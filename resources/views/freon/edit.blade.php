@@ -1,0 +1,35 @@
+@extends('layouts.back2')
+@section('content')
+<!-- --------------------------------------------------- -->
+<!-- Header End -->
+<!-- --------------------------------------------------- -->
+<!-- --------------------------------------------------- -->
+<!--  Form Inputs Grid Start -->
+<!-- --------------------------------------------------- -->
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="border-bottom title-part-padding">
+        <h4 class="card-title mb-0 text-center">Edit Jenis Freon</h4>
+      </div>
+      <div class="card-body">
+        <form action="{{ route('freon.update',$freon->id) }}" method="POST" enctype="multipart/form-data">
+          @csrf
+          @method('PUT')
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="">Jenis Freon</label>
+              <input type="text" name="jenis_freon" class="form-control" id="" value="{{$freon->jenis_freon}}" required="">
+              <input type="hidden" name="id" class="form-control" id="" value="{{$freon->id}}" required="">
+              <button class="btn btn-info px-4 mt-3" type="submit">
+                Submit
+              </button>
+            </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+@endsection
