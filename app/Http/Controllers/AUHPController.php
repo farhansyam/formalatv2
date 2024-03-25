@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipment;
-use App\Models\History;
 use App\Models\AUHP;
+use App\Models\History;
+use App\Models\Equipment;
+use App\Models\GambarAct;
+use App\Models\GambarAct2;
 use Illuminate\Http\Request;
 
 class AUHPController extends Controller
@@ -15,7 +17,7 @@ class AUHPController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function create($id)
+     public function create2($id)
     {
         $equipmentId = Equipment::find($id); // Placeholder value
         
@@ -153,7 +155,7 @@ class AUHPController extends Controller
             $history->type = "AUHP"; // Sesuaikan dengan jenis equipment
             $history->id_act = $AUHP->id;
             $history->id_equipment = $request->id;
-            $history->id_user = "1"; // Gunakan ID user yang sedang login
+            $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
             $history->save();
             return redirect()->route('equipment.show',$request->id)->with('success', 'Task list telah disimpan.');
     }
@@ -168,10 +170,11 @@ class AUHPController extends Controller
      * @param  \App\Models\AUHP  $AUHP
      * @return \Illuminate\Http\Response
      */
-    public function show(AUHP $AUHP)
+    public function show(AUHP $AUHP,$id)
     {
-        $AUHP = AUHP::findOrFail(); // Sesuaikan dengan model AUHP
-        return view('equipment.AUHP.show', compact('AUHP'));
+        $history = History::find($id);
+        $auhp = AUHP::findOrFail($history->id_act); // Sesuaikan dengan model AUHP
+        return view('equipment.AUHP.show', compact('auhp','id'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -179,14 +182,58 @@ class AUHPController extends Controller
      * @param  \App\Models\AUHP  $AUHP
      * @return \Illuminate\Http\Response
      */
-    public function edit(AUHP $AUHP)
+    public function edit(AUHP $AUHP,$id)
     {
-        $AUHP = AUHP::findOrFail(); // Sesuaikan dengan model AUHP
-        return view('equipment.AUHP.edit', compact('AUHP'));
-        
+        $history = History::find($id);
+        $auhp = AUHP::findOrFail($history->id_act); // Sesuaikan dengan model AUHP
+        $id = $history->id_equipment;
+        return view('equipment.AUHP.edit', compact('auhp','id'));
     }
 
+    function update(Request $request,$id){
+        $acs = AUHP::find($id);
 
+        // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
+        $qData = [];
+        for ($i = 1; $i <= 51; $i++) {
+            $qData['q' . $i] = implode(',', $request->input('q' . $i));
+        }
+        // Simpan data ke dalam model CoolingUnit
+        $acs->update($qData); 
+
+        // Simpan data
+        $acs->save();
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
+
+                GambarAct::create([
+                    'id_act' => $acs->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $acs->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index],
+                    'info' => $request->info2[$index],
+                ]);
+            }
+        }
+        return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
+
+    }
 
     /**
      * Update the specified resource in storage.

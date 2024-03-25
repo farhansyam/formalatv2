@@ -48,7 +48,10 @@
                                     <td class="text-center">
                                         <input type="checkbox" class="text-center" name="q31[]" value="Ac Split Standing" onclick="uncheckAllExcept(this)">
                                     </td>
-                                    <td class="text-center"><input type="text" class="text-center" required name="q31[]" value=""></td>
+                                    <td class="text-center"><select name="q[]" class="form-select" id="">
+                                            <option value="Ok">Ok</option>
+                                            <option value="Not Ok">Not Ok</option>
+                                        </select></td>
                                 </tr>
                                 <script>
                                     document.getElementById("myForm").onsubmit = function() {
@@ -114,14 +117,20 @@
                                         <td class="text-center">Cek cover unit, pastikan bersih, skrup masih lengkap dan tidak ada kerusakan pada cover unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q1[]" value=""></td>
+                                        <td><select name="q1[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
                                         <td class="text-center">2</td>
                                         <td class="text-center">Cek kondisi filter, pastikan tidak kotor dan tidak rusak (cleaning jika kotor)</td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q2[]" value=""></td>
+                                        <td><select name="q2[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -129,7 +138,10 @@
                                         <td class="text-center">Cek kondisi fin evap, pastikan tidak kotor dan tidak rusak (cleaning jika kotor)
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q3[]" value=""></td>
+                                        <td><select name="q3[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -137,7 +149,10 @@
                                         <td class="text-center">Cek kondisi blower fan, pastikan tidak kotor dan tidak rusak (cleaning jika kotor)
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q4[]" value=""></td>
+                                        <td><select name="q4[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -145,7 +160,10 @@
                                         <td class="text-center">Cek kondisi drain sistem, bersihkan lendir yang menempel dan pastikan tidak tersumbat
                                         </td>
                                         <td class="text-center">Lancar</td>
-                                        <td><input type="text" class="text-center" required name="q5[]" value=""></td>
+                                        <td><select name="q5[]" class="form-select" id="">
+                                                <option value="Lancar">Lancar</option>
+                                                <option value="Tidak Lancar">Tidak Lancar</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -153,7 +171,10 @@
                                         <td class="text-center">Cek putaran blower, pastikan aliran udara pada evaporator lancar
                                         </td>
                                         <td class="text-center">Lancar</td>
-                                        <td><input type="text" class="text-center" required name="q6[]" value=""></td>
+                                        <td><select name="q6[]" class="form-select" id="">
+                                                <option value="Lancar">Lancar</option>
+                                                <option value="Tidak Lancar">Tidak Lancar</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -161,7 +182,10 @@
                                         <td class="text-center">Cek Insulasi pipa, pastikan semua pipa terinsulasi, tidak ada yang rusak atau kondensasi
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q7[]" value=""></td>
+                                        <td><select name="q7[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -169,7 +193,10 @@
                                         <td class="text-center">Cek kebocoran refrigerant, pastikan tidak ada oli di area indoor, bak drain dan sambungan pipa
                                         </td>
                                         <td class="text-center">Tidak Bocor</td>
-                                        <td><input type="text" class="text-center" required name="q8[]" value=""></td>
+                                        <td><select name="q8[]" class="form-select" id="">
+                                                <option value="Tidak Bocor">Tidak Bocor</option>
+                                                <option value="Bocor">Bocor</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -177,7 +204,10 @@
                                         <td class="text-center">Cek modul indoor, pastikan koneksi kabelnya dan pastikan tidak ada kerusakan pada modul
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q9[]" value=""></td>
+                                        <td><select name="q9[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -185,7 +215,10 @@
                                         <td class="text-center">Kencangkan semua koneksi kabel pada terminal indoor unit
                                         </td>
                                         <td class="text-center">Kencang</td>
-                                        <td><input type="text" class="text-center" required name="q10[]" value=""></td>
+                                        <td><select name="q10[]" class="form-select" id="">
+                                                <option value="Kencang">Kencang</option>
+                                                <option value="Tidak Kencang">Tidak Kencang</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -193,28 +226,40 @@
                                         <td class="text-center">Test running, pastikan tidak ada suara atau vibrasi yang abnormal
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q11[]" value=""></td>
+                                        <td><select name="q11[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
                                     <tr>
                                         <td class="text-center">12</td>
                                         <td class="text-center">Cek setpoint pada remote, pastikan pada mode cool semuai temperature yang diinginkan
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q12[]" value=""></td>
+                                        <td><select name="q12[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
                                     <tr>
                                         <td class="text-center">13</td>
                                         <td class="text-center">Cek timer pada remote, pastikan sesuai dengan kebutuhan
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q13[]" value=""></td>
+                                        <td><select name="q13[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
                                     <tr>
                                         <td class="text-center">14</td>
                                         <td class="text-center">Check baterai pada remote, lakukan penggantian jika diperlukan
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q14[]" value=""></td>
+                                        <td><select name="q14[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
                                     <tr>
                                         <td class="text-center"></td>
@@ -230,21 +275,30 @@
                                         <td class="text-center">Cek cover unit, pastikan bersih, skrup masih lengkap dan tidak ada kerusakan pada cover unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q15[]" value=""></td>
+                                        <td><select name="q15[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
                                     <tr>
                                         <td class="text-center">16</td>
                                         <td class="text-center">Cek kondisi fin kondensor, pastikan tidak kotor dan tidak rusak (cleaning jika kotor)
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q16[]" value=""></td>
+                                        <td><select name="q16[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
                                     <tr>
                                         <td class="text-center">17</td>
                                         <td class="text-center">Cek kondisi fan outdoor, pastikan terpasang dengan baik, tidak kotor & tidak rusak (cleaning jika kotor)
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q17[]" value=""></td>
+                                        <td><select name="q17[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -252,7 +306,10 @@
                                         <td class="text-center">Cek putaran fan outdoor, pastikan aliran udara pada kondensor lancar
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q18[]" value=""></td>
+                                        <td><select name="q18[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -260,7 +317,10 @@
                                         <td class="text-center">Cek Insulasi pipa, pastikan semua pipa terinsulasi, tidak ada yang rusak atau kondensasi
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q19[]" value=""></td>
+                                        <td><select name="q19[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -268,7 +328,10 @@
                                         <td class="text-center">Cek kebocoran refrigerant, pastikan tidak ada oli di area kondensor dan sambungan pipa
                                         </td>
                                         <td class="text-center">Tidak Bocor</td>
-                                        <td><input type="text" class="text-center" required name="q20[]" value=""></td>
+                                        <td><select name="q20[]" class="form-select" id="">
+                                                <option value="Tidak Bocor">Tidak Bocor</option>
+                                                <option value="Bocor">Bocor</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -276,7 +339,10 @@
                                         <td class="text-center">Kencangkan semua koneksi kabel pada terminal outdoor unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q21[]" value=""></td>
+                                        <td><select name="q21[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -284,7 +350,10 @@
                                         <td class="text-center">Cek Kapasitor kompressor
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q22[]" value=""></td>
+                                        <td><select name="q22[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -292,7 +361,10 @@
                                         <td class="text-center">Cek Kapasitor motor fan kondensor
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required required name="q23[]" value=""></td>
+                                        <td><select name="q23[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -300,7 +372,10 @@
                                         <td class="text-center">Test running, pastikan tidak ada suara atau vibrasi yang abnormal
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q24[]" value=""></td>
+                                        <td><select name="q[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -308,7 +383,10 @@
                                         <td class="text-center">Cek ampere kompressor dan sesuaikan dengan kapasitas di nameplate unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q25[]" value=""></td>
+                                        <td><select name="q[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -316,7 +394,10 @@
                                         <td class="text-center">Cek ampere motor fan kondensor dan sesuaikan dengan kapasitas di nameplate unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q26[]" value=""></td>
+                                        <td><select name="q[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                     <tr>
@@ -324,7 +405,10 @@
                                         <td class="text-center">Cek tekanan kompressor disesuaikan dengan tipe referigerant
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><input type="text" class="text-center" required name="q27[]" value=""></td>
+                                        <td><select name="q[]" class="form-select" id="">
+                                                <option value="Ok">Ok</option>
+                                                <option value="Not Ok">Not Ok</option>
+                                            </select></td>
                                     </tr>
 
                                 </tbody>

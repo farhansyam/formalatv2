@@ -110,11 +110,8 @@ Route::resource('cs', ColdStorageController::class)->name('index', 'cs.index')->
 
 Route::get('cu/create/{id}', [CoolingUnitController::class, 'create2'])->name('cooling-unit.create2');
 Route::resource('/cu', CoolingUnitController::class)->name('index','coolong-unit.index');
-Route::get('AUHP/{id}', [AUHPController::class, 'create'])->name('AUHP.create2');        
-Route::resource('/AUHP', AUHPController::class)->names([
-        'edit' => 'AUHP.edit', // Nama untuk rute index
-        'show' => 'AUHP.show', // Nama untuk rute index
-        ]);
+Route::get('auhp/create/{id}', [AUHPController::class, 'create2'])->name('auhp.create2');        
+Route::resource('/auhp', AUHPController::class)->name('index','auhp.index');
 
 Route:: get('mch/create/{id}', [MiniChillerController::class, 'create2'])->name('mini-chiller.create2');
 
@@ -125,17 +122,14 @@ Route::resource('/evaporator-aircooler', EvaporatorAirCoolerController::class)->
         'edit' => 'evaporator-aircooler.edit', // Nama untuk rute index
         'show' => 'evaporator-aircooler.show', // Nama untuk rute index
 ]);
-Route::get('air-cooled-water-chiller/{id}', [AirCooledWaterChillerController::class, 'create'])->name('air-cooled-water-chiller.create2');              
-Route::resource('/air-cooled-water-chiller', AirCooledWaterChillerController::class)->names([
-        'edit' => 'air-cooled-water-chiller.edit', // Nama untuk rute index
-        'show' => 'air-cooled-water-chiller.show', // Nama untuk rute index
-        ]);   
+Route::get('acwc/create/{id}', [AirCooledWaterChillerController::class, 'create2'])->name('acwc.create2');              
+Route::resource('acwc', AirCooledWaterChillerController::class)->name('index', 'acwc');
 
 
-Route::get('PAC/{id}', [PACController::class, 'create'])->name('PAC.create2');    
-Route::resource('/PAC', PACController::class)->names([
-        'edit' => 'PAC.edit', // Nama untuk rute index
-        'show' => 'PAC.show', // Nama untuk rute index
+Route::get('pac/create/{id}', [PACController::class, 'create2'])->name('pac.create2');    
+Route::resource('/pac', PACController::class)->names([
+        'edit' => 'pac.edit', // Nama untuk rute index
+        'show' => 'pac.show', // Nama untuk rute index
         ]); 
 
 
@@ -155,37 +149,31 @@ Route::resource('/PAC', PACController::class)->names([
         // Route::get('evaporator-aircooler/{id}', [EvaporatorAirCoolerController::class, 'create2'])->name('evaporator-aircooler.create2');    
         // Route::put('evaporator-aircooler/{id}', [EvaporatorAirCoolerController::class, 'update'])->name('evaporator-aircooler.update');
 
-Route::get('AHU/{id}', [AHUController::class, 'create'])->name('AHU.create2');    
-Route::resource('/AHU', AHUController::class)->names([
-        'edit' => 'AHU.edit', // Nama untuk rute index
-        'show' => 'AHU.show', // Nama untuk rute index
+Route::get('ahu/create/{id}', [AHUController::class, 'create2'])->name('ahu.create2');    
+Route::resource('/ahu', AHUController::class)->names([
+        'edit' => 'ahu.edit', // Nama untuk rute index
+        'show' => 'ahu.show', // Nama untuk rute index
         ]); 
 
-Route::get('cooling-tower/{id}', [CoolingTowerController::class, 'create'])->name('cooling-tower.create2');       
+Route::get('cooling-tower/create/{id}', [CoolingTowerController::class, 'create2'])->name('cooling-tower.create2');       
 Route::resource('/cooling-tower', CoolingTowerController::class)->names([
         'edit' => 'cooling-tower.edit', // Nama untuk rute index
         'show' => 'cooling-tower.show', // Nama untuk rute index
         ]); 
 
 
-Route::get('humidifier/{id}', [HumidifierController::class, 'create'])->name('humidifier.create2');        
-Route::resource('/humidifier', HumidifierController::class)->names([
+Route::get('humidifier/create/{id}', [HumidifierController::class, 'create2'])->name('humidifier.create2');        
+Route::resource('/humidifierr', HumidifierController::class)->names([
         'edit' => 'humidifier.edit', // Nama untuk rute index
         'show' => 'humidifier.show', // Nama untuk rute index
         ]); 
     
 
-Route::get('dehumidifier/{id}', [DehumidifierController::class, 'create'])->name('dehumidifier.create2');        
-Route::resource('/dehumidifier', DehumidifierController::class)->names([
-        'edit' => 'dehumidifier.edit', // Nama untuk rute index
-        'show' => 'dehumidifier.show', // Nama untuk rute index
-        ]); 
+Route::get('dehumidifier/create/{id}', [DehumidifierController::class, 'create2'])->name('dehumidifier.create2');        
+Route::resource('/dehumidifierr', DehumidifierController::class)->name('index','dehumidifer.index'); 
     
-Route::get('FCU/{id}', [FCUController::class, 'create'])->name('FCU.create2');       
-Route::resource('/FCU', FCUController::class)->names([
-        'edit' => 'FCU.edit', // Nama untuk rute index
-        'show' => 'FCU.show', // Nama untuk rute index
-        ]); 
+Route::get('fcuu/create/{id}', [FCUController::class, 'create2'])->name('fcuu.create2');       
+Route::resource('/fcuu', FCUController::class)->name('index','fcuu.index'); 
     
 Route::get('exhaust-fan/{id}', [ExhaustFanController::class, 'create'])->name('exhaust-fan.create2');       
 Route::resource('/exhaust-fan', ExhaustFanController::class)->names([

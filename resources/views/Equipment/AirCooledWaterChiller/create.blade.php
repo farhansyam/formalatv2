@@ -15,7 +15,7 @@
                             <h5 class="text-center" style="background-color: black;color:white">Task List Air Cooled Water Chiller</h5>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('air-cooled-water-chiller.store') }}" method="POST">
+                            <form action="{{ route('acwc.store') }}" method="POST">
                                 @csrf
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>

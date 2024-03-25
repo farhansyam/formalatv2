@@ -14,7 +14,7 @@
                         <div class="border-bottom title-part-padding">
                             <h4 class="card-title mb-0 text-center">Task List Dehumidifier</h4>
                         </div>
-                            <form action="{{ route('dehumidifier.store') }}" method="POST">
+                            <form action="{{ route('dehumidifierr.store') }}" method="POST">
                                 @csrf
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>

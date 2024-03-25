@@ -219,7 +219,7 @@
                                 // Ambil singkatan dari jenis berdasarkan angka
                                 $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
                                 // Mengambil karakter terakhir
-                                $singkatan2 .= strtoupper($equipment->kode_room);
+                                $singkatan2 = strtoupper($equipment->kode_room);
                                 echo strtoupper($singkatan1 . $singkatan2 . $formattedId = sprintf('%05d', $equipment->id));
                                 // Mengambil karakter pertama
 

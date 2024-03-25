@@ -116,8 +116,8 @@
                                     // Array untuk memetakan angka ke jenis
                                     $jenis = [
                                       1 => "AC Split",
-                                      2 => "AHUP",
-                                      3 => "Cooled Water Chiller",
+                                      3 => "AHUP",
+                                    2 => "Cooled Water Chiller",
                                       4 => "PAC",
                                       5 => "Cold Storage",
                                       6 => "Cooling Unit & AC Panel",
@@ -146,12 +146,11 @@
                                     ];
                                     // Ambil singkatan dari jenis berdasarkan angka
                                     $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
-                                    $singkatan2 = strtoupper(substr($equipment->area, 0, 1));
 
                                     // Mengambil karakter tengah (atau kedua karakter dari tengah jika panjang genap)
                                     $panjang = strlen($equipment->area);
                                     $posisi_tengah = floor($panjang / 2);
-                                    $singkatan2 .= strtoupper($equipment->kode_room);
+                                    $singkatan2 = strtoupper($equipment->kode_room);
 
                                     // Mengambil karakter terakhir
                                     $singkatan2 .= strtoupper(substr($equipment->area, -1));
@@ -165,9 +164,9 @@
                   <td class="bg-transparent">
                     @if($equipment->jenis == 1)
                     {{ "AC Split" }}
-                    @elseif($equipment->jenis == 2)
-                    {{ "AHUP" }}
                     @elseif($equipment->jenis == 3)
+                    {{ "AHUP" }}
+                    @elseif($equipment->jenis == 2)
                     {{ "Cooled Water Chiller" }}
                     @elseif($equipment->jenis == 4)
                     {{ "PAC" }}

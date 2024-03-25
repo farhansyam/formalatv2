@@ -61,6 +61,15 @@ class AirCooledWaterChiller extends Model
         'q49',
         'q50',
         'q51',
+        'q52',
+        'q53',
+        'q54',
+        'q55',
+        'q56',
+        'q57',
+        'q58',
+        'q59',
+        'q60',
     ];
 
     protected $table = "AirCooledWaterChillers";

@@ -15,7 +15,7 @@
                             <h4 class="card-title mb-0 text-center">Task List AHU</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('AHU.store') }}" id="myForm" method="POST">
+                            <form action="{{ route('ahu.store') }}" id="myForm" method="POST">
                                 @csrf
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>
@@ -629,13 +629,13 @@
                                         <tbody>
                                             <td>
                                                 <label>
-                                                    <input type="checkbox" class="text-center" required name="q46[]" value="OK" onclick="toggleCheckbox(this)">
+                                                    <input type="checkbox" class="text-center"  name="q46[]" value="OK" onclick="toggleCheckbox(this)">
                                                     OK
                                                 </label>
                                             </td>
                                             <td>
                                                 <label>
-                                                    <input type="checkbox" class="text-center" required name="q46[]" value="NOT OK" onclick="toggleCheckbox(this)">
+                                                    <input type="checkbox" class="text-center"  name="q46[]" value="NOT OK" onclick="toggleCheckbox(this)">
                                                     NOT OK
                                                 </label>
                                             </td>

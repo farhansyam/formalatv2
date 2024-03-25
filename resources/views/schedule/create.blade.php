@@ -37,8 +37,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                   2 => "Cooled Water Chiller",
+                                   3 => "AHUP",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -78,8 +78,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                   2 => "Cooled Water Chiller",
+                                   3 => "AHUP",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -130,8 +130,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                   2 => "Cooled Water Chiller",
+                                   3 => "AHUP",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -170,8 +170,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                        3 => "AHUP",
+                                        2 => "Cooled Water Chiller",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -223,8 +223,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                        3 => "AHUP",
+                                        2 => "Cooled Water Chiller",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -263,8 +263,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                        3 => "AHUP",
+                                        2 => "Cooled Water Chiller",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -316,8 +316,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                        3 => "AHUP",
+                                        2 => "Cooled Water Chiller",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -356,8 +356,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                        3 => "AHUP",
+                                        2 => "Cooled Water Chiller",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -409,8 +409,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                        3 => "AHUP",
+                                        2 => "Cooled Water Chiller",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -449,8 +449,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                        3 => "AHUP",
+                                        2 => "Cooled Water Chiller",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -515,8 +515,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                        3 => "AHUP",
+                                        2 => "Cooled Water Chiller",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",
@@ -555,8 +555,8 @@
                                 // Array untuk memetakan angka ke jenis
                                 $jenis = [
                                    1 => "AC Split",
-                                        2 => "AHUP",
-                                        3 => "Cooled Water Chiller",
+                                        3 => "AHUP",
+                                        2 => "Cooled Water Chiller",
                                         4 => "PAC",
                                         5 => "Cold Storage",
                                         6 => "Cooling Unit & AC Panel",

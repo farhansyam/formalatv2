@@ -16,10 +16,8 @@ class FCUController extends Controller
      */
 
 
-     public function create($id)
+     public function create2($id)
      {
-         $equipmentId = Equipment::find($id); // Placeholder value
-         
          return view('equipment.FCU.create', compact('id'));
      }
 

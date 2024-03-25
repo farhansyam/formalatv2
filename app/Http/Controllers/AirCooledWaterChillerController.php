@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipment;
 use App\Models\History;
-use App\Models\AirCooledWaterChiller;
+use App\Models\Equipment;
+use App\Models\GambarAct;
+use App\Models\GambarAct2;
 use Illuminate\Http\Request;
+use App\Models\AirCooledWaterChiller;
 
 class AirCooledWaterChillerController extends Controller
 {
@@ -15,7 +17,7 @@ class AirCooledWaterChillerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function create($id)
+     public function create2($id)
     {
         $equipmentId = Equipment::find($id); // Placeholder value
         
@@ -38,112 +40,12 @@ class AirCooledWaterChillerController extends Controller
      */
     public function store(Request $request)
     {
-
+// dd($request->q56);
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
-    
-        $qData = [
-            'q1' => implode(',', $request->input('q1')),
-
-            'q2' => implode(',', $request->input('q2')),
-
-            'q3' => implode(',', $request->input('q3')),
-
-            'q4' => implode(',', $request->input('q4')),
-
-            'q5' => implode(',', $request->input('q5')),
-
-            'q6' => implode(',', $request->input('q6')),
-
-            'q7' => implode(',', $request->input('q7')),
-
-            'q8' => implode(',', $request->input('q8')),
-
-            'q9' => implode(',', $request->input('q9')),
-
-            'q10' => implode(',', $request->input('q10')),
-
-            'q11' => implode(',', $request->input('q11')),
-
-            'q12' => implode(',', $request->input('q12')),
-
-            'q13' => implode(',', $request->input('q13')),
-
-            'q14' => implode(',', $request->input('q14')),
-
-            'q15' => implode(',', $request->input('q15')),
-
-            'q16' => implode(',', $request->input('q16')),
-
-            'q17' => implode(',', $request->input('q17')),
-
-            'q18' => implode(',', $request->input('q18')),
-
-            'q19' => implode(',', $request->input('q19')),
-
-            'q20' => implode(',', $request->input('q20')),#
-
-            'q21' => implode(',', $request->input('q21')),
-
-            'q22' => implode(',', $request->input('q22')),
-
-            'q23' => implode(',', $request->input('q23')),
-
-            'q24' => implode(',', $request->input('q24')),
-
-            'q25' => implode(',', $request->input('q25')),
-
-            'q26' => implode(',', $request->input('q26')),
-
-            'q27' => implode(',', $request->input('q27')),
-
-            'q28' => implode(',', $request->input('q28')),
-
-            'q29' => implode(',', $request->input('q29')),
-
-            'q30' => implode(',', $request->input('q30')),
-
-            'q31' => implode(',', $request->input('q31')),#
-
-            'q32' => implode(',', $request->input('q32')),
-
-            'q33' => implode(',', $request->input('q33')),
-
-            'q34' => implode(',', $request->input('q34')),
-
-            'q35' => implode(',', $request->input('q35')),
-
-            'q36' => implode(',', $request->input('q36')),
-
-            'q37' => implode(',', $request->input('q37')),
-
-            'q38' => implode(',', $request->input('q38')),
-
-            'q39' => implode(',', $request->input('q39')),
-
-            'q40' => implode(',', $request->input('q40')),
-
-            'q41' => implode(',', $request->input('q41')),
-
-            'q42' => implode(',', $request->input('q42')),
-
-            'q43' => implode(',', $request->input('q43')),
-
-            'q44' => implode(',', $request->input('q44')),
-
-            'q45' => implode(',', $request->input('q45')),
-
-            'q46' => implode(',', $request->input('q46')),
-
-            'q47' => implode(',', $request->input('q47')),
-
-            'q48' => implode(',', $request->input('q48')),
-
-            'q49' => implode(',', $request->input('q49')),
-
-            'q50' => implode(',', $request->input('q50')),
-
-            'q51' => implode(',', $request->input('q51')),
-        ];
+        $qData = [];
+        for ($i = 1; $i <= 60; $i++) {
+            $qData['q' . $i] = implode(',', $request->input('q' . $i));
+        }
     
         // Simpan data ke dalam model AirCooledWaterChiller
         $AirCooledWaterChiller = AirCooledWaterChiller::create($qData);
@@ -153,7 +55,7 @@ class AirCooledWaterChillerController extends Controller
             $history->type = "Air Cooled Water Chiller"; // Sesuaikan dengan jenis equipment
             $history->id_act = $AirCooledWaterChiller->id;
             $history->id_equipment = $request->id;
-            $history->id_user = "1"; // Gunakan ID user yang sedang login
+            $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
             $history->save();
             return redirect()->route('equipment.show',$request->id)->with('success', 'Task list telah disimpan.');
     }
@@ -168,9 +70,12 @@ class AirCooledWaterChillerController extends Controller
      * @param  \App\Models\AirCooledWaterChiller  $AirCooledWaterChiller
      * @return \Illuminate\Http\Response
      */
-    public function show(AirCooledWaterChiller $AirCooledWaterChiller)
+    public function show(AirCooledWaterChiller $AirCooledWaterChiller,$id)
     {
-        return view('equipment.AirCooledWaterChiller.show', compact('AirCooledWaterChiller'));
+        $history = History::find($id);
+        $acwc = AirCooledWaterChiller::find($history->id_act);
+        $id = $history->id_equipment;
+        return view('equipment.AirCooledWaterChiller.show', compact('acwc','id'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -178,15 +83,62 @@ class AirCooledWaterChillerController extends Controller
      * @param  \App\Models\AirCooledWaterChiller  $AirCooledWaterChiller
      * @return \Illuminate\Http\Response
      */
-    public function edit(AirCooledWaterChiller $AirCooledWaterChiller)
+    public function edit(AirCooledWaterChiller $AirCooledWaterChiller,$id)
     {
-        $AirCooledWaterChiller = AirCooledWaterChiller::findOrFail(); // Sesuaikan dengan model AirCooledWaterChiller
-        return view('equipment.AirCooledWaterChiller.edit', compact('AirCooledWaterChiller'));
+        $history = History::find($id);
+        $acwc = AirCooledWaterChiller::find($history->id_act);
+        $id = $history->id_equipment;
+        $idh = $history->id;
+        return view('equipment.AirCooledWaterChiller.edit', compact('acwc','id','idh'));
         
     }
 
 
+    public function update(Request $request, $id)
+    {
+        $history = History::find($id);
+        $acs = AirCooledWaterChiller::find($history->id_act);
 
+        // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
+        $qData = [];
+        for ($i = 1; $i <= 60; $i++) {
+            $qData['q' . $i] = implode(',', $request->input('q' . $i));
+        }
+        // Simpan data ke dalam model CoolingUnit
+        $acs->update($qData); // Atau bisa juga menggunakan $acs->fill($qData) diikuti dengan $acs->save();
+
+        // Simpan data
+        $acs->save();
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
+
+                GambarAct::create([
+                    'id_act' => $acs->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $acs->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index],
+                    'info' => $request->info2[$index],
+                ]);
+            }
+        }
+        return redirect()->route('acwc.show', $history->id);
+    }
     /**
      * Update the specified resource in storage.
      *

@@ -14,7 +14,7 @@
                         <div class="border-bottom title-part-padding">
                             <h4 class="card-title mb-0 text-center">Task List FCU (Fan Cooling Unit)</h4>
                         </div>
-                            <form action="{{ route('FCU.store') }}" method="POST">
+                            <form action="{{ route('fcuu.store') }}" method="POST">
                                 @csrf
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>

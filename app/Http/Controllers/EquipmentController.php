@@ -108,8 +108,8 @@ class EquipmentController extends Controller
         $equipment->save();
         $jenis = [
             1 => "AC Split",
-            2 => "AHUP",
-            3 => "Cooled Water Chiller",
+            2 => "Cooled Water Chiller",
+            3 => "AHUP",
             4 => "PAC",
             5 => "Cold Storage",
             6 => "Cooling Unit & AC Panel",
@@ -266,8 +266,8 @@ class EquipmentController extends Controller
         }
         $jenis = [
             1 => "AC Split",
-            2 => "AHUP",
-            3 => "Cooled Water Chiller",
+            2 => "Cooled Water Chiller",
+            3 => "AHUP",
             4 => "PAC",
             5 => "Cold Storage",
             6 => "Cooling Unit & AC Panel",
@@ -328,6 +328,10 @@ class EquipmentController extends Controller
      */
     public function destroy(Equipment $equipment)
     {
+        $history = History::where('id_equipment',$equipment->id)->get();
+        foreach ($history as $record) {
+            $record->delete();
+        }
         $equipment->delete();
         return redirect()->route('equipment.index');
     }
