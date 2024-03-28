@@ -58,6 +58,9 @@ class SpotCooling extends Model
         'q46',
         'q47',
         'q48',
+        'q49',
+        'q50',
+        'q51',
     ];
 
     protected $table = "Spot_Coolings";

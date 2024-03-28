@@ -14,7 +14,7 @@
                         <div class="border-bottom title-part-padding">
                             <h4 class="card-title mb-0 text-center">Task List Pompa</h4>
                         </div>
-                            <form action="{{ route('pompa.store') }}" method="POST">
+                            <form action="{{ route('pompaa.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>
@@ -196,22 +196,22 @@
                                                 <th></th>
                                             </tr>
     
-                                            <tr>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th></th>
-                                                <th>R</th>
-                                                <th>S</th>
-                                                <th>T</th>
-                                                <th>R</th>
-                                                <th>S</th>
-                                                <th>T</th>
-                                            </tr>
                                         </thead>
+                                        <tr>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th></th>
+                                            <th>R</th>
+                                            <th>S</th>
+                                            <th>T</th>
+                                            <th>R</th>
+                                            <th>S</th>
+                                            <th>T</th>
+                                        </tr>
     
                                         <tbody>
                                               <tr>

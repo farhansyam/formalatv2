@@ -325,19 +325,19 @@
                           </button>
                         </a>
                         @elseif($equipment->jenis == 14)
-                        <a href="">
+                        <a href="{{ route('exhaustfan.create2',$equipment->id) }}">
                           <button type="button" class="btn btn-info w-100">
                             Form PM Exhaust Fan
                           </button>
                         </a>
                         @elseif($equipment->jenis == 15)
-                        <a href="">
+                        <a href="{{ route('pompaa.create2',$equipment->id) }}">
                           <button type="button" class="btn btn-info w-100">
                             Form PM Pompa
                           </button>
                         </a>
                         @elseif($equipment->jenis == 16)
-                        <a href="">
+                        <a href="{{ route('spoot-cooling.create2',$equipment->id) }}">
                           <button type="button" class="btn btn-info w-100">
                             Form PM Spot Cooling
                           </button>
@@ -962,13 +962,13 @@
 
                                                   @elseif($equipment->jenis == 15)
                                                   <div class="btn-group">
-                                                    <a href="{{ route('pompa.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                                    <a href="{{ route('pompa.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                                    <a href="{{ route('pompaa.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
+                                                    <a href="{{ route('pompaa.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
 
                                                     @elseif($equipment->jenis == 16)
                                                     <div class="btn-group">
-                                                      <a href="{{ route('spot-cooling.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                                      <a href="{{ route('spot-cooling.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                                      <a href="{{ route('spoot-cooling.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
+                                                      <a href="{{ route('spoot-cooling.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
 
                                                       @elseif($equipment->jenis == 17)
                                                       <div class="btn-group">

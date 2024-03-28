@@ -5,14 +5,14 @@
 <!-- --------------------------------------------------- -->
 <div class="container-fluid">
     <!-- --------------------------------------------------- -->
-    <!--  Form Input disableds Grid Start -->
+    <!--  Form Inputs Grid Start -->
     <!-- --------------------------------------------------- -->
     <section>
         <div class="row">
             <div class="col-12">
                 <div class="card">
                     <div class="border-bottom title-part-padding">
-                        <h4 class="card-title mb-0 text-center">Task List Fan Cooling Unit(FCU) </h4>
+                        <h4 class="card-title mb-0 text-center">Task List FCU (Fan Cooling Unit)</h4>
                     </div>
                     <form action="{{ route('fcuu.store') }}" method="POST">
                         @csrf
@@ -28,9 +28,9 @@
                             </thead>
                             <tbody>
 
-                                <input disabled type="hidden" required name="id" value="{{ $id }}">
+                                <input type="hidden" required name="id" value="{{ $id }}">
                                 <tr>
-                                    @foreach (explode(',',$humidifier->q1) as $val)
+                                    @foreach (explode(',',$fcu->q1) as $val)
                                     <td>
                                         <p>Lokasi :</p><input disabled type="text" class="form-control text-center" required name="q1[]" value="{{$val}}">
                                     </td>
@@ -38,14 +38,15 @@
                                 </tr>
 
                                 <tr>
-                                    @foreach (explode(',',$humidifier->q2) as $val)
+                                    @foreach (explode(',',$fcu->q2) as $val)
                                     <td>
                                         <p>Code Unit :</p><input disabled type="text" class="form-control text-center" required name="q2[]" value="{{$val}}">
                                     </td>
                                     @endforeach
                                 </tr>
+
                                 <tr>
-                                    @foreach (explode(',',$humidifier->q3) as $val)
+                                    @foreach (explode(',',$fcu->q3) as $val)
                                     <td>
                                         <p>No Unit :</p><input disabled type="text" class="form-control text-center" required name="q3[]" value="{{$val}}">
                                     </td>
@@ -53,22 +54,25 @@
                                 </tr>
 
                                 <tr>
-                                    @foreach (explode(',',$humidifier->q4) as $val)
+                                    @foreach (explode(',',$fcu->q4) as $val)
                                     <td>
                                         <p>Model : </p><input disabled type="text" class="form-control text-center" required name="q4[]" value="{{$val}}">
                                     </td>
                                     @endforeach
+
                                 </tr>
 
                                 <tr>
-                                    @foreach (explode(',',$humidifier->q5) as $val)
+                                    @foreach (explode(',',$fcu->q5) as $val)
                                     <td>
                                         <p>No Seri :</p><input disabled type="text" class="form-control text-center" required name="q5[]" value="{{$val}}">
                                     </td>
                                     @endforeach
+
                                 </tr>
+
                                 <tr>
-                                    @foreach (explode(',',$humidifier->q6) as $val)
+                                    @foreach (explode(',',$fcu->q6) as $val)
                                     <td>
                                         <p>Capacity :</p><input disabled type="text" class="form-control text-center" required name="q6[]" value="{{$val}}">
                                     </td>
@@ -83,71 +87,43 @@
                                 <h5 class="text-center" style="background-color: black;color:white">Task List</h5>
 
                                 <tr>
-                                    <th>No</th>
-                                    <th class="text-center">Item Checked</th>
-                                    <th>Freq</th>
-                                    <th>Unit 1</th>
-                                    <th></th>
-                                    <th>Unit 2</th>
-                                    <th></th>
-                                    <th>Unit 3</th>
-                                    <th></th>
-                                </tr>
-
-                                <tr>
-                                    <th></th>
-                                    <th></th>
-                                    <th></th>
-                                    <th>Standar</th>
-                                    <th>Actual</th>
-                                    <th>Standar</th>
-                                    <th>Actual</th>
-                                    <th>Standar</th>
-                                    <th>Actual</th>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-
-                                <tr>
                                     <td>1</td>
-                                    <td>Cleaning Ultrasonic Membran</td>
-                                    @foreach (explode(',',$humidifier->q7) as $val)
-                                    <td><input type="text" class="form-control text-center" required name="q7[]" value="{{$val}}"></td>
+                                    <td>Cleaning coil</td>
+                                    @foreach (explode(',',$fcu->q7) as $val)
+                                    <td><input disabled type="text" class="form-control text-center" value="{{$val}}" required name="q7[]"></td>
                                     @endforeach
                                 </tr>
-
                                 <tr>
                                     <td>2</td>
-                                    <td>Cleaning Water Reseervoir</td>
-                                    @foreach (explode(',',$humidifier->q8) as $val)
-                                    <td><input type="text" class="form-control text-center" required name="q8[]" value="{{$val}}"></td>
+                                    <td>Cleaning Body</td>
+                                    @foreach (explode(',',$fcu->q8) as $val)
+                                    <td><input disabled type="text" class="form-control text-center" value="{{$val}}" required name="q8[]"></td>
                                     @endforeach
                                 </tr>
 
                                 <tr>
                                     <td>3</td>
-                                    <td>Cleaning & Check Floating Valve</td>
-                                    @foreach (explode(',',$humidifier->q9) as $val)
-                                    <td><input type="text" class="form-control text-center" required name="q9[]" value="{{$val}}"></td>
+                                    <td>Cleaning Air Filter</td>
+                                    @foreach (explode(',',$fcu->q9) as $val)
+                                    <td><input disabled type="text" class="form-control text-center" value="{{$val}}" required name="q9[]"></td>
                                     @endforeach
 
                                 </tr>
 
                                 <tr>
                                     <td>4</td>
-                                    <td>Cleaning & Check Floating Switch</td>
-                                    @foreach (explode(',',$humidifier->q10) as $val)
-                                    <td><input type="text" class="form-control text-center" required name="q10[]" value="{{$val}}"></td>
+                                    <td>Cleaning Water Reservoir / bak drain </td>
+                                    @foreach (explode(',',$fcu->q10) as $val)
+                                    <td><input disabled type="text" class="form-control text-center" value="{{$val}}" required name="q10[]"></td>
                                     @endforeach
 
                                 </tr>
 
                                 <tr>
                                     <td>5</td>
-                                    <td>Check Water Quality</td>
-                                    @foreach (explode(',',$humidifier->q11) as $val)
-                                    <td><input type="text" class="form-control text-center" required name="q11[]" value="{{$val}}"></td>
+                                    <td>Cleaning air blower</td>
+                                    @foreach (explode(',',$fcu->q11) as $val)
+                                    <td><input disabled type="text" class="form-control text-center" value="{{$val}}" required name="q11[]"></td>
                                     @endforeach
 
                                 </tr>
@@ -155,24 +131,30 @@
 
                                 <tr>
                                     <td>6</td>
-                                    <td>Check Electronic Control Board</td>
-                                    @foreach (explode(',',$humidifier->q12) as $val)
-                                    <td><input type="text" class="form-control text-center" required name="q12[]" value="{{$val}}"></td>
+                                    <td>Cleaning drain Pipe </td>
+                                    @foreach (explode(',',$fcu->q12) as $val)
+                                    <td><input disabled type="text" class="form-control text-center" value="{{$val}}" required name="q12[]"></td>
                                     @endforeach
 
                                 </tr>
-
-
                                 <tr>
                                     <td>7</td>
-                                    <td>Check Drain Solenoid Valve</td>
-                                    @foreach (explode(',',$humidifier->q13) as $val)
-                                    <td><input type="text" class="form-control text-center" required name="q13[]" value="{{$val}}"></td>
+                                    <td>Check and cleaning control panel</td>
+                                    @foreach (explode(',',$fcu->q13) as $val)
+                                    <td><input disabled type="text" class="form-control text-center" value="{{$val}}" required name="q12[]"></td>
+                                    @endforeach
+
+                                </tr>
+                                <tr>
+                                    <td>8</td>
+                                    <td>Check and verify all FCU sensor, motorize,actuator</td>
+                                    @foreach (explode(',',$fcu->q14) as $val)
+                                    <td><input disabled type="text" class="form-control text-center" value="{{$val}}" required name="q12[]"></td>
                                     @endforeach
 
                                 </tr>
 
-                            </tbody>
+                                </tbody>
                         </table>
                         <table class="table table-bordered" id="personelTeamTable">
                             <tbody>
@@ -180,19 +162,15 @@
                                 <tr>
                                     <td>Unit</td>
                                     <th>Condition</th>
-                                    <th>Temperature</th>
+                                    <th>Reactivation Temp</th>
                                     <th></th>
-                                    <th>Pressure</th>
-                                    <th></th>
-                                    <th>Water Level</th>
-                                    <th>Membran</th>
                                     <th>Air Flow</th>
                                     <th></th>
                                     <th>Voltage</th>
                                     <th></th>
                                     <th></th>
                                     <th>Ampere</th>
-                                    <TH></TH>
+                                    <th></th>
                                 </tr>
 
                                 <tr>
@@ -200,10 +178,6 @@
                                     <th></th>
                                     <th>In</th>
                                     <th>Out</th>
-                                    <th>In</th>
-                                    <th>Out</th>
-                                    <th></th>
-                                    <th></th>
                                     <th></th>
                                     <th>R</th>
                                     <th>S</th>
@@ -218,228 +192,173 @@
                                 <tr>
                                     <td>1</td>
                                     <td>
-                                        <p>Before</p>
+                                        <p>Bfcuore</p>
                                         <p>Standard</p>
                                         <p>After</p>
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q14) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q14[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q15) as $val)
+                                        @foreach (explode(',',$fcu->q15) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q15[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q16) as $val)
+                                        @foreach (explode(',',$fcu->q16) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q16[]" value="{{$val}}">
                                         @endforeach
                                     </td>
+                                    </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q17) as $val)
+                                        @foreach (explode(',',$fcu->q17) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q17[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q18) as $val)
+                                        @foreach (explode(',',$fcu->q18) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q18[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q19) as $val)
+                                        @foreach (explode(',',$fcu->q19) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q19[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q20) as $val)
+                                        @foreach (explode(',',$fcu->q20) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q20[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q21) as $val)
+                                        @foreach (explode(',',$fcu->q21) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q21[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q22) as $val)
+                                        @foreach (explode(',',$fcu->q22) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q22[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q23) as $val)
+                                        @foreach (explode(',',$fcu->q23) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q23[]" value="{{$val}}">
                                         @endforeach
                                     </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q24) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q24[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q25) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q25[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q26) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q26[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
+
                                 </tr>
 
                                 <tr>
                                     <td>2</td>
                                     <td>
-                                        <p>Before</p>
+                                        <p>Bfcuore</p>
                                         <p>Standard</p>
                                         <p>After</p>
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q27) as $val)
+                                        @foreach (explode(',',$fcu->q24) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q24[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q25) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q25[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q26) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q26[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q27) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q27[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q28) as $val)
+                                        @foreach (explode(',',$fcu->q28) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q28[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q29) as $val)
+                                        @foreach (explode(',',$fcu->q29) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q29[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q30) as $val)
+                                        @foreach (explode(',',$fcu->q30) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q30[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q31) as $val)
+                                        @foreach (explode(',',$fcu->q31) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q31[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q32) as $val)
+                                        @foreach (explode(',',$fcu->q32) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q32[]" value="{{$val}}">
                                         @endforeach
                                     </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q33) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q33[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q34) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q34[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q35) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q35[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q36) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q36[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q37) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q37[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q38) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q38[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q39) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q39[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
+
                                 </tr>
 
                                 <tr>
                                     <td>3</td>
                                     <td>
-                                        <p>Before</p>
+                                        <p>Bfcuore</p>
                                         <p>Standard</p>
                                         <p>After</p>
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q40) as $val)
+                                        @foreach (explode(',',$fcu->q33) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q33[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q34) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q34[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q35) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q35[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q36) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q36[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q37) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q37[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q38) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q38[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q39) as $val)
+                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q39[]" value="{{$val}}">
+                                        @endforeach
+                                    </td>
+                                    <td>
+                                        @foreach (explode(',',$fcu->q40) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q40[]" value="{{$val}}">
                                         @endforeach
                                     </td>
                                     <td>
-                                        @foreach (explode(',',$humidifier->q41) as $val)
+                                        @foreach (explode(',',$fcu->q41) as $val)
                                         <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q41[]" value="{{$val}}">
                                         @endforeach
                                     </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q42) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q42[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q43) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q43[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q44) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q44[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q45) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q45[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q46) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q46[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q47) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q47[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q48) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q48[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q49) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q49[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q50) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q50[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q51) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q51[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
-                                    <td>
-                                        @foreach (explode(',',$humidifier->q52) as $val)
-                                        <input disabled type="text" class="form-control text-center" style="width: 100px" required name="q52[]" value="{{$val}}">
-                                        @endforeach
-                                    </td>
+
                                 </tr>
                             </tbody>
                         </table>
                         </tbody>
                         </table>
+
                     </form>
                 </div>
             </div>
@@ -447,7 +366,7 @@
 </div>
 </section>
 <!-- --------------------------------------------------- -->
-<!--  Form Input disableds Grid End -->
+<!--  Form Inputs Grid End -->
 <!-- --------------------------------------------------- -->
 </div>
 @endsection

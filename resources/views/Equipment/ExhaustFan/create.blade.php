@@ -14,7 +14,7 @@
                         <div class="border-bottom title-part-padding">
                             <h4 class="card-title mb-0 text-center">Task List Exhaust Fan</h4>
                         </div>
-                            <form action="{{ route('exhaust-fan.store') }}" method="POST">
+                            <form action="{{ route('exhaustfan.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>

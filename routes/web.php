@@ -175,22 +175,22 @@ Route::resource('/dehumidifierr', DehumidifierController::class)->name('index','
 Route::get('fcuu/create/{id}', [FCUController::class, 'create2'])->name('fcuu.create2');       
 Route::resource('/fcuu', FCUController::class)->name('index','fcuu.index'); 
     
-Route::get('exhaust-fan/{id}', [ExhaustFanController::class, 'create'])->name('exhaust-fan.create2');       
-Route::resource('/exhaust-fan', ExhaustFanController::class)->names([
+Route::get('exhaustfan/create/{id}', [ExhaustFanController::class, 'create2'])->name('exhaustfan.create2');       
+Route::resource('/exhaustfan', ExhaustFanController::class)->names([
         'edit' => 'exhaust-fan.edit', // Nama untuk rute index
         'show' => 'exhaust-fan.show', // Nama untuk rute index
         ]); 
     
-Route::get('pompa/{id}', [PompaController::class, 'create'])->name('pompa.create2');       
-Route::resource('/pompa', PompaController::class)->names([
-        'edit' => 'pompa.edit', // Nama untuk rute index
-        'show' => 'pompa.show', // Nama untuk rute index
+Route::get('pompaa/create/{id}', [PompaController::class, 'create2'])->name('pompaa.create2');       
+Route::resource('/pompaa', PompaController::class)->names([
+        'edit' => 'pompaa.edit', // Nama untuk rute index
+        'show' => 'pompaa.show', // Nama untuk rute index
         ]); 
     
-Route::get('spot-cooling/{id}', [SpotCoolingController::class, 'create'])->name('spot-cooling.create2');       
-Route::resource('/spot-cooling', SpotCoolingController::class)->names([
-        'edit' => 'spot-cooling.edit', // Nama untuk rute index
-        'show' => 'spot-cooling.show', // Nama untuk rute index
+Route::get('spoot-cooling/create/{id}', [SpotCoolingController::class, 'create2'])->name('spoot-cooling.create2');       
+Route::resource('/spoot-cooling', SpotCoolingController::class)->names([
+        'edit' => 'spoot-cooling.edit', // Nama untuk rute index
+        'show' => 'spoot-cooling.show', // Nama untuk rute index
         ]); 
     
 Route::get('water-mist/{id}', [WaterMistController::class, 'create'])->name('water-mist.create2');       
