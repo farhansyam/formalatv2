@@ -343,110 +343,107 @@
                           </button>
                         </a>
                         @elseif($equipment->jenis == 17)
-                        <a href="">
+                        <a href="{{route('water-mistt.create2',$equipment->id)}}">
                           <button type="button" class="btn btn-info w-100">
                             Form PM Water Mist
                           </button>
                         </a>
                         @elseif($equipment->jenis == 18)
-                        <a href="">
+                        <a href="{{route('chiller-centrifugall.create2',$equipment->id)}}">
                           <button type="button" class="btn btn-info w-100">
                             Form PM Chiller Centrifugal
-                            <a href="{{ route('cooling-unit.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Cooling Unit & AC Panel
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 7)
-                            <a href="{{ route('mini-chiller.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Mini Chiller
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 8)
-                            <a href="{{ route('evaporator-aircooler.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Evaporative Air Cooler
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 9)
-                            <a href="{{ route('ahu.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List AHU
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 10)
-                            <a href="{{ route('cooling-tower.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Cooling Tower
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 11)
-                            <a href="{{ route('humidifier.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Humidifier
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 12)
-                            <a href="{{ route('dehumidifier.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Dehumidifier
-                            </a>
-                            @elseif($equipment->jenis == 13)
-                            <a href="{{ route('FCU.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Fan Cooling Unit
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 14)
-                            <a href="{{ route('exhaust-fan.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Exhaust Fan
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 15)
-                            <a href="{{ route('pompa.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Pompa
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 16)
-                            <a href="{{ route('spot-cooling.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Spot Cooling
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 17)
-                            <a href="{{ route('water-mist.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Water Mist
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 18)
-                            <a href="{{ route('chiller-centrifugal.create2',$equipment->id) }}">
-                              <button type="button" class="btn btn-info">
-                                Task List Chiller Centrifugal
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 19)
-                            <a href="">
-                              <button type="button" class="btn btn-info w-100">
-                                Form PM Floor Standing
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 20)
-                            <a href="">
-                              <button type="button" class="btn btn-info w-100">
-                                Form PM Ac Cassette
-                              </button>
-                            </a>
-                            @elseif($equipment->jenis == 21)
-                            <a href="">
-                              <button type="button" class="btn btn-info w-100">
-                                Form PM Split Duct
-                              </button>
-                            </a>
-                            @endif
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 7)
+                        <a href="{{ route('mini-chiller.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Mini Chiller
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 8)
+                        <a href="{{ route('evaporator-aircooler.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Evaporative Air Cooler
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 9)
+                        <a href="{{ route('ahu.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List AHU
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 10)
+                        <a href="{{ route('cooling-tower.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Cooling Tower
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 11)
+                        <a href="{{ route('humidifier.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Humidifier
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 12)
+                        <a href="{{ route('dehumidifier.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Dehumidifier
+                        </a>
+                        @elseif($equipment->jenis == 13)
+                        <a href="{{ route('FCU.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Fan Cooling Unit
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 14)
+                        <a href="{{ route('exhaust-fan.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Exhaust Fan
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 15)
+                        <a href="{{ route('pompa.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Pompa
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 16)
+                        <a href="{{ route('spot-cooling.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Spot Cooling
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 17)
+                        <a href="{{ route('water-mist.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Water Mist
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 18)
+                        <a href="{{ route('chiller-centrifugall.create2',$equipment->id) }}">
+                          <button type="button" class="btn btn-info">
+                            Task List Chiller Centrifugal
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 19)
+                        <a href="">
+                          <button type="button" class="btn btn-info w-100">
+                            Form PM Floor Standing
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 20)
+                        <a href="">
+                          <button type="button" class="btn btn-info w-100">
+                            Form PM Ac Cassette
+                          </button>
+                        </a>
+                        @elseif($equipment->jenis == 21)
+                        <a href="">
+                          <button type="button" class="btn btn-info w-100">
+                            Form PM Split Duct
+                          </button>
+                        </a>
+                        @endif
                       </div>
                       <div class="col-md-4 col-sm-12 mb-2">
                         <a href="{{ route('ts.create', $equipment->id) }}" type="button" class="btn btn-danger w-100">
@@ -548,7 +545,7 @@
                         </button>
                         @elseif($equipment->jenis == 18)
                         <button type="button" class="btn btn-light w-100" onclick="CheckPM()">
-                          Form PM Chiller Centrifugal
+                          Form PM Chiller Centrisfugal
                         </button>
                         @elseif($equipment->jenis == 19)
                         <button type="button" class="btn btn-light w-100" onclick="CheckPM()">
@@ -977,8 +974,8 @@
 
                                                         @elseif($equipment->jenis == 18)
                                                         <div class="btn-group">
-                                                          <a href="{{ route('chiller-centrifugal.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                                          <a href="{{ route('chiller-centrifugal.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                                          <a href="{{ route('chiller-centrifugall.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
+                                                          <a href="{{ route('chiller-centrifugall.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
 
                                                           @endif
                                                           @else

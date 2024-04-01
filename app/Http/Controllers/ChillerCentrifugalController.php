@@ -137,7 +137,7 @@ class ChillerCentrifugalController extends Controller
             $history->type = "Chiller Centrifugal"; // Sesuaikan dengan jenis equipment
             $history->id_act = $ChillerCentrifugal->id;
             $history->id_equipment = $request->id;
-            $history->id_user = "1"; // Gunakan ID user yang sedang login
+            $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
             $history->save();
             return redirect()->route('equipment.show',$request->id)->with('success', 'Task list telah disimpan.');
     }

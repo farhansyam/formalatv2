@@ -60,6 +60,7 @@ class WaterMist extends Model
         'q48',
         'q49',
         'q50',
+        'q51',
     ];
 
     protected $table = "Water_Mists";

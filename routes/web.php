@@ -193,14 +193,14 @@ Route::resource('/spoot-cooling', SpotCoolingController::class)->names([
         'show' => 'spoot-cooling.show', // Nama untuk rute index
         ]); 
     
-Route::get('water-mist/{id}', [WaterMistController::class, 'create'])->name('water-mist.create2');       
-Route::resource('/water-mist', WaterMistController::class)->names([
+Route::get('water-mistt/create/{id}', [WaterMistController::class, 'create'])->name('water-mistt.create2');       
+Route::resource('/water-mistt', WaterMistController::class)->names([
         'edit' => 'water-mist.edit', // Nama untuk rute index
         'show' => 'water-mist.show', // Nama untuk rute index
         ]); 
 
-Route::get('chiller-centrifugal/{id}', [ChillerCentrifugalController::class, 'create'])->name('chiller-centrifugal.create2');       
-Route::resource('/chiller-centrifugal', ChillerCentrifugalController::class)->names([
-        'edit' => 'chiller-centrifugal.edit', // Nama untuk rute index
-        'show' => 'chiller-centrifugal.show', // Nama untuk rute index
+Route::get('chiller-centrifugall/create/{id}', [ChillerCentrifugalController::class, 'create'])->name('chiller-centrifugall.create2');       
+Route::resource('/chiller-centrifugall', ChillerCentrifugalController::class)->names([
+        'edit' => 'chiller-centrifugall.edit', // Nama untuk rute index
+        'show' => 'chiller-centrifugall.show', // Nama untuk rute index
         ]); 

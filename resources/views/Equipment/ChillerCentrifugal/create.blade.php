@@ -15,7 +15,7 @@
                             <h4 class="card-title mb-0 text-center">Task List Chiller Centrifugal</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('chiller-centrifugal.store') }}" method="POST">
+                            <form action="{{ route('chiller-centrifugall.store') }}" method="POST">
                                 @csrf
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>
