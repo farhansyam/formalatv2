@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipment;
 use App\Models\History;
+use App\Models\Equipment;
+use App\Models\GambarAct;
 use App\Models\WaterMist;
+use App\Models\GambarAct2;
 use Illuminate\Http\Request;
 
 class WaterMistController extends Controller
@@ -144,7 +146,34 @@ class WaterMistController extends Controller
     
         // Simpan data ke dalam model WaterMist
         $WaterMist = WaterMist::create($qData);
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
 
+                GambarAct::create([
+                    'id_act' => $WaterMist->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $WaterMist->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index],
+                    'info' => $request->info2[$index],
+                ]);
+            }
+        }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
             $history = new History();
             $history->type = "Water Mist"; // Sesuaikan dengan jenis equipment
@@ -284,7 +313,34 @@ class WaterMistController extends Controller
 
         ];
         $ef->update($qData);
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
 
+                GambarAct::create([
+                    'id_act' => $ef->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $ef->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index],
+                    'info' => $request->info2[$index],
+                ]);
+            }
+        }
         return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 

@@ -260,8 +260,8 @@
                     <th>: {{$equipment->nameplate}}</th>
                     <th>&nbsp;&nbsp;</th>
                     <th>&nbsp;&nbsp;</th>
-                    <th>Room</th>
-                    <th>: {{$equipment->room}}</th>
+                    <th>Area Site</th>
+                    <th>: {{$equipment->area}}</th>
                     <th></th>
                 </tr>
                 <tr>
@@ -283,8 +283,8 @@
                     <th>: {{$equipment->tahun_installasi}}</th>
                     <th>&nbsp;&nbsp;</th>
                     <th>&nbsp;&nbsp;</th>
-                    <th></th>
-                    <th></th>
+                    <th>Room</th>
+                    <th>: {{$equipment->room}}</th>
                     <th></th>
                 </tr>
                 <tr>

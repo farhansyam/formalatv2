@@ -15,8 +15,9 @@
                         <h4 class="card-title mb-0 text-center">Task List Chiller Centrifugal</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('chiller-centrifugall.store') }}" method="POST">
+                        <form action="{{ route('chiller-centrifugall.update',$ChillerCentrifugal->id) }}" method="POST">
                             @csrf
+                            @method('PUT')
                             <table class="table table-bordered" id="personelTeamTable">
                                 <thead>
                                     <h5 class="text-center" style="background-color: black;color:white">A.Filter AHU</h5>
@@ -48,81 +49,65 @@
                                     <tr>
                                         <td>1</td>
                                         <td>Cleaning Strainer Chilled Water</td>
-                                        <td><input type="text" class="form-control text-center" name="q1[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q1[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q1[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q1[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q1[]" value=""></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q1) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q1[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>2</td>
                                         <td>Cleaning Condenser</td>
-                                        <td><input type="text" class="form-control text-center" name="q2[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q2[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q2[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q2[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q2[]" value=""></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q2) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q2[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>3</td>
                                         <td>Cleaning Evaporator</td>
-                                        <td><input type="text" class="form-control text-center" name="q3[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q3[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q3[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q3[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q3[]" value=""></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q3) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q3[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>4</td>
                                         <td>Cleaning Fan Blower</td>
-                                        <td><input type="text" class="form-control text-center" name="q4[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q4[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q4[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q4[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q4[]" value=""></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q4) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q4[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>5</td>
                                         <td>Cleaning Body</td>
-                                        <td><input type="text" class="form-control text-center" name="q5[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q5[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q5[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q5[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q5[]" value=""></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q5) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q5[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>6</td>
                                         <td>Cleaning Refrigant</td>
-                                        <td><input type="text" class="form-control text-center" name="q6[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q6[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q6[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q6[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q6[]" value=""></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q6) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q6[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>7</td>
                                         <td>Check & Cleaning all sensor</td>
-                                        <td><input type="text" class="form-control text-center" name="q7[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q7[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q7[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q7[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q7[]" value=""></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q7) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q7[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>8</td>
                                         <td>Check & cleaning control panel chiller</td>
-                                        <td><input type="text" class="form-control text-center" name="q8[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q8[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q8[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q8[]" value=""></td>
-                                        <td><input type="text" class="form-control text-center" name="q8[]" value=""></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q8) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q8[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
                                 </tbody>
                             </table>
@@ -150,45 +135,45 @@
                                         <td>1</td>
                                         <td>Status Running</td>
                                         <td>On/Off</td>
-                                        <td><input type="text" class="form-control text-center" name="q9[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q9[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q9[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q9) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q9[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>2</td>
                                         <td>Set Point Cool Ewt</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q10[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q10[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q10[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q10) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q10[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>3</td>
                                         <td>Set Point Cool Lwt</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q11[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q11[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q11[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q11) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q11[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>4</td>
                                         <td>Base Demand Limit</td>
                                         <td>%</td>
-                                        <td><input type="text" class="form-control text-center" name="q12[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q12[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q12[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q12) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q12[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>5</td>
                                         <td>Vane Position</td>
                                         <td>%</td>
-                                        <td><input type="text" class="form-control text-center" name="q13[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q13[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q13[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q13) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q13[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                 </tbody>
@@ -217,9 +202,9 @@
                                         <td>Vane Position</td>
                                         <td>%</td>
                                         <td></td>
-                                        <td><input type="text" class="form-control text-center" name="q14[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q14[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q14[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q14) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q14[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
 
@@ -238,21 +223,19 @@
                                         </td>
 
                                         <td>
-                                            <input type="text" class="form-control text-center" name="q15[]">
-                                            <input type="text" class="form-control text-center" name="q15[]">
-                                            <input type="text" class="form-control text-center" name="q15[]">
+                                            @foreach (explode(',',$ChillerCentrifugal->q15) as $val)
+                                            <input type="text" class="form-control text-center" name="q15[]" value="{{$val}}" >
+                                            @endforeach
                                         </td>
-
                                         <td>
-                                            <input type="text" class="form-control text-center" name="q16[]">
-                                            <input type="text" class="form-control text-center" name="q16[]">
-                                            <input type="text" class="form-control text-center" name="q16[]">
+                                            @foreach (explode(',',$ChillerCentrifugal->q16) as $val)
+                                            <input type="text" class="form-control text-center" name="q16[]" value="{{$val}}" >
+                                            @endforeach
                                         </td>
-
                                         <td>
-                                            <input type="text" class="form-control text-center" name="q17[]">
-                                            <input type="text" class="form-control text-center" name="q17[]">
-                                            <input type="text" class="form-control text-center" name="q17[]">
+                                            @foreach (explode(',',$ChillerCentrifugal->q17) as $val)
+                                            <input type="text" class="form-control text-center" name="q17[]" value="{{$val}}" >
+                                            @endforeach
                                         </td>
                                     </tr>
 
@@ -269,23 +252,21 @@
                                             <p>Volt</p>
                                             <p>Volt</p>
                                         </td>
-
                                         <td>
-                                            <input type="text" class="form-control text-center" name="q18[]">
-                                            <input type="text" class="form-control text-center" name="q18[]">
-                                            <input type="text" class="form-control text-center" name="q18[]">
+                                            @foreach (explode(',',$ChillerCentrifugal->q18) as $val)
+                                            <input type="text" class="form-control text-center" name="q18[]" value="{{$val}}" >
+                                            @endforeach
+                                        </td>
+                                        <td>
+                                            @foreach (explode(',',$ChillerCentrifugal->q19) as $val)
+                                            <input type="text" class="form-control text-center" name="q19[]" value="{{$val}}" >
+                                            @endforeach
                                         </td>
 
                                         <td>
-                                            <input type="text" class="form-control text-center" name="q19[]">
-                                            <input type="text" class="form-control text-center" name="q19[]">
-                                            <input type="text" class="form-control text-center" name="q19[]">
-                                        </td>
-
-                                        <td>
-                                            <input type="text" class="form-control text-center" name="q20[]">
-                                            <input type="text" class="form-control text-center" name="q20[]">
-                                            <input type="text" class="form-control text-center" name="q20[]">
+                                            @foreach (explode(',',$ChillerCentrifugal->q20) as $val)
+                                            <input type="text" class="form-control text-center" name="q20[]" value="{{$val}}" >
+                                            @endforeach
                                         </td>
 
                                     </tr>
@@ -296,9 +277,9 @@
                                         <td>Motor Winding Temperature</td>
                                         <td>°C</td>
                                         <td></td>
-                                        <td><input type="text" class="form-control text-center" name="q21[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q21[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q21[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q21) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q21[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                 </tbody>
@@ -326,63 +307,63 @@
                                         <td>1</td>
                                         <td>Cool Entering Water Temp</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q22[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q22[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q22[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q22) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q22[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>2</td>
                                         <td>Cool Leaving Water Temp</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q23[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q23[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q23[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q23) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q23[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>3</td>
                                         <td>Cooler Delta Temp</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q24[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q24[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q24[]"></td>
+                                        < @foreach (explode(',',$ChillerCentrifugal->q24) as $val)
+                                            <td><input type="text" class="form-control text-center" name="q24[]" value="{{$val}}" ></td>
+                                            @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>4</td>
                                         <td>Cooler Temp</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q25[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q25[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q25[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q25) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q25[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>5</td>
                                         <td>Suction Pressure</td>
                                         <td>KPA</td>
-                                        <td><input type="text" class="form-control text-center" name="q26[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q26[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q26[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q26) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q26[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>6</td>
                                         <td>Cooler Aproach</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q27[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q27[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q27[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q27) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q27[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>7</td>
                                         <td>Cooler Delta Press</td>
                                         <td>PSI</td>
-                                        <td><input type="text" class="form-control text-center" name="q28[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q28[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q28[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q28) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q28[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                 </tbody>
@@ -409,63 +390,63 @@
                                         <td>1</td>
                                         <td>Cond Entering Water Temp</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q29[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q29[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q29[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q29) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q29[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>2</td>
                                         <td>Cond Leaving Water Temp</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q30[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q30[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q30[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q30) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q30[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>3</td>
                                         <td>Cond Delta Temp</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q31[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q31[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q31[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q31) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q31[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>4</td>
                                         <td>Condenser Temp</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q32[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q32[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q32[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q32) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q32[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>5</td>
                                         <td>Condenser Pressure</td>
                                         <td>KPA</td>
-                                        <td><input type="text" class="form-control text-center" name="q33[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q33[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q33[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q33) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q33[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>6</td>
                                         <td>Condenser Aproach</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q34[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q34[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q34[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q34) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q34[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
                                         <td>7</td>
                                         <td>Discharge Temp</td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q35[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q35[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q35[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q35) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q35[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
 
@@ -473,9 +454,9 @@
                                         <td>8</td>
                                         <td>Condenser Delta Press</td>
                                         <td>PSI</td>
-                                        <td><input type="text" class="form-control text-center" name="q36[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q36[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q36[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q36) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q36[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                 </tbody>
@@ -505,9 +486,9 @@
                                         <td>Oil Pressure</td>
                                         <td></td>
                                         <td>KPA</td>
-                                        <td><input type="text" class="form-control text-center" name="q37[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q37[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q37[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q37) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q37[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
@@ -515,9 +496,9 @@
                                         <td>Sump Temp</td>
                                         <td></td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q38[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q38[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q38[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q38) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q38[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
@@ -525,9 +506,9 @@
                                         <td>Bearing Temp</td>
                                         <td></td>
                                         <td>°C</td>
-                                        <td><input type="text" class="form-control text-center" name="q39[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q39[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q39[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q39) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q39[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
@@ -535,9 +516,9 @@
                                         <td>Oil Level</td>
                                         <td></td>
                                         <td></td>
-                                        <td><input type="text" class="form-control text-center" name="q40[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q40[]"></td>
-                                        <td><input type="text" class="form-control text-center" name="q40[]"></td>
+                                        @foreach (explode(',',$ChillerCentrifugal->q40) as $val)
+                                        <td><input type="text" class="form-control text-center" name="q40[]" value="{{$val}}" ></td>
+                                        @endforeach
                                     </tr>
 
                                     <tr>
@@ -555,29 +536,29 @@
                                         </td>
 
                                         <td>
-                                            <input type="text" class="form-control text-center" name="q41[]">
-                                            <input type="text" class="form-control text-center" name="q41[]">
-                                            <input type="text" class="form-control text-center" name="q41[]">
+                                            @foreach (explode(',',$ChillerCentrifugal->q41) as $val)
+                                            <input type="text" class="form-control text-center" name="q41[]" value="{{$val}}" >
+                                            @endforeach
                                         </td>
 
                                         <td>
-                                            <input type="text" class="form-control text-center" name="q42[]">
-                                            <input type="text" class="form-control text-center" name="q42[]">
-                                            <input type="text" class="form-control text-center" name="q42[]">
+                                            @foreach (explode(',',$ChillerCentrifugal->q42) as $val)
+                                            <input type="text" class="form-control text-center" name="q42[]" value="{{$val}}" >
+                                            @endforeach
                                         </td>
 
                                         <td>
-                                            <input type="text" class="form-control text-center" name="q43[]">
-                                            <input type="text" class="form-control text-center" name="q43[]">
-                                            <input type="text" class="form-control text-center" name="q43[]">
+                                            @foreach (explode(',',$ChillerCentrifugal->q43) as $val)
+                                            <input type="text" class="form-control text-center" name="q43[]" value="{{$val}}" >
+                                            @endforeach
                                         </td>
                                     </tr>
 
 
                                 </tbody>
                             </table>
-
                             <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
+
                         </form>
                     </div>
                 </div>

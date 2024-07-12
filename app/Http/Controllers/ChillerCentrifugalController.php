@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Equipment;
 use App\Models\History;
-use App\Models\ChillerCentrifugal;
+use App\Models\Equipment;
+use App\Models\GambarAct;
+use App\Models\GambarAct2;
 use Illuminate\Http\Request;
+use App\Models\ChillerCentrifugal;
 
 class ChillerCentrifugalController extends Controller
 {
@@ -131,7 +133,34 @@ class ChillerCentrifugalController extends Controller
     
         // Simpan data ke dalam model ChillerCentrifugal
         $ChillerCentrifugal = ChillerCentrifugal::create($qData);
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
 
+                GambarAct::create([
+                    'id_act' => $ChillerCentrifugal->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $ChillerCentrifugal->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index],
+                    'info' => $request->info2[$index],
+                ]);
+            }
+        }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
             $history = new History();
             $history->type = "Chiller Centrifugal"; // Sesuaikan dengan jenis equipment
@@ -152,10 +181,12 @@ class ChillerCentrifugalController extends Controller
      * @param  \App\Models\ChillerCentrifugal  $ChillerCentrifugal
      * @return \Illuminate\Http\Response
      */
-    public function show(ChillerCentrifugal $ChillerCentrifugal)
+    public function show($id)
     {
-        $ChillerCentrifugal = ChillerCentrifugal::findOrFail(); // Sesuaikan dengan model ChillerCentrifugal
-        return view('equipment.ChillerCentrifugal.show', compact('ChillerCentrifugal'));
+        $history = History::find($id);
+        $ChillerCentrifugal = ChillerCentrifugal::Find($history->id_act); // Sesuaikan dengan model ChillerCentrifugal
+        $id = $history->id_equipment;
+        return view('equipment.ChillerCentrifugal.show', compact('ChillerCentrifugal','id'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -163,14 +194,59 @@ class ChillerCentrifugalController extends Controller
      * @param  \App\Models\ChillerCentrifugal  $ChillerCentrifugal
      * @return \Illuminate\Http\Response
      */
-    public function edit(ChillerCentrifugal $ChillerCentrifugal)
+    public function edit(ChillerCentrifugal $ChillerCentrifugal,$id)
     {
-        $ChillerCentrifugal = ChillerCentrifugal::findOrFail(); // Sesuaikan dengan model ChillerCentrifugal
-        return view('equipment.ChillerCentrifugal.edit', compact('ChillerCentrifugal'));
+        $history = History::find($id);
+        $ChillerCentrifugal = ChillerCentrifugal::Find($history->id_act); // Sesuaikan dengan model ChillerCentrifugal
+        $id = $history->id_equipment;
+        return view('equipment.ChillerCentrifugal.edit', compact('ChillerCentrifugal','id'));
         
     }
 
+    function update(Request $request, $id)
+    {
+        $acs = ChillerCentrifugal::find($id);
 
+        // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
+        $qData = [];
+        for ($i = 1; $i <= 43; $i++) {
+            $qData['q' . $i] = implode(',', $request->input('q' . $i));
+        }
+        // Simpan data ke dalam model CoolingUnit
+        $acs->update($qData);
+
+        // Simpan data
+        $acs->save();
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
+
+                GambarAct::create([
+                    'id_act' => $acs->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $acs->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index],
+                    'info' => $request->info2[$index],
+                ]);
+            }
+        }
+        return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
+    }
 
     /**
      * Update the specified resource in storage.

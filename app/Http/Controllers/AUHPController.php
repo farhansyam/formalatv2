@@ -149,7 +149,34 @@ class AUHPController extends Controller
     
         // Simpan data ke dalam model AUHP
         $AUHP = AUHP::create($qData);
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
 
+                GambarAct::create([
+                    'id_act' => $AUHP->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $AUHP->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index],
+                    'info' => $request->info2[$index],
+                ]);
+            }
+        }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
             $history = new History();
             $history->type = "AUHP"; // Sesuaikan dengan jenis equipment

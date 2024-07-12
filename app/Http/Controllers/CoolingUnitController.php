@@ -2,10 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\CoolingUnit;
-use App\Models\Equipment;
 use App\Models\History;
+use App\Models\Equipment;
+use App\Models\GambarAct;
+use App\Models\GambarAct2;
+use App\Models\CoolingUnit;
 use Illuminate\Http\Request;
+
 class CoolingUnitController extends Controller
 {
     /**
@@ -105,7 +108,34 @@ class CoolingUnitController extends Controller
     
         // Simpan data ke dalam model CoolingUnit
         $cooling_unit = CoolingUnit::create($qData);
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
 
+                GambarAct::create([
+                    'id_act' => $cooling_unit->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $cooling_unit->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index],
+                    'info' => $request->info2[$index],
+                ]);
+            }
+        }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
             $history = new History();
             $history->type = "Cooling Unit"; // Sesuaikan dengan jenis equipment
@@ -218,7 +248,34 @@ class CoolingUnitController extends Controller
      
     // Perbarui data ColdStorage dengan data yang baru
     $cooling_unit->update($qData);
- 
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
+
+                GambarAct::create([
+                    'id_act' => $cooling_unit->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $cooling_unit->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index],
+                    'info' => $request->info2[$index],
+                ]);
+            }
+        }
          // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
          return redirect()->route('equipment.show',$request->id_equipment)->with('success', 'Task list telah disimpan.');
      }

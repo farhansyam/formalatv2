@@ -177,7 +177,7 @@ class EquipmentController extends Controller
     {
         $history = History::where('id_equipment', $equipment->id)->get();
         $schedule = ItemSchedule::where('id_equipement',$equipment->id_combine)->orderBy('schedule','ASC')->get();
-        return view('Equipment.show', compact('equipment', 'history','schedule'));
+        return view('Equipment.show', compact('equipment', 'history', 'schedule'));
     }
     public function search(Request $request)
     {

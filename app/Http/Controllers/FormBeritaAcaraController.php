@@ -104,7 +104,7 @@ class FormBeritaAcaraController extends Controller
     public function show($id)
     {
         $history = History::find($id);
-        $acs = AcSplit::find($history->id_act);
+        $beritaacara = FormBeritaAcara::find($id);
         $list = ListKebutuhanBeritaAcara::where('type', 'FormBeritaAcara')->where('id_beritaacara', $id)->get();
         $gambar = GambarAct::where('id_act', $id)->get();
         $gambar2 = GambarAct2::where('id_act', $id)->get();

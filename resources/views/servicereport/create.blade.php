@@ -15,7 +15,7 @@
             <h4 class="card-title mb-0 text-center">Service Report Troubleshoot / Corrective</h4>
           </div>
           <div class="card-body">
-            <form action="{{ route('troubleshoot.store') }}" method="POST">
+            <form action="{{ route('troubleshoot.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
               <div class="row">
                 <div class="col-md-4 mb-3">
@@ -186,12 +186,13 @@
                   </script>
                   <br><br>
                 </div>
+              </div>
 
-                <h5 class="text-center" style="background-color: black;color:white">Catatan Equipment </h5>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="">Jenis Equipment</label>
-                    <input type="text" name="jenis_equipment" class="form-control" id="" value='@if($equipment->jenis == 1)
+              <h5 class="text-center" style="background-color: black;color:white">Catatan Equipment </h5>
+              <div class="row">
+                <div class="col-md-6 mb-3">
+                  <label for="">Jenis Equipment</label>
+                  <input type="text" name="jenis_equipment" class="form-control" id="" value='@if($equipment->jenis == 1)
                     {{"AC Split"}}
                     @elseif($equipment->jenis == 2)
                     {{"AHUP"}}
@@ -234,77 +235,83 @@
                     @elseif($equipment->jenis == 21)
                     {{"Split Duct"}}
                     @endif' required="">
-                    <label for="">Brand & Model</label>
-                    <input type="text" name="brand" class="form-control" id="" value="{{$equipment->brand}}" required="">
-                    <label for="">Serial No</label>
-                    <input type="text" name="serial" class="form-control" id="" value="{{$equipment->serial_number}}" required="">
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <br>
-                    <label for="">Name Plate : &nbsp;</label>
-                    <input type="radio" name="name_plate" value="ada" class="form-check-input">
-                    <label class="form-check-label" for="">&nbsp; &nbsp;Ada</label>
-
-                    <input type="radio" name="name_plate" value="tidak ada" class="form-check-input">
-                    <label class="form-check-label" for=""> &nbsp;&nbsp;Tidak Ada</label>
-                    <br>
-                    <br>
-
-                    <label for="">Tahun Pembuatan</label>
-                    <input type="text" name="tahun_pembuatan" class="form-control" id="" value="{{$equipment->tahun_pembuatan}}" required="">
-                    <label for="">Tahun Install</label>
-                    <input type="text" id="datepicker" name="tahun_install" class="form-control" id="" value="{{$equipment->tahun_installasi}}" required="">
-                  </div>
-                  <div class="col-md-12 mb-3">
-                    <label for="">Trouble Desc :</label>
-                    <textarea class="form-control" name="deskripsi" id="" cols="10" rows="4"></textarea>
-                  </div>
-                  <div class="col-md-12 mb-2">
-                    <label for="">Action :</label>
-                    <textarea class="form-control" name="tindakan" id="" cols="10" rows="4"></textarea>
-                  </div>
-                  <div class="col-md-12 mb-2">
-                    <label for="">Rekomendasi Teknisi Lapangan :</label>
-                    <textarea class="form-control" name="rekomendasi_teknisi_lapangan" id="" cols="10" rows="4"></textarea>
-                  </div>
+                  <label for="">Brand & Model</label>
+                  <input type="text" name="brand" class="form-control" id="" value="{{$equipment->brand}}" required="">
+                  <label for="">Serial No</label>
+                  <input type="text" name="serial" class="form-control" id="" value="{{$equipment->serial_number}}" required="">
                 </div>
-                <h5 class="text-center" style="background-color: black;color:white">List Kebutuhan Part material dan jasa </h5>
-                <table class="table table-bordered" id="personelTeamTable">
-                  <thead>
-                    <tr>
-                      <th>No</th>
-                      <th>Deskripsi</th>
-                      <th>Model/Part Number</th>
-                      <th>Qty</th>
-                      <th>Keterangan</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <!-- Initial row -->
-                    <tr>
-                      <td>1</td>
-                      <td><input type="text" class="form-control" name="deskripsilist[]"></td>
-                      <td><input type="text" class="form-control" name="modelpart[]"></td>
-                      <td><input type="number" class="form-control" name="qty[]"></td>
-                      <td><input type="text" class="form-control" name="keterangan[]"></td>
-                      <td></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <button type="button" class="btn btn-primary" id="addPersonelTeam">Add List</button>
-                <br>
-                <script src="{{asset('dist/libs/jquery/dist/jquery.min.js')}}"></script>
+                <div class="col-md-6 mb-3">
+                  <br>
+                  <label for="">Name Plate : &nbsp;</label>
+                  <input type="radio" name="name_plate" value="ada" class="form-check-input">
+                  <label class="form-check-label" for="">&nbsp; &nbsp;Ada</label>
 
-                <script>
-                  $(document).ready(function() {
-                    var personelCounter = 1;
-                    var pekerjaanCounter = 1;
+                  <input type="radio" name="name_plate" value="tidak ada" class="form-check-input">
+                  <label class="form-check-label" for=""> &nbsp;&nbsp;Tidak Ada</label>
+                  <br>
+                  <br>
 
-                    // Add a new row for Nama Personel Team
-                    $("#addPersonelTeam").click(function() {
-                      personelCounter++;
-                      var newRow = `
+                  <label for="">Tahun Pembuatan</label>
+                  <input type="text" name="tahun_pembuatan" class="form-control" id="" value="{{$equipment->tahun_pembuatan}}" required="">
+                  <label for="">Tahun Install</label>
+                  <input type="text" id="datepicker" name="tahun_install" class="form-control" id="" value="{{$equipment->tahun_installasi}}" required="">
+                </div>
+                <div class="col-md-12 mb-3">
+                  <label for="">Trouble Desc :</label>
+                  <textarea class="form-control" name="deskripsi" id="" cols="10" rows="4"></textarea>
+                </div>
+                <div class="col-md-12 mb-2">
+                  <label for="">Action :</label>
+                  <textarea class="form-control" name="tindakan" id="" cols="10" rows="4"></textarea>
+                </div>
+                <div class="col-md-12 mb-2">
+                  <label for="">Rekomendasi Teknisi Lapangan :</label>
+                  <textarea class="form-control" name="rekomendasi_teknisi_lapangan" id="" cols="10" rows="4"></textarea>
+                </div>
+              </div>
+              <h5 class="text-center" style="background-color: black;color:white">List Kebutuhan Part material dan jasa </h5>
+              <table class="table table-bordered" id="personelTeamTable">
+                <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>Deskripsi</th>
+                    <th>Model/Part Number</th>
+                    <th>Qty</th>
+                    <th>Keterangan</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- Initial row -->
+                  <tr>
+                    <td>1</td>
+                    <td><input type="text" class="form-control" name="deskripsilist[]"></td>
+                    <td><input type="text" class="form-control" name="modelpart[]"></td>
+                    <td><input type="number" class="form-control" name="qty[]"></td>
+                    <td><input type="text" class="form-control" name="keterangan[]"></td>
+                    <td></td>
+                  </tr>
+                </tbody>
+              </table>
+              <button type="button" class="btn btn-primary" id="addPersonelTeam">Add List</button><br>
+              @include('formimage.image')
+              <button class="btn btn-info px-4 mt-3" type="submit">
+                Submit form
+              </button>
+          </div>
+
+          <br>
+          <script src="{{asset('dist/libs/jquery/dist/jquery.min.js')}}"></script>
+
+          <script>
+            $(document).ready(function() {
+              var personelCounter = 1;
+              var pekerjaanCounter = 1;
+
+              // Add a new row for Nama Personel Team
+              $("#addPersonelTeam").click(function() {
+                personelCounter++;
+                var newRow = `
         <tr>
             <td>${personelCounter}</td>
             <td><input type="text" class="form-control" name="deskripsilist[]"></td>
@@ -315,34 +322,33 @@
 
         </tr>
     `;
-                      $("#personelTeamTable tbody").append(newRow);
-                    });
-                  });
+                $("#personelTeamTable tbody").append(newRow);
+              });
+            });
 
 
-                  // Remove a row from the Nama Personel Team table
-                  $("#personelTeamTable").on("click", ".remove-row", function() {
-                    $(this).closest("tr").remove();
-                    personelCounter--;
-                    // Update the row numbers
-                    $("#personelTeamTable tbody tr").each(function(index) {
-                      $(this).find("td:first").text(index + 1);
-                    });
-                  });
-                </script>
-                <button class="btn btn-info px-4 mt-3" type="submit">
-                  Submit form
-                </button>
-            </form>
-          </div>
+            // Remove a row from the Nama Personel Team table
+            $("#personelTeamTable").on("click", ".remove-row", function() {
+              $(this).closest("tr").remove();
+              personelCounter--;
+              // Update the row numbers
+              $("#personelTeamTable tbody tr").each(function(index) {
+                $(this).find("td:first").text(index + 1);
+              });
+            });
+          </script>
+
         </div>
+
+        </form>
       </div>
     </div>
+</div>
 
-  </section>
-  <!-- --------------------------------------------------- -->
-  <!--  Form Inputs Grid End -->
-  <!-- --------------------------------------------------- -->
+</section>
+<!-- --------------------------------------------------- -->
+<!--  Form Inputs Grid End -->
+<!-- --------------------------------------------------- -->
 </div>
 </div>
 
