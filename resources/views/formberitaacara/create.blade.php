@@ -86,26 +86,50 @@
 
               <div class="row">
                 <div class="col-md-2 mb-2">
-                  <input type="radio" name="jenis_survey" value="new" class="form-check-input" id="" name="jenis_survey">
-                  <label class="form-check-label" for="">&nbsp; New Install</label>
+                  <input type="radio" name="jenis_survey" value="new" class="form-check-input" id="radio1">
+                  <label class="form-check-label" for="radio1">&nbsp; New Install</label>
                 </div>
                 <div class="col-md-2 mb-2">
-                  <input type="radio" name="jenis_survey" value="relokasi" class="form-check-input" id="radio2" name="jenis_survey">
+                  <input type="radio" name="jenis_survey" value="relokasi" class="form-check-input" id="radio2">
                   <label class="form-check-label" for="radio2">&nbsp; Relokasi/Modifikasi</label>
                 </div>
                 <div class="col-md-2 mb-2">
-                  <input type="radio" name="jenis_survey" value="audit" class="form-check-input" id="radio3" name="jenis_survey">
-                  <label class="form-check-label" for="radio3"> &nbsp;Audit Preparation</label>
+                  <input type="radio" name="jenis_survey" value="audit" class="form-check-input" id="radio3">
+                  <label class="form-check-label" for="radio3">&nbsp;Audit Preparation</label>
                 </div>
                 <div class="col-md-2 mb-2">
-                  <input type="radio" name="jenis_survey" value="trouble" class="form-check-input" id="radio4" name="jenis_survey">
+                  <input type="radio" name="jenis_survey" value="trouble" class="form-check-input" id="radio4">
                   <label class="form-check-label" for="radio4">&nbsp;Laporan Trouble</label>
                 </div>
                 <div class="col-md-3">
-                  <input type="text" name="jenis_survey" placeholder="Lainnya" class="form-control" id="radio5" name="lainnya">
+                  <input type="radio" name="jenis_survey" value="lainnya" class="form-check-input" id="radio5" onchange="toggleLainnyaInput()">
+                  <label class="form-check-label" for="radio5">&nbsp;Lainnya</label>
+                  <input type="text" name="jenis_survey" placeholder="Lainnya" class="form-control" id="lainnyaInput" disabled>
                   <br>
                 </div>
               </div>
+
+              <script>
+                function toggleLainnyaInput() {
+                  var lainnyaInput = document.getElementById('lainnyaInput');
+                  var radioLainnya = document.getElementById('radio5');
+
+                  if (radioLainnya.checked) {
+                    lainnyaInput.disabled = false;
+                    lainnyaInput.focus();
+                  } else {
+                    lainnyaInput.disabled = true;
+                  }
+                }
+
+                // Untuk memastikan input lainnya dinonaktifkan saat halaman dimuat
+                document.addEventListener('DOMContentLoaded', function() {
+                  var lainnyaInput = document.getElementById('lainnyaInput');
+                  var radioLainnya = document.getElementById('radio5');
+
+                  lainnyaInput.disabled = !radioLainnya.checked;
+                });
+              </script>
 
               <h5 class="text-center" style="background-color: black;color:white">Catatan Equipment </h5>
               <div class="row">

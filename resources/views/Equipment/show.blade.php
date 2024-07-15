@@ -772,6 +772,7 @@
                   <th>Id</th>
                   <th>Site</th>
                   <th>Jenis Equipment</th>
+                  <th>Type</th>
                   <th>Date</th>
                   <th>Action</th>
                 </thead>
@@ -835,7 +836,7 @@
                                       ?>
                     </td>
                     <td class="bg-transparent">
-                      {{$equipment->area}}
+                      {{$equipment->site}}
                     </td>
                     <td class="bg-transparent">
                       @if($equipment->jenis == 1)
@@ -882,114 +883,119 @@
                       {{ "Split Duct" }}
                       @endif
                     </td>
+                    <td class="bg-transparent">{{$data->type}}</td>
                     <td class="bg-transparent">{{$data->created_at}}</td>
                     <td class="text-end rounded-end bg-transparent">
 
-                      @if($data->type != "Survei" && $data->type !="TS")
+                      @if($data->type != "Survei" && $data->type !="Troubleshoot")
                       @if($equipment->jenis == 1)
-                      <div class="btn-group">
-                        <a href="{{ route('ac-split.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                        <a href="{{ route('ac-split.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
-
-
+                      <div style="display: flex; align-items: center;">
+                        <a href="{{ route('ac-split.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detsail</button></a>
+                        <a href="{{ route('ac-split.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                         @elseif($equipment->jenis == 2)
-                        <div class="btn-group">
-                          <a href="{{ route('acwc.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                          <a href="{{ route('acwc.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                        <div style="display: flex; align-items: center;">
+                          <a href="{{ route('acwc.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                          <a href="{{ route('acwc.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                           @elseif($equipment->jenis == 3)
-                          <div class="btn-group">
-                            <a href="{{ route('auhp.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                            <a href="{{ route('auhp.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                          <div style="display: flex; align-items: center;">
+                            <a href="{{ route('auhp.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                            <a href="{{ route('auhp.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                             @elseif($equipment->jenis == 4)
-                            <div class="btn-group">
-                              <a href="{{ route('pac.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                              <a href="{{ route('pac.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                            <div style="display: flex; align-items: center;">
+                              <a href="{{ route('pac.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                              <a href="{{ route('pac.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                               @elseif($equipment->jenis == 5)
-                              <div class="btn-group">
-                                <a href="{{ route('cs.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">detail</a>
-                                <a href="{{ route('cs.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                              <div style="display: flex; align-items: center;">
+                                <a href="{{ route('cs.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">detail</button></a>
+                                <a href="{{ route('cs.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                 @elseif($equipment->jenis == 6)
-                                <div class="btn-group">
-                                  <a href="{{ route('cu.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                  <a href="{{ route('cu.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                <div style="display: flex; align-items: center;">
+                                  <a href="{{ route('cu.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                  <a href="{{ route('cu.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                   @elseif($equipment->jenis == 7)
-                                  <div class="btn-group">
-                                    <a href="{{ route('mini-chilleer.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                    <a href="{{ route('mini-chilleer.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                  <div style="display: flex; align-items: center;">
+                                    <a href="{{ route('mini-chilleer.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                    <a href="{{ route('mini-chilleer.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                     @elseif($equipment->jenis == 8)
-                                    <div class="btn-group">
-                                      <a href="{{ route('evaporator-aircooler.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                      <a href="{{ route('evaporator-aircooler.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                    <div style="display: flex; align-items: center;">
+                                      <a href="{{ route('evaporator-aircooler.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                      <a href="{{ route('evaporator-aircooler.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                       @elseif($equipment->jenis == 9)
-                                      <div class="btn-group">
-                                        <a href="{{ route('ahu.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                        <a href="{{ route('ahu.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                      <div style="display: flex; align-items: center;">
+                                        <a href="{{ route('ahu.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                        <a href="{{ route('ahu.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                         @elseif($equipment->jenis == 10)
-                                        <div class="btn-group">
-                                          <a href="{{ route('cooling-tower.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                          <a href="{{ route('cooling-tower.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                        <div style="display: flex; align-items: center;">
+                                          <a href="{{ route('cooling-tower.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                          <a href="{{ route('cooling-tower.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                           @elseif($equipment->jenis == 11)
-                                          <div class="btn-group">
-                                            <a href="{{ route('humidifier.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                            <a href="{{ route('humidifier.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                          <div style="display: flex; align-items: center;">
+                                            <a href="{{ route('humidifier.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                            <a href="{{ route('humidifier.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                             @elseif($equipment->jenis == 12)
-                                            <div class="btn-group">
-                                              <a href="{{ route('dehumidifierr.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                              <a href="{{ route('dehumidifierr.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                            <div style="display: flex; align-items: center;">
+                                              <a href="{{ route('dehumidifierr.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                              <a href="{{ route('dehumidifierr.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                               @elseif($equipment->jenis == 13)
-                                              <div class="btn-group">
-                                                <a href="{{ route('fcuu.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                                <a href="{{ route('fcuu.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                              <div style="display: flex; align-items: center;">
+                                                <a href="{{ route('fcuu.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                                <a href="{{ route('fcuu.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                 @elseif($equipment->jenis == 14)
-                                                <div class="btn-group">
-                                                  <a href="{{ route('exhaust-fan.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                                  <a href="{{ route('exhaust-fan.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                                <div style="display: flex; align-items: center;">
+                                                  <a href="{{ route('exhaust-fan.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                                  <a href="{{ route('exhaust-fan.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                   @elseif($equipment->jenis == 15)
-                                                  <div class="btn-group">
-                                                    <a href="{{ route('pompaa.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                                    <a href="{{ route('pompaa.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                                  <div style="display: flex; align-items: center;">
+                                                    <a href="{{ route('pompaa.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                                    <a href="{{ route('pompaa.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                     @elseif($equipment->jenis == 16)
-                                                    <div class="btn-group">
-                                                      <a href="{{ route('spoot-cooling.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                                      <a href="{{ route('spoot-cooling.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                                    <div style="display: flex; align-items: center;">
+                                                      <a href="{{ route('spoot-cooling.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                                      <a href="{{ route('spoot-cooling.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                       @elseif($equipment->jenis == 17)
-                                                      <div class="btn-group">
-                                                        <a href="{{ route('water-mist.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                                        <a href="{{ route('water-mist.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                                      <div style="display: flex; align-items: center;">
+                                                        <a href="{{ route('water-mist.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                                        <a href="{{ route('water-mist.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                         @elseif($equipment->jenis == 18)
-                                                        <div class="btn-group">
-                                                          <a href="{{ route('chiller-centrifugall.show',$data->id) }}" class="btn btn-primary mx-1 btn-block">Detail</a>
-                                                          <a href="{{ route('chiller-centrifugall.edit',$data->id) }}" class="btn btn-warning mx-1 btn-block">edit</a>
+                                                        <div style="display: flex; align-items: center;">
+                                                          <a href="{{ route('chiller-centrifugall.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                                          <a href="{{ route('chiller-centrifugall.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                           @endif
                                                           @else
                                                           <div style="display: flex; align-items: center;">
-                                                            <a class=""><button class="badge bg-warning" style="margin-right: 10px;">{{$data->type}}</button></a>
 
+                                                            @if ($data->type == "Survei")
+                                                            <a href=" {{ route('survey.print', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                             <a href=" {{ route('formberitaacara.show', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail</button></a>
+                                                            @else
+                                                            <a href=" {{ route('troubleshoot.show', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail</button></a>
+                                                            @endif
                                                             @endif
 
                                                             <form action="{{ route('history.destroy', $data->id) }}" method="POST">
                                                               @csrf
                                                               @method('DELETE')
-                                                              <button class="btn btn-danger mx-1 btn-block" type="submit">Delete</button>
+                                                              <button class="badge bg-danger" type="submit">Delete</button>
+
                                                             </form>
+
 
                                                           </div>
                                                         </div>

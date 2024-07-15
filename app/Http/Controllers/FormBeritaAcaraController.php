@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
+use App\Models\AcSplit;
 use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
 use App\Models\GambarAct2;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\AcSplit;
 use App\Models\FormBeritaAcara; // Pastikan Anda memiliki model "FormBeritaAcara" yang sesuai
 use App\Models\ListKebutuhanBeritaAcara; // Pastikan Anda memiliki model "FormBeritaAcara" yang sesuai
 
@@ -137,5 +138,42 @@ class FormBeritaAcaraController extends Controller
         // Redirect atau lakukan apa yang diperlukan setelah berhasil menghapus
 
         return redirect()->route('formberitaacara.index');
+    }
+
+    public function print($id)
+    {
+        $history = History::find($id);
+        $beritaacara = FormBeritaAcara::find($id);
+        $list = ListKebutuhanBeritaAcara::where('type', 'FormBeritaAcara')->where('id_beritaacara', $id)->get();
+        $gambar = GambarAct::where('id_act', $id)->get();
+        $gambar2 = GambarAct2::where('id_act', $id)->get();
+
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.survey', ['history' => $history, 'beritaacara' =>$beritaacara, 'list' =>$list, 'gambar' =>$gambar, 'gambar2' => $gambar2])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+        $output = $dompdf->output();
+        file_put_contents($filename, $output);
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
     }
 }

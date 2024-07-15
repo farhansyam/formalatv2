@@ -192,48 +192,14 @@
               <div class="row">
                 <div class="col-md-6 mb-3">
                   <label for="">Jenis Equipment</label>
-                  <input type="text" name="jenis_equipment" class="form-control" id="" value='@if($equipment->jenis == 1)
-                    {{"AC Split"}}
-                    @elseif($equipment->jenis == 2)
-                    {{"AHUP"}}
-                    @elseif($equipment->jenis == 3)
-                    {{"Cooled Water Chiller"}}
-                    @elseif($equipment->jenis == 4)
-                    {{"PAC"}}
-                    @elseif($equipment->jenis == 5)
-                    {{"Cold Storage"}}
-                    @elseif($equipment->jenis == 6)
-                    {{"Cooling Unit & AC Panel"}}
-                    @elseif($equipment->jenis == 7)
-                    {{"Mini Chiller"}}
-                    @elseif($equipment->jenis == 8)
-                    {{"Evaporative Air Cooler"}}
-                    @elseif($equipment->jenis == 9)
-                    {{"AHU"}}
-                    @elseif($equipment->jenis == 10)
-                    {{"Cooling tower"}}
-                    @elseif($equipment->jenis == 11)
-                    {{"Humidifier"}}
-                    @elseif($equipment->jenis == 12)
-                    {{"Dehumidifier"}}
-                    @elseif($equipment->jenis == 13)
-                    {{"FCU (Fan Cooling Unit)"}}
-                    @elseif($equipment->jenis == 14)
-                    {{"Exhaust Fan"}}
-                    @elseif($equipment->jenis == 15)
-                    {{"Pompa"}}
-                    @elseif($equipment->jenis == 16)
-                    {{"Spot Cooling"}}
-                    @elseif($equipment->jenis == 17)
-                    {{"Water Mist"}}
-                    @elseif($equipment->jenis == 18)
-                    {{"Chiller Centrifugal"}}
-                    @elseif($equipment->jenis == 19)
-                    {{"Floor Standing"}}
-                    @elseif($equipment->jenis == 20)
-                    {{"Ac Cassette"}}
-                    @elseif($equipment->jenis == 21)
-                    {{"Split Duct"}}
+                  <input type="text" name="jenis_equipment" class="form-control" id="" value='@if($equipment->jenis == 1){{"AC Split"}}
+                    @elseif($equipment->jenis == 2){{"AHUP"}}@elseif($equipment->jenis == 3)@elseif($equipment->jenis == 4)
+                    {{"PAC"}}@elseif($equipment->jenis == 5){{"Cold Storage"}}@elseif($equipment->jenis == 6)@elseif($equipment->jenis == 7){{"Mini Chiller"}}@elseif($equipment->jenis == 8)
+                    {{"Evaporative Air Cooler"}}@elseif($equipment->jenis == 9){{"AHU"}}@elseif($equipment->jenis == 10){{"Cooling tower"}}@elseif($equipment->jenis == 11)
+                    {{"Humidifier"}}@elseif($equipment->jenis == 12){{"Dehumidifier"}} @elseif($equipment->jenis == 13){{"FCU (Fan Cooling Unit)"}}
+                    @elseif($equipment->jenis == 14){{"Exhaust Fan"}}@elseif($equipment->jenis == 15){{"Pompa"}}@elseif($equipment->jenis == 16){{"Spot Cooling"}}
+                    @elseif($equipment->jenis == 17){{"Water Mist"}}@elseif($equipment->jenis == 18){{"Chiller Centrifugal"}}@elseif($equipment->jenis == 19)
+                    {{"Floor Standing"}}@elseif($equipment->jenis == 20){{"Ac Cassette"}}@elseif($equipment->jenis == 21){{"Split Duct"}}
                     @endif' required="">
                   <label for="">Brand & Model</label>
                   <input type="text" name="brand" class="form-control" id="" value="{{$equipment->brand}}" required="">

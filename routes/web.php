@@ -85,6 +85,7 @@ Route::get('part', [EquipmentController::class, 'part'])->name('part.index')->mi
 Route::get('part/{id}', [EquipmentController::class, 'partshow'])->name('part.show')->middleware('auth');
 
 
+Route::get('survey/print/{id}', [FormBeritaAcaraController::class, 'print'])->name('survey.print')->middleware('auth');
 Route::resource('formberitaacara', FormBeritaAcaraController::class)->name('index', 'formberitaacara.index')->middleware('auth');
 Route::get('survey/{id}', [FormBeritaAcaraController::class,'create'])->name('survey.create')->middleware('auth');
 Route::get('search', [EquipmentController::class,'scan'])->name('scan')->middleware('auth');

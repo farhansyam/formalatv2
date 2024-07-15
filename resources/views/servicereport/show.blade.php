@@ -90,21 +90,20 @@
 
               <div class="row">
                 <div class="col-md-2 mb-2">
-                  <input type="radio" name="jenis_survey" @if ($service->jenis_survey == 'new') checked @endif value="new" class="form-check-input" id="jenis_survey_new">
-                  <input type="radio" name="jenis_survey" @if ($service->jenis_survey == 'new') checked @endif value="new" class="form-check-input" id="">
+                  <input type="radio" disabled name="jenis_survey" @if ($service->jenis_survey == 'new') checked @endif value="new" class="form-check-input" id="jenis_survey_new">
                   <label class="form-check-label" for="">&nbsp; PASCA PM</label>
                 </div>
                 <div class="col-md-2 mb-2">
-                  <input type="radio" name="jenis_survey" value="relokasi" @if ($service->jenis_survey == 'relokasi') checked @endif class="form-check-input" id="radio2">
+                  <input type="radio" disabled name="jenis_survey" value="relokasi" @if ($service->jenis_survey == 'relokasi') checked @endif class="form-check-input" id="radio2">
                   <label class="form-check-label" for="radio2">&nbsp; TEMUAN DH/SRQ</label>
                 </div>
                 <div class="col-md-2 mb-2">
-                  <input type="radio" name="jenis_survey" value="audit" @if ($service->jenis_survey == 'audit') checked @endif class="form-check-input" id="radio3">
+                  <input type="radio" disabled name="jenis_survey" value="audit" @if ($service->jenis_survey == 'audit') checked @endif class="form-check-input" id="radio3">
                   <label class="form-check-label" for="radio3">&nbsp; COMPLAIN</label>
                 </div>
                 <div class="col-md-3">
                   <div class="form-check">
-                    <input type="radio" name="jenis_survey" value="other" class="form-check-input" id="radio4">
+                    <input type="radio" disabled name="jenis_survey" value="other" class="form-check-input" id="radio4">
                     <label class="form-check-label" for="radio4">&nbsp; Lainnya</label>
                   </div>
                   <input type="text" name="other_jenis_survey" placeholder="Lainnya" class="form-control" id="other_jenis_survey_input" style="display: none;">
@@ -130,15 +129,15 @@
                 <div class="col-md-6 mb-3">
                   <h5 class="text-center" style="background-color: black; color: white">Defect Level</h5>
                   <div class="form-check">
-                    <input type="radio" name="defect_level" @if ($service->defect_level == 'High') checked @endif value="High" class="form-check-input" id="_column1">
+                    <input type="radio" disabled name="defect_level" @if ($service->defect_level == 'High') checked @endif value="High" class="form-check-input" id="_column1">
                     <label class="form-check-label" for="_column1">&nbsp; &nbsp;High</label>
                   </div>
                   <div class="form-check">
-                    <input type="radio" name="defect_level" @if ($service->defect_level == 'Medium') checked @endif value="Medium" class="form-check-input" id="radio2_column1">
+                    <input type="radio" disabled name="defect_level" @if ($service->defect_level == 'Medium') checked @endif value="Medium" class="form-check-input" id="radio2_column1">
                     <label class="form-check-label" for="radio2_column1">&nbsp;&nbsp;Medium</label>
                   </div>
                   <div class="form-check">
-                    <input type="radio" name="defect_level" value="Low" @if ($service->defect_level == 'Low') checked @endif class="form-check-input" id="radio3_column1">
+                    <input type="radio" disabled name="defect_level" value="Low" @if ($service->defect_level == 'Low') checked @endif class="form-check-input" id="radio3_column1">
                     <label class="form-check-label" for="radio3_column1">&nbsp;&nbsp;Low</label>
                   </div>
                 </div>
@@ -146,35 +145,35 @@
                   <h5 class="text-center" style="background-color: black; color: white">Defect Type</h5>
                   <br>
                   <div class="form-check">
-                    <input type="radio" name="defect_type" @if ($service->defect_type == 'Minor') checked @endif value="Minor" class="form-check-input" id="">
+                    <input type="radio" disabled name="defect_type" @if ($service->defect_type == 'Minor') checked @endif value="Minor" class="form-check-input" id="">
                     <label class="form-check-label" for="">Minor</label>
                   </div>
                   <div class="form-check">
-                    <input type="radio" name="defect_type" @if ($service->defect_type == 'Tidak standar') checked @endif value="Tidak standar" class="form-check-input" id="">
+                    <input type="radio" disabled name="defect_type" @if ($service->defect_type == 'Tidak standar') checked @endif value="Tidak standar" class="form-check-input" id="">
                     <label class="form-check-label" for="">Tidak standar</label>
                   </div>
                   <div class="form-check">
-                    <input type="radio" name="defect_type" @if ($service->defect_type == 'Area sulit dijangkau / Hard Access') checked @endif value="Area sulit dijangkau / Hard Access" class="form-check-input" id="radio2">
+                    <input type="radio" disabled name="defect_type" @if ($service->defect_type == 'Area sulit dijangkau / Hard Access') checked @endif value="Area sulit dijangkau / Hard Access" class="form-check-input" id="radio2">
                     <label class="form-check-label" for="radio2">Area sulit dijangkau / Hard Access</label>
                   </div>
                   <div class="form-check">
-                    <input type="radio" name="defect_type" @if ($service->defect_type == 'Sumber kontaminasi produk') checked @endif value="Sumber kontaminasi produk" class="form-check-input" id="radio3">
+                    <input type="radio" disabled name="defect_type" @if ($service->defect_type == 'Sumber kontaminasi produk') checked @endif value="Sumber kontaminasi produk" class="form-check-input" id="radio3">
                     <label class="form-check-label" for="radio3">Sumber kontaminasi produk</label>
                   </div>
                   <div class="form-check">
-                    <input type="radio" name="defect_type" @if ($service->defect_type == 'Mengurangi kualitas') checked @endif value="Mengurangi kualitas" class="form-check-input" id="radio4">
+                    <input type="radio" disabled name="defect_type" @if ($service->defect_type == 'Mengurangi kualitas') checked @endif value="Mengurangi kualitas" class="form-check-input" id="radio4">
                     <label class="form-check-label" for="radio4">Mengurangi kualitas</label>
                   </div>
                   <div class="form-check">
-                    <input type="radio" name="defect_type" @if ($service->defect_type == 'Tidak Dibutuhkan') checked @endif value="Tidak Dibutuhkan" class="form-check-input" id="radio5">
+                    <input type="radio" disabled name="defect_type" @if ($service->defect_type == 'Tidak Dibutuhkan') checked @endif value="Tidak Dibutuhkan" class="form-check-input" id="radio5">
                     <label class="form-check-label" for="radio5">Tidak Dibutuhkan</label>
                   </div>
                   <div class="form-check">
-                    <input type="radio" name="defect_type" @if ($service->defect_type == 'Tidak Safety') checked @endif value="Tidak Safety" class="form-check-input" id="radio6">
+                    <input type="radio" disabled name="defect_type" @if ($service->defect_type == 'Tidak Safety') checked @endif value="Tidak Safety" class="form-check-input" id="radio6">
                     <label class="form-check-label" for="radio6">Tidak Safety</label>
                   </div>
                   <div class="form-check">
-                    <input type="radio" name="defect_type" @if ($service->defect_type == 'Other') checked @endif value="Other" class="form-check-input" id="radio_other">
+                    <input type="radio" disabled name="defect_type" @if ($service->defect_type == 'Other') checked @endif value="Other" class="form-check-input" id="radio_other">
                     <label class="form-check-label" for="radio_other">Other</label>
                     <input type="text" name="other_defect_type" id="other_defect_input" style="display: none;">
                   </div>
@@ -296,6 +295,7 @@
                     });
                   });
                 </script>
+                @include('formimage.show')
             </form>
           </div>
         </div>
