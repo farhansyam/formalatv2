@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class AcSplit extends Model
 {
     protected $fillable = [
+        "q",
+        "status",'rekomendasi','running_hour','temuan',
         'id',
          'id_equipment',
          'q1',

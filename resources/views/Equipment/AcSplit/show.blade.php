@@ -60,7 +60,7 @@
                                         @endif class="text-center" name="q31[]" value="Ac Split Standing" onclick="uncheckAllExcept(this)">
                                     </td>
 
-                                    <td class="text-center"><input disabled type="text" class="text-center" required name="q31[]" value="{{$values[1]}}"></td>
+                                    <td class="text-center"><input disabled type="text" class="text-center" required name="q31[]" value="{{$values[0]}}"></td>
                                 </tr>
 
                         </table>

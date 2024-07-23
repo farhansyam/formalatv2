@@ -890,7 +890,9 @@
                       @if($data->type != "Survei" && $data->type !="Troubleshoot")
                       @if($equipment->jenis == 1)
                       <div style="display: flex; align-items: center;">
-                        <a href="{{ route('ac-split.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detsail</button></a>
+                      <a href=" {{ route('ac-split.print', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
+
+                        <a href="{{ route('ac-split.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                         <a href="{{ route('ac-split.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                         @elseif($equipment->jenis == 2)
                         <div style="display: flex; align-items: center;">
@@ -985,6 +987,7 @@
                                                             <a href=" {{ route('survey.print', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                             <a href=" {{ route('formberitaacara.show', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail</button></a>
                                                             @else
+                                                            <a href=" {{ route('troubleshoot.print', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                             <a href=" {{ route('troubleshoot.show', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail</button></a>
                                                             @endif
                                                             @endif

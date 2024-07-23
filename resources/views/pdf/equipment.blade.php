@@ -250,7 +250,7 @@
                     <th>&nbsp;&nbsp;</th>
                     <th>&nbsp;&nbsp;</th>
                     <th>Site</th>
-                    <th>: {{$equipment->area}}</th>
+                    <th>: {{$equipment->site}}</th>
                     <th></th>
                 </tr>
                 <tr>

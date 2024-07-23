@@ -1,6 +1,9 @@
 @extends('layouts.back2')
 
 @section('content')
+@if($equipment == 0)
+p
+@else
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-6">
@@ -100,9 +103,11 @@
                 @endphp
                 @foreach ($history as $data)
                 @php
-                $equipment = \App\Models\Equipment::find($data->id_equipment);
+                $equipments = \App\Models\Equipment::find($data->id_equipment);
                 @endphp
-                <tr class="bg-light">
+                @if ($equipments == null)
+                @else
+                  <tr class="bg-light">
                   <td class="rounded-start bg-transparent">
                     <div class="d-flex align-items-center gap-3">
                       <div>
@@ -114,7 +119,7 @@
                   <td class="bg-transparent">
                     <i class=""></i><?php
                                     // Array untuk memetakan angka ke jenis
-                                    $jenis = [
+                                    $jenis2 = [
                                       1 => "AC Split",
                                       3 => "AHUP",
                                     2 => "Cooled Water Chiller",
@@ -145,16 +150,16 @@
                                       28 => "Lakos Filter"
                                     ];
                                     // Ambil singkatan dari jenis berdasarkan angka
-                                    $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
+                                    $singkatan1 = isset($jenis2[$equipments->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis2[$equipments->jenis]))), 0, 3) : '';
 
                                     // Mengambil karakter tengah (atau kedua karakter dari tengah jika panjang genap)
-                                    $panjang = strlen($equipment->area);
+                                    $panjang = strlen($equipments->area);
                                     $posisi_tengah = floor($panjang / 2);
-                                    $singkatan2 = strtoupper($equipment->kode_room);
+                                    $singkatan2 = strtoupper($equipments->kode_room);
 
                                     // Mengambil karakter terakhir
-                                    $singkatan2 .= strtoupper(substr($equipment->area, -1));
-                                    echo strtoupper($singkatan1 . $singkatan2 . $formattedId = sprintf('%05d', $equipment->id));
+                                    $singkatan2 .= strtoupper(substr($equipments->area, -1));
+                                    echo strtoupper($singkatan1 . $singkatan2 . $formattedId = sprintf('%05d', $equipments->id));
                                     // Mengambil karakter pertama
 
 
@@ -162,45 +167,45 @@
                   </td>
 
                   <td class="bg-transparent">
-                    @if($equipment->jenis == 1)
+                    @if($equipments->jenis == 1)
                     {{ "AC Split" }}
-                    @elseif($equipment->jenis == 3)
+                    @elseif($equipments->jenis == 3)
                     {{ "AHUP" }}
-                    @elseif($equipment->jenis == 2)
+                    @elseif($equipments->jenis == 2)
                     {{ "Cooled Water Chiller" }}
-                    @elseif($equipment->jenis == 4)
+                    @elseif($equipments->jenis == 4)
                     {{ "PAC" }}
-                    @elseif($equipment->jenis == 5)
+                    @elseif($equipments->jenis == 5)
                     {{ "Cold Storage" }}
-                    @elseif($equipment->jenis == 6)
+                    @elseif($equipments->jenis == 6)
                     {{ "Cooling Unit & AC Panel" }}
-                    @elseif($equipment->jenis == 7)
+                    @elseif($equipments->jenis == 7)
                     {{ "Mini Chiller" }}
-                    @elseif($equipment->jenis == 8)
+                    @elseif($equipments->jenis == 8)
                     {{ "Evaporative Air Cooler" }}
-                    @elseif($equipment->jenis == 9)
+                    @elseif($equipments->jenis == 9)
                     {{ "AHU" }}
-                    @elseif($equipment->jenis == 10)
+                    @elseif($equipments->jenis == 10)
                     {{ "Cooling tower" }}
-                    @elseif($equipment->jenis == 11)
+                    @elseif($equipments->jenis == 11)
                     {{ "Humidifier" }}
-                    @elseif($equipment->jenis == 12)
+                    @elseif($equipments->jenis == 12)
                     {{ "Dehumidifier" }}
-                    @elseif($equipment->jenis == 13)
+                    @elseif($equipments->jenis == 13)
                     {{ "FCU (Fan Cooling Unit)" }}
-                    @elseif($equipment->jenis == 14)
+                    @elseif($equipments->jenis == 14)
                     {{ "Exhaust Fan" }}
-                    @elseif($equipment->jenis == 15)
+                    @elseif($equipments->jenis == 15)
                     {{ "Pompa" }}
-                    @elseif($equipment->jenis == 16)
+                    @elseif($equipments->jenis == 16)
                     {{ "Spot Cooling" }}
-                    @elseif($equipment->jenis == 17)
+                    @elseif($equipments->jenis == 17)
                     {{ "Water Mist" }}
-                    @elseif($equipment->jenis == 18)
+                    @elseif($equipments->jenis == 18)
                     {{ "Chiller Centrifugal" }}
-                    @elseif($equipment->jenis == 19)
+                    @elseif($equipments->jenis == 19)
                     {{ "Floor Standing" }}
-                    @elseif($equipment->jenis == 20)
+                    @elseif($equipments->jenis == 20)
                     {{ "Ac Cassette" }}
                     @elseif($data->jenis == 21)
                     {{ "Split Duct" }}
@@ -221,14 +226,15 @@
                     @endif
                   </td>
                   <td class="bg-transparent">
-                    {{$equipment->room}}
+                    {{$equipments->room}}
                   </td>
                   <td class="bg-transparent">{{$data->created_at}}</td>
                   <td class="text-end rounded-end bg-transparent">
                     <span class="badge bg-warning">{{$data->type}}</span>
                     <a href="{{ route('formberitaacara.show', $data->id_act) }}" class="badge bg-primary">Detail</a>
                   </td>
-                </tr>
+                </tr> 
+                @endif
                 @endforeach
 
               </tbody>
@@ -239,4 +245,5 @@
     </div>
   </div>
 </div>
+@endif
 @endsection

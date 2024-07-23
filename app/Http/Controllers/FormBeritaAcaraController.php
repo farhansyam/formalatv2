@@ -167,8 +167,9 @@ class FormBeritaAcaraController extends Controller
         $filename = 'equipment_qrcode_' . time() . '.pdf';
 
         // Simpan PDF ke server sementara
-        $output = $dompdf->output();
-        file_put_contents($filename, $output);
+      // Simpan PDF ke folder public
+    $pdfFilePath = public_path($filename);
+    file_put_contents($pdfFilePath, $dompdf->output());
 
         // Tautan untuk membuka pratinjau PDF di tab baru
         $previewLink = route('pdf.preview', ['filename' => $filename]);

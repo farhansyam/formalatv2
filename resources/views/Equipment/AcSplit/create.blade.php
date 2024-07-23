@@ -48,7 +48,7 @@
                                     <td class="text-center">
                                         <input type="checkbox" class="text-center" name="q31[]" value="Ac Split Standing" onclick="uncheckAllExcept(this)">
                                     </td>
-                                    <td class="text-center"><select name="q[]" class="form-select" id="">
+                                    <td class="text-center"><select name="q" class="form-select" id="">
                                             <option value="Ok">Ok</option>
                                             <option value="Not Ok">Not Ok</option>
                                         </select></td>
@@ -372,7 +372,7 @@
                                         <td class="text-center">Test running, pastikan tidak ada suara atau vibrasi yang abnormal
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q[]" class="form-select" id="">
+                                        <td><select name="q24[]" class="form-select" id="">
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -383,7 +383,7 @@
                                         <td class="text-center">Cek ampere kompressor dan sesuaikan dengan kapasitas di nameplate unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q[]" class="form-select" id="">
+                                        <td><select name="q25[]" class="form-select" id="">
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -394,7 +394,7 @@
                                         <td class="text-center">Cek ampere motor fan kondensor dan sesuaikan dengan kapasitas di nameplate unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q[]" class="form-select" id="">
+                                        <td><select name="q26[]" class="form-select" id="">
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -405,7 +405,7 @@
                                         <td class="text-center">Cek tekanan kompressor disesuaikan dengan tipe referigerant
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q[]" class="form-select" id="">
+                                        <td><select name="q27[]" class="form-select" id="">
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>

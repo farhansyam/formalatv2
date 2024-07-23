@@ -21,7 +21,6 @@ class DashboardController extends Controller
         $survey = FormBeritaAcara::count();
         $now = Carbon::now();
         $month = $now->month;
-
         $history = History::whereMonth('created_at', $month)->get();
         return view('index',compact('customer','equipment','survey','history','troubleshoot'));
     }

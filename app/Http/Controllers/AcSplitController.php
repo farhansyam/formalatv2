@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
 use App\Models\AcSplit;
 use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
 use App\Models\GambarAct2;
 use Illuminate\Http\Request;
+use App\Models\ListKebutuhanBeritaAcara;
 
 class AcSplitController extends Controller
 {
@@ -39,6 +41,11 @@ class AcSplitController extends Controller
     {
             // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
             $qData = [
+                'q'=> $request->input('q'),
+                'temuan'=> $request->input('temuan'),
+                'running_hour'=> $request->input('running_hour'),
+                'status'=> $request->input('status'),
+                'rekomendasi'=> $request->input('rekomendasi'),
                 'q1' => implode(',', $request->input('q1')),
     
                 'q2' => implode(',', $request->input('q2')),
@@ -187,14 +194,26 @@ class AcSplitController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $history = History::find($id);
-        $acs = AcSplit::find($history->id_act);
+       $history = History::find($id);
+$acs = AcSplit::find($history->id_act);
 
-        // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
-        $qData = [];
-        for ($i = 1; $i <= 31; $i++) {
-            $qData['q' . $i] = implode(',', $request->input('q' . $i));
-        }
+// Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
+$qData = [];
+for ($i = 1; $i <= 31; $i++) {
+    $qData['q' . $i] = implode(',', $request->input('q' . $i));
+}
+
+// Menambahkan input tambahan ke dalam array $qData
+$qData['q'] = $request->input('q');
+$qData['temuan'] = $request->input('temuan');
+$qData['running_hour'] = $request->input('running_hour');
+$qData['status'] = $request->input('status');
+$qData['rekomendasi'] = $request->input('rekomendasi');
+
+// Melakukan sesuatu dengan $qData, misalnya menyimpannya ke dalam database
+// Contoh:
+// $history->update($qData);
+
         // Simpan data ke dalam model CoolingUnit
         $acs->update($qData); // Atau bisa juga menggunakan $acs->fill($qData) diikuti dengan $acs->save();
 
@@ -240,5 +259,42 @@ class AcSplitController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+     public function print($id)
+    {
+        $history = History::find($id);
+        $Acs = AcSplit::find($id);
+        $gambar = GambarAct::where('id_act', $id)->get();
+        $gambar2 = GambarAct2::where('id_act', $id)->get();
+
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.acs', ['history' => $history, 'Acs' =>$Acs, 'gambar' =>$gambar, 'gambar2' => $gambar2])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+      // Simpan PDF ke folder public
+    $pdfFilePath = public_path($filename);
+    file_put_contents($pdfFilePath, $dompdf->output());
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
     }
 }

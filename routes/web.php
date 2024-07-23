@@ -90,6 +90,8 @@ Route::resource('formberitaacara', FormBeritaAcaraController::class)->name('inde
 Route::get('survey/{id}', [FormBeritaAcaraController::class,'create'])->name('survey.create')->middleware('auth');
 Route::get('search', [EquipmentController::class,'scan'])->name('scan')->middleware('auth');
 Route::resource('troubleshoot', TroubleshootController::class)->name('index', 'troubleshoot.index')->middleware('auth');
+Route::get('troubleshoot/print/{id}', [TroubleshootController::class, 'print'])->name('troubleshoot.print')->middleware('auth');
+
 Route::get('ts/{id}', [TroubleshootController::class, 'create'])->name('ts.create')->middleware('auth');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 
@@ -105,6 +107,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 Route::get('add-ac-split/{id}', [AcSplitController::class, 'create2'])->name('ac-split.create2');
 Route::resource('ac-split', AcSplitController::class)->name('index', 'ac-split.index')->middleware('auth');
+Route::get('ac-split/print/{id}', [AcSplitController::class, 'print'])->name('ac-split.print')->middleware('auth');
 
 Route::get('cold-storage/create/{id}', [ColdStorageController::class, 'create2'])->name('cold-storage.create2');
 Route::resource('cs', ColdStorageController::class)->name('index', 'cs.index')->middleware('auth');

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
 use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
@@ -159,5 +160,43 @@ class TroubleshootController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+        public function print($id)
+    {
+        $history = History::find($id);
+        $ServiceReport = ServiceReport::find($id);
+        $list = ListKebutuhanBeritaAcara::where('type', 'FormserviceReport')->where('id_beritaacara', $id)->get();
+        $gambar = GambarAct::where('id_act', $id)->get();
+        $gambar2 = GambarAct2::where('id_act', $id)->get();
+
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.troubleshoot', ['history' => $history, 'ServiceReport' =>$ServiceReport, 'list' =>$list, 'gambar' =>$gambar, 'gambar2' => $gambar2])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+      // Simpan PDF ke folder public
+    $pdfFilePath = public_path($filename);
+    file_put_contents($pdfFilePath, $dompdf->output());
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
     }
 }
