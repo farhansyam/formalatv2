@@ -112,6 +112,12 @@ class AcSplitController extends Controller
                     
                 'q31' => implode(',', $request->input('q31')),
             ];
+        $qData['q'] = $request->input('q');
+        $qData['temuan'] = $request->input('temuan');
+        $qData['running_hour'] = $request->input('running_hour');
+        $qData['status'] = $request->input('status');
+        $qData['rekomendasi'] = $request->input('rekomendasi');
+
         
             // Simpan data ke dalam model CoolingUnit
             $AcSplit = AcSplit::create($qData);
@@ -146,9 +152,9 @@ class AcSplitController extends Controller
     
             // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
                 $history = new History();
-                $history->type = "AC Split"; // Sesuaikan dengan jenis equipment
+                $history->type = "PM"; // Sesuaikan dengan jenis equipment
                 $history->id_act = $AcSplit->id;
-                $history->id_equipment = $request->id;
+                $history->id_equipment = $request->id_equipment;
                 $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
                 $history->save();
                 return redirect()->route('equipment.show',$request->id)->with('success', 'Task list telah disimpan.');
@@ -264,12 +270,13 @@ $qData['rekomendasi'] = $request->input('rekomendasi');
      public function print($id)
     {
         $history = History::find($id);
-        $Acs = AcSplit::find($id);
+        $equipment = Equipment::find($history->id_equipment);
+        $Acs = AcSplit::find($history->id_act);
         $gambar = GambarAct::where('id_act', $id)->get();
         $gambar2 = GambarAct2::where('id_act', $id)->get();
 
         // Render view blade dengan gambar QR
-        $pdfContent = view('pdf.acs', ['history' => $history, 'Acs' =>$Acs, 'gambar' =>$gambar, 'gambar2' => $gambar2])->render();
+        $pdfContent = view('pdf.acs', ['history' => $history, 'Acs' =>$Acs, 'gambar' =>$gambar, 'gambar2' => $gambar2,'equipment' => $equipment])->render();
 
         // Buat objek DOMPDF
         $dompdf = new Dompdf();
@@ -278,7 +285,7 @@ $qData['rekomendasi'] = $request->input('rekomendasi');
         $dompdf->loadHtml($pdfContent);
 
         // Set ukuran dan orientasi dokumen
-        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->setPaper('A4', 'potrait');
 
         // Render PDF
         $dompdf->render();
@@ -287,9 +294,9 @@ $qData['rekomendasi'] = $request->input('rekomendasi');
         $filename = 'equipment_qrcode_' . time() . '.pdf';
 
         // Simpan PDF ke server sementara
-      // Simpan PDF ke folder public
-    $pdfFilePath = public_path($filename);
-    file_put_contents($pdfFilePath, $dompdf->output());
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
 
         // Tautan untuk membuka pratinjau PDF di tab baru
         $previewLink = route('pdf.preview', ['filename' => $filename]);

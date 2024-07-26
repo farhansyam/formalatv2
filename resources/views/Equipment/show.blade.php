@@ -426,19 +426,19 @@
                           </button>
                         </a>
                         @elseif($equipment->jenis == 19)
-                        <a href="">
+                         <a href="{{route('ac-split.create2',$equipment->id)}}">
                           <button type="button" class="btn btn-info w-100">
-                            Form PM Floor Standing
+                            Form PM Ac Floor Standing
                           </button>
                         </a>
                         @elseif($equipment->jenis == 20)
-                        <a href="">
+                       <a href="{{route('ac-split.create2',$equipment->id)}}">
                           <button type="button" class="btn btn-info w-100">
-                            Form PM Ac Cassette
+                            Form PM Ac Cassete
                           </button>
                         </a>
                         @elseif($equipment->jenis == 21)
-                        <a href="">
+                        <a href="{{route('ac-split.create2',$equipment->id)}}">
                           <button type="button" class="btn btn-info w-100">
                             Form PM Split Duct
                           </button>
@@ -890,17 +890,18 @@
                       @if($data->type != "Survei" && $data->type !="Troubleshoot")
                       @if($equipment->jenis == 1)
                       <div style="display: flex; align-items: center;">
-                      <a href=" {{ route('ac-split.print', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
-
+                        <a href=" {{ route('ac-split.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                         <a href="{{ route('ac-split.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                         <a href="{{ route('ac-split.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                         @elseif($equipment->jenis == 2)
                         <div style="display: flex; align-items: center;">
+                          <a href=" {{ route('acwc.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                           <a href="{{ route('acwc.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                           <a href="{{ route('acwc.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                           @elseif($equipment->jenis == 3)
                           <div style="display: flex; align-items: center;">
+                            <a href=" {{ route('ac-split.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                             <a href="{{ route('auhp.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                             <a href="{{ route('auhp.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
@@ -978,6 +979,24 @@
                                                         <div style="display: flex; align-items: center;">
                                                           <a href="{{ route('chiller-centrifugall.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                                           <a href="{{ route('chiller-centrifugall.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
+                                                        @elseif($equipment->jenis == 19)
+                                                        <div style="display: flex; align-items: center;">
+                                                         <a href=" {{ route('ac-split.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
+
+                                                          <a href="{{ route('ac-split.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                                          <a href="{{ route('ac-split.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
+                                                        @elseif($equipment->jenis == 20)
+                                                        <div style="display: flex; align-items: center;">
+                                                         <a href=" {{ route('ac-split.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
+
+                                                          <a href="{{ route('ac-split.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                                          <a href="{{ route('ac-split.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
+                                                        @elseif($equipment->jenis == 21)
+                                                        <div style="display: flex; align-items: center;">
+                                                         <a href=" {{ route('ac-split.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
+
+                                                          <a href="{{ route('ac-split.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
+                                                          <a href="{{ route('ac-split.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                           @endif
                                                           @else

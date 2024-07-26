@@ -29,7 +29,7 @@
                                     <th class="text-center">Ac Split Wall</th>
                                     <th class="text-center">Ac Cassette</th>
                                     <th class="text-center">Ac Floor Standing</th>
-                                    <th class="text-center">Ac Split Standing</th>
+                                    <th class="text-center">Ac Split Duct</th>
                                     <th class="text-center"></th>
                                 </tr>
                             </thead>
@@ -463,6 +463,29 @@
                                 </tbody>
 
                             </table>
+                            <table class="table table-bordered" id="GambarTable">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10"></textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Running Hour</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+<td><input type="text" class="form-control" name="running_hour" required></td>
+            <td><select name="status" id="" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+
                             <h5 class="text-center" style="background-color: black;color:white">Tambahkan Foto Equipment</h5>
                             <table class="table table-bordered" id="GambarTable">
                                 <thead>

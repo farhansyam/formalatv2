@@ -1,25 +1,30 @@
 <?php
 
 use App\Models\AcSplit;
-use App\Models\ChillerCentrifugal;
+use App\Models\ExhaustFan;
 use App\Models\ColdStorage;
 use App\Models\CoolingUnit;
+use App\Models\ChillerCentrifugal;
 use App\Models\EvaporatorAirCooler;
-use App\Models\ExhaustFan;
 use Illuminate\Support\Facades\Route;
+use SebastianBergmann\Type\Parameter;
 use App\Http\Controllers\AHUController;
 use App\Http\Controllers\FCUController;
 use App\Http\Controllers\PACController;
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\AUHPController;
+use App\Http\Controllers\RoomController;
 use App\Http\Controllers\FreonController;
 use App\Http\Controllers\PompaController;
+
+use App\Http\Controllers\ImportController;
 use App\Http\Controllers\AcSplitController;
 use App\Http\Controllers\RegulerController;
-
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\TasklistController;
+use App\Http\Controllers\AuthorityController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EquipmentController;
 use App\Http\Controllers\KapasitasController;
@@ -37,11 +42,7 @@ use App\Http\Controllers\FormBeritaAcaraController;
 use App\Http\Controllers\ChillerCentrifugalController;
 use App\Http\Controllers\EvaporatorAirCoolerController;
 use App\Http\Controllers\AirCooledWaterChillerController;
-use App\Http\Controllers\AuthorityController;
-use App\Http\Controllers\RoomController;
-use App\Http\Controllers\TasklistController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
-use SebastianBergmann\Type\Parameter;
 
 /*
 |--------------------------------------------------------------------------
@@ -128,6 +129,7 @@ Route::resource('/evaporator-aircooler', EvaporatorAirCoolerController::class)->
 ]);
 Route::get('acwc/create/{id}', [AirCooledWaterChillerController::class, 'create2'])->name('acwc.create2');              
 Route::resource('acwc', AirCooledWaterChillerController::class)->name('index', 'acwc');
+Route::get('acwc/print/{id}', [AirCooledWaterChillerController::class, 'print'])->name('acwc.print')->middleware('auth');
 
 
 Route::get('pac/create/{id}', [PACController::class, 'create2'])->name('pac.create2');    
@@ -207,4 +209,8 @@ Route::get('chiller-centrifugall/create/{id}', [ChillerCentrifugalController::cl
 Route::resource('/chiller-centrifugall', ChillerCentrifugalController::class)->names([
         'edit' => 'chiller-centrifugall.edit', // Nama untuk rute index
         'show' => 'chiller-centrifugall.show', // Nama untuk rute index
-        ]); 
+        ]);
+
+
+Route::get('import', [ImportController::class, 'showForm'])->name('import.form');
+Route::post('import', [ImportController::class, 'import'])->name('import');

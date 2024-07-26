@@ -17,6 +17,10 @@
           <div class="card-body">
             <a href="{{route('equipment.create')}}">
               <button class="btn btn-primary">Tambah</button></a>
+              <a href="{{route('import.form')}}">
+              <button class="btn btn-success">Import Excel</button></a>
+
+              </a>
             <select id="jenisFilter">
               <option value="">Filter Jenis Equipment</option>
               <option value="AC Split">AC Split</option>

@@ -1444,7 +1444,7 @@
           <span lang="id" style="
                                     font-size: 12pt;
                                     font-family: &quot;Times New Roman&quot;, serif;
-                                "><br><br><img width="" height="" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g1->gambar)) }}" />
+                                "><br><br><br><br><img width="100" height="" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g1->gambar)) }}" />
           </span>
         </p>
       </td>
@@ -1609,7 +1609,7 @@
           <span lang="id" style="
                                     font-size: 12pt;
                                     font-family: &quot;Times New Roman&quot;, serif;
-                                "><br><br><img width="" height="" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g2->gambar)) }}" />
+                                "><br><br><br><br><img width="100" height="" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g2->gambar)) }}" />
           </span>
         </p>
       </td>

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
 use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
@@ -166,11 +167,41 @@ class AirCooledWaterChillerController extends Controller
         }
         return redirect()->route('acwc.show', $history->id);
     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AirCooledWaterChiller  $AirCooledWaterChiller
-     * @return \Illuminate\Http\Response
-     */
+    public function print($id)
+    {
+        $history = History::find($id);
+        $equipment = Equipment::find($history->id_equipment);
+        $acwc = AirCooledWaterChiller::find($history->id_act);
+        $gambar = GambarAct::where('id_act', $id)->get();
+        $gambar2 = GambarAct2::where('id_act', $id)->get();
+
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.acwc', ['history' => $history, 'acwc' => $acwc, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
+    }
 }

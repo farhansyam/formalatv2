@@ -30,7 +30,7 @@
                                     <th class="text-center">Ac Split Wall</th>
                                     <th class="text-center">Ac Cassette</th>
                                     <th class="text-center">Ac Floor Standing</th>
-                                    <th class="text-center">Ac Split Standing</th>
+                                    <th class="text-center">Ac Split Duct</th>
                                     <th class="text-center"></th>
                                 </tr>
                             </thead>
@@ -53,7 +53,7 @@
                                         <input  type="checkbox" @if ($values[0]=="Ac Split Standing" ) checked @endif class="text-center" name="q31[]" value="Ac Split Standing" onclick="uncheckAllExcept(this)">
                                     </td>
 
-                                    <td class="text-center"><input  type="text" class="text-center" required name="q31[]" value="{{$values[1]}}"></td>
+                                    <td class="text-center"><input  type="text" class="text-center" required name="q31[]" value="{{$values[0]}}"></td>
                                 </tr>
                                 <script>
                                     document.getElementById("myForm").onsubmit = function() {
@@ -378,7 +378,30 @@
                                 </tbody>
 
                             </table>
+                            <table class="table table-bordered" id="GambarTable">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$acs->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$acs->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Running Hour</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+<td><input type="text" class="form-control" name="running_hour" value="{{$acs->running_hour}}" required></td>
+            <td><select name="status" id="" class="form-select">
+                    <option value="{{$acs->status}}">{{$acs->status}}</option>
 
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
                             <h5 class="text-center" style="background-color: black;color:white">Tambahkan Foto Equipment</h5>
                             <table class="table table-bordered" id="GambarTable">
                                 <thead>
@@ -394,8 +417,8 @@
                                     <!-- Initial row -->
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="file" class="form-control" name="gambar[]" required></td>
-                                        <td><input type="text" class="form-control" name="info[]" required></td>
+                                        <td><input type="file" class="form-control" name="gambar[]" ></td>
+                                        <td><input type="text" class="form-control" name="info[]" ></td>
                                         <td><select name="keterangangambar[]" id="" class="form-select">
                                                 <option value="Before">Before</option>
                                                 <option value="After">After</option>
@@ -460,8 +483,8 @@
                                     <!-- Initial row -->
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="file" class="form-control" name="gambar2[]" required></td>
-                                        <td><input type="text" class="form-control" name="info2[]" required></td>
+                                        <td><input type="file" class="form-control" name="gambar2[]" ></td>
+                                        <td><input type="text" class="form-control" name="info2[]" ></td>
                                         <td><select name="keterangangambar2[]" id="" class="form-select">
                                                 <option value="Before">Before</option>
                                                 <option value="After">After</option>

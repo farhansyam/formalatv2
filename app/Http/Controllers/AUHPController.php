@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
 use App\Models\AUHP;
 use App\Models\History;
 use App\Models\Equipment;
@@ -262,11 +263,41 @@ class AUHPController extends Controller
 
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AUHP  $AUHP
-     * @return \Illuminate\Http\Response
-     */
+    public function print($id)
+    {
+        $history = History::find($id);
+        $equipment = Equipment::find($history->id_equipment);
+        $ahup = AUHP::find($history->id_act);
+        $gambar = GambarAct::where('id_act', $id)->get();
+        $gambar2 = GambarAct2::where('id_act', $id)->get();
+
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.auhp', ['history' => $history, 'ahup' => $ahup, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'potrait');
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
+    }
 }

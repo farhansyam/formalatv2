@@ -29,7 +29,7 @@
                                     <th class="text-center">Ac Split Wall</th>
                                     <th class="text-center">Ac Cassette</th>
                                     <th class="text-center">Ac Floor Standing</th>
-                                    <th class="text-center">Ac Split Standing</th>
+                                    <th class="text-center">Ac Split Duct</th>
                                     <th class="text-center"></th>
                                 </tr>
                             </thead>
@@ -368,6 +368,73 @@
                                 </tbody>
 
                             </table>
+                                                <table class="table table-bordered" id="personelTeamTable">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="background-color: black;color:white">Sub Equipment</th>
+                                        <th class="text-center" style="background-color: black;color:white">Indoor Unit</th>
+                                        <th class="text-center" style="background-color: black;color:white"></th>
+                                        <th class="text-center" style="background-color: black;color:white"></th>
+                                        <th class="text-center" style="background-color: black;color:white">Outdoor Unit</th>
+                                        <th class="text-center" style="background-color: black;color:white"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="tg-0lax">Parameter</td>
+                                        <td class="tg-0lax">Temp (C)</td>
+                                        <td class="tg-0lax">Suction Pressure (Psi)</td>
+                                        <td class="tg-0lax">Discharge Pressure (Psi)</td>
+                                        <td class="tg-0lax">Amp.Compressor(A)</td>
+                                        <td class="tg-0lax">Voltage (V)</td>
+                                    </tr>
+                                </tbody>
+                                <tbody>
+                                    <tr>
+                                        <td class="text-center">Standar Condition</td>
+                                        @foreach(explode(',', $acs->q28) as $value)
+                                        <td><input type="text" class="form-control text-center" required name="q28[]" value="{{ $value }}"></td>
+                                        @endforeach
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">Before</td>
+                                        @foreach(explode(',', $acs->q29) as $value)
+                                        <td><input type="text" class="form-control text-center" required name="q29[]" value="{{ $value }}"></td>
+                                        @endforeach
+                                    </tr>
+                                    <tr>
+                                        <td class="text-center">After</td>
+                                        @foreach(explode(',', $acs->q30) as $value)
+                                        <td><input type="text" class="form-control text-center" required name="q30[]" value="{{ $value }}"></td>
+                                        @endforeach
+                                    </tr>
+                                </tbody>
+
+                            </table>
+                            <table class="table table-bordered" id="GambarTable">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea disabled name="temuan" id="" cols="60" rows="10">{{$acs->temuan}}</textarea></td>
+            <td><textarea disabled name="rekomendasi" id="" cols="60" rows="10">{{$acs->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Running Hour</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+<td><input type="text" class="form-control" name="running_hour" value="{{$acs->running_hour}}" disabled></td>
+            <td><select name="status" id="" class="form-select" disabled>
+                    <option value="{{$acs->status}}">{{$acs->status}}</option>
+
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
                             <h5 class="text-center" style="background-color: black;color:white">Foto Equipment</h5>
                             <table class="table table-bordered" id="personelTeamTable">
                                 <thead>
