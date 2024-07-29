@@ -901,7 +901,7 @@
 
                           @elseif($equipment->jenis == 3)
                           <div style="display: flex; align-items: center;">
-                            <a href=" {{ route('ac-split.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
+                            <a href=" {{ route('auhp.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                             <a href="{{ route('auhp.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                             <a href="{{ route('auhp.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 

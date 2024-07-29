@@ -146,6 +146,10 @@ class AUHPController extends Controller
             'q50' => implode(',', $request->input('q50')),
 
             'q51' => implode(',', $request->input('q51')),
+            'temuan' => $request->input('temuan'),
+            'running_hour' => $request->input('running_hour'),
+            'status' => $request->input('status'),
+            'rekomendasi' => $request->input('rekomendasi'),
         ];
     
         // Simpan data ke dalam model AUHP
@@ -202,7 +206,9 @@ class AUHPController extends Controller
     {
         $history = History::find($id);
         $auhp = AUHP::findOrFail($history->id_act); // Sesuaikan dengan model AUHP
-        return view('equipment.AUHP.show', compact('auhp','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        return view('equipment.AUHP.show', compact('auhp','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -215,7 +221,9 @@ class AUHPController extends Controller
         $history = History::find($id);
         $auhp = AUHP::findOrFail($history->id_act); // Sesuaikan dengan model AUHP
         $id = $history->id_equipment;
-        return view('equipment.AUHP.edit', compact('auhp','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        return view('equipment.AUHP.edit', compact('auhp','id','gambar','gambar2'));
     }
 
     function update(Request $request,$id){
@@ -227,6 +235,10 @@ class AUHPController extends Controller
             $qData['q' . $i] = implode(',', $request->input('q' . $i));
         }
         // Simpan data ke dalam model CoolingUnit
+        $qData['temuan'] = $request->input('temuan');
+        $qData['running_hour'] = $request->input('running_hour');
+        $qData['status'] = $request->input('status');
+        $qData['rekomendasi'] = $request->input('rekomendasi');
         $acs->update($qData); 
 
         // Simpan data
@@ -254,8 +266,8 @@ class AUHPController extends Controller
                     'id_act' => $acs->id,
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -267,12 +279,12 @@ class AUHPController extends Controller
     {
         $history = History::find($id);
         $equipment = Equipment::find($history->id_equipment);
-        $ahup = AUHP::find($history->id_act);
-        $gambar = GambarAct::where('id_act', $id)->get();
-        $gambar2 = GambarAct2::where('id_act', $id)->get();
+        $auhp = AUHP::find($history->id_act);
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement',$history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
 
         // Render view blade dengan gambar QR
-        $pdfContent = view('pdf.auhp', ['history' => $history, 'ahup' => $ahup, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+        $pdfContent = view('pdf.auhp', ['history' => $history, 'auhp' => $auhp, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
 
         // Buat objek DOMPDF
         $dompdf = new Dompdf();

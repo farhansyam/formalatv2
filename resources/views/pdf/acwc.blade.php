@@ -3846,5 +3846,6 @@
          </table>
          <p class=MsoNormal>&nbsp;</p>
       </div>
+      @include('pdf.tablegambar')
    </body>
 </html>

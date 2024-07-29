@@ -15,7 +15,7 @@
                         <h4 class="card-title mb-0 text-center">Task List Air Unit Handling Precision</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('auhp.update',$auhp->id) }}" method="POST">
+                        <form action="{{ route('auhp.update',$auhp->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
                             <table class="table table-bordered" id="personelTeamTable">
@@ -32,6 +32,7 @@
                                 <tbody>
 
                                     <input type="hidden" required name="id" value="{{ $id }}">
+                                    <input type="hidden" required name="id_equipment" value="{{ $id }}">
                                     <tr>
                                         <td>1</td>
                                         <td>Check/Replace Filters</td>
@@ -796,9 +797,35 @@
 
                                 </tbody>
                             </table>
+                               <table class="table table-bordered" id="GambarTable">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$auhp->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$auhp->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Running Hour</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+<td><input type="text" class="form-control" name="running_hour" value="{{$auhp->running_hour}}" required></td>
+            <td><select name="status" id="" class="form-select">
+                    <option value="{{$auhp->status}}">{{$auhp->status}}</option>
+
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+                            @include('formimage.formkosong')
 
                             <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                         </form>
+                        @include('formimage.edit')
                     </div>
                 </div>
             </div>

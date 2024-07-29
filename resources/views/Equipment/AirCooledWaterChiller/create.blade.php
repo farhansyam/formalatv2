@@ -15,7 +15,7 @@
                             <h5 class="text-center" style="background-color: black;color:white">Task List Air Cooled Water Chiller</h5>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('acwc.store') }}" method="POST">
+                            <form action="{{ route('acwc.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>
@@ -29,6 +29,7 @@
                                     <tbody>
 
                                         <input type="hidden"required  name="id" value="{{ $id }}">
+                                        <input type="hidden"required  name="id_equipment" value="{{ $id }}">
                                             <tr>
                                                 <td>1</td>
                                                 <td>Check the evaporator refrigerant pressure and the condenser refrigerant</td>
@@ -576,7 +577,7 @@
                                 </table>
                                     </tbody>
                                 </table>
-
+                                @include('formimage.image')
                                 <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                             </form>
                         </div>

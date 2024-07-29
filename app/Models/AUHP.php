@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class AUHP extends Model
 {
-    protected $fillable = [
+    protected $fillable = ['temuan','rekomendasi','status','running_hour',
        'id',
         'id_equipment',
         'q1',

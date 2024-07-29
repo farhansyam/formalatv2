@@ -560,6 +560,7 @@
                             </table>
                             </tbody>
                             </table>
+                            @include('formimage.show')
 
                         </form>
                     </div>

@@ -248,8 +248,8 @@ $qData['rekomendasi'] = $request->input('rekomendasi');
                     'id_act' => $acs->id,
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -272,9 +272,8 @@ $qData['rekomendasi'] = $request->input('rekomendasi');
         $history = History::find($id);
         $equipment = Equipment::find($history->id_equipment);
         $Acs = AcSplit::find($history->id_act);
-        $gambar = GambarAct::where('id_act', $id)->get();
-        $gambar2 = GambarAct2::where('id_act', $id)->get();
-
+        $gambar = GambarAct::where('id_act', $history->id_act)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
         // Render view blade dengan gambar QR
         $pdfContent = view('pdf.acs', ['history' => $history, 'Acs' =>$Acs, 'gambar' =>$gambar, 'gambar2' => $gambar2,'equipment' => $equipment])->render();
 

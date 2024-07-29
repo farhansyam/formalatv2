@@ -73,8 +73,8 @@ class AirCooledWaterChillerController extends Controller
                     'id_act' => $AirCooledWaterChiller->id,
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -103,7 +103,9 @@ class AirCooledWaterChillerController extends Controller
         $history = History::find($id);
         $acwc = AirCooledWaterChiller::find($history->id_act);
         $id = $history->id_equipment;
-        return view('equipment.AirCooledWaterChiller.show', compact('acwc','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        return view('equipment.AirCooledWaterChiller.show', compact('acwc','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -117,7 +119,9 @@ class AirCooledWaterChillerController extends Controller
         $acwc = AirCooledWaterChiller::find($history->id_act);
         $id = $history->id_equipment;
         $idh = $history->id;
-        return view('equipment.AirCooledWaterChiller.edit', compact('acwc','id','idh'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        return view('equipment.AirCooledWaterChiller.edit', compact('acwc','id','idh','gambar','gambar2'));
         
     }
 
@@ -172,8 +176,8 @@ class AirCooledWaterChillerController extends Controller
         $history = History::find($id);
         $equipment = Equipment::find($history->id_equipment);
         $acwc = AirCooledWaterChiller::find($history->id_act);
-        $gambar = GambarAct::where('id_act', $id)->get();
-        $gambar2 = GambarAct2::where('id_act', $id)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
 
         // Render view blade dengan gambar QR
         $pdfContent = view('pdf.acwc', ['history' => $history, 'acwc' => $acwc, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();

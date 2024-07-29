@@ -117,6 +117,7 @@ Route::get('cu/create/{id}', [CoolingUnitController::class, 'create2'])->name('c
 Route::resource('/cu', CoolingUnitController::class)->name('index','coolong-unit.index');
 Route::get('auhp/create/{id}', [AUHPController::class, 'create2'])->name('auhp.create2');        
 Route::resource('/auhp', AUHPController::class)->name('index','auhp.index');
+Route::get('auhp/print/{id}', [AUHPController::class, 'print'])->name('auhp.print')->middleware('auth');
 
 Route:: get('mch/create/{id}', [MiniChillerController::class, 'create2'])->name('mini-chiller.create2');
 

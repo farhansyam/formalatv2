@@ -4,9 +4,6 @@
 <!-- Header End -->
 <!-- --------------------------------------------------- -->
 <div class="container-fluid">
-    <!-- --------------------------------------------------- -->
-    <!--  Form Inputs Grid Start -->
-    <!-- --------------------------------------------------- -->
     <section>
         <div class="row">
             <div class="col-12">
@@ -15,9 +12,9 @@
                         <h4 class="card-title mb-0 text-center">Task List Air Unit Handling Precision</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('auhp.store') }}" method="POST">
+                        <form action="{{ route('auhp.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
-                            <table class="table table-bordered" id="personelTeamTable">
+                            <table class="table table-bordered" id="personelTeamTable" >
                                 <thead>
                                     <h5 class="text-center" style="background-color: black;color:white">A.Filter Section</h5>
 
@@ -31,6 +28,7 @@
                                 <tbody>
 
                                     <input type="hidden" required name="id" value="{{ $id }}">
+                                    <input type="hidden" required name="id_equipment" value="{{ $id }}">
                                     <tr>
                                         <td>1</td>
                                         <td>Check/Replace Filters</td>
@@ -960,7 +958,30 @@
 
                                 </tbody>
                             </table>
-
+                                            <table class="table table-bordered" id="GambarTable">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10"></textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Running Hour</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+<td><input type="text" class="form-control" name="running_hour" required></td>
+            <td><select name="status" id="" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+                                  @include('formimage.image')
+                            
                             <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                         </form>
                     </div>

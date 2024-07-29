@@ -651,7 +651,8 @@
                                             </script>
                                         </tbody>
                                     </table>
-
+                                  @include('formimage.image')
+                                    
                                 <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                             </form>
                         </div>

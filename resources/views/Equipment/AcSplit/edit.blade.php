@@ -493,7 +493,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-primary" id="addGambar">Add Gambar</button>
+                            <button type="button" class="btn btn-primary" id="addGambar2">Add Gambar</button>
                             <br>
                             <script src="{{asset('dist/libs/jquery/dist/jquery.min.js')}}"></script>
 
@@ -503,7 +503,7 @@
                                     var pekerjaanCounter = 1;
 
                                     // Add a new row for Nama Personel Team
-                                    $("#addGambar").click(function() {
+                                    $("#addGambar2").click(function() {
                                         personelCounter++;
                                         var newRow = `
         <tr>
