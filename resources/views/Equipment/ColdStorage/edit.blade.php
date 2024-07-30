@@ -17,6 +17,25 @@
                     <div class="card-body">
                         <form action="{{ route('cs.update', $coldStorage->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                            <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="">Customer</label>
+                  <input type="text" name="customer" class="form-control" id="" value="{{$equipment->customer}}" required="">
+                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$equipment->id}}" required="">
+                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$id}}" required="">
+
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="">Engineer List</label>
+                  <textarea class="form-control" name="enginer_list" id="" cols="10" rows="4">{{$coldStorage->enginer_list}}</textarea>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="">Tanggal PM</label>
+                  <div class="input-group">
+                    <input type="date" class="form-control" id="" aria-describedby="inputGroupPrepend2" required="" name="tanggal" value="{{$coldStorage->tanggal}}">
+                  </div>
+                </div>
+              </div>
                             <input type="hidden" value="{{$id}}" name="id_equipment">
                             @method('PUT') <!-- Tambahkan baris ini -->
                             <table class="table table-bordered" id="personelTeamTable">
@@ -703,6 +722,27 @@
                                     </tr>
                                 </tbody>
                             </table>
+                             <table class="table table-bordered" id="GambarTable">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$coldStorage->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$coldStorage->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select name="status" id="" class="form-select">
+                    <option value="{{$coldStorage->status}}">{{$coldStorage->status}}</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
                             <br><br>
                             <h5 class="text-center" style="background-color: black;color:white">Tambahkan Foto Equipment</h5>
                             <table class="table table-bordered" id="GambarTable">
@@ -719,8 +759,8 @@
                                     <!-- Initial row -->
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="file" class="form-control" name="gambar[]" required></td>
-                                        <td><input type="text" class="form-control" name="info[]" required></td>
+                                        <td><input type="file" class="form-control" name="gambar[]" ></td>
+                                        <td><input type="text" class="form-control" name="info[]" ></td>
                                         <td><select name="keterangangambar[]" id="" class="form-select">
                                                 <option value="Before">Before</option>
                                                 <option value="After">After</option>
@@ -785,8 +825,8 @@
                                     <!-- Initial row -->
                                     <tr>
                                         <td>1</td>
-                                        <td><input type="file" class="form-control" name="gambar2[]" required></td>
-                                        <td><input type="text" class="form-control" name="info2[]" required></td>
+                                        <td><input type="file" class="form-control" name="gambar2[]" ></td>
+                                        <td><input type="text" class="form-control" name="info2[]" ></td>
                                         <td><select name="keterangangambar2[]" id="" class="form-select">
                                                 <option value="Before">Before</option>
                                                 <option value="After">After</option>

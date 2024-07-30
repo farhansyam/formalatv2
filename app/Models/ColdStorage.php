@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ColdStorage extends Model
 {
-    protected $fillable = [
+    protected $fillable = ['enginer_list','tanggal','temuan','rekomendasi','status','running_hour',
        'id',
         'id_equipment',
         'q1',

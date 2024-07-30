@@ -11,6 +11,25 @@
             <div class="row">
                 <div class="col-12">
                     <div class="card">
+                        <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="">Customer</label>
+                  <input disabled type="text" name="customer" class="form-control" id="" value="{{$equipment->customer}}" required="">
+                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$equipment->id}}" required="">
+                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$id}}" required="">
+
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="">Engineer List</label>
+                  <textarea disabled class="form-control" name="engineer_list" id="" cols="10" rows="4">{{$coldStorage->enginer_list}}</textarea>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="">Tanggal PM</label>
+                  <div class="input-group">
+                    <input disabled type="text" class="form-control" id="" aria-describedby="inputGroupPrepend2" required="" name="tanggal" value={{$coldStorage->tanggal}}>
+                  </div>
+                </div>
+              </div>
                         <div class="border-bottom title-part-padding">
                             <h4 class="card-title mb-0 text-center">Task List Cold Storage</h4>
                         </div>
@@ -702,6 +721,27 @@
                                             </tr>
                                         </tbody>
                                 </table>
+                                <table class="table table-bordered" id="GambarTable">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea disabled name="temuan" id="" cols="60" rows="10">{{$coldStorage->temuan}}</textarea></td>
+            <td><textarea disabled name="rekomendasi" id="" cols="60" rows="10">{{$coldStorage->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select disabled name="status" id="" class="form-select">
+                    <option value="{{$coldStorage->status}}">{{$coldStorage->status}}</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
                                 <h5 class="text-center" style="background-color: black;color:white">Foto Equipment</h5>
                             <table class="table table-bordered" id="personelTeamTable">
                                 <thead>

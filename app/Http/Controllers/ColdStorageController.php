@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
 use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
 use App\Models\GambarAct2;
 use App\Models\ColdStorage;
 use Illuminate\Http\Request;
+use PhpParser\Node\Expr\BinaryOp\Equal;
 
 class ColdStorageController extends Controller
 {
@@ -20,8 +22,8 @@ class ColdStorageController extends Controller
 
      public function create2($id)
      {
-
-         return view('equipment.ColdStorage.create', compact('id'));
+        $equipment = Equipment::find($id);
+         return view('equipment.ColdStorage.create', compact('id','equipment'));
     
      }
 
@@ -47,7 +49,13 @@ class ColdStorageController extends Controller
         $qData = [];
         for ($i = 1; $i <= 64; $i++) {
             $qData['q' . $i] = implode(',', $request->input('q' . $i));
+
         }
+        $qData['tanggal'] = $request->input('tanggal');
+        $qData['enginer_list'] = $request->input('enginer_list');
+        $qData['temuan'] = $request->input('temuan');
+        $qData['rekomendasi'] = $request->input('rekomendasi');
+        $qData['status'] = $request->input('status');
         $coldStorage = ColdStorage::create($qData);
         if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
@@ -72,8 +80,8 @@ class ColdStorageController extends Controller
                     'id_act' => $coldStorage->id,
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -96,10 +104,11 @@ class ColdStorageController extends Controller
     public function show(ColdStorage $coldStorage,$id)
     {
         $history = History::find($id);
+        $equipment = Equipment::find($history->id_equipment);
         $coldStorage = ColdStorage::find($history->id_act);
-        $gambar = GambarAct::where('id_act', $history->id_act)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
-        return view('equipment.ColdStorage.show', compact('coldStorage','gambar','gambar2'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.ColdStorage.show', compact('coldStorage','gambar','gambar2','equipment','id'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -110,11 +119,12 @@ class ColdStorageController extends Controller
     public function edit(ColdStorage $coldStorage,$id)
     {
         $history = History::find($id);
-        $gambar = GambarAct::where('id_act', $history->id_act)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        $equipment = Equipment::find($history->id_equipment);
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $coldStorage = ColdStorage::find($history->id_act);
         $id = $history->id_equipment;
-        return view('equipment.ColdStorage.edit', compact('coldStorage','id','gambar','gambar2'));
+        return view('equipment.ColdStorage.edit', compact('coldStorage','id','gambar','gambar2','equipment'));
     }
 
     public function update(Request $request, $id)
@@ -126,9 +136,13 @@ class ColdStorageController extends Controller
         for ($i = 1; $i <= 64; $i++) {
             $qData['q' . $i] = implode(',', $request->input('q' . $i));
         }
-    
 
-    
+        $qData['temuan'] = $request->input('temuan');
+        $qData['rekomendasi'] = $request->input('rekomendasi');
+        $qData['status'] = $request->input('status');
+        $qData['tanggal'] = $request->input('tanggal');
+        $qData['enginer_list'] = $request->input('enginer_list');
+
    // Perbarui data ColdStorage dengan data yang baru
    $coldStorage->update($qData);
         if ($request->file('gambar')) {
@@ -154,8 +168,8 @@ class ColdStorageController extends Controller
                     'id_act' => $coldStorage->id,
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -170,4 +184,41 @@ class ColdStorageController extends Controller
      * @param  \App\Models\ColdStorage  $coldStorage
      * @return \Illuminate\Http\Response
      */
+
+    public function print($id)
+    {
+        $history = History::find($id);
+        $equipment = Equipment::find($history->id_equipment);
+        $cs = ColdStorage::find($history->id_act);
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.cs', ['history' => $history, 'cs' => $cs, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'landscape');
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
+    }
 }

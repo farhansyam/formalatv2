@@ -112,9 +112,12 @@ Route::get('ac-split/print/{id}', [AcSplitController::class, 'print'])->name('ac
 
 Route::get('cold-storage/create/{id}', [ColdStorageController::class, 'create2'])->name('cold-storage.create2');
 Route::resource('cs', ColdStorageController::class)->name('index', 'cs.index')->middleware('auth');
+Route::get('cs/print/{id}', [ColdStorageController::class, 'print'])->name('cs.print')->middleware('auth');
 
 Route::get('cu/create/{id}', [CoolingUnitController::class, 'create2'])->name('cooling-unit.create2');
 Route::resource('/cu', CoolingUnitController::class)->name('index','coolong-unit.index');
+Route::get('cu/print/{id}', [CoolingUnitController::class, 'print'])->name('cu.print')->middleware('auth');
+
 Route::get('auhp/create/{id}', [AUHPController::class, 'create2'])->name('auhp.create2');        
 Route::resource('/auhp', AUHPController::class)->name('index','auhp.index');
 Route::get('auhp/print/{id}', [AUHPController::class, 'print'])->name('auhp.print')->middleware('auth');
@@ -138,6 +141,8 @@ Route::resource('/pac', PACController::class)->names([
         'edit' => 'pac.edit', // Nama untuk rute index
         'show' => 'pac.show', // Nama untuk rute index
         ]); 
+Route:: get('pac/print/{id}', [PACController::class, 'print'])->name('pac.print')->middleware('auth');
+
 
 
 

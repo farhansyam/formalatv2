@@ -907,16 +907,19 @@
 
                             @elseif($equipment->jenis == 4)
                             <div style="display: flex; align-items: center;">
+                              <a href=" {{ route('pac.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                               <a href="{{ route('pac.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                               <a href="{{ route('pac.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                               @elseif($equipment->jenis == 5)
                               <div style="display: flex; align-items: center;">
+                              <a href=" {{ route('cs.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                 <a href="{{ route('cs.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">detail</button></a>
                                 <a href="{{ route('cs.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                 @elseif($equipment->jenis == 6)
                                 <div style="display: flex; align-items: center;">
+                              <a href=" {{ route('cu.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                   <a href="{{ route('cu.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                   <a href="{{ route('cu.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 

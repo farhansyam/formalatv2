@@ -16,6 +16,25 @@
                     </div>
                     <div class="card-body">
                         <form action="{{ route('cs.store') }}" method="POST" enctype="multipart/form-data">
+                               <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="">Customer</label>
+                  <input type="text" name="customer" class="form-control" id="" value="{{$equipment->customer}}" required="">
+                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$equipment->id}}" required="">
+                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$id}}" required="">
+
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="">Engineer List</label>
+                  <textarea class="form-control" name="engineer_list" id="" cols="10" rows="4"></textarea>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="">Tanggal PM</label>
+                  <div class="input-group">
+                    <input type="date" class="form-control" id="" aria-describedby="inputGroupPrepend2" required="" name="tanggal">
+                  </div>
+                </div>
+              </div>
                             <input type="hidden" name="id_equipment" value="{{$id}}">
                             @csrf
                             <table class="table table-bordered" id="personelTeamTable">
@@ -508,8 +527,14 @@
                                         <td>Oil Cleanliness</td>
                                         <td></td>
                                         <td>Clean</td>
-                                        <td><input type="text" class="form-control text-center" required name="q50[]"></td>
-                                        <td><input type="text" class="form-control text-center" required name="q50[]"></td>
+                                        <td><select name="q50[]" id="" class="form-select">
+                    <option value="Clean">Clean</option>
+                    <option value="Not Clean">Not Clean</option>
+                </select></td>
+                                        <td><select name="q50[]" id="" class="form-select">
+                    <option value="Clean">Clean</option>
+                    <option value="Not Clean">Not Clean</option>
+                </select></td>
                                     </tr>
 
                                     <tr>
@@ -517,8 +542,14 @@
                                         <td>Ref Sight Glass</td>
                                         <td></td>
                                         <td>Clean</td>
-                                        <td><input type="text" class="form-control text-center" required name="q51[]"></td>
-                                        <td><input type="text" class="form-control text-center" required name="q51[]"></td>
+                                        <td><select name="q51[]" id="" class="form-select">
+                    <option value="Clean">Clean</option>
+                    <option value="Not Clean">Not Clean</option>
+                </select></td>
+                                        <td><select name="q51[]" id="" class="form-select">
+                    <option value="Clean">Clean</option>
+                    <option value="Not Clean">Not Clean</option>
+                </select></td>
                                     </tr>
 
                                     <tr>
@@ -526,8 +557,14 @@
                                         <td>Oil Pressure</td>
                                         <td></td>
                                         <td>Clean</td>
-                                        <td><input type="text" class="form-control text-center" required name="q52[]"></td>
-                                        <td><input type="text" class="form-control text-center" required name="q52[]"></td>
+                                        <td><select name="q52[]" id="" class="form-select">
+                    <option value="Clean">Clean</option>
+                    <option value="Not Clean">Not Clean</option>
+                </select></td>
+                                        <td><select name="q52[]" id="" class="form-select">
+                    <option value="Clean">Clean</option>
+                    <option value="Not Clean">Not Clean</option>
+                </select></td>
                                     </tr>
 
                                     <tr>
@@ -535,8 +572,14 @@
                                         <td>Crank Oil Heater</td>
                                         <td></td>
                                         <td>Ok / Not Ok</td>
-                                        <td><input type="text" class="form-control text-center" required name="q53[]"></td>
-                                        <td><input type="text" class="form-control text-center" required name="q53[]"></td>
+                                        <td><select name="q53[]" id="" class="form-select">
+                    <option value="Ok">Ok</option>
+                    <option value="Not Ok">Not Ok</option>
+                </select></td>
+                                        <td><select name="q53[]" id="" class="form-select">
+                    <option value="Ok">Ok</option>
+                    <option value="Not Ok">Not Ok</option>
+                </select></td>
                                     </tr>
 
                                     <tr>
@@ -637,6 +680,26 @@
                                     </tr>
                                 </tbody>
                             </table>
+                              <table class="table table-bordered" id="GambarTable">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10"></textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select name="status" id="" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
                             <br><br>
                             <h5 class="text-center" style="background-color: black;color:white">Tambahkan Foto Equipment</h5>
                             <table class="table table-bordered" id="GambarTable">
