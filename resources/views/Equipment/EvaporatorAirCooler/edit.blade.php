@@ -210,7 +210,7 @@
                                                 <td>Cleaning Fan Motor</td>
                                                 <td><input type="text" class="form-control text-center"required value="{{ isset($q16Array[0]) ? $q16Array[0] : '' }}" name="q16[]"></td>
                                                 <td><input type="text" class="form-control text-center"required value="{{ isset($q16Array[1]) ? $q16Array[1] : '' }}" name="q16[]" ></td>
-                                                <td class="text-center"><input type="text" class="form-control text-center"required value="{{ isset($q16Array[2]) ? $q16Array[2] : '' }}" name="q15[]"></td>
+                                                <td class="text-center"><input type="text" class="form-control text-center"required value="{{ isset($q16Array[2]) ? $q16Array[2] : '' }}" name="q16[]"></td>
                                             </tr>
 
                                             <tr>
@@ -771,10 +771,12 @@
             
 </table>
 @include('formimage.formkosong')
-@include('formimage.edit')
 
                                 <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                             </form>
+
+@include('formimage.edit')
+
                         </div>
                     </div>
                 </div>

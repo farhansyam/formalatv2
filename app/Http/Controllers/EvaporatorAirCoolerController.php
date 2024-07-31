@@ -315,16 +315,21 @@ class EvaporatorAirCoolerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
+    public function destroy($id)
+    {
+        //
+    }
+
     public function print($id)
     {
         $history = History::find($id);
         $equipment = Equipment::find($history->id_equipment);
-        $cu = EvaporatorAirCooler::find($history->id_act);
+        $evap = EvaporatorAirCooler::find($history->id_act);
         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
 
         // Render view blade dengan gambar QR
-        $pdfContent = view('pdf.evap', ['history' => $history, 'cu' => $cu, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+        $pdfContent = view('pdf.evap', ['history' => $history, 'evap' => $evap, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
 
         // Buat objek DOMPDF
         $dompdf = new Dompdf();

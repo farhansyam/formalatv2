@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
 use App\Models\AHU;
 use App\Models\History;
 use App\Models\Equipment;
@@ -135,6 +136,17 @@ class AHUController extends Controller
             'q45' => implode(',', $request->input('q45')),
 
             'q46' => implode(',', $request->input('q46')),
+            'q47' => implode(',', $request->input('q47')),
+            'q48' => implode(',', $request->input('q48')),
+            'q49' => implode(',', $request->input('q49')),
+            'running_hour' => $request->input('running_hour'),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
         ];
     
         // Simpan data ke dalam model AHU
@@ -146,7 +158,7 @@ class AHUController extends Controller
 
                 GambarAct::create([
                     'id_act' => $AHU->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -160,7 +172,7 @@ class AHUController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $AHU->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index],
                     'info' => $request->info2[$index],
@@ -191,8 +203,10 @@ class AHUController extends Controller
     {
         $history = History::find($id);
         $ahu = AHU::findOrFail($history->id_act); // Sesuaikan dengan model AHU
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $id = $history->id_equipment;
-        return view('equipment.AHU.show', compact('ahu','id'));
+        return view('equipment.AHU.show', compact('ahu','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -205,7 +219,9 @@ class AHUController extends Controller
         $history = History::find($id);
         $ahu = AHU::findOrFail($history->id_act); // Sesuaikan dengan model AHU
         $id = $history->id_equipment;
-        return view('equipment.AHU.edit', compact('ahu','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.AHU.edit', compact('ahu','id','gambar','gambar2'));
         
     }
 
@@ -303,6 +319,17 @@ class AHUController extends Controller
             'q45' => implode(',', $request->input('q45')),
 
             'q46' => implode(',', $request->input('q46')),
+            'q47' => implode(',', $request->input('q47')),
+            'q48' => implode(',', $request->input('q48')),
+            'q49' => implode(',', $request->input('q49')),
+            'running_hour' => $request->input('running_hour'),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
         ]; 
             $ahu = AHU::find($id);
 
@@ -334,19 +361,49 @@ class AHUController extends Controller
                         'id_act' => $ahu->id,
                         'id_equipement' => $request->id_equipment,
                         'gambar' => $gambarname2,
-                        'keterangan' => $request->keterangangambar2[$index],
-                        'info' => $request->info2[$index],
+                        'keterangan' => $request->keterangangambar2[$index2],
+                        'info' => $request->info2[$index2],
                     ]);
                 }
             }
             return redirect()->route('equipment.show', $request->id);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\AHU  $AHU
-     * @return \Illuminate\Http\Response
-     */
+    public function print($id)
+    {
+        $history = History::find($id);
+        $equipment = Equipment::find($history->id_equipment);
+        $ahu = AHU::find($history->id_act);
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.ahu', ['history' => $history, 'ahu' => $ahu, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'potrait');
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
+    }
 }

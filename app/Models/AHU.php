@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class AHU extends Model
 {
     protected $fillable = [
+        'tanggal', 'start', 'end', 'enginer_list', 'temuan', 'rekomendasi', 'status','running_hour','q47','q48','q49',
        'id',
         'id_equipment',
         'q1',

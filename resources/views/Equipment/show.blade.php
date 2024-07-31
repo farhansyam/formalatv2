@@ -936,6 +936,7 @@
 
                                       @elseif($equipment->jenis == 9)
                                       <div style="display: flex; align-items: center;">
+                                      <a href=" {{ route('ahu.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                         <a href="{{ route('ahu.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                         <a href="{{ route('ahu.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 

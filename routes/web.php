@@ -167,7 +167,8 @@ Route::get('ahu/create/{id}', [AHUController::class, 'create2'])->name('ahu.crea
 Route::resource('/ahu', AHUController::class)->names([
         'edit' => 'ahu.edit', // Nama untuk rute index
         'show' => 'ahu.show', // Nama untuk rute index
-        ]); 
+        ]);
+Route::get('ahu/print/{id}', [AHUController::class, 'print'])->name('ahu.print')->middleware('auth');
 
 Route::get('cooling-tower/create/{id}', [CoolingTowerController::class, 'create2'])->name('cooling-tower.create2');       
 Route::resource('/cooling-tower', CoolingTowerController::class)->names([

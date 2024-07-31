@@ -171,7 +171,7 @@
                                                 <td>Cleaning Fan Motor</td>
                                                 <td><input type="text" class="form-control text-center"required  name="q16[]"></td>
                                                 <td><input type="text" class="form-control text-center"required  name="q16[]" value=""></td>
-                                                <td class="text-center"><input type="text" class="form-control text-center"required  name="q15[]"></td>
+                                                <td class="text-center"><input type="text" class="form-control text-center"required  name="q16[]"></td>
                                             </tr>
 
                                             <tr>
