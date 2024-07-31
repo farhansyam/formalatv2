@@ -15,7 +15,25 @@
                             <h4 class="card-title mb-0 text-center">Task List Cooling Unit & AC Panel</h4>
                         </div>
                         <div class="card-body">
-                        
+                         <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control" value="{{$cooling_unit->tanggal}}"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$cooling_unit->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required value="{{$cooling_unit->start}}"></td>
+            <td><input type="time" name="end" class="form-control" id="" value="{{$cooling_unit->end}}"></td>
+        </tr>
+            
+</table>
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>
                                         <tr>
@@ -507,9 +525,30 @@
                                         </tr>
                                     </tbody>
                                 </table>
-
-                                <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
-                     
+                                <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$cooling_unit->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$cooling_unit->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select name="status" id="" class="form-select">
+                
+                    <option value="{{$cooling_unit->temuan}}">{{$cooling_unit->temuan}}</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.show')
+ 
                         </div>
                     </div>
                 </div>

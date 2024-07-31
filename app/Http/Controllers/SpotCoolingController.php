@@ -139,6 +139,7 @@ class SpotCoolingController extends Controller
             'q49' => implode(',', $request->input('q49')),
             'q50' => implode(',', $request->input('q50')),
             'q51' => implode(',', $request->input('q51')),
+            
         ];
     
         // Simpan data ke dalam model SpotCooling

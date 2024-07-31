@@ -17,6 +17,7 @@
           <div class="card-body">
             <form action="{{ route('troubleshoot.store') }}" method="POST" enctype="multipart/form-data">
               @csrf
+              
               <div class="row">
                 <div class="col-md-4 mb-3">
                   <label for="">Customer</label>

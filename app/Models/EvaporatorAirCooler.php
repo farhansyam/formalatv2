@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class EvaporatorAirCooler extends Model
 {
-    protected $fillable = [
+    protected $fillable = ['tanggal','start','end','enginer_list','temuan','rekomendasi','status',
        'id',
         'id_equipment',
         'q1',

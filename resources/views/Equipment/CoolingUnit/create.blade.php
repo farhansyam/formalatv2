@@ -15,8 +15,27 @@
                             <h4 class="card-title mb-0 text-center">Task List Cooling Unit & AC Panel</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('cu.store') }}" method="POST">
+                            <form action="{{ route('cu.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                 <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required></td>
+            <td><input type="time" name="end" class="form-control" id=""></td>
+        </tr>
+            
+</table>
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>
                                         <tr>
@@ -162,7 +181,7 @@
                                                 <td>Cek Amper Fan</td>
                                                 <td><input type="text" class="form-control text-center"required  name="q16[]"></td>
                                                 <td><input type="text" class="form-control text-center"required  name="q16[]" value=""></td>
-                                                <td class="text-center"><input type="text" class="form-control text-center"required  name="q15[]"></td>
+                                                <td class="text-center"><input type="text" class="form-control text-center"required  name="q16[]"></td>
                                             </tr>
 
                                             <tr>
@@ -228,9 +247,9 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td><input type="checkbox" class= "text-center" required  name="q22[]" value="Ac Panel"></td>
-                                            <td><input type="checkbox" class= "text-center" required  name="q22[]" value="Cooling Unit"></td>
-                                            <td><input type="checkbox" class= "text-center"required  name="q22[]" value="Cooling Granitur"></td>
+                                            <td><input type="radio" class= "text-center" required  name="q22[]" value="Ac Panel"></td>
+                                            <td><input type="radio" class= "text-center" required  name="q22[]" value="Cooling Unit"></td>
+                                            <td><input type="radio" class= "text-center"required  name="q22[]" value="Cooling Granitur"></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -474,7 +493,27 @@
                                         </tr>
                                     </tbody>
                                 </table>
-
+ <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10"></textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select name="status" id="" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.formkosong')
                                 <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                             </form>
                         </div>

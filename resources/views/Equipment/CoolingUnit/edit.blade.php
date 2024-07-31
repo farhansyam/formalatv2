@@ -19,6 +19,25 @@
                                 @csrf
                                 @method('PUT')
                                 <input type="hidden" value="{{$id}}" name="id_equipment">
+                                <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control" value="{{$cooling_unit->tanggal}}"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$cooling_unit->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required value="{{$cooling_unit->start}}"></td>
+            <td><input type="time" name="end" class="form-control" id="" value="{{$cooling_unit->end}}"></td>
+        </tr>
+            
+</table>
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>
                                         <tr>
@@ -197,7 +216,7 @@
                                                 <td>Cek Amper Fan</td>
                                                 <td><input type="text" class="form-control text-center"required value="{{ isset($q16Array[0]) ? $q16Array[0] : '' }}"  name="q16[]"></td>
                                                 <td><input type="text" class="form-control text-center"required value="{{ isset($q16Array[1]) ? $q16Array[1] : '' }}"  name="q16[]" value=""></td>
-                                                <td class="text-center"><input type="text" class="form-control text-center"required value="{{ isset($q16Array[2]) ? $q16Array[2] : '' }}"  name="q15[]"></td>
+                                                <td class="text-center"><input type="text" class="form-control text-center"required value="{{ isset($q16Array[2]) ? $q16Array[2] : '' }}"  name="q16[]"></td>
                                             </tr>
 
                                             <tr>
@@ -509,7 +528,32 @@
                                         </tr>
                                     </tbody>
                                 </table>
+                          <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$cooling_unit->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$cooling_unit->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select name="status" id="" class="form-select">
+                
+                    <option value="{{$cooling_unit->temuan}}">{{$cooling_unit->temuan}}</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
 
+@include('formimage.formkosong')
+@include('formimage.edit')
+ 
                                 <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                             </form>
                         </div>

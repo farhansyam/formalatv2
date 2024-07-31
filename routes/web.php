@@ -131,6 +131,8 @@ Route::resource('/evaporator-aircooler', EvaporatorAirCoolerController::class)->
         'edit' => 'evaporator-aircooler.edit', // Nama untuk rute index
         'show' => 'evaporator-aircooler.show', // Nama untuk rute index
 ]);
+Route::get('evaporator-aircooler/print/{id}', [EvaporatorAirCoolerController::class, 'print'])->name('evaporator-aircooler.print')->middleware('auth');
+
 Route::get('acwc/create/{id}', [AirCooledWaterChillerController::class, 'create2'])->name('acwc.create2');              
 Route::resource('acwc', AirCooledWaterChillerController::class)->name('index', 'acwc');
 Route::get('acwc/print/{id}', [AirCooledWaterChillerController::class, 'print'])->name('acwc.print')->middleware('auth');

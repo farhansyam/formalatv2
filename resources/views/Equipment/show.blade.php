@@ -930,6 +930,7 @@
 
                                     @elseif($equipment->jenis == 8)
                                     <div style="display: flex; align-items: center;">
+                                     <a href=" {{ route('evaporator-aircooler.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                       <a href="{{ route('evaporator-aircooler.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                       <a href="{{ route('evaporator-aircooler.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 

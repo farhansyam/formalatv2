@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
 use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
@@ -106,6 +107,13 @@ class EvaporatorAirCoolerController extends Controller
             'q32' => implode(',', $request->input('q32')),
 
             'q33' => implode(',', $request->input('q33')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
         ];
     
         // Simpan data ke dalam model EvaporatorAirCooler
@@ -117,7 +125,7 @@ class EvaporatorAirCoolerController extends Controller
 
                 GambarAct::create([
                     'id_act' => $EvaporatorAirCooler->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -131,7 +139,7 @@ class EvaporatorAirCoolerController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $EvaporatorAirCooler->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index],
                     'info' => $request->info2[$index],
@@ -161,9 +169,12 @@ class EvaporatorAirCoolerController extends Controller
     public function show(EvaporatorAirCooler $EvaporatorAirCooler,$id)
     {
         $history = History::find($id);
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+
         $EvaporatorAirCooler = EvaporatorAirCooler::find($history->id_act);
 
-        return view('equipment.EvaporatorAirCooler.show', compact('EvaporatorAirCooler'));
+        return view('equipment.EvaporatorAirCooler.show', compact('EvaporatorAirCooler','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -175,8 +186,11 @@ class EvaporatorAirCoolerController extends Controller
     {
         $history = History::find($id);
         $EvaporatorAirCooler = EvaporatorAirCooler::find($history->id_act);
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+
         $id = $history->id_equipment;
-        return view('equipment.EvaporatorAirCooler.edit', compact('EvaporatorAirCooler','id'));
+        return view('equipment.EvaporatorAirCooler.edit', compact('EvaporatorAirCooler','id','gambar','gambar2'));
     }
     public function update(Request $request, $id)
     {
@@ -249,6 +263,13 @@ class EvaporatorAirCoolerController extends Controller
             'q32' => implode(',', $request->input('q32')),
 
             'q33' => implode(',', $request->input('q33')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
         ];
     
 
@@ -262,7 +283,7 @@ class EvaporatorAirCoolerController extends Controller
 
                 GambarAct::create([
                     'id_act' => $EvaporatorAirCooler->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -276,10 +297,10 @@ class EvaporatorAirCoolerController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $EvaporatorAirCooler->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -293,4 +314,43 @@ class EvaporatorAirCoolerController extends Controller
      * @param  \App\Models\EvaporatorAirCooler  $EvaporatorAirCooler
      * @return \Illuminate\Http\Response
      */
+
+    public function print($id)
+    {
+        $history = History::find($id);
+        $equipment = Equipment::find($history->id_equipment);
+        $cu = EvaporatorAirCooler::find($history->id_act);
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.evap', ['history' => $history, 'cu' => $cu, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->set_option('isHtml5ParserEnabled', true);
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
+    }
 }

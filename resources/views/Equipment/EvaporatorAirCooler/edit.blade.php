@@ -17,6 +17,25 @@
                         <div class="card-body">
                             <form action="{{ route('evaporator-aircooler.update',$EvaporatorAirCooler->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
+                                            <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input  type="date" name="tanggal" required class="form-control" value="{{$EvaporatorAirCooler->tanggal}}"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$EvaporatorAirCooler->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" value="{{$EvaporatorAirCooler->start}}" required></td>
+            <td><input  type="time" name="end" class="form-control" value="{{$EvaporatorAirCooler->end}}" id=""></td>
+        </tr>
+            
+</table>
                                 <input type="hidden" name="id_equipment" value="{{$id}}">
                                 @method('PUT') <!-- Tambahkan baris ini -->
                                 <table class="table table-bordered" id="personelTeamTable">
@@ -731,6 +750,29 @@
                                                         
                                     </tbody>
                                 </table>
+                                <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$EvaporatorAirCooler->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$EvaporatorAirCooler->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select name="status" id="" class="form-select">
+                    <option value="{{$EvaporatorAirCooler->status}}">{{$EvaporatorAirCooler->status}}</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.formkosong')
+@include('formimage.edit')
+
                                 <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                             </form>
                         </div>

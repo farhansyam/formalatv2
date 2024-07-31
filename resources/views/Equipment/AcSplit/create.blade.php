@@ -463,7 +463,7 @@
                                 </tbody>
 
                             </table>
-                            <table class="table table-bordered" id="GambarTable">
+                            <table class="table table-bordered" id="">
         <tr>
             <th>Temuan</th>
             <th>Rekomendasi</th>
