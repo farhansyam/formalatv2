@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Humidifier extends Model
 {
-    protected $fillable = [
+    protected $fillable = ['tanggal','start','end','enginer_list','temuan','rekomendasi','status','running_hour',
        'id',
         'id_equipment',
         'q1',

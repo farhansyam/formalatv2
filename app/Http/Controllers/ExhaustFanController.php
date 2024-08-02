@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Dompdf\Dompdf;
 use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
 use App\Models\ExhaustFan;
+use App\Models\GambarAct2;
 use Illuminate\Http\Request;
 
 class ExhaustFanController extends Controller
@@ -307,4 +309,42 @@ class ExhaustFanController extends Controller
      * @param  \App\Models\ExhaustFan  $ExhaustFan
      * @return \Illuminate\Http\Response
      */
+
+    public function print($id)
+    {
+        $history = History::find($id);
+        $equipment = Equipment::find($history->id_equipment);
+        $ct = ExhaustFan::find($history->id_act);
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.exa', ['history' => $history, 'ct' => $ct, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'potrait');
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
+    }
 }

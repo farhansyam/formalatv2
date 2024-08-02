@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Dehumidifier extends Model
 {
     protected $fillable = [
+        'tanggal', 'start', 'end', 'enginer_list', 'temuan', 'rekomendasi', 'status', 'running_hour',
        'id',
         'id_equipment',
         'q1',

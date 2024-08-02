@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class CoolingTower extends Model
 {
-    protected $fillable = [
+    protected $fillable = ['tanggal','enginer_list','start','end','temuan','rekomendasi','running_hour','status','intensive',
        'id',
         'id_equipment',
         'q1',

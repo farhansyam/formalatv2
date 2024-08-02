@@ -174,7 +174,8 @@ Route::get('cooling-tower/create/{id}', [CoolingTowerController::class, 'create2
 Route::resource('/cooling-tower', CoolingTowerController::class)->names([
         'edit' => 'cooling-tower.edit', // Nama untuk rute index
         'show' => 'cooling-tower.show', // Nama untuk rute index
-        ]); 
+        ]);
+Route::get('cooling-tower/print/{id}', [CoolingTowerController::class, 'print'])->name('cooling-tower.print')->middleware('auth');
 
 
 Route::get('humidifier/create/{id}', [HumidifierController::class, 'create2'])->name('humidifier.create2');        
@@ -182,43 +183,57 @@ Route::resource('/humidifierr', HumidifierController::class)->names([
         'edit' => 'humidifier.edit', // Nama untuk rute index
         'show' => 'humidifier.show', // Nama untuk rute index
         ]); 
+Route:: get('humidifier/print/{id}', [HumidifierController::class, 'print'])->name('humidifier.print')->middleware('auth');
+
     
 
 Route::get('dehumidifier/create/{id}', [DehumidifierController::class, 'create2'])->name('dehumidifier.create2');        
-Route::resource('/dehumidifierr', DehumidifierController::class)->name('index','dehumidifer.index'); 
+Route::resource('/dehumidifierr', DehumidifierController::class)->name('index','dehumidifer.index');
+Route::get('dehumidifier/print/{id}', [DeHumidifierController::class, 'print'])->name('dehumidifier.print')->middleware('auth');
     
 Route::get('fcuu/create/{id}', [FCUController::class, 'create2'])->name('fcuu.create2');       
-Route::resource('/fcuu', FCUController::class)->name('index','fcuu.index'); 
+Route::resource('/fcuu', FCUController::class)->name('index','fcuu.index');
+Route::get('fcuu/print/{id}', [FCUController::class, 'print'])->name('fcuu.print')->middleware('auth');
     
 Route::get('exhaustfan/create/{id}', [ExhaustFanController::class, 'create2'])->name('exhaustfan.create2');       
 Route::resource('/exhaustfan', ExhaustFanController::class)->names([
         'edit' => 'exhaust-fan.edit', // Nama untuk rute index
         'show' => 'exhaust-fan.show', // Nama untuk rute index
         ]); 
+Route:: get('exhaust-fan/print/{id}', [ExhaustFanController::class, 'print'])->name('exhaust-fan.print')->middleware('auth');
+
     
 Route::get('pompaa/create/{id}', [PompaController::class, 'create2'])->name('pompaa.create2');       
 Route::resource('/pompaa', PompaController::class)->names([
         'edit' => 'pompaa.edit', // Nama untuk rute index
         'show' => 'pompaa.show', // Nama untuk rute index
         ]); 
+Route:: get('pompaan/print/{id}', [PompaController::class, 'print'])->name('pompaa.print')->middleware('auth');
+
     
 Route::get('spoot-cooling/create/{id}', [SpotCoolingController::class, 'create2'])->name('spoot-cooling.create2');       
 Route::resource('/spoot-cooling', SpotCoolingController::class)->names([
         'edit' => 'spoot-cooling.edit', // Nama untuk rute index
         'show' => 'spoot-cooling.show', // Nama untuk rute index
         ]); 
+Route:: get('spoot-cooling/print/{id}', [SpotCoolingController::class, 'print'])->name('spoot-cooling.print')->middleware('auth');
+
     
 Route::get('water-mistt/create/{id}', [WaterMistController::class, 'create'])->name('water-mistt.create2');       
 Route::resource('/water-mistt', WaterMistController::class)->names([
         'edit' => 'water-mist.edit', // Nama untuk rute index
         'show' => 'water-mist.show', // Nama untuk rute index
         ]); 
+Route:: get('water-mist/print/{id}', [WaterMistController::class, 'print'])->name('water-mist.print')->middleware('auth');
+
 
 Route::get('chiller-centrifugall/create/{id}', [ChillerCentrifugalController::class, 'create'])->name('chiller-centrifugall.create2');       
 Route::resource('/chiller-centrifugall', ChillerCentrifugalController::class)->names([
         'edit' => 'chiller-centrifugall.edit', // Nama untuk rute index
         'show' => 'chiller-centrifugall.show', // Nama untuk rute index
         ]);
+Route:: get('chiller-centrifugall/print/{id}', [ChillerCentrifugal::class, 'print'])->name('chiller-centrifugall.print')->middleware('auth');
+
 
 
 Route::get('import', [ImportController::class, 'showForm'])->name('import.form');

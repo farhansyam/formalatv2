@@ -17,6 +17,25 @@
                     <form action="{{ route('dehumidifierr.update',$dehumidifier->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                         <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control" value="{{$dehumidifier->tanggal}}"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$dehumidifier->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required value="{{$dehumidifier->start}}"></td>
+            <td><input type="time" name="end" class="form-control" id="" value="{{$dehumidifier->end}}"></td>
+        </tr>
+            
+</table>
                         <table class="table table-bordered" id="personelTeamTable">
                             <thead>
                                 <h5 class="text-center" style="background-color: black;color:white">Spesifikasi Unit</h5>
@@ -442,9 +461,35 @@
                         </tbody>
                         </table>
 
+<table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea   name="temuan" id="" cols="60" rows="10">{{$dehumidifier->temuan}}</textarea></td>
+            <td><textarea   name="rekomendasi" id="" cols="60" rows="10">{{$dehumidifier->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Running Hour</th>
+            <th>Job Complete</th>
+            
+        </tr>
+        <tr>
+            <td><input type="number" name="running_hour" required class="form-control" value="{{$dehumidifier->running_hour}}"></td>
+
+            <td><select  name="status" id="" class="form-select">
+                    <option value="{{$dehumidifier->status}}">{{$dehumidifier->status}}</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.formkosong')
                         <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                     </form>
-                </div>
+@include('formimage.edit')                </div>
             </div>
         </div>
 </div>

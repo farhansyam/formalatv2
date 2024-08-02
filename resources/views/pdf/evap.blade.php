@@ -3254,11 +3254,13 @@ echo $firstValue;
                 </td>
                 <td style="width:28.65pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+                            style="font-family:'Times New Roman'; -aw-import:ignore">
+@php
 $values = explode(',', $evap->q23);
 $firstValue = $values[0];
 echo $firstValue;
-@endphp</span></p>
+@endphp
+</span></p>
                 </td>
                 <td style="width:29.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span

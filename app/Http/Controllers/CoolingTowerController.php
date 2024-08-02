@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use id;
+use Dompdf\Dompdf;
 use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
@@ -146,6 +147,16 @@ class CoolingTowerController extends Controller
             'q51' => implode(',', $request->input('q51')),
             
             'q52' => implode(',', $request->input('q52')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'running_hour' => $request->input('running_hour'),
+            'intensive' => $request->input('intensive'),
+
 
         ];
     
@@ -299,6 +310,15 @@ class CoolingTowerController extends Controller
             'q51' => implode(',', $request->input('q51')),
             
             'q52' => implode(',', $request->input('q52')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'running_hour' => $request->input('running_hour'),
+            'intensive' => $request->input('intensive'),
 
         ];
         $coolingtower->update($qData);
@@ -309,7 +329,7 @@ class CoolingTowerController extends Controller
 
                 GambarAct::create([
                     'id_act' => $coolingtower->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -323,7 +343,7 @@ class CoolingTowerController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $coolingtower->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index],
                     'info' => $request->info2[$index],
@@ -348,7 +368,9 @@ class CoolingTowerController extends Controller
     {
         $history = History::find($id);
         $coolingtower = CoolingTower::findOrFail($history->id_act); // Sesuaikan dengan model CoolingTower
-        return view('equipment.CoolingTower.show', compact('coolingtower','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.CoolingTower.show', compact('coolingtower','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -361,7 +383,9 @@ class CoolingTowerController extends Controller
         $history = History::find($id);
         $coolingtower = CoolingTower::findOrFail($history->id_act); // Sesuaikan dengan model CoolingTower
         $id = $history->id_equipment;
-        return view('equipment.CoolingTower.edit', compact('coolingtower','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.CoolingTower.edit', compact('coolingtower','id','gambar','gambar2'));
         
     }
 
@@ -374,4 +398,42 @@ class CoolingTowerController extends Controller
      * @param  \App\Models\CoolingTower  $CoolingTower
      * @return \Illuminate\Http\Response
      */
+
+    public function print($id)
+    {
+        $history = History::find($id);
+        $equipment = Equipment::find($history->id_equipment);
+        $ct = CoolingTower::find($history->id_act);
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+
+        // Render view blade dengan gambar QR
+        $pdfContent = view('pdf.ct', ['history' => $history, 'ct' => $ct, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+
+        // Buat objek DOMPDF
+        $dompdf = new Dompdf();
+
+        // Muat konten PDF
+        $dompdf->loadHtml($pdfContent);
+
+        // Set ukuran dan orientasi dokumen
+        $dompdf->setPaper('A4', 'potrait');
+
+        // Render PDF
+        $dompdf->render();
+
+        // Menghasilkan nama file unik
+        $filename = 'equipment_qrcode_' . time() . '.pdf';
+
+        // Simpan PDF ke server sementara
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
+
+        // Tautan untuk membuka pratinjau PDF di tab baru
+        $previewLink = route('pdf.preview', ['filename' => $filename]);
+
+        // Redirect ke pratinjau PDF
+        return redirect()->away($previewLink);
+    }
 }

@@ -942,46 +942,55 @@
 
                                         @elseif($equipment->jenis == 10)
                                         <div style="display: flex; align-items: center;">
+                                         <a href=" {{ route('cooling-tower.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                           <a href="{{ route('cooling-tower.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                           <a href="{{ route('cooling-tower.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                           @elseif($equipment->jenis == 11)
                                           <div style="display: flex; align-items: center;">
+                                            <a href="{{ route('humidifier.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                             <a href="{{ route('humidifier.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                             <a href="{{ route('humidifier.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                             @elseif($equipment->jenis == 12)
                                             <div style="display: flex; align-items: center;">
+                                            <a href="{{ route('dehumidifier.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                               <a href="{{ route('dehumidifierr.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                               <a href="{{ route('dehumidifierr.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                               @elseif($equipment->jenis == 13)
                                               <div style="display: flex; align-items: center;">
+                                                <a href="{{ route('fcuu.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                 <a href="{{ route('fcuu.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                                 <a href="{{ route('fcuu.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                 @elseif($equipment->jenis == 14)
                                                 <div style="display: flex; align-items: center;">
+                                                 <a href="{{ route('exhaust-fan.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                   <a href="{{ route('exhaust-fan.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                                   <a href="{{ route('exhaust-fan.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                   @elseif($equipment->jenis == 15)
                                                   <div style="display: flex; align-items: center;">
+                                                    <a href="{{ route('pompaa.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                     <a href="{{ route('pompaa.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                                     <a href="{{ route('pompaa.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                     @elseif($equipment->jenis == 16)
                                                     <div style="display: flex; align-items: center;">
+                                                      <a href="{{ route('spoot-cooling.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                       <a href="{{ route('spoot-cooling.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                                       <a href="{{ route('spoot-cooling.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                       @elseif($equipment->jenis == 17)
                                                       <div style="display: flex; align-items: center;">
+                                                        <a href="{{ route('water-mist.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                         <a href="{{ route('water-mist.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                                         <a href="{{ route('water-mist.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
 
                                                         @elseif($equipment->jenis == 18)
                                                         <div style="display: flex; align-items: center;">
+                                                          <a href="{{ route('chiller-centrifugall.print', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                           <a href="{{ route('chiller-centrifugall.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
                                                           <a href="{{ route('chiller-centrifugall.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                                         @elseif($equipment->jenis == 19)

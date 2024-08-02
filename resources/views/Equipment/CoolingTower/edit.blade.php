@@ -17,6 +17,25 @@
                     <form action="{{ route('cooling-tower.update',$coolingtower->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                               <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control" value="{{$coolingtower->tanggal}}"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$coolingtower->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required value="{{$coolingtower->start}}"></td>
+            <td><input type="time" name="end" class="form-control" id="" value="{{$coolingtower->end}}"></td>
+        </tr>
+            
+</table>
                         <table class="table table-bordered" id="personelTeamTable">
                             <thead>
                                 <h5 class="text-center" style="background-color: black;color:white">Spesifikasi Unit</h5>
@@ -82,7 +101,18 @@
                         <table class="table table-bordered" id="personelTeamTable">
                             <thead>
                                 <h5 class="text-center" style="background-color: black;color:white">Task List</h5>
-
+ <tr>
+                                                <td colspan="7">
+                                                    INTENSIVE SAFETY BRIEFING TEAM 
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="intensive" @if($coolingtower->intensive == 'Ok') checked @endif id="" value="Ok">&nbsp;&nbsp;Ok
+                                                </td>
+                                                <td>
+                                                    <input type="radio" name="intensive" @if($coolingtower->intensive == 'Not Ok') checked @endif id="" value="Not Ok">&nbsp;&nbsp;Not Ok
+                                                </td>
+                                            </tr>
+                                        <tr>
                                 <tr>
                                     <th>No</th>
                                     <th class="text-center">Item Checked</th>
@@ -441,9 +471,35 @@
                         </table>
                         </tbody>
                         </table>
+           <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea   name="temuan" id="" cols="60" rows="10">{{$coolingtower->temuan}}</textarea></td>
+            <td><textarea   name="rekomendasi" id="" cols="60" rows="10">{{$coolingtower->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Running Hour</th>
+            <th>Job Complete</th>
+            
+        </tr>
+        <tr>
+            <td><input type="number" name="running_hour" required class="form-control" value="{{$coolingtower->running_hour}}"></td>
 
+            <td><select  name="status" id="" class="form-select">
+                    <option value="{{$coolingtower->status}}">{{$coolingtower->status}}</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.formkosong')
                         <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                     </form>
+@include('formimage.edit')
+
                 </div>
             </div>
         </div>
