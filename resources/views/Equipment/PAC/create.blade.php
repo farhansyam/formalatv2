@@ -15,8 +15,28 @@
                         <h4 class="card-title mb-0 text-center">Task List PAC (Precision Air Conditioning)</h4>
                     </div>
                     <div class="card-body">
-                        <form action="{{ route('pac.store') }}" method="POST">
+                        <form action="{{ route('pac.store') }}" method="POST" enctype="multipart/form-data">
                             @csrf
+                                 <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required></td>
+            <td	><input type="time" name="end" class="form-control" id=""></td>
+        </tr>
+            
+</table>
+
                             <table class="table table-bordered" id="personelTeamTable">
                                 <thead>
                                     <h5 class="text-center" style="background-color: black;color:white">A.Filter Section</h5>
@@ -1552,8 +1572,33 @@
 
                                 </tbody>
                             </table>
-                            @include('formimage.formkosong')
-
+                            <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10"></textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Intensive Check</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select name="intensive" id="" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>"></td>
+            <td><select name="status" id="" class="form-select">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.formkosong')
+    
                             <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                         </form>
                     </div>

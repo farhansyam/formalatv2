@@ -16,6 +16,26 @@
                     </div>
                     <form action="{{ route('water-mistt.store') }}" method="POST">
                         @csrf
+                        <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input disabled type="date" name="tanggal" required class="form-control" value="{{$wm->tanggal}}"></td>
+            <td><textarea disabled name="enginer_list" id="" cols="60" rows="10">{{$wm->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input disabled type="time" class="form-control" name="start" required value="{{$wm->start}}"></td>
+            <td><input disabled type="time" name="end" class="form-control" value="{{$wm->end}}" id=""></td>
+        </tr>
+            
+</table>
+
                         <table class="table table-bordered" id="personelTeamTable">
                             <thead>
                                 <h5 class="text-center" style="background-color: black;color:white">Spesifikasi Unit</h5>
@@ -426,7 +446,35 @@
                         </table>
                         </tbody>
                         </table>
+   <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea disabled disabled name="temuan" id="" cols="60" rows="10">{{$wm->temuan}}</textarea></td>
+            <td><textarea disabled disabled name="rekomendasi" id="" cols="60" rows="10">{{$wm->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Intensive Check</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><td><select disabled name="status" id="" class="form-select">
+                    <option value="{{$wm->intensive}}">{{$wm->intensive}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
 
+                </select></td>
+            <td><select disabled name="status" id="" class="form-select">
+                    <option value="{{$wm->status}}">{{$wm->status}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.show')
                     </form>
                 </div>
             </div>

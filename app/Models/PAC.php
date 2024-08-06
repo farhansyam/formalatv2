@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class PAC extends Model
 {
-    protected $fillable = [
+    protected $fillable = ['tanggal','start','end','enginer_list','temuan','rekomendasi','status','intensive',
        'id',
         'id_equipment',
         'q1',

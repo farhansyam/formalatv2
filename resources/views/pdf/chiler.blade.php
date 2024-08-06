@@ -105,10 +105,7 @@
                 <td colspan="2"
                     style="width:113.9pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.4pt; line-height:9.4pt"><span
-                            style="height:0pt; display:block; position:absolute; z-index:-1"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.001.png" width="131"
-                                height="61" alt=""
-                                style="margin-top:-52.95pt; margin-left:11.95pt; -aw-left-pos:12.6pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:-52.95pt; -aw-wrap-type:none; position:absolute" /></span><span
+                            style="height:0pt; display:block; position:absolute; z-index:-1"></span><span
                             style="font-size:8pt; letter-spacing:-0.1pt">Lokasi</span><span
                             style="width:17.93pt; font-size:8pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:39.35pt">&#xa0;</span><span
                             style="font-size:8pt; letter-spacing:-0.5pt">:</span></p>
@@ -318,24 +315,44 @@
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q1);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q1);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:30.5pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q1);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:20.75pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q1);
+$firstValue = $values[3];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="7"
                     style="width:232.72pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q1);
+$firstValue = $values[4];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10.75pt">
@@ -349,24 +366,44 @@
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q2);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q2);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:30.5pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q2);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:20.75pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q2);
+$firstValue = $values[3];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="7"
                     style="width:232.72pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q2);
+$firstValue = $values[4];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10.75pt">
@@ -380,24 +417,44 @@
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q3);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q3);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:30.5pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q3);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:20.75pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q3);
+$firstValue = $values[3];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="7"
                     style="width:232.72pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q3);
+$firstValue = $values[4];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10.75pt">
@@ -413,24 +470,44 @@
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q4);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q4);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:30.5pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q4);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:20.75pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q4);
+$firstValue = $values[3];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="7"
                     style="width:232.72pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q4);
+$firstValue = $values[4];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10.75pt">
@@ -444,24 +521,44 @@
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q5);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q5);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:30.5pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q5);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:20.75pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q5);
+$firstValue = $values[3];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="7"
                     style="width:232.72pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q5);
+$firstValue = $values[4];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10.75pt">
@@ -475,24 +572,44 @@
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q6);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q6);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:30.5pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q6);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:20.75pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q6);
+$firstValue = $values[3];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="7"
                     style="width:232.72pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q6);
+$firstValue = $values[4];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10.75pt">
@@ -512,24 +629,44 @@
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q7);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q7);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:30.5pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q7);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:20.75pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q7);
+$firstValue = $values[3];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="7"
                     style="width:232.72pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q7);
+$firstValue = $values[4];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10.75pt">
@@ -550,30 +687,46 @@
                             style="font-size:8pt; font-weight:bold; letter-spacing:-0.15pt"> </span><span
                             style="font-size:8pt; font-weight:bold; letter-spacing:-0.1pt">chiller</span></p>
                 </td>
-                <td
-                    style="width:25.05pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q8);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2"
-                    style="width:33.9pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q8);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:30.5pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                <td style="width:30.5pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q8);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:20.75pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                <td style="width:20.75pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q8);
+$firstValue = $values[3];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="7"
-                    style="width:232.72pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                    style="width:232.72pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q8);
+$firstValue = $values[4];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:11.85pt">
@@ -625,10 +778,7 @@
                     style="width:27.88pt; border-right-style:solid; border-right-width:6pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top; background-color:#d9d9d9">
                     <p class="TableParagraph"
                         style="margin-top:2.3pt; margin-left:2.4pt; text-indent:2.25pt; line-height:111%; font-size:7pt">
-                        <span style="height:0pt; margin-top:-2.3pt; display:block; position:absolute; z-index:0"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.002.png" width="5"
-                                height="1" alt=""
-                                style="margin-top:11.13pt; margin-left:25.13pt; -aw-left-pos:29.4pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:11.13pt; -aw-wrap-type:none; position:absolute" /></span><span
+                        <span style="height:0pt; margin-top:-2.3pt; display:block; position:absolute; z-index:0"></span><span
                             style="font-weight:bold; letter-spacing:-0.1pt">Actual</span><span
                             style="font-weight:bold; letter-spacing:2pt"> </span><span
                             style="font-weight:bold; letter-spacing:-0.1pt">Checked</span></p>
@@ -707,47 +857,41 @@
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.1pt">ON/OFF</span></p>
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q9);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2"
                     style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q9);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q9);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td rowspan="8"
                     style="width:18.12pt; border-style:solid; border-width:1.5pt 0.75pt 1.5pt 6pt; vertical-align:top">
                     <p class="TableParagraph"
                         style="margin-top:3pt; margin-right:5.8pt; margin-left:7.3pt; text-indent:0.45pt; text-align:justify; line-height:111%; font-size:7pt">
                         <span
-                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-8"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:79.87pt; margin-left:-6.26pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:79.87pt; -aw-wrap-type:none; position:absolute" /></span><span
-                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-9"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:68.35pt; margin-left:-6.26pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:68.35pt; -aw-wrap-type:none; position:absolute" /></span><span
-                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-10"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:44.95pt; margin-left:-6.26pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:44.95pt; -aw-wrap-type:none; position:absolute" /></span><span
-                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-11"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:33.43pt; margin-left:-6.26pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:33.43pt; -aw-wrap-type:none; position:absolute" /></span><span
-                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-12"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:21.91pt; margin-left:-6.26pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:21.91pt; -aw-wrap-type:none; position:absolute" /></span><span
-                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-13"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:10.39pt; margin-left:-6.26pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:10.39pt; -aw-wrap-type:none; position:absolute" /></span><span
+                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-8"></span><span
+                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-9"></span><span
+                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-10"></span><span
+                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-11"></span><span
+                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-12"></span><span
+                            style="height:0pt; margin-top:-3pt; text-align:left; display:block; position:absolute; z-index:-13"></span><span
                             style="font-weight:bold; letter-spacing:-0.5pt">C</span><span
                             style="font-weight:bold; letter-spacing:2pt"> </span><span
                             style="font-weight:bold; letter-spacing:-0.5pt">O</span><span
@@ -784,18 +928,30 @@
                         style="margin-top:0.75pt; margin-right:0.25pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q29);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q29);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q29);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -816,18 +972,30 @@
                         style="margin-top:0.75pt; margin-right:0.05pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q10);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q10);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q10);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" style="width:113.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9pt"><span
@@ -846,18 +1014,30 @@
                         style="margin-top:0.75pt; margin-right:0.25pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q30);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q30);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q30);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -878,18 +1058,30 @@
                         style="margin-top:0.75pt; margin-right:0.05pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q11);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q11);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q11);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" style="width:113.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9pt"><span
@@ -906,18 +1098,30 @@
                         style="margin-top:0.75pt; margin-right:0.25pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+               <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q31);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q31);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q31);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -934,18 +1138,30 @@
                         style="margin-top:0.75pt; margin-right:0.15pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.5pt">%</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q12);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q12);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q12);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" style="width:113.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9pt"><span
@@ -959,18 +1175,30 @@
                         style="margin-top:0.75pt; margin-right:0.25pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q32);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q32);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q32);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10.35pt">
@@ -987,18 +1215,30 @@
                         style="margin-right:0.15pt; margin-left:2.2pt; text-align:center; line-height:8.35pt"><span
                             style="font-size:7pt; font-weight:bold; letter-spacing:-0.5pt">%</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q13);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2"
-                    style="width:33.9pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q13);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 1.5pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q13);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" style="width:113.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9.4pt"><span
@@ -1013,18 +1253,30 @@
                         style="margin-top:0.95pt; margin-right:0.15pt; margin-left:2.2pt; text-align:center; line-height:8.4pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">KPA</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q33);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q33);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:7pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q33);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1065,17 +1317,29 @@
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.5pt">%</span></p>
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q14);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2"
                     style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q14);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q14);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" style="width:113.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9pt"><span
@@ -1090,18 +1354,30 @@
                         style="margin-top:0.75pt; margin-right:0.25pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+               <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q34);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q34);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q34);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1122,18 +1398,30 @@
                         style="margin-top:0.75pt; margin-right:0.3pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.1pt">Ampere</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q15);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q15);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q15);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" style="width:113.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9pt"><span
@@ -1148,18 +1436,30 @@
                         style="margin-top:0.75pt; margin-right:0.25pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q35);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q35);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q35);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1183,18 +1483,30 @@
                         style="margin-top:0.75pt; margin-right:0.3pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.1pt">Ampere</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q16);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q16);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q16);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3"
                     style="width:113.9pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
@@ -1212,18 +1524,30 @@
                         style="margin-top:0.75pt; margin-left:2.2pt; text-align:center; line-height:8.25pt"><span
                             style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">PSI</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q36);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q36);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 1.5pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q36);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1237,18 +1561,30 @@
                         style="margin-top:0.75pt; margin-right:0.3pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.1pt">Ampere</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q17);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q17);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q17);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td rowspan="7"
                     style="width:18.12pt; border-style:solid; border-width:1.5pt 0.75pt 1.5pt 6pt; vertical-align:top">
@@ -1256,26 +1592,11 @@
                             style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                     <p class="TableParagraph"
                         style="margin-right:5.45pt; margin-left:8.15pt; text-indent:-1.1pt; text-align:justify; line-height:216%; font-size:8pt">
-                        <span style="height:0pt; text-align:left; display:block; position:absolute; z-index:-3"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:54.78pt; margin-left:-5.56pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:54.78pt; -aw-wrap-type:none; position:absolute" /></span><span
-                            style="height:0pt; text-align:left; display:block; position:absolute; z-index:-4"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:31.74pt; margin-left:-5.56pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:31.74pt; -aw-wrap-type:none; position:absolute" /></span><span
-                            style="height:0pt; text-align:left; display:block; position:absolute; z-index:-5"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:20.22pt; margin-left:-5.56pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:20.22pt; -aw-wrap-type:none; position:absolute" /></span><span
-                            style="height:0pt; text-align:left; display:block; position:absolute; z-index:-6"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:8.7pt; margin-left:-5.56pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:8.7pt; -aw-wrap-type:none; position:absolute" /></span><span
-                            style="height:0pt; text-align:left; display:block; position:absolute; z-index:-7"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:-2.82pt; margin-left:-5.56pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:-2.82pt; -aw-wrap-type:none; position:absolute" /></span><span
+                        <span style="height:0pt; text-align:left; display:block; position:absolute; z-index:-3"></span><span
+                            style="height:0pt; text-align:left; display:block; position:absolute; z-index:-4"></span><span
+                            style="height:0pt; text-align:left; display:block; position:absolute; z-index:-5"></span><span
+                            style="height:0pt; text-align:left; display:block; position:absolute; z-index:-6"></span><span
+                            style="height:0pt; text-align:left; display:block; position:absolute; z-index:-7"></span><span
                             style="font-weight:bold; letter-spacing:-0.5pt">O</span><span
                             style="font-weight:bold; letter-spacing:2pt"> </span><span
                             style="font-weight:bold; letter-spacing:-0.5pt">I</span><span
@@ -1295,18 +1616,30 @@
                         style="margin-top:0.75pt; margin-right:0.15pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">KPA</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q37);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q37);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q37);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1334,18 +1667,30 @@
                         style="margin-top:0.75pt; margin-left:2.2pt; text-align:center; line-height:8.25pt"><span
                             style="font-size:7pt; font-weight:bold; letter-spacing:-0.2pt">VOLT</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q18);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q18);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q18);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" style="width:113.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9pt"><span
@@ -1360,18 +1705,30 @@
                         style="margin-top:0.75pt; margin-right:0.25pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q38);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q38);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q38);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1385,18 +1742,30 @@
                         style="margin-top:0.75pt; margin-left:2.2pt; text-align:center; line-height:8.25pt"><span
                             style="font-size:7pt; font-weight:bold; letter-spacing:-0.2pt">VOLT</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q19);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q19);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q19);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" style="width:113.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9pt"><span
@@ -1411,18 +1780,30 @@
                         style="margin-top:0.75pt; margin-right:0.25pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q39);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q39);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q39);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1441,18 +1822,30 @@
                         style="margin-top:0.75pt; margin-left:2.2pt; text-align:center; line-height:8.25pt"><span
                             style="font-size:7pt; font-weight:bold; letter-spacing:-0.2pt">VOLT</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q20);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q20);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q20);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" style="width:113.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9pt"><span
@@ -1462,24 +1855,33 @@
                             style="font-size:8pt; font-weight:bold; letter-spacing:-0.1pt"> Level</span></p>
                 </td>
                 <td style="width:27.45pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="margin-left:4.5pt; line-height:9.95pt"><img
-                            src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.004.png" width="29"
-                            height="14" alt=""
-                            style="-aw-left-pos:0pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:0pt; -aw-wrap-type:inline" />
+                    <p class="TableParagraph" style="margin-left:4.5pt; line-height:9.95pt">
                     </p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q40);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q40);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q40);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1499,20 +1901,31 @@
                         style="margin-right:0.05pt; margin-left:2.2pt; text-align:center; font-size:7pt"><span
                             style="font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q21);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2"
-                    style="width:33.9pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q21);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 1.5pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
-                </td>
-                <td
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q21);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
+                </td>                <td
                     style="width:85.25pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.85pt; line-height:9pt"><span
                             style="font-size:8pt; font-weight:bold">5.</span><span
@@ -1528,18 +1941,30 @@
                         style="margin-top:0.75pt; margin-left:2.2pt; text-align:center; line-height:8.25pt"><span
                             style="font-size:7pt; font-weight:bold; letter-spacing:-0.1pt">Ampere</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q41);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q41);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q41);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1578,17 +2003,29 @@
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
                 <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q22);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2"
                     style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q22);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q22);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td
                     style="width:85.25pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
@@ -1609,18 +2046,30 @@
                         style="margin-top:0.75pt; margin-left:2.2pt; text-align:center; line-height:8.25pt"><span
                             style="font-size:7pt; font-weight:bold; letter-spacing:-0.1pt">Ampere</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q42);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q42);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q42);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1641,18 +2090,30 @@
                         style="margin-top:0.75pt; margin-right:0.55pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q23);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q23);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q23);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td
                     style="width:85.25pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
@@ -1669,18 +2130,30 @@
                         style="margin-top:0.75pt; margin-left:2.2pt; text-align:center; line-height:8.25pt"><span
                             style="font-size:7pt; font-weight:bold; letter-spacing:-0.1pt">Ampere</span></p>
                 </td>
-                <td style="width:21.8pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q43);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:35.1pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="1"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q43);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:31.48pt; border-style:solid; border-width:0.75pt 1.5pt 1.5pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q43);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1699,26 +2172,35 @@
                         style="margin-top:0.75pt; margin-right:0.55pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <<td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q24);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q24);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q24);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="3" rowspan="2"
                     style="width:115.45pt; border-top-style:solid; border-top-width:1.5pt; border-left-style:solid; border-left-width:6pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-top:5.55pt; margin-left:35.65pt; font-size:8pt"><span
-                            style="height:0pt; margin-top:-5.55pt; display:block; position:absolute; z-index:-2"><img
-                                src="images/Aspose.Words.8caff053-a2af-496b-b330-3296fb95f5a5.003.png" width="4"
-                                height="1" alt=""
-                                style="margin-top:10.4pt; margin-left:-34.16pt; -aw-left-pos:-1.51pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:10.4pt; -aw-wrap-type:none; position:absolute" /></span><span
+                            style="height:0pt; margin-top:-5.55pt; display:block; position:absolute; z-index:-2"></span><span
                             style="font-weight:bold">Checklist</span><span
                             style="font-weight:bold; letter-spacing:-0.25pt"> </span><span
                             style="font-weight:bold">History</span><span
@@ -1766,18 +2248,30 @@
                         style="margin-top:0.75pt; margin-right:0.55pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q25);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q25);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q25);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
             </tr>
             <tr style="height:10pt">
@@ -1794,18 +2288,30 @@
                         style="margin-top:0.75pt; margin-right:0.45pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">KPA</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q26);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q26);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q26);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="8"
                     style="width:251.6pt; border-top-style:solid; border-top-width:1.5pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:6pt; vertical-align:top">
@@ -1827,18 +2333,30 @@
                         style="margin-top:0.75pt; margin-right:0.55pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">°C</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q27);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td colspan="2" style="width:33.9pt; border-style:solid; border-width:0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td colspan="2"
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q27);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td
-                    style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 0.75pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q27);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="8"
                     style="width:251.6pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:6pt; vertical-align:top">
@@ -1867,18 +2385,30 @@
                         style="margin-top:0.75pt; margin-right:0.3pt; margin-left:2.2pt; text-align:center; line-height:8.25pt">
                         <span style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt">PSI</span></p>
                 </td>
-                <td style="width:25.05pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:25.05pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q28);
+$firstValue = $values[0];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="2"
-                    style="width:33.9pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    style="width:33.9pt; border-style:solid; border-width:1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q28);
+$firstValue = $values[1];
+echo $firstValue;
+@endphp</span></p>
                 </td>
-                <td style="width:27.88pt; border-style:solid; border-width:0.75pt 6pt 1.5pt 0.75pt; vertical-align:top">
-                    <p class="TableParagraph" style="font-size:6pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                <td style="width:27.88pt; border-style:solid; border-width:1.5pt 6pt 0.75pt 0.75pt; vertical-align:top">
+                    <p  class="TableParagraph" style="font-size:7pt;text-align:center"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">@php
+$values = explode(',', $ct->q28);
+$firstValue = $values[2];
+echo $firstValue;
+@endphp</span></p>
                 </td>
                 <td colspan="8"
                     style="width:251.6pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:6pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">

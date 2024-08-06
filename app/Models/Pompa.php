@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Pompa extends Model
 {
     protected $fillable = [
+        'tanggal', 'start', 'end', 'enginer_list', 'temuan', 'rekomendasi', 'status', 'intensive',
        'id',
         'id_equipment',
         'q1',

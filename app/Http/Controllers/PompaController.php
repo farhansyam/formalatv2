@@ -133,6 +133,14 @@ class PompaController extends Controller
             'q44' => implode(',', $request->input('q44')),
 
             'q45' => implode(',', $request->input('q45')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
         ];
     
         // Simpan data ke dalam model Pompa
@@ -144,7 +152,7 @@ class PompaController extends Controller
 
                 GambarAct::create([
                     'id_act' => $Pompa->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -158,10 +166,10 @@ class PompaController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $Pompa->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -190,7 +198,9 @@ class PompaController extends Controller
         $history = History::find($id);
         $pompa = Pompa::findOrFail($history->id_act); // Sesuaikan dengan model Pompa
         $id = $history->id_equipment;
-        return view('equipment.Pompa.show', compact('pompa','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.Pompa.show', compact('pompa','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -203,7 +213,9 @@ class PompaController extends Controller
         $history = History::find($id);
         $pompa = Pompa::findOrFail($history->id_act); // Sesuaikan dengan model Pompa
         $id = $history->id_equipment;
-        return view('equipment.Pompa.edit', compact('pompa','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.Pompa.edit', compact('pompa','id','gambar','gambar2'));
         
     }
 
@@ -296,6 +308,14 @@ class PompaController extends Controller
             'q43' => implode(',', $request->input('q43')),
             'q44' => implode(',', $request->input('q44')),
             'q45' => implode(',', $request->input('q45')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
 
         ];
         $ef->update($qData);
@@ -306,7 +326,7 @@ class PompaController extends Controller
 
                 GambarAct::create([
                     'id_act' => $ef->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -320,10 +340,10 @@ class PompaController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $ef->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }

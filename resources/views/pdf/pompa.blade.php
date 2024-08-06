@@ -25,18 +25,18 @@
             </tr>
             <tr style="height:11.35pt">
                <td colspan="5" rowspan="2" style="width:203.4pt; border-top-style:solid; border-top-width:2.25pt; border-right-style:solid; border-right-width:2.25pt; border-left-style:solid; border-left-width:2.25pt; vertical-align:top">
-                  <p class="TableParagraph" style="margin-left:1.35pt; line-height:10.3pt"><span style="font-size:9pt">Team</span><span style="font-size:9pt; letter-spacing:0.05pt"> </span><span style="font-size:9pt">Engineer</span><span style="font-size:9pt; letter-spacing:0.1pt"> </span><span style="font-size:9pt">List</span><span style="font-size:9pt; letter-spacing:0.15pt"> </span><span style="font-size:9pt">:</span></p>
+                  <p class="TableParagraph" style="margin-left:1.35pt; line-height:10.3pt"><span style="font-size:9pt">Team</span><span style="font-size:9pt; letter-spacing:0.05pt"> </span><span style="font-size:9pt">Engineer</span><span style="font-size:9pt; letter-spacing:0.1pt"> </span><span style="font-size:9pt">List</span><span style="font-size:9pt; letter-spacing:0.15pt"> </span><span style="font-size:9pt">: {{$ct->enginer_list}}</span></p>
                </td>
                <td colspan="4" rowspan="2" style="width:149.35pt; border-top-style:solid; border-top-width:2.25pt; border-right-style:solid; border-right-width:2.25pt; border-left-style:solid; border-left-width:2.25pt; vertical-align:top">
-                  <p class="TableParagraph" style="margin-left:1.3pt; line-height:10.3pt"><span style="font-size:9pt">Date</span><span style="font-size:9pt; letter-spacing:0.05pt"> </span><span style="font-size:9pt">:</span></p>
+                  <p class="TableParagraph" style="margin-left:1.3pt; line-height:10.3pt"><span style="font-size:9pt">Date</span><span style="font-size:9pt; letter-spacing:0.05pt"> </span><span style="font-size:9pt">: {{$ct->tanggal}}</span></p>
                </td>
                <td colspan="4" style="width:135.1pt; border-style:solid; border-width:2.25pt 2.25pt 1pt; vertical-align:top">
-                  <p class="TableParagraph" style="margin-left:1.25pt; line-height:10.4pt"><span style="font-size:9pt">Start</span><span style="font-size:9pt; letter-spacing:0.1pt"> </span><span style="font-size:9pt">PM</span><span style="font-size:9pt; letter-spacing:0.25pt"> </span><span style="font-size:9pt">:</span></p>
+                  <p class="TableParagraph" style="margin-left:1.25pt; line-height:10.4pt"><span style="font-size:9pt">Start</span><span style="font-size:9pt; letter-spacing:0.1pt"> </span><span style="font-size:9pt">PM</span><span style="font-size:9pt; letter-spacing:0.25pt"> </span><span style="font-size:9pt">: {{$ct->start}}</span></p>
                </td>
             </tr>
             <tr style="height:11.9pt">
                <td colspan="4" style="width:135.1pt; border-top-style:solid; border-top-width:1pt; border-right-style:solid; border-right-width:2.25pt; border-left-style:solid; border-left-width:2.25pt; vertical-align:top">
-                  <p class="TableParagraph" style="margin-left:1.25pt; line-height:10.5pt"><span style="font-size:9pt">Close</span><span style="font-size:9pt; letter-spacing:0.05pt"> </span><span style="font-size:9pt">PM</span><span style="font-size:9pt; letter-spacing:0.05pt"> </span><span style="font-size:9pt">:</span></p>
+                  <p class="TableParagraph" style="margin-left:1.25pt; line-height:10.5pt"><span style="font-size:9pt">Close</span><span style="font-size:9pt; letter-spacing:0.05pt"> </span><span style="font-size:9pt">PM</span><span style="font-size:9pt; letter-spacing:0.05pt"> </span><span style="font-size:9pt">: {{$ct->end}}</span></p>
                </td>
             </tr>
             <tr style="height:14.15pt">
@@ -1469,10 +1469,10 @@ echo $firstValue;
             </tr>
             <tr style="height:90.95pt">
                <td colspan="5" style="width:203.4pt; border-right-style:solid; border-right-width:2.25pt; border-left-style:solid; border-left-width:2.25pt; vertical-align:top">
-                  <p class="TableParagraph" style="margin-left:1.35pt; line-height:10.55pt"><span style="font-size:9pt; font-weight:bold">Temuan</span><span style="font-size:9pt; font-weight:bold; letter-spacing:0.1pt"> </span><span style="font-size:9pt; font-weight:bold">:</span></p>
+                  <p class="TableParagraph" style="margin-left:1.35pt; line-height:10.55pt"><span style="font-size:9pt; font-weight:bold">Temuan</span><span style="font-size:9pt; font-weight:bold; letter-spacing:0.1pt"> </span><span style="font-size:9pt; font-weight:bold">: {{$ct->temuan}}</span></p>
                </td>
                <td colspan="8" style="width:286.7pt; border-right-style:solid; border-right-width:2.25pt; border-left-style:solid; border-left-width:2.25pt; vertical-align:top">
-                  <p class="TableParagraph" style="margin-left:1.3pt; line-height:10.55pt"><span style="font-size:9pt; font-weight:bold">Rekomendasi</span><span style="font-size:9pt; font-weight:bold; letter-spacing:0.35pt"> </span><span style="font-size:9pt; font-weight:bold">:</span></p>
+                  <p class="TableParagraph" style="margin-left:1.3pt; line-height:10.55pt"><span style="font-size:9pt; font-weight:bold">Rekomendasi</span><span style="font-size:9pt; font-weight:bold; letter-spacing:0.35pt"> </span><span style="font-size:9pt; font-weight:bold">: {{$ct->rekomendasi}}</span></p>
                </td>
             </tr>
             <tr style="height:15pt">
@@ -1482,13 +1482,13 @@ echo $firstValue;
             </tr>
             <tr style="height:24.55pt">
                <td colspan="4" style="width:153.32pt; border-left-style:solid; border-left-width:2.25pt; vertical-align:top">
-                  <p class="TableParagraph" style="margin-top:5.1pt; margin-left:21.05pt"><span style="font-weight:bold">JOB</span><span style="font-weight:bold; letter-spacing:-0.25pt"> </span><span style="font-weight:bold">COMPLETED</span><span style="font-weight:bold; letter-spacing:-0.2pt"> </span><span style="font-weight:bold">?</span><span style="width:21.54pt; font-weight:bold; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:126.4pt">&#xa0;</span><span style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#00b050">⃝</span><span style="font-size:9pt; font-weight:bold; letter-spacing:0.15pt; vertical-align:0.5pt; color:#00b050"> </span><span style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#00b050">YES</span></p>
+                  <p class="TableParagraph" style="margin-top:5.1pt; margin-left:21.05pt"><span style="font-weight:bold">JOB</span><span style="font-weight:bold; letter-spacing:-0.25pt"> </span><span style="font-weight:bold">COMPLETED</span><span style="font-weight:bold; letter-spacing:-0.2pt"> </span><span style="font-weight:bold"></span><span style="width:21.54pt; font-weight:bold; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:126.4pt">&#xa0;</span><span style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#00b050"></span><span style="font-size:9pt; font-weight:bold; letter-spacing:0.15pt; vertical-align:0.5pt; color:#00b050"> </span><span style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#00b050">{{$ct->status}}</span></p>
                </td>
                <td colspan="3" style="width:133.02pt; border-right-style:solid; border-right-width:2.25pt; vertical-align:top">
-                  <p class="TableParagraph" style="margin-top:6.3pt; margin-left:14.15pt; font-size:9pt"><span style="font-weight:bold; color:#c00000">⃝</span><span style="font-weight:bold; letter-spacing:0.55pt; color:#c00000"> </span><span style="font-weight:bold; color:#c00000">NO</span><span style="font-weight:bold">,</span><span style="font-weight:bold; letter-spacing:0.3pt"> </span><span style="font-size:8pt; font-weight:bold">please</span><span style="font-size:8pt; font-weight:bold; letter-spacing:0.1pt"> </span><span style="font-size:8pt; font-weight:bold">check</span><span style="font-size:8pt; font-weight:bold; letter-spacing:0.25pt"> </span><span style="font-size:8pt; font-weight:bold">on</span><span style="font-size:8pt; font-weight:bold; letter-spacing:0.35pt"> </span><span style="font-size:8pt; font-weight:bold">NOTES</span></p>
+                  <p class="TableParagraph" style="margin-top:6.3pt; margin-left:14.15pt; font-size:9pt"><span style="font-weight:bold; color:#c00000"></span><span style="font-weight:bold; letter-spacing:0.55pt; color:#c00000"> </span><span style="font-weight:bold; color:#c00000"></span><span style="font-weight:bold">,</span><span style="font-weight:bold; letter-spacing:0.3pt"> </span><span style="font-size:8pt; font-weight:bold">please</span><span style="font-size:8pt; font-weight:bold; letter-spacing:0.1pt"> </span><span style="font-size:8pt; font-weight:bold">check</span><span style="font-size:8pt; font-weight:bold; letter-spacing:0.25pt"> </span><span style="font-size:8pt; font-weight:bold">on</span><span style="font-size:8pt; font-weight:bold; letter-spacing:0.35pt"> </span><span style="font-size:8pt; font-weight:bold">NOTES</span></p>
                </td>
                <td colspan="6" style="width:203.75pt; border-right-style:solid; border-right-width:2.25pt; border-left-style:solid; border-left-width:2.25pt; vertical-align:top">
-                  <p class="TableParagraph" style="margin-top:6.3pt; margin-left:1.25pt; font-size:9pt"><span style="font-weight:bold">RUNNING</span><span style="font-weight:bold; letter-spacing:0.25pt"> </span><span style="font-weight:bold">HOURS</span><span style="font-weight:bold; letter-spacing:0.3pt"> </span><span style="font-weight:bold">:</span></p>
+                  <p class="TableParagraph" style="margin-top:6.3pt; margin-left:1.25pt; font-size:9pt"><span style="font-weight:bold">RUNNING</span><span style="font-weight:bold; letter-spacing:0.25pt"> </span><span style="font-weight:bold">HOURS</span><span style="font-weight:bold; letter-spacing:0.3pt"> </span><span style="font-weight:bold">: {{$equipment->jamoperasi}}</span></p>
                </td>
             </tr>
             <tr style="height:15pt">

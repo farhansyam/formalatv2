@@ -18,6 +18,26 @@
                     <form action="{{ route('pompaa.update',$pompa->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                        <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control" value="{{$pompa->tanggal}}"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$pompa->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required value="{{$pompa->start}}"></td>
+            <td><input type="time" name="end" class="form-control" value="{{$pompa->end}}" id=""></td>
+        </tr>
+            
+</table>
+
                         <table class="table table-bordered" id="personelTeamTable">
                             <thead>
                                 <h5 class="text-center" style="background-color: black;color:white">Spesifikasi Unit</h5>
@@ -76,7 +96,7 @@
                                 <tr>
                                     @foreach (explode(',',$pompa->q6) as $val)
                                     <td>
-                                        <p>Capacity :</p><input type="text" class="form-control text-center" required name="q6[]" value="{{$val}}">
+                                        <p>Capompaity :</p><input type="text" class="form-control text-center" required name="q6[]" value="{{$val}}">
                                     </td>
                                     @endforeach
 
@@ -404,8 +424,40 @@
                         </table>
                         </tbody>
                         </table>
+                           <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$pompa->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$pompa->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Intensive Check</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><td><select name="status" id="" class="form-select">
+                    <option value="{{$pompa->intensive}}">{{$pompa->intensive}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+
+                </select></td>
+            <td><select name="status" id="" class="form-select">
+                    <option value="{{$pompa->status}}">{{$pompa->status}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.formkosong')
+
                         <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                     </form>
+@include('formimage.edit')
+
                 </div>
             </div>
         </div>

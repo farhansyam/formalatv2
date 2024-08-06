@@ -2338,6 +2338,7 @@ echo $firstValue;
             </span><span>3</span><span style="letter-spacing:-0.1pt"> </span><span>Arsip</span><span
                 style="letter-spacing:-0.15pt"> </span><span>Kantor</span></p>
     </div>
+    @include('pdf.tablegambar')
 </body>
 
 </html>

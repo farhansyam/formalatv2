@@ -140,6 +140,15 @@ class SpotCoolingController extends Controller
             'q49' => implode(',', $request->input('q49')),
             'q50' => implode(',', $request->input('q50')),
             'q51' => implode(',', $request->input('q51')),
+
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
             
         ];
     
@@ -152,7 +161,7 @@ class SpotCoolingController extends Controller
 
                 GambarAct::create([
                     'id_act' => $SpotCooling->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -166,10 +175,10 @@ class SpotCoolingController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $SpotCooling->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -198,7 +207,9 @@ class SpotCoolingController extends Controller
         $history = History::find($id);
         $SpotCooling = SpotCooling::findOrFail($history->id_act); // Sesuaikan dengan model SpotCooling
         $id = $history->id_equipment;
-        return view('equipment.SpotCooling.show', compact('SpotCooling','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.SpotCooling.show', compact('SpotCooling','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -211,7 +222,9 @@ class SpotCoolingController extends Controller
         $history = History::find($id);
         $SpotCooling = SpotCooling::findOrFail($history->id_act); // Sesuaikan dengan model SpotCooling
         $id = $history->id_equipment;
-        return view('equipment.SpotCooling.edit', compact('SpotCooling','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.SpotCooling.edit', compact('SpotCooling','id','gambar','gambar2'));
         
     }
 
@@ -311,6 +324,14 @@ class SpotCoolingController extends Controller
             'q49' => implode(',', $request->input('q49')),
             'q50' => implode(',', $request->input('q50')),
             'q51' => implode(',', $request->input('q51')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
 
         ];
         $ef->update($qData);
@@ -321,7 +342,7 @@ class SpotCoolingController extends Controller
 
                 GambarAct::create([
                     'id_act' => $ef->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -335,10 +356,10 @@ class SpotCoolingController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $ef->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }

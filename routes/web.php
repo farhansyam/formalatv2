@@ -125,6 +125,7 @@ Route::get('auhp/print/{id}', [AUHPController::class, 'print'])->name('auhp.prin
 Route:: get('mch/create/{id}', [MiniChillerController::class, 'create2'])->name('mini-chiller.create2');
 
 Route::resource('mini-chilleer', MiniChillerController::class)->name('index','mini-chilleer.index');
+Route::get('mini-chilleer/print/{id}', [MiniChillerController::class, 'print'])->name('mini-chilleer.print')->middleware('auth');
 
 Route::get('evp/create/{id}', [EvaporatorAirCoolerController::class, 'create2'])->name('evaporator-aircooler.create2');
 Route::resource('/evaporator-aircooler', EvaporatorAirCoolerController::class)->names([
@@ -232,7 +233,7 @@ Route::resource('/chiller-centrifugall', ChillerCentrifugalController::class)->n
         'edit' => 'chiller-centrifugall.edit', // Nama untuk rute index
         'show' => 'chiller-centrifugall.show', // Nama untuk rute index
         ]);
-Route:: get('chiller-centrifugall/print/{id}', [ChillerCentrifugal::class, 'print'])->name('chiller-centrifugall.print')->middleware('auth');
+Route:: get('chiller-centrifugall/print/{id}', [ChillerCentrifugalController::class, 'print'])->name('chiller-centrifugall.print')->middleware('auth');
 
 
 

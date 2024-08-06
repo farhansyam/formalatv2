@@ -17,6 +17,26 @@
                     <form action="{{ route('water-mistt.update',$wm->id) }}" method="POST" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
+                         <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control" value="{{$wm->tanggal}}"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$wm->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required value="{{$wm->start}}"></td>
+            <td><input type="time" name="end" class="form-control" id="" value="{{$wm->end}}"></td>
+        </tr>
+            
+</table>
+
                         <table class="table table-bordered" id="personelTeamTable">
                             <thead>
                                 <h5 class="text-center" style="background-color: black;color:white">Spesifikasi Unit</h5>
@@ -75,7 +95,7 @@
                                 <tr>
                                     @foreach (explode(',',$wm->q6) as $val)
                                     <td>
-                                        <p>Capacity :</p><input type="text" class="form-control text-center" required name="q6[]" value="{{$val}}">
+                                        <p>Cawmity :</p><input type="text" class="form-control text-center" required name="q6[]" value="{{$val}}">
                                     </td>
                                     @endforeach
 
@@ -427,9 +447,38 @@
                         </table>
                         </tbody>
                         </table>
+   <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$wm->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$wm->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Intensive Check</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><td><select name="status" id="" class="form-select">
+                    <option value="{{$wm->intensive}}">{{$wm->intensive}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
 
+                </select></td>
+            <td><select name="status" id="" class="form-select">
+                    <option value="{{$wm->status}}">{{$wm->status}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.formkosong')
                         <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                     </form>
+                    @include('formimage.edit')
                 </div>
             </div>
         </div>

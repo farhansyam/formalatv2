@@ -214,7 +214,7 @@
                                         
                                           <tr>
                                             <td>1</td>
-                                            <td>Vane Position</td>
+                                            <td>Load Ampere</td>
                                             <td>%</td>
                                             <td></td>
                                             <td><input type="text" class="form-control text-center" name="q14[]"></td>

@@ -46,19 +46,35 @@ class PACController extends Controller
 
         $qData = [];
         for ($i = 1; $i <= 77; $i++) {
-            $qData['q' . $i] = implode(',', $request->input('q' . $i));
+            $qData['q' . $i] = implode(',', $request->input('q' . $i, []));
         }
-    
+
+        $data = [
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
+        ];
+
+        // Merging $qData with $data
+        $mergedData = array_merge($data,
+            $qData
+        );
+
         // Simpan data ke dalam model PAC
-        $PAC = PAC::create($qData);
-        if ($request->file('gambar')) {
+        $PAC = PAC::create($mergedData);
+ if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
                 $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
                 $gambar->move(public_path('gambar'), $gambarname);
 
                 GambarAct::create([
                     'id_act' => $PAC->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -72,10 +88,10 @@ class PACController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $PAC->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -103,7 +119,9 @@ class PACController extends Controller
     {
         $history = History::find($id);
         $PAC = PAC::findOrFail($history->id_act); // Sesuaikan dengan model PAC
-        return view('equipment.PAC.show', compact('PAC','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.PAC.show', compact('PAC','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -116,7 +134,9 @@ class PACController extends Controller
         $history = History::find($id);
         $PAC = PAC::findOrFail($history->id_act); // Sesuaikan dengan model PAC
         $id = $history->id_equipment;
-        return view('equipment.PAC.edit', compact('PAC','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.PAC.edit', compact('PAC', 'id', 'gambar', 'gambar2'));
         
     }
 
@@ -128,7 +148,28 @@ class PACController extends Controller
         }
 
         $pac = PAC::find($id);
-        $pac->update($qData);
+        $qData = [];
+        for ($i = 1; $i <= 77; $i++) {
+            $qData['q' . $i] = implode(',', $request->input('q' . $i, []));
+        }
+
+        $data = [
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
+        ];
+
+        // Merging $qData with $data
+        $mergedData = array_merge($data, $qData);
+
+        // Simpan data ke dalam model PAC
+
+        $pac->update($mergedData);
         if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
                 $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
@@ -136,7 +177,7 @@ class PACController extends Controller
 
                 GambarAct::create([
                     'id_act' => $pac->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -150,7 +191,7 @@ class PACController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $pac->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index],
                     'info' => $request->info2[$index],
@@ -168,12 +209,12 @@ class PACController extends Controller
     {
         $history = History::find($id);
         $equipment = Equipment::find($history->id_equipment);
-        $auhp = PAC::find($history->id_act);
+        $ct = PAC::find($history->id_act);
         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
 
         // Render view blade dengan gambar QR
-        $pdfContent = view('pdf.pac', ['history' => $history, 'auhp' => $auhp, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+        $pdfContent = view('pdf.pac', ['history' => $history, 'ct' => $ct, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
 
         // Buat objek DOMPDF
         $dompdf = new Dompdf();
@@ -182,7 +223,7 @@ class PACController extends Controller
         $dompdf->loadHtml($pdfContent);
 
         // Set ukuran dan orientasi dokumen
-        $dompdf->setPaper('A4', 'landscape');
+        $dompdf->setPaper('A4', 'potrait');
 
         // Render PDF
         $dompdf->render();

@@ -143,6 +143,15 @@ class WaterMistController extends Controller
             'q49' => implode(',', $request->input('q49')),
 
             'q50' => implode(',', $request->input('q50')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
+
         ];
     
         // Simpan data ke dalam model WaterMist
@@ -154,7 +163,7 @@ class WaterMistController extends Controller
 
                 GambarAct::create([
                     'id_act' => $WaterMist->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -168,10 +177,10 @@ class WaterMistController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $WaterMist->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -200,7 +209,9 @@ class WaterMistController extends Controller
         $history = History::find($id);
         $wm = WaterMist::find($history->id_act); // Sesuaikan dengan model WaterMist
         $id = $history->id_equipment;
-        return view('equipment.WaterMist.show', compact('wm','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.WaterMist.show', compact('wm','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -213,7 +224,9 @@ class WaterMistController extends Controller
         $history = History::find($id);
         $wm = WaterMist::find($history->id_act); // Sesuaikan dengan model WaterMist
         $id = $history->id_equipment;
-        return view('equipment.WaterMist.edit', compact('wm','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.WaterMist.edit', compact('wm','id','gambar','gambar2'));
         
     }
 
@@ -311,6 +324,14 @@ class WaterMistController extends Controller
             'q48' => implode(',', $request->input('q48')),
             'q49' => implode(',', $request->input('q49')),
             'q50' => implode(',', $request->input('q50')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
 
         ];
         $ef->update($qData);
@@ -321,7 +342,7 @@ class WaterMistController extends Controller
 
                 GambarAct::create([
                     'id_act' => $ef->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -335,10 +356,10 @@ class WaterMistController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $ef->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }

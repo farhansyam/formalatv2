@@ -16,6 +16,26 @@
                     </div>
                     <div class="card-body">
                         <form action="{{ route('pac.store') }}" method="POST">
+                            <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input disabled type="date" name="tanggal" required class="form-control" value="{{$PAC->tanggal}}"></td>
+            <td><textarea disabled name="enginer_list" id="" cols="60" rows="10">{{$PAC->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input disabled type="time" class="form-control" name="start" required value="{{$PAC->start}}"></td>
+            <td><input disabled type="time" name="end" class="form-control" value="{{$PAC->end}}" id=""></td>
+        </tr>
+            
+</table>
+
                             <input type="hidden" required name="id_equipment" value="{{ $id }}">
 
                             @csrf
@@ -1134,8 +1154,36 @@
 
                                 </tbody>
                             </table>
+                    <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea disabled disabled name="temuan" id="" cols="60" rows="10">{{$PAC->temuan}}</textarea></td>
+            <td><textarea disabled disabled name="rekomendasi" id="" cols="60" rows="10">{{$PAC->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Intensive Check</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><td><select disabled name="status" id="" class="form-select">
+                    <option value="{{$PAC->intensive}}">{{$PAC->intensive}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
 
-                            <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
+                </select></td>
+            <td><select disabled name="status" id="" class="form-select">
+                    <option value="{{$PAC->status}}">{{$PAC->status}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.show')
+
                         </form>
                     </div>
                 </div>
