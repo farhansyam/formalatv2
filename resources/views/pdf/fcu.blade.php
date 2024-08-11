@@ -108,20 +108,20 @@
                         </span><span style="font-size:9pt">Engineer</span><span
                             style="font-size:9pt; letter-spacing:0.1pt"> </span><span
                             style="font-size:9pt">List</span><span style="font-size:9pt; letter-spacing:0.15pt">
-                        </span><span style="font-size:9pt">:</span></p>
+                        </span><span style="font-size:9pt">: {{$ct->enginer_list}}</span></p>
                 </td>
                 <td colspan="4" rowspan="2"
                     style="width:136.55pt; border-top-style:solid; border-top-width:2.25pt; border-right-style:solid; border-right-width:2.25pt; border-left-style:solid; border-left-width:2.25pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.3pt; line-height:10.05pt"><span
                             style="font-size:9pt">Date</span><span style="font-size:9pt; letter-spacing:0.05pt">
-                        </span><span style="font-size:9pt">:</span></p>
+                        </span><span style="font-size:9pt">: {{$ct->tanggal}}</span></p>
                 </td>
                 <td colspan="4"
                     style="width:135.1pt; border-style:solid; border-width:2.25pt 2.25pt 1pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.25pt; line-height:10.15pt"><span
                             style="font-size:9pt">Start</span><span style="font-size:9pt; letter-spacing:0.1pt">
                         </span><span style="font-size:9pt">PM</span><span style="font-size:9pt; letter-spacing:0.25pt">
-                        </span><span style="font-size:9pt">:</span></p>
+                        </span><span style="font-size:9pt">: {{$ct->start}}</span></p>
                 </td>
             </tr>
             <tr style="height:11.9pt">
@@ -130,7 +130,7 @@
                     <p class="TableParagraph" style="margin-left:1.25pt; line-height:10.25pt"><span
                             style="font-size:9pt">Close</span><span style="font-size:9pt; letter-spacing:0.05pt">
                         </span><span style="font-size:9pt">PM</span><span style="font-size:9pt; letter-spacing:0.05pt">
-                        </span><span style="font-size:9pt">:</span></p>
+                        </span><span style="font-size:9pt">: {{$ct->end}}</span></p>
                 </td>
             </tr>
             <tr style="height:14.15pt">
@@ -1006,7 +1006,7 @@ echo $firstValue;
                         </span><span style="font-size:9pt">verify</span><span
                             style="font-size:9pt; letter-spacing:0.15pt"> </span><span
                             style="font-size:9pt">all</span><span style="font-size:9pt; letter-spacing:0.1pt">
-                        </span><span style="font-size:9pt">FCU</span><span style="font-size:9pt; letter-spacing:0.2pt">
+                        </span><span style="font-size:9pt">ct</span><span style="font-size:9pt; letter-spacing:0.2pt">
                         </span><span style="font-size:9pt">sensor,</span><span
                             style="font-size:9pt; letter-spacing:0.15pt"> </span><span
                             style="font-size:9pt">motorize,actuator</span></p>
@@ -2000,14 +2000,14 @@ echo $firstValue;
                     <p class="TableParagraph" style="margin-left:1.35pt; line-height:10.35pt"><span
                             style="font-size:9pt; font-weight:bold">Temuan</span><span
                             style="font-size:9pt; font-weight:bold; letter-spacing:0.1pt"> </span><span
-                            style="font-size:9pt; font-weight:bold">:</span></p>
+                            style="font-size:9pt; font-weight:bold">: {{$ct->temuan}}</span></p>
                 </td>
                 <td colspan="8"
                     style="width:273.9pt; border-right-style:solid; border-right-width:2.25pt; border-left-style:solid; border-left-width:2.25pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:1.3pt; line-height:10.35pt"><span
                             style="font-size:9pt; font-weight:bold">Rekomendasi</span><span
                             style="font-size:9pt; font-weight:bold; letter-spacing:0.35pt"> </span><span
-                            style="font-size:9pt; font-weight:bold">:</span></p>
+                            style="font-size:9pt; font-weight:bold">: {{$ct->rekomendasi}}</span></p>
                 </td>
             </tr>
             <tr style="height:15pt">
@@ -2026,16 +2026,16 @@ echo $firstValue;
                             style="font-weight:bold; letter-spacing:-0.2pt"> </span><span
                             style="font-weight:bold">?</span><span
                             style="width:21.54pt; font-weight:bold; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:126.4pt">&#xa0;</span><span
-                            style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#00b050">⃝</span><span
+                            style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#00b050"></span><span
                             style="font-size:9pt; font-weight:bold; letter-spacing:0.15pt; vertical-align:0.5pt; color:#00b050">
                         </span><span
-                            style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#00b050">YES</span><span
+                            style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#00b050"></span><span
                             style="font-size:9pt; font-weight:bold; letter-spacing:0.9pt; vertical-align:0.5pt; color:#00b050">
                         </span><span
-                            style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#c00000">⃝</span><span
+                            style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#c00000"></span><span
                             style="font-size:9pt; font-weight:bold; letter-spacing:2.4pt; vertical-align:0.5pt; color:#c00000">
                         </span><span
-                            style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#c00000">NO</span><span
+                            style="font-size:9pt; font-weight:bold; vertical-align:0.5pt; color:#c00000">{{$ct->status}}</span><span
                             style="font-size:9pt; font-weight:bold; vertical-align:0.5pt">,</span><span
                             style="font-size:9pt; font-weight:bold; letter-spacing:0.2pt; vertical-align:0.5pt">
                         </span><span style="font-size:9pt; font-weight:bold; vertical-align:0.5pt">please</span><span
@@ -2052,7 +2052,7 @@ echo $firstValue;
                             style="font-weight:bold">RUNNING</span><span
                             style="font-weight:bold; letter-spacing:0.25pt"> </span><span
                             style="font-weight:bold">HOURS</span><span style="font-weight:bold; letter-spacing:0.3pt">
-                        </span><span style="font-weight:bold">:</span></p>
+                        </span><span style="font-weight:bold">: {{$equipment->jamoperasi}}</span></p>
                 </td>
             </tr>
             <tr style="height:15pt">
@@ -2163,6 +2163,7 @@ echo $firstValue;
             </span><span>3</span><span style="letter-spacing:0.3pt"> </span><span>Arsip</span><span
                 style="letter-spacing:0.3pt"> </span><span>Kantor</span></p>
     </div>
+    @include('pdf.tablegambar')
 </body>
 
 </html>

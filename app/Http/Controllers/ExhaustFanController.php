@@ -80,7 +80,7 @@ class ExhaustFanController extends Controller
 
             'q19' => implode(',', $request->input('q19')),
 
-            'q20' => implode(',', $request->input('q20')),#
+            'q20' => implode(',', $request->input('q20')),
 
             'q21' => implode(',', $request->input('q21')),
 
@@ -102,7 +102,7 @@ class ExhaustFanController extends Controller
 
             'q30' => implode(',', $request->input('q30')),
 
-            'q31' => implode(',', $request->input('q31')),#
+            'q31' => implode(',', $request->input('q31')),
 
             'q32' => implode(',', $request->input('q32')),
 
@@ -131,11 +131,46 @@ class ExhaustFanController extends Controller
             'q44' => implode(',', $request->input('q44')),
 
             'q45' => implode(',', $request->input('q45')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive'),
         ];
     
         // Simpan data ke dalam model ExhaustFan
         $ExhaustFan = ExhaustFan::create($qData);
+ if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
 
+                GambarAct::create([
+                    'id_act' => $ExhaustFan->id,
+                    'id_equipement' => $request->id,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $ExhaustFan->id,
+                    'id_equipement' => $request->id,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
+                ]);
+            }
+        }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
             $history = new History();
             $history->type = "Exhaust Fan"; // Sesuaikan dengan jenis equipment
@@ -161,7 +196,9 @@ class ExhaustFanController extends Controller
         $history = History::find($id);
         $ef = ExhaustFan::findOrFail($history->id_act); // Sesuaikan dengan model ExhaustFan
         $id = $history->id_equipment;
-        return view('equipment.ExhaustFan.show', compact('ef','id'));
+         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.ExhaustFan.show', compact('ef','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -174,7 +211,9 @@ class ExhaustFanController extends Controller
         $history = History::find($id);
         $ef = ExhaustFan::findOrFail($history->id_act); // Sesuaikan dengan model ExhaustFan
         $id = $history->id_equipment;
-        return view('equipment.ExhaustFan.edit', compact('ef','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.ExhaustFan.edit', compact('ef','id','gambar','gambar2'));
         
     }
 
@@ -221,7 +260,7 @@ class ExhaustFanController extends Controller
 
             'q19' => implode(',', $request->input('q19')),
 
-            'q20' => implode(',', $request->input('q20')), #
+            'q20' => implode(',', $request->input('q20')), 
 
             'q21' => implode(',', $request->input('q21')),
 
@@ -243,7 +282,7 @@ class ExhaustFanController extends Controller
 
             'q30' => implode(',', $request->input('q30')),
 
-            'q31' => implode(',', $request->input('q31')), #
+            'q31' => implode(',', $request->input('q31')), 
 
             'q32' => implode(',', $request->input('q32')),
 
@@ -268,6 +307,14 @@ class ExhaustFanController extends Controller
             'q43' => implode(',', $request->input('q43')),
             'q44' => implode(',', $request->input('q44')),
             'q45' => implode(',', $request->input('q45')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive'),
 
         ];
         $ef->update($qData);
@@ -278,7 +325,7 @@ class ExhaustFanController extends Controller
 
                 GambarAct::create([
                     'id_act' => $ef->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -292,10 +339,10 @@ class ExhaustFanController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $ef->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }

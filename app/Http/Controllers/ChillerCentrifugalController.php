@@ -157,8 +157,8 @@ class ChillerCentrifugalController extends Controller
                     'id_act' => $ChillerCentrifugal->id,
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -213,6 +213,7 @@ class ChillerCentrifugalController extends Controller
         for ($i = 1; $i <= 43; $i++) {
             $qData['q' . $i] = implode(',', $request->input('q' . $i));
         }
+        
         // Simpan data ke dalam model CoolingUnit
         $acs->update($qData);
 

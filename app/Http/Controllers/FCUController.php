@@ -124,10 +124,46 @@ class FCUController extends Controller
             'q40' => implode(',', $request->input('q40')),
 
             'q41' => implode(',', $request->input('q41')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive'),
         ];
     
         // Simpan data ke dalam model FCU
         $FCU = FCU::create($qData);
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
+
+                GambarAct::create([
+                    'id_act' => $FCU->id,
+                    'id_equipement' => $request->id,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $FCU->id,
+                    'id_equipement' => $request->id,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
+                ]);
+            }
+        }
 
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
             $history = new History();
@@ -144,8 +180,9 @@ class FCUController extends Controller
         $history = History::find($id);
         $fcu = FCU::find($history->id_act);
         $id = $history->id_equipment;
-
-        return view('equipment.FCU.show', compact('fcu','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.FCU.show', compact('fcu','id','gambar','gambar2'));
     }
 
     public function edit($id)
@@ -153,7 +190,9 @@ class FCUController extends Controller
         $history = History::find($id);
         $fcu = FCU::find($history->id_act);
         $id = $history->id_equipment;
-        return view('equipment.FCU.edit', compact('fcu','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.FCU.edit', compact('fcu','id','gambar','gambar2'));
         
     }
 
@@ -243,6 +282,14 @@ class FCUController extends Controller
             'q40' => implode(',', $request->input('q40')),
 
             'q41' => implode(',', $request->input('q41')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive'),
 
         ];
         $fcu->update($qData);
@@ -253,7 +300,7 @@ class FCUController extends Controller
 
                 GambarAct::create([
                     'id_act' => $fcu->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -267,10 +314,10 @@ class FCUController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $fcu->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }

@@ -130,6 +130,14 @@ class MiniChillerController extends Controller
             'q43' => implode(',', $request->input('q43')),
 
             'q44' => implode(',', $request->input('q44')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive'),
         ];
     
         // Simpan data ke dalam model MiniChiller
@@ -141,7 +149,7 @@ class MiniChillerController extends Controller
 
                 GambarAct::create([
                     'id_act' => $MiniChiller->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -155,10 +163,10 @@ class MiniChillerController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $MiniChiller->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }
@@ -265,11 +273,46 @@ class MiniChillerController extends Controller
             'q43' => implode(',', $request->input('q43')),
 
             'q44' => implode(',', $request->input('q44')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive'),
         ];
     
         // Simpan data ke dalam model MiniChiller
         $MiniChiller->update($qData);
+ if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
 
+                GambarAct::create([
+                    'id_act' => $MiniChiller->id,
+                    'id_equipement' => $request->id,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $MiniChiller->id,
+                    'id_equipement' => $request->id,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
+                ]);
+            }
+        }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
             $history = new History();
             $history->type = "Mini Chiller"; // Sesuaikan dengan jenis equipment
@@ -294,7 +337,11 @@ class MiniChillerController extends Controller
     {
         $history = History::find($id);
         $MiniChiller = MiniChiller::find($history->id_act);
-        return view('equipment.MiniChiller.show', compact('MiniChiller','id'));
+
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+
+        return view('equipment.MiniChiller.show', compact('MiniChiller','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -307,7 +354,10 @@ class MiniChillerController extends Controller
         $history = History::find($id);
         $MiniChiller = MiniChiller::find($history->id_act);
         $id = $history->id_equipment;
-        return view('equipment.MiniChiller.edit', compact('MiniChiller','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+
+        return view('equipment.MiniChiller.edit', compact('MiniChiller','id','gambar','gambar2'));
     }
 
 
@@ -343,7 +393,7 @@ class MiniChillerController extends Controller
         $dompdf->render();
 
         // Menghasilkan nama file unik
-        $filename = 'equipment_qrcode_' . time() . '.pdf';
+        $filename = 'minichiler_PM'.$history->id . time() . '.pdf';
 
         // Simpan PDF ke server sementara
         // Simpan PDF ke folder public

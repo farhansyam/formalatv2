@@ -68,7 +68,7 @@
             style="margin-left:6.7pt; border:1.5pt solid #000000; -aw-border-insideh:1.5pt single #000000; -aw-border-insidev:1.5pt single #000000; border-collapse:collapse">
             <tr style="height:36.1pt; -aw-height-rule:exactly">
                 <td colspan="21"
-                    style="width:756.95pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
+                    style="width:756.95pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top"><br>
                     <p class="TableParagraph" style="margin-left:75.65pt; line-height:8.05pt"><span
                             style="font-family:Arial; font-size:12pt; font-weight:bold">PT.</span><span
                             style="font-family:Arial; font-size:12pt; font-weight:bold; letter-spacing:-0.25pt">
@@ -82,10 +82,13 @@
                             style="font-family:Arial; font-size:12pt; font-weight:bold; letter-spacing:-0.1pt">INDONESIA</span>
                     </p>
                     <p class="TableParagraph" style="margin-left:75.05pt; line-height:19.5pt"><span
-                            style="height:0pt; display:block; position:absolute; z-index:-1"><img
+                            style="height:0pt; display:block; position:absolute; z-index:-1">
+                            {{-- <img
                                 src="images/Aspose.Words.29e724cf-d77c-469e-a6c2-a5b8a13fe4d0.001.png" width="83"
                                 height="40" alt=""
-                                style="margin-top:-7.71pt; margin-left:-66.5pt; -aw-left-pos:7.8pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:-7.71pt; -aw-wrap-type:none; position:absolute" /></span><span
+                                style="margin-top:-7.71pt; margin-left:-66.5pt; -aw-left-pos:7.8pt; -aw-rel-hpos:column; -aw-rel-vpos:paragraph; -aw-top-pos:-7.71pt; -aw-wrap-type:none; position:absolute" /> --}}
+                            
+                            </span><span
                             style="font-family:Arial; font-size:7.5pt; font-weight:bold; vertical-align:3pt">ENGINEERING</span><span
                             style="font-family:Arial; font-size:7.5pt; font-weight:bold; letter-spacing:-0.5pt; vertical-align:3pt">
                         </span><span
@@ -127,25 +130,25 @@
                     style="width:200.95pt; border-top-style:solid; border-top-width:1.5pt; border-right-style:solid; border-right-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-top:3.95pt; margin-left:0.65pt; font-size:7.5pt">
                         <span>Customer/User</span><span style="letter-spacing:0.1pt"> </span><span
-                            style="letter-spacing:-0.5pt">:</span></p>
+                            style="letter-spacing:-0.5pt">: {{$equipment->customer}}</span></p>
                     <p class="TableParagraph" style="margin-top:1.7pt; font-size:7.5pt"><span
                             style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                     <p class="TableParagraph" style="margin-left:0.65pt; font-size:7.5pt"><span
                             style="letter-spacing:-0.2pt">Site</span><span
                             style="width:41.23pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:54.8pt">&#xa0;</span><span
-                            style="letter-spacing:-0.5pt">:</span></p>
+                            style="letter-spacing:-0.5pt">: {{$equipment->site}}</span></p>
                 </td>
                 <td colspan="7" rowspan="3"
                     style="width:171.6pt; border-style:solid; border-width:1.5pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-top:3.95pt; margin-left:0.65pt; font-size:7.5pt">
                         <span>Location</span><span style="letter-spacing:-0.05pt"> </span><span>of</span><span
                             style="letter-spacing:0.1pt"> </span><span>Eq.</span><span style="letter-spacing:3.35pt">
-                        </span><span style="letter-spacing:-0.5pt">:</span></p>
+                        </span><span style="letter-spacing:-0.5pt">: {{$equipment->room}}</span></p>
                     <p class="TableParagraph" style="margin-top:1.7pt; font-size:7.5pt"><span
                             style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
                     <p class="TableParagraph" style="margin-left:0.65pt; font-size:7.5pt"><span>Code/No. of</span><span
                             style="letter-spacing:0.05pt"> </span><span>Eq.</span><span style="letter-spacing:0.1pt">
-                        </span><span style="letter-spacing:-0.6pt">:</span></p>
+                        </span><span style="letter-spacing:-0.6pt">: {{$equipment->kode}}</span></p>
                 </td>
                 <td colspan="6" rowspan="3"
                     style="width:160.7pt; border-style:solid; border-width:1.5pt; vertical-align:top">
@@ -155,13 +158,13 @@
                             style="font-size:7.5pt">Name</span><span style="font-size:7.5pt; letter-spacing:-0.05pt">
                         </span><span style="font-size:7.5pt">List</span><span
                             style="font-size:7.5pt; letter-spacing:0.1pt"> </span><span
-                            style="font-size:7.5pt; letter-spacing:-0.5pt">:</span></p>
+                            style="font-size:7.5pt; letter-spacing:-0.5pt">: {{$mc->enginer_list}}</span></p>
                 </td>
                 <td colspan="3"
                     style="width:134.6pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-left:0.8pt; line-height:8.75pt"><span
                             style="font-size:8.5pt">Date</span><span style="font-size:8.5pt; letter-spacing:-0.6pt">
-                        </span><span style="font-size:8.5pt; letter-spacing:-0.5pt">:</span></p>
+                        </span><span style="font-size:8.5pt; letter-spacing:-0.5pt">: {{$mc->tanggal}}</span></p>
                 </td>
                 <td colspan="2" rowspan="2"
                     style="width:83.1pt; border-top-style:solid; border-top-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:0.75pt; vertical-align:top; background-color:#f2f2f2">
@@ -174,13 +177,13 @@
                     style="width:68.28pt; border-style:solid; border-width:0.75pt 0.75pt 1.5pt 1.5pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-top:0.35pt; margin-left:0.55pt; font-size:6.5pt">
                         <span>Start</span><span style="letter-spacing:0.05pt"> </span><span
-                            style="letter-spacing:-0.2pt">Time</span></p>
+                            style="letter-spacing:-0.2pt">Time {{$mc->start}}</span></p>
                 </td>
                 <td colspan="2" rowspan="2"
                     style="width:65.58pt; border-style:solid; border-width:0.75pt 1.5pt 1.5pt 0.75pt; vertical-align:top">
                     <p class="TableParagraph" style="margin-top:0.35pt; margin-left:0.9pt; font-size:6.5pt">
                         <span>Stop</span><span style="letter-spacing:-0.1pt"> </span><span
-                            style="letter-spacing:-0.2pt">Time</span></p>
+                            style="letter-spacing:-0.2pt">Time {{$mc->end}}</span></p>
                 </td>
             </tr>
             <tr style="height:9.45pt; -aw-height-rule:exactly">
@@ -2178,12 +2181,12 @@ echo $firstValue;
                             style="font-family:Arial; font-size:8.5pt; font-weight:bold; letter-spacing:-0.3pt">
                         </span><span style="font-family:Arial; font-size:8.5pt; font-weight:bold">?</span><span
                             style="font-family:Arial; font-size:8.5pt; font-weight:bold; letter-spacing:0.25pt">
-                        </span><span style="font-family:Calibri">⃝</span><span
+                        </span><span style="font-family:Calibri"></span><span
                             style="font-family:Calibri; letter-spacing:-0.3pt"> </span><span
-                            style="font-family:Calibri; letter-spacing:-0.25pt">YES</span></p>
+                            style="font-family:Calibri; letter-spacing:-0.25pt">{{$mc->status}}</span></p>
                     <p class="TableParagraph" style="margin-top:6.15pt; margin-left:99.3pt; font-size:9pt"><span
-                            style="font-family:Calibri">⃝</span><span style="font-family:Calibri; letter-spacing:0.1pt">
-                        </span><span style="font-family:Calibri">NO,</span><span
+                            style="font-family:Calibri"></span><span style="font-family:Calibri; letter-spacing:0.1pt">
+                        </span><span style="font-family:Calibri"></span><span
                             style="font-family:Calibri; letter-spacing:0.1pt"> </span><span
                             style="font-family:Calibri">please</span><span
                             style="font-family:Calibri; letter-spacing:0.1pt"> </span><span
@@ -2443,7 +2446,7 @@ echo $firstValue;
                 <td colspan="4"
                     style="width:240.6pt; border-right-style:solid; border-right-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
                     <p class="TableParagraph" style="font-size:8pt"><span
-                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                            style="font-family:'Times New Roman'; -aw-import:ignore">{{$mc->temuan}}</span></p>
                 </td>
                 <td colspan="8"
                     style="width:255.9pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
@@ -2458,7 +2461,9 @@ echo $firstValue;
                             style="font-family:Arial; font-style:italic; letter-spacing:-0.2pt"> </span><span
                             style="font-family:Arial; font-style:italic">media</span><span
                             style="font-family:Arial; font-style:italic; letter-spacing:-0.05pt"> </span><span
-                            style="font-family:Arial; font-style:italic; letter-spacing:-0.1pt">lainnya.</span></p>
+                            style="font-family:Arial; font-style:italic; letter-spacing:-0.1pt">lainnya.</span><br>
+                        {{$mc->rekomendasi}}
+                        </p>
                 </td>
                 <td colspan="7" rowspan="2"
                     style="width:248.1pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
@@ -2555,6 +2560,7 @@ echo $firstValue;
         </table>
         <p><span style="-aw-import:ignore">&#xa0;</span></p>
     </div>
+    @include('pdf.tablegambar')
 </body>
 
 </html> 

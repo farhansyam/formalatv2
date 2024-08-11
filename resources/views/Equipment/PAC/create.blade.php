@@ -1589,7 +1589,7 @@
             <td><select name="intensive" id="" class="form-select">
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
-                </select>"></td>
+                </select></td>
             <td><select name="status" id="" class="form-select">
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>

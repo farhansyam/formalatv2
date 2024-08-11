@@ -16,6 +16,25 @@
                     </div>
                     <form action="{{ route('exhaustfan.store') }}" method="POST">
                         @csrf
+                                              <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input disabled type="date" name="tanggal" required class="form-control" value="{{$ef->tanggal}}"></td>
+            <td><textarea disabled name="enginer_list" id="" cols="60" rows="10">{{$ef->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input disabled type="time" class="form-control" name="start" required value="{{$ef->start}}"></td>
+            <td><input disabled type="time" name="end" class="form-control" value="{{$ef->end}}" id=""></td>
+        </tr>
+            
+</table>
                         <table class="table table-bordered" id="personelTeamTable">
                             <thead>
                                 <h5 class="text-center" style="background-color: black;color:white">Spesifikasi Unit</h5>
@@ -74,7 +93,7 @@
                                 <tr>
                                     @foreach (explode(',',$ef->q6) as $val)
                                     <td>
-                                        <p>Capacity :</p><input disabled type="text" class="form-control text-center" required name="q6[]" value="{{$val}}">
+                                        <p>Caefity :</p><input disabled type="text" class="form-control text-center" required name="q6[]" value="{{$val}}">
                                     </td>
                                     @endforeach
 
@@ -402,7 +421,35 @@
                         </table>
                         </tbody>
                         </table>
+             <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea disabled disabled name="temuan" id="" cols="60" rows="10">{{$ef->temuan}}</textarea></td>
+            <td><textarea disabled disabled name="rekomendasi" id="" cols="60" rows="10">{{$ef->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Intensive Check</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select disabled name="status" id="" class="form-select">
+                    <option value="{{$ef->intensive}}">{{$ef->intensive}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
 
+                </select></td>
+            <td><select disabled name="status" id="" class="form-select">
+                    <option value="{{$ef->status}}">{{$ef->status}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.show')
                     </form>
                 </div>
             </div>

@@ -1168,7 +1168,7 @@
             <th>Job Complete</th>
         </tr>
         <tr>
-            <td><td><select disabled name="status" id="" class="form-select">
+            <td><select disabled name="status" id="" class="form-select">
                     <option value="{{$PAC->intensive}}">{{$PAC->intensive}}</option>
                     <option value="No">No</option>
                     <option value="Yes">Yes</option>

@@ -15,10 +15,30 @@
                             <h4 class="card-title mb-0 text-center">Task List Mini Chiller</h4>
                         </div>
                         <div class="card-body">
-                            <form action="{{ route('mini-chilleer.update', $MiniChiller->id) }}" method="POST">
+                            <form action="{{ route('mini-chilleer.update', $MiniChiller->id) }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 @method('PUT') <!-- Tambahkan baris ini -->
                                 @csrf
+                                 <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control" value="{{$MiniChiller->tanggal}}"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$MiniChiller->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required value="{{$MiniChiller->start}}"></td>
+            <td><input type="time" name="end" class="form-control" id="" value="{{$MiniChiller->end}}"></td>
+        </tr>
+            
+</table>
+
                                 <table class="table table-bordered" id="personelTeamTable">
                                     <thead>
                                         <tr>
@@ -536,8 +556,39 @@
                                         </tr>
                                     </tbody>
                                     </table>
+                                                                <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" disabled id="" cols="60" rows="10">{{$MiniChiller->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" disabled id="" cols="60" rows="10">{{$MiniChiller->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Intensive Check</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select name="intensive" id="" disabled class="form-select">
+                    <option value="{{$MiniChiller->intensive}}">{{$MiniChiller->intensive}}</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+
+            <td><select name="status" disabled id="" class="form-select">
+                    <option value="{{$MiniChiller->status}}">{{$MiniChiller->status}}</option>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select></td>
+        </tr>
+            
+</table>
+@include('formimage.formkosong')
+
                                     <button type="submit" class="btn btn-primary">Submit</button>
                                 </form>
+@include('formimage.edit')
                         
                         </div>
                     </div>
