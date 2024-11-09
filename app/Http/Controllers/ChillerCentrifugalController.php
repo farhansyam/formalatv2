@@ -130,6 +130,14 @@ class ChillerCentrifugalController extends Controller
             'q42' => implode(',', $request->input('q42')),
 
             'q43' => implode(',', $request->input('q43')),
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
         ];
     
         // Simpan data ke dalam model ChillerCentrifugal
@@ -141,7 +149,7 @@ class ChillerCentrifugalController extends Controller
 
                 GambarAct::create([
                     'id_act' => $ChillerCentrifugal->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -155,7 +163,7 @@ class ChillerCentrifugalController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $ChillerCentrifugal->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index2],
                     'info' => $request->info2[$index2],
@@ -187,7 +195,9 @@ class ChillerCentrifugalController extends Controller
         $history = History::find($id);
         $ChillerCentrifugal = ChillerCentrifugal::Find($history->id_act); // Sesuaikan dengan model ChillerCentrifugal
         $id = $history->id_equipment;
-        return view('equipment.ChillerCentrifugal.show', compact('ChillerCentrifugal','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.ChillerCentrifugal.show', compact('ChillerCentrifugal','id','gambar','gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -200,7 +210,9 @@ class ChillerCentrifugalController extends Controller
         $history = History::find($id);
         $ChillerCentrifugal = ChillerCentrifugal::Find($history->id_act); // Sesuaikan dengan model ChillerCentrifugal
         $id = $history->id_equipment;
-        return view('equipment.ChillerCentrifugal.edit', compact('ChillerCentrifugal','id'));
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        return view('equipment.ChillerCentrifugal.edit', compact('ChillerCentrifugal','id','gambar','gambar2'));
         
     }
 
@@ -213,7 +225,16 @@ class ChillerCentrifugalController extends Controller
         for ($i = 1; $i <= 43; $i++) {
             $qData['q' . $i] = implode(',', $request->input('q' . $i));
         }
-        
+        $qData = [
+            'tanggal' => $request->input('tanggal'),
+            'rekomendasi' => $request->input('rekomendasi'),
+            'status' => $request->input('status'),
+            'temuan' => $request->input('temuan'),
+            'enginer_list' => $request->input('enginer_list'),
+            'start' => $request->input('start'),
+            'end' => $request->input('end'),
+            'intensive' => $request->input('intensive')
+        ];
         // Simpan data ke dalam model CoolingUnit
         $acs->update($qData);
 
@@ -226,7 +247,7 @@ class ChillerCentrifugalController extends Controller
 
                 GambarAct::create([
                     'id_act' => $acs->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
@@ -240,10 +261,10 @@ class ChillerCentrifugalController extends Controller
 
                 GambarAct2::create([
                     'id_act' => $acs->id,
-                    'id_equipement' => $request->id_equipment,
+                    'id_equipement' => $request->id,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                 ]);
             }
         }

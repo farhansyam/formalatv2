@@ -85,7 +85,8 @@
             border-right:none;
             border-top: solid black 1.5pt;
             border-left: solid black 1.5pt;
-        "><img width="" height="" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('Pengecekan_files/image002.png'))) }}" /></td>
+        ">
+        <img width="50" height="" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('Pengecekan_files/logo.jpg'))) }}" /></td>
         <td width="582" colspan="6" valign="top" style="
               width: 436.85pt;
               border-top: solid black 1.5pt;

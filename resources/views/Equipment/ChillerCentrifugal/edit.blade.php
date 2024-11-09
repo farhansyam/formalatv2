@@ -17,6 +17,25 @@
                     <div class="card-body">
                         <form action="{{ route('chiller-centrifugall.update',$ChillerCentrifugal->id) }}" method="POST">
                             @csrf
+                            <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal" required class="form-control" value="{{$ChillerCentrifugal->tanggal}}"></td>
+            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$ChillerCentrifugal->enginer_list}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required value="{{$ChillerCentrifugal->start}}"></td>
+            <td><input type="time" name="end" class="form-control" id="" value="{{$ChillerCentrifugal->end}}"></td>
+        </tr>
+            
+</table>
                             @method('PUT')
                             <table class="table table-bordered" id="personelTeamTable">
                                 <thead>
@@ -559,7 +578,38 @@
                             </table>
                             <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
 
+                        <table class="table table-bordered" id="">
+        <tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$ChillerCentrifugal->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$ChillerCentrifugal->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Intensive Check</th>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td><select name="status" id="" class="form-select">
+                    <option value="{{$ChillerCentrifugal->intensive}}">{{$ChillerCentrifugal->intensive}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+
+                </select></td>
+            <td><select name="status" id="" class="form-select">
+                    <option value="{{$ChillerCentrifugal->status}}">{{$ChillerCentrifugal->status}}</option>
+                    <option value="No">No</option>
+                    <option value="Yes">Yes</option>
+                </select></td>
+        </tr>
+            @include('formimage.formkosong')
+</table>
+
+                            <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                         </form>
+@include('formimage.edit')
                     </div>
                 </div>
             </div>
