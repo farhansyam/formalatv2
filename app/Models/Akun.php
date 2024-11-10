@@ -13,6 +13,9 @@ class Akun extends Model
         'name',
         'email',
         'password',
+        'customer',
+        'site',
+        'role_sipm'
     ];
 
     public $timestamps = false;

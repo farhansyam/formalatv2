@@ -81,6 +81,7 @@
                 <span class="hide-menu">Equipment</span>
               </a>
             </li>
+            @if(auth()->user()->role_sipm != 'user')
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('schedule.index')}}" aria-expanded="false">
                 <span>
@@ -97,6 +98,8 @@
                 <span class="hide-menu">Part Proposal</span>
               </a>
             </li>
+            @endif
+
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('scan')}}" aria-expanded="false">
                 <span>
@@ -156,6 +159,14 @@
                   <i class="ti ti-map"></i>
                 </span>
                 <span class="hide-menu">Area</span>
+              </a>
+            </li>
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{route('brand.index')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-map"></i>
+                </span>
+                <span class="hide-menu">Brand/Merk</span>
               </a>
             </li>
             <li class="sidebar-item">

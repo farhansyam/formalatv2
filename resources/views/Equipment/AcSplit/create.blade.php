@@ -11,7 +11,35 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
+                              <div class="border-bottom title-part-padding">
+            <h4 class="card-title mb-0 text-center">AIR CONDITIONER SERIES</h4>
+          </div>
+          <div class="card-body">
+
                     <form action="{{ route('ac-split.store') }}" id="myForm" method="POST" enctype="multipart/form-data">
+                         <div class="row">
+                <div class="col-md-4 mb-3">
+                  <label for="">Customer</label>
+                  <input type="text" name="customer" class="form-control" id="" value="{{$equipment->customer}}" required="">
+                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$equipment->id}}" required="">
+                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$id}}" required="">
+                  <label for="">No Kontak</label>
+                  <input type="text" name="no_kontak" class="form-control" id="" value="" required="">
+                  <label for="">Alamat</label>
+                  <textarea class="form-control" name="alamat" id="" cols="10" rows="4">{{$equipment->customer()->alamat}}</textarea>
+
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="">Engineer List</label>
+                  <textarea class="form-control" name="engineer_list" id="" cols="10" rows="4"></textarea>
+                </div>
+                <div class="col-md-4 mb-3">
+                  <label for="">Tanggal Survey</label>
+                  <div class="input-group">
+                    <input type="date" class="form-control" id="" aria-describedby="inputGroupPrepend2" required="" name="tanggal_survey">
+                  </div>
+                </div>
+              </div>
                         <table class="table table-bordered" id="personelTeamTable">
                             <thead>
                                 <tr>

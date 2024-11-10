@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Dompdf\Dompdf;
 use App\Models\Area;
 use App\Models\Room;
+use App\Models\Brand;
 use App\Models\Freon;
 use App\Models\History;
 use App\Models\Reguler;
@@ -32,9 +33,19 @@ class EquipmentController extends Controller
      */
     public function index()
     {
+
         $room = Room::all();
         $equipment = Equipment::all();
-        return view('Equipment.index', compact('equipment','room'));
+        if (auth()->user()->role_sipm == 'user') {
+            $equipment = Equipment::Where('customer', auth()->user()->customer)->get();
+        }
+        if (auth()->user()->role_sipm == 'spv') {
+            $equipment = Equipment::Where('site', auth()->user()->site)->get();
+        }
+        if (auth()->user()->role_sipm == 'team_lead') {
+            $equipment = Equipment::Where('site', auth()->user()->site)->get();
+        }
+        return view('Equipment.index', compact('equipment', 'room'));
     }
 
     /**
@@ -45,12 +56,13 @@ class EquipmentController extends Controller
     public function create()
     {
         $area = Area::all();
+        $brand = Brand::all();
         $kapasitas = Kapasitas::all();
         $customer = Customer::all();
         $freon = Freon::all();
         $reguler = Reguler::all();
         $room = Room::all();
-        return view('Equipment.create', compact('area', 'kapasitas', 'customer','freon','reguler','room'));
+        return view('Equipment.create', compact('area', 'kapasitas', 'customer', 'freon', 'reguler', 'room', 'brand'));
     }
 
     /**
@@ -61,7 +73,7 @@ class EquipmentController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $equipment = new Equipment;
         $equipment->jenis = $request->jenis;
         $equipment->customer = $request->customer;
@@ -76,7 +88,7 @@ class EquipmentController extends Controller
         $equipment->jenis_freon = $request->jenis_freon;
         $equipment->room = $request->room;
         $equipment->other = $request->other;
-        $room = Room::where('room',$request->room)->first();
+        $room = Room::where('room', $request->room)->first();
         $equipment->kode_room = $room->kode;
         $equipment->reguler = $request->reguler;
         $site = Area::where('area', $request->area)->first();
@@ -176,7 +188,7 @@ class EquipmentController extends Controller
     public function show(Equipment $equipment)
     {
         $history = History::where('id_equipment', $equipment->id)->get();
-        $schedule = ItemSchedule::where('id_equipement',$equipment->id_combine)->orderBy('schedule','ASC')->get();
+        $schedule = ItemSchedule::where('id_equipement', $equipment->id_combine)->orderBy('schedule', 'ASC')->get();
         return view('Equipment.show', compact('equipment', 'history', 'schedule'));
     }
     public function search(Request $request)
@@ -208,13 +220,15 @@ class EquipmentController extends Controller
     public function edit(Equipment $equipment)
     {
         $area = Area::all();
+        $brand = Brand::all();
+
         $kapasitas = Kapasitas::all();
         $customer = Customer::all();
         $freon = Freon::all();
         $reguler = Reguler::all();
         $room = Room::all();
 
-        return view('Equipment.edit', compact('area', 'kapasitas', 'customer', 'freon','equipment','reguler','room'));
+        return view('Equipment.edit', compact('area', 'kapasitas', 'customer', 'freon', 'equipment', 'reguler', 'room', 'brand'));
     }
 
     /**
@@ -248,21 +262,21 @@ class EquipmentController extends Controller
         $equipment->site = $site;
         $equipment->kode = $request->kode;
 
-        if($request->file('foto')){
-        $imageNames = [];
+        if ($request->file('foto')) {
+            $imageNames = [];
 
-        // Looping untuk setiap gambar yang diunggah
-        foreach ($request->file('foto') as $image) {
-            // Simpan gambar ke dalam folder yang ditentukan
-            $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('image'), $imageName);
-            // Tambahkan nama gambar ke array
-            $imageNames[] = $imageName;
-        }
+            // Looping untuk setiap gambar yang diunggah
+            foreach ($request->file('foto') as $image) {
+                // Simpan gambar ke dalam folder yang ditentukan
+                $imageName = time() . '_' . $image->getClientOriginalName();
+                $image->move(public_path('image'), $imageName);
+                // Tambahkan nama gambar ke array
+                $imageNames[] = $imageName;
+            }
 
-        // Gabungkan nama-nama gambar dengan pemisah koma
-        $imageNamesString = implode(',', $imageNames);
-        $equipment->foto = $imageNamesString;
+            // Gabungkan nama-nama gambar dengan pemisah koma
+            $imageNamesString = implode(',', $imageNames);
+            $equipment->foto = $imageNamesString;
         }
         $jenis = [
             1 => "AC Split",
@@ -328,12 +342,18 @@ class EquipmentController extends Controller
      */
     public function destroy(Equipment $equipment)
     {
-        $history = History::where('id_equipment',$equipment->id)->get();
+        $history = History::where('id_equipment', $equipment->id)->get();
         foreach ($history as $record) {
             $record->delete();
         }
         $equipment->delete();
         return redirect()->route('equipment.index');
+    }
+    public function history_approve($equipment)
+    {
+        History::where('id_act', $equipment)->update(['approval' => 'Approve']);
+
+        return back();
     }
 
     function scan()
@@ -367,7 +387,7 @@ class EquipmentController extends Controller
         $filename = 'equipment_qrcode_' . time() . '.pdf';
 
         // Simpan PDF ke server sementara
-        $output = $dompdf->output();    
+        $output = $dompdf->output();
         file_put_contents($filename, $output);
 
         // Tautan untuk membuka pratinjau PDF di tab baru
@@ -383,33 +403,37 @@ class EquipmentController extends Controller
         return view('pdf.equipment', compact('equipment'));
     }
 
-    function history_destoroy(History $history,$id){
+    function history_destoroy(History $history, $id)
+    {
         $history = History::find($id);
-        if($history->type == "Survei"){
+        if ($history->type == "Survei") {
             $survey = FormBeritaAcara::find($history->id_act);
             $survey->delete();
-
         }
         $history->delete();
         return back();
     }
-    function gambar1_destroy(GambarAct $gambar,$id){
+    function gambar1_destroy(GambarAct $gambar, $id)
+    {
         $gambar = GambarAct::find($id);
         $gambar->delete();
         return back();
     }
-    function gambar2_destroy(GambarAct $gambar,$id){
+    function gambar2_destroy(GambarAct $gambar, $id)
+    {
         $gambar = GambarAct2::find($id);
         $gambar->delete();
         return back();
     }
 
-    function part(){
+    function part()
+    {
         $history = History::all();
-        return view('part.index',compact('history'));
+        return view('part.index', compact('history'));
     }
-    function partshow($id){
-        $parts = ListKebutuhanBeritaAcara::where('id_beritaacara',$id)->get();
-        return view('part.show',compact('parts'));
+    function partshow($id)
+    {
+        $parts = ListKebutuhanBeritaAcara::where('id_beritaacara', $id)->get();
+        return view('part.show', compact('parts'));
     }
 }

@@ -10,7 +10,7 @@ class Customer extends Model
 {
     use HasFactory;
 
-    
+
     public function equipment()
     {
         return Equipment::where('customer', $this->nama);
@@ -41,4 +41,3 @@ class Customer extends Model
         return $this->itemschedules()->whereMonth('schedule', now()->subMonths(2)->month);
     }
 }
-

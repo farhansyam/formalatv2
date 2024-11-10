@@ -52,7 +52,11 @@
             <div class="col-md-6 mb-3">
 
               <label for="">Brand</label>
-              <input type="text" name="brand" class="form-control" id="" value="" required="">
+                <select name="brand" id="" class="form-select">
+                @foreach ($brand as $data)
+                <option value="{{$data->brand}}">{{$data->brand}}</option>
+                @endforeach
+              </select>
             </div>
             <div class="col-md-6 mb-3">
 

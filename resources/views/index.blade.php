@@ -6,7 +6,13 @@ p
 @else
 <div class="container-fluid">
   <div class="row">
-    <div class="col-md-6">
+    @if (auth()->user()->role_sipm == 'user')
+    <h2>Welcome {{auth()->user()->role_sipm}}</h2>
+    @elseif (auth()->user()->role_sipm == 'spv')  
+    @elseif (auth()->user()->role_sipm == 'team_lead')  
+    @else
+      <div class="col-md-6">
+      
       @foreach ($customer as $data)
       <br>
       <h5>Customer : {{$data->nama}}</h5>
@@ -243,6 +249,7 @@ p
         </div>
       </div>
     </div>
+    @endif
   </div>
 </div>
 @endif

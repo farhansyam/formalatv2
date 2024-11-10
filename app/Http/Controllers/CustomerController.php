@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Customer;
+
 class CustomerController extends Controller
 {
     /**
@@ -40,7 +41,7 @@ class CustomerController extends Controller
         $customer->alamat = $request->alamat;
         $customer->bidang = $request->bidang;
         $customer->save();
-        return redirect()->route('customer.index')->with(['message'=>'Data berhasil dibuat']);
+        return redirect()->route('customer.index')->with(['message' => 'Data berhasil dibuat']);
     }
 
     /**
@@ -62,8 +63,8 @@ class CustomerController extends Controller
      */
     public function edit(Customer $customer)
     {
-            
-            return view('customer.edit',compact('customer'));
+
+        return view('customer.edit', compact('customer'));
     }
 
     /**
@@ -75,12 +76,12 @@ class CustomerController extends Controller
      */
     public function update(Request $request, Customer $customer)
     {
-            
-            $customer->nama = $request->nama;
-            $customer->alamat = $request->alamat;
-            $customer->bidang = $request->bidang;
-            $customer -> save();
-            return redirect()->route('customer.index')->with(['message'=>'Data berhasil diubah']);
+
+        $customer->nama = $request->nama;
+        $customer->alamat = $request->alamat;
+        $customer->bidang = $request->bidang;
+        $customer->save();
+        return redirect()->route('customer.index')->with(['message' => 'Data berhasil diubah']);
     }
 
     /**
@@ -91,8 +92,8 @@ class CustomerController extends Controller
      */
     public function destroy(Customer $customer)
     {
-            
-                $customer->delete();
-                return redirect()->route('customer.index')->with(['message'=>'Data berhasil dihapus']);
+
+        $customer->delete();
+        return redirect()->route('customer.index')->with(['message' => 'Data berhasil dihapus']);
     }
 }

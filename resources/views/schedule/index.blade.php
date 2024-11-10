@@ -33,7 +33,9 @@
 <!-- --------------------------------------------------- -->
 <div class="container-fluid">
   <!-- --------------------------------------------------- -->
+  @if(auth()->user()->role_sipm != 'team_lead')
   <a href="{{route('schedule.create')}}" class="btn btn-primary">Add Schedule</a>
+  @endif
   <br>
   <br>
   <div class="card">

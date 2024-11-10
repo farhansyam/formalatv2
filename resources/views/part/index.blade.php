@@ -166,7 +166,7 @@
                   <td class="tablesaw-priority-3">{{ \Carbon\Carbon::parse($data->created_at)->format('d F Y') }}</td>
                   <td class="tablesaw-priority-1">
                     <div style="display: flex; align-items: center;">
-                      <a href="{{ route('part.show', $data->id) }}" style="text-decoration: none;">
+                      <a href="{{ route('part.show', $data->id_act) }}" style="text-decoration: none;">
                         <button class="btn btn-success">Detail Part Proposal</button>
                       </a>
 

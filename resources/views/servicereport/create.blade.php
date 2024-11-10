@@ -210,10 +210,10 @@
                 <div class="col-md-6 mb-3">
                   <br>
                   <label for="">Name Plate : &nbsp;</label>
-                  <input type="radio" name="name_plate" value="ada" class="form-check-input">
+                  <input type="radio" required name="name_plate" value="ada" class="form-check-input">
                   <label class="form-check-label" for="">&nbsp; &nbsp;Ada</label>
 
-                  <input type="radio" name="name_plate" value="tidak ada" class="form-check-input">
+                  <input type="radio" required name="name_plate" value="tidak ada" class="form-check-input">
                   <label class="form-check-label" for=""> &nbsp;&nbsp;Tidak Ada</label>
                   <br>
                   <br>

@@ -15,12 +15,14 @@
             <h4 class="card-title mb-0 text-center">equipment</h4>
           </div>
           <div class="card-body">
-            <a href="{{route('equipment.create')}}">
+              @if (auth()->user()->role_sipm == 'user')
+              @else
+                  <a href="{{route('equipment.create')}}">
               <button class="btn btn-primary">Tambah</button></a>
               <a href="{{route('import.form')}}">
               <button class="btn btn-success">Import Excel</button></a>
 
-              </a>
+              @endif
             <select id="jenisFilter">
               <option value="">Filter Jenis Equipment</option>
               <option value="AC Split">AC Split</option>
@@ -53,6 +55,7 @@
               <option value="Lakos Filter">Lakos Filter</option>
               <!-- Tambahkan opsi lainnya sesuai dengan jenis peralatan yang Anda miliki -->
             </select>
+                  @if(auth()->user()->role_sipm != 'user')
 
             <select id="roomFilter">
               <option value="">Filter Room</option>
@@ -62,6 +65,7 @@
               @endforeach
               <!-- Tambahkan opsi lainnya sesuai dengan ruangan yang Anda miliki -->
             </select>
+            @endif
             <br><br>
             <table class="table table-striped table-hover table-bordered table no-wrap tablesaw-columntoggle" data-tablesaw-mode="columntoggle" id="example">
               <thead>

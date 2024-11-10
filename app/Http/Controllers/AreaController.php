@@ -14,7 +14,7 @@ class AreaController extends Controller
      */
     public function index()
     {
-        $area= Area::all();
+        $area = Area::all();
         return view('area.index', compact('area'));
     }
 
@@ -25,12 +25,12 @@ class AreaController extends Controller
      */
     public function create()
     {
-        return  view ('area.create');
+        return  view('area.create');
     }
 
     public function store(Request $request)
     {
-        $area= new Area();
+        $area = new Area();
         $area->area = $request->area;
         $area->site = $request->site;
         $area->save();

@@ -111,7 +111,12 @@
             </div>
             <div class="col-md-6 mb-3">
               <label for="">Brand</label>
-              <input type="text" name="brand" class="form-control" id="" value="{{$equipment->brand}}" required="">
+                 <select name="brand" id="" class="form-select">
+                <option value="{{$equipment->brand}}">{{$equipment->brand}}</option>
+                @foreach ($brand as $data)
+                <option value="{{$data->brand}}">{{$data->brand}}</option>
+                @endforeach
+              </select>
             </div>
             <div class="col-md-6 mb-3">
               <label for="">Model</label>
