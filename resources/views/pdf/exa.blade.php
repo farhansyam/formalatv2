@@ -15,7 +15,50 @@
                   <p class="TableParagraph" style="margin-top:2.2pt; margin-left:195.8pt; line-height:15.55pt"><span style="font-size:21.5pt; font-weight:bold">EXHAUST</span><span style="font-size:21.5pt; font-weight:bold; letter-spacing:0.5pt"> </span><span style="font-size:21.5pt; font-weight:bold; letter-spacing:-0.25pt">FAN</span></p>
                </td>
                <td colspan="3" style="width:101.38pt; border-left-style:solid; border-left-width:1pt; border-bottom-style:solid; border-bottom-width:1pt; vertical-align:top; background-color:#f2f2f2">
-                  <p class="TableParagraph" style="margin-left:1.55pt; line-height:8.2pt"><span style="font-size:7pt">FORM</span><span style="font-size:7pt; letter-spacing:-0.4pt"> </span><span style="font-size:7pt; letter-spacing:-0.25pt">NO.</span></p>
+                  <p class="TableParagraph" style="margin-left:1.55pt; line-height:8.2pt"><span style="font-size:7pt">FORM</span><span style="font-size:7pt; letter-spacing:-0.4pt"> </span><span style="font-size:7pt; letter-spacing:-0.25pt">NO. <br>
+                  <?php
+                    // Array untuk memetakan angka ke jenis
+                    $jenis = [
+                      1 => "AC Split",
+                      2 => "Cooled Water Chiller",
+                      3 => "AHUP",
+                      4 => "PAC",
+                      5 => "Cold Storage",
+                      6 => "Cooling Unit & AC Panel",
+                      7 => "Mini Chiller",
+                      8 => "Evaporative Air Cooler",
+                      9 => "AHU",
+                      10 => "Cooling tower",
+                      11 => "Humidifier",
+                      12 => "Dehumidifier",
+                      13 => "FCU (Fan Cooling Unit)",
+                      14 => "Exhaust Fan",
+                      15 => "Pompa",
+                      16 => "Spot Cooling",
+                      17 => "Water Mist",
+                      18 => "Chiller Centrifugal",
+                      19 => "Floor Standing",
+                      20 => "Ac Cassette",
+                      21 => "Split Duct",
+                      22 => "Air Cooled Chiller",
+                      23 => "Centralize Chiller",
+                      24 => "Ultrasonic Humidifier",
+                      25 => "Piping & Accs",
+                      26 => "Panel SCR",
+                      27 => "ATCS",
+                      28 => "Lakos Filter"
+                    ];
+                    // Ambil singkatan dari jenis berdasarkan angka
+                    $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
+                    $singkatan2 = strtoupper($history->type);
+                    $bulan = strtoupper($history->created_at->format('m'));
+                    $tahun = strtoupper($history->created_at->format('y'));
+                    // Mengambil karakter terakhir
+                    echo strtoupper($singkatan1 .'-'. $singkatan2 .'-'. $bulan .'-'.$tahun.'-'.$formattedId = sprintf('%05d', $equipment->id));
+                    // Mengambil karakter pertama
+
+
+                    ?></span></p>
                </td>
             </tr>
             <tr style="height:16.05pt">

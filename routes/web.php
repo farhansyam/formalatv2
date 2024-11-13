@@ -20,6 +20,9 @@ use App\Http\Controllers\PompaController;
 
 use App\Http\Controllers\ImportController;
 use App\Http\Controllers\AcSplitController;
+use App\Http\Controllers\AcSplitController2;
+use App\Http\Controllers\AcSplitController3;
+use App\Http\Controllers\AcSplitController4;
 use App\Http\Controllers\RegulerController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ScheduleController;
@@ -113,6 +116,18 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('add-ac-split/{id}', [AcSplitController::class, 'create2'])->name('ac-split.create2');
 Route::resource('ac-split', AcSplitController::class)->name('index', 'ac-split.index')->middleware('auth');
 Route::get('ac-split/print/{id}', [AcSplitController::class, 'print'])->name('ac-split.print')->middleware('auth');
+
+Route::get('add-ac-split2/{id}', [AcSplitController2::class, 'create2'])->name('ac-split2.create2');
+Route::resource('ac-split2', AcSplitController2::class)->name('index', 'ac-split2.index')->middleware('auth');
+Route::get('ac-split2/print/{id}', [AcSplitController2::class, 'print'])->name('ac-split2.print')->middleware('auth');
+
+Route::get('add-ac-split3/{id}', [AcSplitController3::class, 'create2'])->name('ac-split3.create2');
+Route::resource('ac-split3', AcSplitController3::class)->name('index', 'ac-split3.index')->middleware('auth');
+Route::get('ac-split3/print/{id}', [AcSplitController3::class, 'print'])->name('ac-split3.print')->middleware('auth');
+
+Route::get('add-ac-split4/{id}', [AcSplitController4::class, 'create2'])->name('ac-split4.create2');
+Route::resource('ac-split4', AcSplitController4::class)->name('index', 'ac-split4.index')->middleware('auth');
+Route::get('ac-split4/print/{id}', [AcSplitController4::class, 'print'])->name('ac-split4.print')->middleware('auth');
 
 Route::get('cold-storage/create/{id}', [ColdStorageController::class, 'create2'])->name('cold-storage.create2');
 Route::resource('cs', ColdStorageController::class)->name('index', 'cs.index')->middleware('auth');

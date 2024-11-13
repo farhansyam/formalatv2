@@ -52,7 +52,7 @@
                   <p class=TableParagraph style='margin-left:112.85pt;line-height:18.55pt'><span
                      style='position:absolute;z-index:-1660505088;left:0px;margin-left:27px;
                      margin-top:2px;width:100px;height:48px'><img width=100 height=48
-                     src="02%20Tasklist%20Air%20Cooled%20Water%20Chiller_files/image001.png"></span><b><span
+                     src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('Pengecekan_files/logo.jpg'))) }}"></span><b><span
                      style='font-size:12.5pt;font-family:"Arial",sans-serif'>PT.<span
                      style='letter-spacing:.4pt'> </span>DIKARI<span style='letter-spacing:.35pt'>
                      </span>TATA<span style='letter-spacing:-.2pt'> </span>UDARA<span
@@ -110,20 +110,62 @@
                   <p class=TableParagraph style='margin-left:.75pt;line-height:10.3pt'><span
                      style='font-size:8.5pt'>Engineer<span style='letter-spacing:.4pt'> </span>Name<span
                      style='letter-spacing:.45pt'> </span>List<span style='letter-spacing:.5pt'> </span><span
-                     style='letter-spacing:-.5pt'>:</span></span></p>
+                     style='letter-spacing:-.5pt'>:{{$acwc->enginerlist}}</span></span></p>
                </td>
                <td width=233 colspan=8 valign=top style='width:174.4pt;border-top:none;
                   border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
                   padding:0in 0in 0in 0in;height:21.45pt'>
                   <p class=TableParagraph style='margin-left:1.0pt;line-height:13.25pt'><b>Date<span
-                     style='letter-spacing:.2pt'> </span><span style='letter-spacing:-.5pt'>:</span></b></p>
+                     style='letter-spacing:.2pt'> </span><span style='letter-spacing:-.5pt'>:{{$acwc->tanggal_survey}}</span></b></p>
                </td>
                <td width=101 rowspan=2 valign=top style='width:75.45pt;border:none;
                   border-right:solid black 1.5pt;background:#F2F2F2;padding:0in 0in 0in 0in;
                   height:21.45pt'>
                   <p class=TableParagraph style='margin-left:.5pt;line-height:8.35pt'><b><span
                      style='font-size:7.0pt;color:black'>FORM<span style='letter-spacing:.4pt'> </span><span
-                     style='letter-spacing:-.25pt'>NO.</span></span></b></p>
+                     style='letter-spacing:-.25pt'>NO.  <br>  <?php
+                    // Array untuk memetakan angka ke jenis
+                    $jenis = [
+                      1 => "AC Split",
+                      2 => "Cooled Water Chiller",
+                      3 => "AHUP",
+                      4 => "PAC",
+                      5 => "Cold Storage",
+                      6 => "Cooling Unit & AC Panel",
+                      7 => "Mini Chiller",
+                      8 => "Evaporative Air Cooler",
+                      9 => "AHU",
+                      10 => "Cooling tower",
+                      11 => "Humidifier",
+                      12 => "Dehumidifier",
+                      13 => "FCU (Fan Cooling Unit)",
+                      14 => "Exhaust Fan",
+                      15 => "Pompa",
+                      16 => "Spot Cooling",
+                      17 => "Water Mist",
+                      18 => "Chiller Centrifugal",
+                      19 => "Floor Standing",
+                      20 => "Ac Cassette",
+                      21 => "Split Duct",
+                      22 => "Air Cooled Chiller",
+                      23 => "Centralize Chiller",
+                      24 => "Ultrasonic Humidifier",
+                      25 => "Piping & Accs",
+                      26 => "Panel SCR",
+                      27 => "ATCS",
+                      28 => "Lakos Filter"
+                    ];
+                    // Ambil singkatan dari jenis berdasarkan angka
+                    $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
+                    $singkatan2 = strtoupper($history->type);
+                    $bulan = strtoupper($history->created_at->format('m'));
+                    $tahun = strtoupper($history->created_at->format('y'));
+                    // Mengambil karakter terakhir
+                    echo strtoupper($singkatan1 .'-'. $singkatan2 .'-'. $bulan .'-'.$tahun.'-'.$formattedId = sprintf('%05d', $equipment->id));
+                    // Mengambil karakter pertama
+
+
+                    ?></span></span></b></p>
                </td>
                <td style='height:21.45pt;border:none' width=0 height=29></td>
             </tr>
@@ -133,14 +175,14 @@
                   padding:0in 0in 0in 0in;height:11.5pt'>
                   <p class=TableParagraph style='margin-top:.05pt;margin-right:0in;margin-bottom:
                      0in;margin-left:.65pt;margin-bottom:.0001pt'><span style='font-size:8.0pt'>Start<span
-                     style='letter-spacing:-.2pt'> Time</span></span></p>
+                     style='letter-spacing:-.2pt'> Time : {{$acwc->start}}</span></span></p>
                </td>
                <td width=124 colspan=4 rowspan=2 valign=top style='width:92.8pt;border-top:
                   none;border-left:none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
                   padding:0in 0in 0in 0in;height:11.5pt'>
                   <p class=TableParagraph style='margin-top:.05pt;margin-right:0in;margin-bottom:
                      0in;margin-left:1.0pt;margin-bottom:.0001pt'><span style='font-size:8.0pt'>Stop<span
-                     style='letter-spacing:-.25pt'> </span><span style='letter-spacing:-.2pt'>Time</span></span></p>
+                     style='letter-spacing:-.25pt'> </span><span style='letter-spacing:-.2pt'>Time : {{$acwc->stop}}</span></span></p>
                </td>
                <td style='height:11.5pt;border:none' width=0 height=15></td>
             </tr>

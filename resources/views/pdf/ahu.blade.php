@@ -9,7 +9,7 @@
    <body>
       <div>
          <div style="-aw-headerfooter-type:header-primary; clear:both">
-            <p class="BodyText" style="line-height:6%; font-size:10pt"><span style="height:0pt; display:block; position:absolute; z-index:-65537"><img src="images/Aspose.Words.8dc7887e-9b83-487b-8ac1-bc9879ebfa82.001.png" width="15" height="16" alt="" style="margin-top:-0.27pt; margin-left:513.96pt; -aw-left-pos:552.96pt; -aw-rel-hpos:page; -aw-rel-vpos:page; -aw-top-pos:22.58pt; -aw-wrap-type:none; position:absolute" /></span><span style="font-weight:normal; font-style:normal; -aw-import:ignore">&#xa0;</span></p>
+            <p class="BodyText" style="line-height:6%; font-size:10pt"><span style="height:0pt; display:block; position:absolute; z-index:-65537"></span><span style="font-weight:normal; font-style:normal; -aw-import:ignore">&#xa0;</span></p>
          </div>
          <table cellspacing="0" cellpadding="0" class="TableNormal" style="margin-left:6.5pt; -aw-border-insideh:1.5pt single #000000; -aw-border-insidev:1.5pt single #000000; border-collapse:collapse">
             <tr style="height:28.85pt">
@@ -18,7 +18,50 @@
                   <p class="TableParagraph" style="margin-top:0.95pt; margin-right:58.25pt; margin-left:134pt; text-align:center; line-height:14pt"><span style="font-size:11.5pt; font-weight:bold">AIR</span><span style="font-size:11.5pt; font-weight:bold; letter-spacing:0.25pt"> </span><span style="font-size:11.5pt; font-weight:bold">HANDLING</span><span style="font-size:11.5pt; font-weight:bold; letter-spacing:0.35pt"> </span><span style="font-size:11.5pt; font-weight:bold">UNIT</span><span style="font-size:11.5pt; font-weight:bold; letter-spacing:0.3pt"> </span><span style="font-size:11.5pt; font-weight:bold">(AHU)</span></p>
                </td>
                <td style="width:88.42pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt 0.75pt; vertical-align:top; background-color:#f2f2f2">
-                  <p class="TableParagraph" style="margin-left:1.4pt; line-height:7.6pt"><span style="font-size:6.5pt">FORM</span><span style="font-size:6.5pt; letter-spacing:0.05pt"> </span><span style="font-size:6.5pt">NO.</span></p>
+                  <p class="TableParagraph" style="margin-left:1.4pt; line-height:7.6pt"><span style="font-size:6.5pt">FORM</span><span style="font-size:6.5pt; letter-spacing:0.05pt"> </span><span style="font-size:6.5pt">NO. <br>
+                  <?php
+                    // Array untuk memetakan angka ke jenis
+                    $jenis = [
+                      1 => "AC Split",
+                      2 => "Cooled Water Chiller",
+                      3 => "AHUP",
+                      4 => "PAC",
+                      5 => "Cold Storage",
+                      6 => "Cooling Unit & AC Panel",
+                      7 => "Mini Chiller",
+                      8 => "Evaporative Air Cooler",
+                      9 => "AHU",
+                      10 => "Cooling tower",
+                      11 => "Humidifier",
+                      12 => "Dehumidifier",
+                      13 => "FCU (Fan Cooling Unit)",
+                      14 => "Exhaust Fan",
+                      15 => "Pompa",
+                      16 => "Spot Cooling",
+                      17 => "Water Mist",
+                      18 => "Chiller Centrifugal",
+                      19 => "Floor Standing",
+                      20 => "Ac Cassette",
+                      21 => "Split Duct",
+                      22 => "Air Cooled Chiller",
+                      23 => "Centralize Chiller",
+                      24 => "Ultrasonic Humidifier",
+                      25 => "Piping & Accs",
+                      26 => "Panel SCR",
+                      27 => "ATCS",
+                      28 => "Lakos Filter"
+                    ];
+                    // Ambil singkatan dari jenis berdasarkan angka
+                    $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
+                    $singkatan2 = strtoupper($history->type);
+                    $bulan = strtoupper($history->created_at->format('m'));
+                    $tahun = strtoupper($history->created_at->format('y'));
+                    // Mengambil karakter terakhir
+                    echo strtoupper($singkatan1 .'-'. $singkatan2 .'-'. $bulan .'-'.$tahun.'-'.$formattedId = sprintf('%05d', $equipment->id));
+                    // Mengambil karakter pertama
+
+
+                    ?></span></p>
                </td>
             </tr>
             <tr style="height:11.8pt">
@@ -1758,12 +1801,12 @@ echo $firstValue;
                <td style="width:89.55pt"></td>
             </tr>
          </table>
-         <p style="font-size:1pt"><span style="width:113pt; height:41pt; display:block"><span style="height:0pt; display:block; position:absolute; z-index:-1"><img src="images/Aspose.Words.8dc7887e-9b83-487b-8ac1-bc9879ebfa82.002.jpeg" width="117" height="48" alt="" style="margin-top:-715.07pt; margin-left:24.6pt; -aw-left-pos:63.6pt; -aw-rel-hpos:page; -aw-rel-vpos:page; -aw-top-pos:49.08pt; -aw-wrap-type:none; position:absolute" /></span></span></p>
+         <p style="font-size:1pt"><span style="width:113pt; height:41pt; display:block"><span style="height:0pt; display:block; position:absolute; z-index:-1"></span></span></p>
       </div>
       <br style="page-break-before:always; clear:both; mso-break-type:section-break" />
       <div>
          <div style="-aw-headerfooter-type:linked; clear:both">
-            <p class="BodyText" style="line-height:6%; font-size:10pt"><span style="height:0pt; display:block; position:absolute; z-index:-65537"><img src="images/Aspose.Words.8dc7887e-9b83-487b-8ac1-bc9879ebfa82.001.png" width="15" height="16" alt="" style="margin-top:-0.27pt; margin-left:513.96pt; -aw-left-pos:552.96pt; -aw-rel-hpos:page; -aw-rel-vpos:page; -aw-top-pos:22.58pt; -aw-wrap-type:none; position:absolute" /></span><span style="font-weight:normal; font-style:normal; -aw-import:ignore">&#xa0;</span></p>
+            <p class="BodyText" style="line-height:6%; font-size:10pt"><span style="height:0pt; display:block; position:absolute; z-index:-65537"></span><span style="font-weight:normal; font-style:normal; -aw-import:ignore">&#xa0;</span></p>
          </div>
          <br>
          <br>

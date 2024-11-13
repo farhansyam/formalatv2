@@ -18,9 +18,9 @@ class AHUController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function create2($id)
+    public function create2($id)
     {
-        
+
         return view('equipment.AHU.create', compact('id'));
     }
 
@@ -43,7 +43,7 @@ class AHUController extends Controller
     {
 
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
-    
+
         $qData = [
             'q1' => implode(',', $request->input('q1')),
 
@@ -83,7 +83,7 @@ class AHUController extends Controller
 
             'q19' => implode(',', $request->input('q19')),
 
-            'q20' => implode(',', $request->input('q20')),#
+            'q20' => implode(',', $request->input('q20')), #
 
             'q21' => implode(',', $request->input('q21')),
 
@@ -105,7 +105,7 @@ class AHUController extends Controller
 
             'q30' => implode(',', $request->input('q30')),
 
-            'q31' => implode(',', $request->input('q31')),#
+            'q31' => implode(',', $request->input('q31')), #
 
             'q32' => implode(',', $request->input('q32')),
 
@@ -148,7 +148,7 @@ class AHUController extends Controller
             'start' => $request->input('start'),
             'end' => $request->input('end'),
         ];
-    
+
         // Simpan data ke dalam model AHU
         $AHU = AHU::create($qData);
         if ($request->file('gambar')) {
@@ -180,33 +180,33 @@ class AHUController extends Controller
             }
         }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
-            $history = new History();
-            $history->type = "AHU"; // Sesuaikan dengan jenis equipment
-            $history->id_act = $AHU->id;
-            $history->id_equipment = $request->id;
-            $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
-            $history->save();
-            return redirect()->route('equipment.show',$request->id)->with('success', 'Task list telah disimpan.');
+        $history = new History();
+        $history->type = "PM"; // Sesuaikan dengan jenis equipment
+        $history->id_act = $AHU->id;
+        $history->id_equipment = $request->id;
+        $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
+        $history->save();
+        return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
-    
-    
 
-    
+
+
+
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\AHU  $AHU
      * @return \Illuminate\Http\Response
      */
-    public function show(AHU $AHU,$id)
+    public function show(AHU $AHU, $id)
     {
         $history = History::find($id);
         $ahu = AHU::findOrFail($history->id_act); // Sesuaikan dengan model AHU
         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $id = $history->id_equipment;
-        return view('equipment.AHU.show', compact('ahu','id','gambar','gambar2'));
+        return view('equipment.AHU.show', compact('ahu', 'id', 'gambar', 'gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -214,18 +214,17 @@ class AHUController extends Controller
      * @param  \App\Models\AHU  $AHU
      * @return \Illuminate\Http\Response
      */
-    public function edit(AHU $AHU,$id)
+    public function edit(AHU $AHU, $id)
     {
         $history = History::find($id);
         $ahu = AHU::findOrFail($history->id_act); // Sesuaikan dengan model AHU
         $id = $history->id_equipment;
         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
-        return view('equipment.AHU.edit', compact('ahu','id','gambar','gambar2'));
-        
+        return view('equipment.AHU.edit', compact('ahu', 'id', 'gambar', 'gambar2'));
     }
 
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $qData = [
             'q1' => implode(',', $request->input('q1')),
@@ -330,43 +329,43 @@ class AHUController extends Controller
             'enginer_list' => $request->input('enginer_list'),
             'start' => $request->input('start'),
             'end' => $request->input('end'),
-        ]; 
-            $ahu = AHU::find($id);
+        ];
+        $ahu = AHU::find($id);
 
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
-             $ahu->update($qData); // Atau bisa juga menggunakan $acs->fill($qData) diikuti dengan $acs->save();
+        $ahu->update($qData); // Atau bisa juga menggunakan $acs->fill($qData) diikuti dengan $acs->save();
 
-            // Simpan data
-            $ahu->save();
-            if ($request->file('gambar')) {
-                foreach ($request->file('gambar') as $index => $gambar) {
-                    $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
-                    $gambar->move(public_path('gambar'), $gambarname);
+        // Simpan data
+        $ahu->save();
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
 
-                    GambarAct::create([
-                        'id_act' => $ahu->id,
-                        'id_equipement' => $request->id_equipment,
-                        'gambar' => $gambarname,
-                        'keterangan' => $request->keterangangambar[$index],
-                        'info' => $request->info[$index],
-                    ]);
-                }
+                GambarAct::create([
+                    'id_act' => $ahu->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
             }
-            if ($request->file('gambar2')) {
-                foreach ($request->file('gambar2') as $index2 => $gambar2) {
-                    $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
-                    $gambar2->move(public_path('gambar2'), $gambarname2);
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
 
-                    GambarAct2::create([
-                        'id_act' => $ahu->id,
-                        'id_equipement' => $request->id_equipment,
-                        'gambar' => $gambarname2,
-                        'keterangan' => $request->keterangangambar2[$index2],
-                        'info' => $request->info2[$index2],
-                    ]);
-                }
+                GambarAct2::create([
+                    'id_act' => $ahu->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
+                ]);
             }
-            return redirect()->route('equipment.show', $request->id);
+        }
+        return redirect()->route('equipment.show', $request->id);
     }
 
     public function print($id)

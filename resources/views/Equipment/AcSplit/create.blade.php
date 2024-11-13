@@ -3,6 +3,33 @@
 <!-- --------------------------------------------------- -->
 <!-- Header End -->
 <!-- --------------------------------------------------- -->
+<style>
+    table {
+  border: 11px solid black;
+  border-collapse: collapse; /* Optional: makes the border look cleaner */
+}
+
+table td, table th {
+  border: 2px solid black; /* Ensures cells have the same border */
+  padding: 8px; /* Optional: adds padding for readability */
+  
+}
+/* with the :focus here, we would show grey when not using the element */
+ .form-select {
+        color: rgb(255, 0, 0);
+    }
+
+/* with the :focus here, we show grey when using the element */
+select:focus {
+  color: #9e9e9e;
+}
+option {
+  color: black;
+}
+option:first-of-type {
+  color: #9e9e9e;
+}
+</style>
 <div class="container-fluid">
     <!-- --------------------------------------------------- -->
     <!--  Form Inputs Grid Start -->
@@ -12,94 +39,32 @@
             <div class="col-12">
                 <div class="card">
                               <div class="border-bottom title-part-padding">
-            <h4 class="card-title mb-0 text-center">AIR CONDITIONER SERIES</h4>
+            <h4 class="card-title mb-0 text-center">AC Split</h4>
           </div>
           <div class="card-body">
 
                     <form action="{{ route('ac-split.store') }}" id="myForm" method="POST" enctype="multipart/form-data">
                          <div class="row">
-                <div class="col-md-4 mb-3">
-                  <label for="">Customer</label>
-                  <input type="text" name="customer" class="form-control" id="" value="{{$equipment->customer}}" required="">
-                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$equipment->id}}" required="">
-                  <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$id}}" required="">
-                  <label for="">No Kontak</label>
-                  <input type="text" name="no_kontak" class="form-control" id="" value="" required="">
-                  <label for="">Alamat</label>
-                  <textarea class="form-control" name="alamat" id="" cols="10" rows="4">{{$equipment->customer()->alamat}}</textarea>
-
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="">Engineer List</label>
-                  <textarea class="form-control" name="engineer_list" id="" cols="10" rows="4"></textarea>
-                </div>
-                <div class="col-md-4 mb-3">
-                  <label for="">Tanggal Survey</label>
-                  <div class="input-group">
-                    <input type="date" class="form-control" id="" aria-describedby="inputGroupPrepend2" required="" name="tanggal_survey">
-                  </div>
-                </div>
+                                           <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal_survey" required class="form-control"></td>
+            <td><textarea name="enginerlist" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" required></td>
+            <td><input type="time" name="stop" class="form-control" id=""></td>
+        </tr>
+            
+</table>
               </div>
-                        <table class="table table-bordered" id="personelTeamTable">
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th style="background-color: black;color:white"></th>
-                                    <th style="background-color: black;color:white"></th>
-                                    <th class="text-center" style="background-color: black;color:white">TYPE OF AIR CONDITIONER EQUIPMENT</th>
-                                    <th style="background-color: black;color:white"></th>
-                                    <th class="text-center" style="background-color: black;color:white">REFRIGERANT TYPE</th>
-                                </tr>
-                            </thead>
-                            <thead>
-                                <tr>
-                                    <th></th>
-                                    <th class="text-center">Ac Split Wall</th>
-                                    <th class="text-center">Ac Cassette</th>
-                                    <th class="text-center">Ac Floor Standing</th>
-                                    <th class="text-center">Ac Split Duct</th>
-                                    <th class="text-center"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td></td>
-                                    <td class="text-center">
-                                        <input type="checkbox" class="text-center" name="q31[]" value="Ac Split Wall" onclick="uncheckAllExcept(this)">
-                                    </td>
-                                    <td class="text-center">
-                                        <input type="checkbox" class="text-center" name="q31[]" value="Ac Cassette" onclick="uncheckAllExcept(this)">
-                                    </td>
-                                    <td class="text-center">
-                                        <input type="checkbox" class="text-center" name="q31[]" value="Ac Floor Standing" onclick="uncheckAllExcept(this)">
-                                    </td>
-                                    <td class="text-center">
-                                        <input type="checkbox" class="text-center" name="q31[]" value="Ac Split Standing" onclick="uncheckAllExcept(this)">
-                                    </td>
-                                    <td class="text-center"><select name="q" class="form-select" id="">
-                                            <option value="Ok">Ok</option>
-                                            <option value="Not Ok">Not Ok</option>
-                                        </select></td>
-                                </tr>
-                                <script>
-                                    document.getElementById("myForm").onsubmit = function() {
-                                        var checkboxes = document.querySelectorAll('input[name="q31[]"]:checked');
-                                        if (checkboxes.length < 1) {
-                                            alert("Anda harus memilih setidaknya satu opsi.");
-                                            return false; // Menghentikan pengiriman formulir
-                                        }
-                                    };
-
-                                    function uncheckAllExcept(checkbox) {
-                                        var checkboxes = document.getElementsByName('q31[]');
-                                        for (var i = 0; i < checkboxes.length; i++) {
-                                            if (checkboxes[i] !== checkbox) {
-                                                checkboxes[i].checked = false;
-                                            }
-                                        }
-                                    }
-                                </script>
-                        </table>
                         <div class="border-bottom title-part-padding">
                             <h4 class="card-title mb-0 text-center" style="background-color: black;color:white">Task List AC Split</h4>
                         </div>
@@ -145,17 +110,23 @@
                                         <td class="text-center">Cek cover unit, pastikan bersih, skrup masih lengkap dan tidak ada kerusakan pada cover unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q1[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q1[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
                                     </tr>
-
+<script>
+    function setColor(dropdown){
+    dropdown.style.color = "black";
+};
+</script>
                                     <tr>
                                         <td class="text-center">2</td>
                                         <td class="text-center">Cek kondisi filter, pastikan tidak kotor dan tidak rusak (cleaning jika kotor)</td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q2[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q2[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -166,7 +137,8 @@
                                         <td class="text-center">Cek kondisi fin evap, pastikan tidak kotor dan tidak rusak (cleaning jika kotor)
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q3[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q3[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -177,7 +149,8 @@
                                         <td class="text-center">Cek kondisi blower fan, pastikan tidak kotor dan tidak rusak (cleaning jika kotor)
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q4[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q4[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -188,7 +161,8 @@
                                         <td class="text-center">Cek kondisi drain sistem, bersihkan lendir yang menempel dan pastikan tidak tersumbat
                                         </td>
                                         <td class="text-center">Lancar</td>
-                                        <td><select name="q5[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q5[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Lancar">Lancar</option>
                                                 <option value="Tidak Lancar">Tidak Lancar</option>
                                             </select></td>
@@ -199,7 +173,8 @@
                                         <td class="text-center">Cek putaran blower, pastikan aliran udara pada evaporator lancar
                                         </td>
                                         <td class="text-center">Lancar</td>
-                                        <td><select name="q6[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q6[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Lancar">Lancar</option>
                                                 <option value="Tidak Lancar">Tidak Lancar</option>
                                             </select></td>
@@ -210,7 +185,8 @@
                                         <td class="text-center">Cek Insulasi pipa, pastikan semua pipa terinsulasi, tidak ada yang rusak atau kondensasi
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q7[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q7[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -221,7 +197,8 @@
                                         <td class="text-center">Cek kebocoran refrigerant, pastikan tidak ada oli di area indoor, bak drain dan sambungan pipa
                                         </td>
                                         <td class="text-center">Tidak Bocor</td>
-                                        <td><select name="q8[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q8[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Tidak Bocor">Tidak Bocor</option>
                                                 <option value="Bocor">Bocor</option>
                                             </select></td>
@@ -232,7 +209,8 @@
                                         <td class="text-center">Cek modul indoor, pastikan koneksi kabelnya dan pastikan tidak ada kerusakan pada modul
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q9[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q9[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -243,7 +221,8 @@
                                         <td class="text-center">Kencangkan semua koneksi kabel pada terminal indoor unit
                                         </td>
                                         <td class="text-center">Kencang</td>
-                                        <td><select name="q10[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q10[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Kencang">Kencang</option>
                                                 <option value="Tidak Kencang">Tidak Kencang</option>
                                             </select></td>
@@ -254,17 +233,45 @@
                                         <td class="text-center">Test running, pastikan tidak ada suara atau vibrasi yang abnormal
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q11[]" class="form-select" id="">
-                                                <option value="Ok">Ok</option>
-                                                <option value="Not Ok">Not Ok</option>
-                                            </select></td>
+                                       <td>
+                                        <style>
+    /* Warna merah untuk opsi pertama saat belum dipilih */
+    #q11-select option[value="?"] {
+        color: red;
+    }
+</style>
+
+    <select onchange="setColor(this);" name="q11[]" class="form-select" id="q11-select">
+        <option value="?" class="text-danger">?</option>
+                                                <option value="?">?</option>
+        <option value="Ok">Ok</option>
+        <option value="Not Ok">Not Ok</option>
+    </select>
+</td>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Tambahkan kelas 'text-danger' ke elemen <select> jika tanda tanya dipilih
+        $('#q11-select').change(function() {
+            if ($(this).val() === "?") {
+                $(this).addClass('text-danger');
+            } else {
+                $(this).removeClass('text-danger');
+            }
+        });
+    });
+</script>
+
                                     </tr>
                                     <tr>
                                         <td class="text-center">12</td>
                                         <td class="text-center">Cek setpoint pada remote, pastikan pada mode cool semuai temperature yang diinginkan
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q12[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q12[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -274,7 +281,8 @@
                                         <td class="text-center">Cek timer pada remote, pastikan sesuai dengan kebutuhan
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q13[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q13[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -284,7 +292,8 @@
                                         <td class="text-center">Check baterai pada remote, lakukan penggantian jika diperlukan
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q14[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q14[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -303,7 +312,8 @@
                                         <td class="text-center">Cek cover unit, pastikan bersih, skrup masih lengkap dan tidak ada kerusakan pada cover unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q15[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q15[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -313,7 +323,8 @@
                                         <td class="text-center">Cek kondisi fin kondensor, pastikan tidak kotor dan tidak rusak (cleaning jika kotor)
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q16[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q16[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -323,7 +334,8 @@
                                         <td class="text-center">Cek kondisi fan outdoor, pastikan terpasang dengan baik, tidak kotor & tidak rusak (cleaning jika kotor)
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q17[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q17[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -334,7 +346,8 @@
                                         <td class="text-center">Cek putaran fan outdoor, pastikan aliran udara pada kondensor lancar
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q18[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q18[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -345,7 +358,8 @@
                                         <td class="text-center">Cek Insulasi pipa, pastikan semua pipa terinsulasi, tidak ada yang rusak atau kondensasi
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q19[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q19[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -356,7 +370,8 @@
                                         <td class="text-center">Cek kebocoran refrigerant, pastikan tidak ada oli di area kondensor dan sambungan pipa
                                         </td>
                                         <td class="text-center">Tidak Bocor</td>
-                                        <td><select name="q20[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q20[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Tidak Bocor">Tidak Bocor</option>
                                                 <option value="Bocor">Bocor</option>
                                             </select></td>
@@ -367,7 +382,8 @@
                                         <td class="text-center">Kencangkan semua koneksi kabel pada terminal outdoor unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q21[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q21[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -378,7 +394,8 @@
                                         <td class="text-center">Cek Kapasitor kompressor
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q22[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q22[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -389,7 +406,8 @@
                                         <td class="text-center">Cek Kapasitor motor fan kondensor
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q23[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q23[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -400,7 +418,8 @@
                                         <td class="text-center">Test running, pastikan tidak ada suara atau vibrasi yang abnormal
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q24[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q24[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -411,7 +430,8 @@
                                         <td class="text-center">Cek ampere kompressor dan sesuaikan dengan kapasitas di nameplate unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q25[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q25[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -422,7 +442,8 @@
                                         <td class="text-center">Cek ampere motor fan kondensor dan sesuaikan dengan kapasitas di nameplate unit
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q26[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q26[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -433,7 +454,8 @@
                                         <td class="text-center">Cek tekanan kompressor disesuaikan dengan tipe referigerant
                                         </td>
                                         <td class="text-center">OK</td>
-                                        <td><select name="q27[]" class="form-select" id="">
+                                        <td><select onchange="setColor(this);" name="q27[]" class="form-select" id="">
+                                                <option value="?">?</option>
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
@@ -506,7 +528,8 @@
         </tr>
         <tr>
 <td><input type="text" class="form-control" name="running_hour" required></td>
-            <td><select name="status" id="" class="form-select">
+            <td><select onchange="setColor(this);" name="status" id="" class="form-select">
+                                                <option value="?">?</option>
                     <option value="Yes">Yes</option>
                     <option value="No">No</option>
                 </select></td>
@@ -531,7 +554,9 @@
                                         <td>1</td>
                                         <td><input type="file" class="form-control" name="gambar[]" required></td>
                                         <td><input type="text" class="form-control" name="info[]" required></td>
-                                        <td><select name="keterangangambar[]" id="" class="form-select">
+                                        <td><select onchange="setColor(this);" name="keterangangambar[]" id="" class="form-select">
+                                                <option value="?">?</option>
+                                                
                                                 <option value="Before">Before</option>
                                                 <option value="After">After</option>
                                             </select></td>
@@ -556,7 +581,7 @@
             <td>${personelCounter}</td>
             <td><input type="file" class="form-control" name="gambar[]"></td>
             <td><input type="text" class="form-control" name="info[]"></td>
-            <td><select name="keterangangambar[]" id="" class="form-select">
+            <td><select onchange="setColor(this);" name="keterangangambar[]" id="" class="form-select">
                       <option value="Before">Before</option>
                       <option value="After">After</option>
                     </select></td>
@@ -597,7 +622,8 @@
                                         <td>1</td>
                                         <td><input type="file" class="form-control" name="gambar2[]" required></td>
                                         <td><input type="text" class="form-control" name="info2[]" required></td>
-                                        <td><select name="keterangangambar2[]" id="" class="form-select">
+                                        <td><select onchange="setColor(this);" name="keterangangambar2[]" id="" class="form-select">
+                                                <option value="?">?</option>
                                                 <option value="Before">Before</option>
                                                 <option value="After">After</option>
                                             </select></td>
@@ -605,7 +631,7 @@
                                     </tr>
                                 </tbody>
                             </table>
-                            <button type="button" class="btn btn-primary" id="addGambar">Add Gambar</button>
+                            <button type="button" class="btn btn-primary" id="addGambar2">Add Gambar</button>
                             <br>
                             <script src="{{asset('dist/libs/jquery/dist/jquery.min.js')}}"></script>
 
@@ -615,14 +641,14 @@
                                     var pekerjaanCounter = 1;
 
                                     // Add a new row for Nama Personel Team
-                                    $("#addGambar").click(function() {
+                                    $("#addGambar2").click(function() {
                                         personelCounter++;
                                         var newRow = `
         <tr>
             <td>${personelCounter}</td>
             <td><input type="file" class="form-control" name="gambar2[]"></td>
             <td><input type="text" class="form-control" name="info2[]"></td>
-            <td><select name="keterangangambar2[]" id="" class="form-select">
+            <td><select onchange="setColor(this);" name="keterangangambar2[]" id="" class="form-select">
                       <option value="Before">Before</option>
                       <option value="After">After</option>
                     </select></td>

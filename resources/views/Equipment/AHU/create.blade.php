@@ -1,5 +1,17 @@
 @extends('layouts.back2')
 @section('content')
+<style>
+        table {
+  border: 11px solid black;
+  border-collapse: collapse; /* Optional: makes the border look cleaner */
+}
+
+table td, table th {
+  border: 2px solid black; /* Ensures cells have the same border */
+  padding: 8px; /* Optional: adds padding for readability */
+  
+}
+</style>
     <!-- --------------------------------------------------- -->
     <!-- Header End -->
     <!-- --------------------------------------------------- -->
@@ -69,9 +81,9 @@
                                                 <td>Check Pressure Different in/out Prefilter</td>
                                                 <td>30-100 pa</td>
                                                 <td>1M</td>
-                                                <td><input type="text" class="form-control text-center"required  name="q1[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q1[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q1[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q1[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q1[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q1[]" value=""></td>
                                             </tr>
                                             
                                             <tr>
@@ -79,9 +91,9 @@
                                                 <td>Check Pressure Different in/out Bagfilter (Pocket Filter)</td>
                                                 <td>70-225 pa</td>
                                                 <td>1M</td>
-                                                <td><input type="text" class="form-control text-center"required  name="q2[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q2[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q2[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q2[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q2[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q2[]" value=""></td>
                                             </tr>
                                             
                                             <tr>
@@ -89,9 +101,9 @@
                                                 <td>Cleaning Pre Filter</td>
                                                 <td>Clean</td>
                                                 <td>1M</td>
-                                                <td><input type="text" class="form-control text-center"required  name="q3[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q3[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q3[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q3[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q3[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q3[]" value=""></td>
                                             </tr>
                                             
                                             <tr>
@@ -99,9 +111,9 @@
                                                 <td>Cleaning Bag Filter</td>
                                                 <td>Clean</td>
                                                 <td>1M</td>
-                                                <td><input type="text" class="form-control text-center"required  name="q4[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q4[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q4[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q4[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q4[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q4[]" value=""></td>
                                             </tr>
 
                                           <tr>
@@ -109,9 +121,9 @@
                                                 <td>Replace Pre Filter</td>
                                                 <td>3 Month</td>
                                                 <td>3M</td>
-                                                <td><input type="text" class="form-control text-center"required  name="q5[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q5[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q5[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q5[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q5[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q5[]" value=""></td>
                                             </tr>
                                             
                                             <tr>
@@ -119,9 +131,9 @@
                                                 <td>Replace Bag Filter</td>
                                                 <td>248 pa</td>
                                                 <td>3M</td>
-                                                <td><input type="text" class="form-control text-center"required  name="q6[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q6[]" value=""></td>
-                                                <td><input type="text" class="form-control text-center"required  name="q6[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q6[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q6[]" value=""></td>
+                                                <td><input type="text" placeholder="?" class="form-control text-center"required  name="q6[]" value=""></td>
                                             </tr>
                                         </tbody>
                                 </table>
@@ -159,9 +171,9 @@
                                                     <td>Check Pressure Different in/out Cooling Coil</td>
                                                     <td>30-100 pa</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q7[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q7[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q7[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -169,9 +181,9 @@
                                                     <td>Check temperature Cooling Coil</td>
                                                     <td>10-12°C</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q8[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q8[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q8[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -179,9 +191,9 @@
                                                     <td>Inspect Temperature Water in & out</td>
                                                     <td>Delta T 3-5°C</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q9[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q9[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q9[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -189,9 +201,9 @@
                                                     <td>Inspect Pressure Water in & out</td>
                                                     <td>D.P 0,5 - 1 Bar</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q10[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q10[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q10[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]" value=""></td>
                                                 </tr>
     
                                               <tr>
@@ -199,9 +211,9 @@
                                                     <td>Inspect Manual valve</td>
                                                     <td>Normal</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q11[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q11[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q11[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -209,9 +221,9 @@
                                                     <td>Inspect Motorize valve</td>
                                                     <td>Normal</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q12[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q12[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q12[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -219,9 +231,9 @@
                                                     <td>Cleaning Cooling Oil</td>
                                                     <td>Clean</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q13[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q13[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q13[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q13[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q13[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q13[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -229,9 +241,9 @@
                                                     <td>Check Air Velocity</td>
                                                     <td>2,5 m/s</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q14[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q14[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q14[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q14[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q14[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q14[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -239,9 +251,9 @@
                                                     <td>Replace Snap ring Motorize valve</td>
                                                     <td>3 Month</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q15[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q15[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q15[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q15[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q15[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q15[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -249,9 +261,9 @@
                                                     <td>Cleaning Strainer</td>
                                                     <td>Clean</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q16[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q16[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q16[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q16[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q16[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q16[]" value=""></td>
                                                 </tr>
 
                                             </tbody>
@@ -289,9 +301,9 @@
                                                         <td>Check Pressure Different in/out Heating Coil</td>
                                                         <td>30-100 pa</td>
                                                         <td>1M</td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q17[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q17[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q17[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q17[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q17[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q17[]" value=""></td>
                                                     </tr>
                                                     
                                                     <tr>
@@ -299,9 +311,9 @@
                                                         <td>Check temperature HHeating Coil</td>
                                                         <td>10-12°C</td>
                                                         <td>1M</td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q18[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q18[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q18[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q18[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q18[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q18[]" value=""></td>
                                                     </tr>
                                                     
                                                     <tr>
@@ -309,9 +321,9 @@
                                                         <td>Inspect Temperature Water in & out</td>
                                                         <td>Delta T 3-5°C</td>
                                                         <td>1M</td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q19[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q19[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q19[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q19[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q19[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q19[]" value=""></td>
                                                     </tr>
                                                     
                                                     <tr>
@@ -319,9 +331,9 @@
                                                         <td>Inspect Pressure Water in & out</td>
                                                         <td>D.P 0,5 - 1 Bar</td>
                                                         <td>1M</td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q20[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q20[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q20[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q20[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q20[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q20[]" value=""></td>
                                                     </tr>
         
                                                   <tr>
@@ -329,9 +341,9 @@
                                                         <td>Inspect Manual valve</td>
                                                         <td>Normal</td>
                                                         <td>1M</td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q21[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q21[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q21[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q21[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q21[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q21[]" value=""></td>
                                                     </tr>
                                                     
                                                     <tr>
@@ -339,9 +351,9 @@
                                                         <td>Inspect Motorize valve</td>
                                                         <td>Normal</td>
                                                         <td>1M</td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q22[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q22[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q22[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q22[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q22[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q22[]" value=""></td>
                                                     </tr>
     
                                                     <tr>
@@ -349,9 +361,9 @@
                                                         <td>Cleaning Heating Oil</td>
                                                         <td>Clean</td>
                                                         <td>3M</td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q23[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q23[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q23[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q23[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q23[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q23[]" value=""></td>
                                                     </tr>
     
                                                     <tr>
@@ -359,9 +371,9 @@
                                                         <td>Check Air Velocity</td>
                                                         <td>2,5 m/s</td>
                                                         <td>3M</td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q24[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q24[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q24[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q24[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q24[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q24[]" value=""></td>
                                                     </tr>    
 
                                                     <tr>
@@ -369,9 +381,9 @@
                                                         <td>Replace Snap ring Motorize valve</td>
                                                         <td>3 Month</td>
                                                         <td>3M</td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q25[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q25[]" value=""></td>
-                                                        <td><input type="text" class="form-control text-center"required  name="q25[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q25[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q25[]" value=""></td>
+                                                        <td><input type="text" placeholder="?" class="form-control text-center"required  name="q25[]" value=""></td>
                                                     </tr>
 
                                                 </tbody>
@@ -410,9 +422,9 @@
                                                     <td>Check V-Belt Condition</td>
                                                     <td>Kondisi Bagus</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q26[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q26[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q26[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q26[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q26[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q26[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -420,9 +432,9 @@
                                                     <td>Check V-Belt Tension</td>
                                                     <td>2,7-4,1 kgF</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q27[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q27[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q27[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q27[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q27[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q27[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -430,9 +442,9 @@
                                                     <td>Dressing V-Belt</td>
                                                     <td>Kondisi Bagus</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q28[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q28[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q28[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q28[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q28[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q28[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -440,9 +452,9 @@
                                                     <td>Replace V-Belt</td>
                                                     <td>6 Month</td>
                                                     <td>6M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q29[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q29[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q29[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q29[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q29[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q29[]" value=""></td>
                                                 </tr>
     
                                               <tr>
@@ -450,9 +462,9 @@
                                                     <td>Check Abrassion of Pulley</td>
                                                     <td>Normal</td>
                                                     <td>6M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q30[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q30[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q30[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q30[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q30[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q30[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -460,9 +472,9 @@
                                                     <td>Check Allignment of Pulley</td>
                                                     <td>Center</td>
                                                     <td>6M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q31[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q31[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q31[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q31[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q31[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q31[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -470,9 +482,9 @@
                                                     <td>Check Cover Blower</td>
                                                     <td>Kondisi Bagus</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q32[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q32[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q32[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q32[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q32[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q32[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -480,9 +492,9 @@
                                                     <td>Check Blower Condition</td>
                                                     <td>Normal</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q33[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q33[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q33[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q33[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q33[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q33[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -490,9 +502,9 @@
                                                     <td>Cleaning Blower</td>
                                                     <td>Clean</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q34[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q34[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q34[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q34[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q34[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q34[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -500,9 +512,9 @@
                                                     <td>Cleaning Cover Blower</td>
                                                     <td>Clean</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q35[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q35[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q35[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q35[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q35[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q35[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -510,9 +522,9 @@
                                                     <td>Check Motor Blower</td>
                                                     <td>Normal</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q36[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q36[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q36[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q36[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q36[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q36[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -520,9 +532,9 @@
                                                     <td>Cleaning Cover motor blower</td>
                                                     <td>Clean</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q37[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q37[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q37[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q37[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q37[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q37[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -530,9 +542,9 @@
                                                     <td>Check Temperature Motor blower</td>
                                                     <td>40-60°C</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q38[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q38[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q38[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q38[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q38[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q38[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -540,9 +552,9 @@
                                                     <td>Greasing Bearing Motor Blower & Pillow block Bearing</td>
                                                     <td></td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q39[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q39[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q39[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q39[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q39[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q39[]" value=""></td>
                                                 </tr>
 
                                                 <tr>
@@ -550,9 +562,9 @@
                                                     <td>Check Insulation Motor Blower</td>
                                                     <td>>50MΩ</td>
                                                     <td>12M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q40[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q40[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q40[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q40[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q40[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q40[]" value=""></td>
                                                 </tr>
                                             </tbody>
                                     </table>
@@ -588,9 +600,9 @@
                                                     <td>Inspect Panel Control Component</td>
                                                     <td>Kondisi Bagus</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q47[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q47[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q47[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q47[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q47[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q47[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -598,9 +610,9 @@
                                                     <td> Cleaning Dust in the panel box </td>
                                                     <td>Clean</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q48[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q48[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q48[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q48[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q48[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q48[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -608,9 +620,9 @@
                                                     <td>Check terminal tight </td>
                                                     <td>Clean</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q49[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q49[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q49[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q49[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q49[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q49[]" value=""></td>
                                                 </tr>
                                                 
                                             </tbody>
@@ -646,9 +658,9 @@
                                                     <td>Inspect Basin</td>
                                                     <td>Kondisi Bagus</td>
                                                     <td>3M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q41[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q41[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q41[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q41[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q41[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q41[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -656,9 +668,9 @@
                                                     <td>Cleaning Basin</td>
                                                     <td>Clean</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q42[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q42[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q42[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q42[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q42[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q42[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -666,9 +678,9 @@
                                                     <td>Inspect U-Trap</td>
                                                     <td>Clean</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q43[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q43[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q43[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q43[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q43[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q43[]" value=""></td>
                                                 </tr>
                                                 
                                                 <tr>
@@ -676,9 +688,9 @@
                                                     <td>Inspect Piping</td>
                                                     <td>Clean</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q44[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q44[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q44[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q44[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q44[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q44[]" value=""></td>
                                                 </tr>
     
                                                 <tr>
@@ -686,9 +698,9 @@
                                                     <td>Cleaning Piping</td>
                                                     <td>Clean</td>
                                                     <td>1M</td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q45[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q45[]" value=""></td>
-                                                    <td><input type="text" class="form-control text-center"required  name="q45[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q45[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q45[]" value=""></td>
+                                                    <td><input type="text" placeholder="?" class="form-control text-center"required  name="q45[]" value=""></td>
                                                 </tr>
                                                 
                                             </tbody>
@@ -705,7 +717,7 @@
                                         <tbody>
                                             <td>
                                                 <label>
-                                                    <input type="checkbox" class="text-center"  name="q46[]" value="OK" onclick="toggleCheckbox(this)">
+                                                    <input type="checkbox" required class="text-center"  name="q46[]" value="OK" onclick="toggleCheckbox(this)">
                                                     OK
                                                 </label>
                                             </td>

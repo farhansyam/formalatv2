@@ -19,10 +19,10 @@ class ExhaustFanController extends Controller
      */
 
 
-     public function create2($id)
-     {
-         return view('equipment.ExhaustFan.create', compact('id'));
-     }
+    public function create2($id)
+    {
+        return view('equipment.ExhaustFan.create', compact('id'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -40,7 +40,7 @@ class ExhaustFanController extends Controller
     {
 
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
-    
+
         $qData = [
             'q1' => implode(',', $request->input('q1')),
 
@@ -140,10 +140,10 @@ class ExhaustFanController extends Controller
             'end' => $request->input('end'),
             'intensive' => $request->input('intensive'),
         ];
-    
+
         // Simpan data ke dalam model ExhaustFan
         $ExhaustFan = ExhaustFan::create($qData);
- if ($request->file('gambar')) {
+        if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
                 $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
                 $gambar->move(public_path('gambar'), $gambarname);
@@ -172,19 +172,19 @@ class ExhaustFanController extends Controller
             }
         }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
-            $history = new History();
-            $history->type = "Exhaust Fan"; // Sesuaikan dengan jenis equipment
-            $history->id_act = $ExhaustFan->id;
-            $history->id_equipment = $request->id;
-            $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
-            $history->save();
-            return redirect()->route('equipment.show',$request->id)->with('success', 'Task list telah disimpan.');
+        $history = new History();
+        $history->type = "PM"; // Sesuaikan dengan jenis equipment
+        $history->id_act = $ExhaustFan->id;
+        $history->id_equipment = $request->id;
+        $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
+        $history->save();
+        return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
-    
-    
 
-    
+
+
+
     /**
      * Display the specified resource.
      *
@@ -196,9 +196,9 @@ class ExhaustFanController extends Controller
         $history = History::find($id);
         $ef = ExhaustFan::findOrFail($history->id_act); // Sesuaikan dengan model ExhaustFan
         $id = $history->id_equipment;
-         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
-        return view('equipment.ExhaustFan.show', compact('ef','id','gambar','gambar2'));
+        return view('equipment.ExhaustFan.show', compact('ef', 'id', 'gambar', 'gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -213,8 +213,7 @@ class ExhaustFanController extends Controller
         $id = $history->id_equipment;
         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
-        return view('equipment.ExhaustFan.edit', compact('ef','id','gambar','gambar2'));
-        
+        return view('equipment.ExhaustFan.edit', compact('ef', 'id', 'gambar', 'gambar2'));
     }
 
 
@@ -260,7 +259,7 @@ class ExhaustFanController extends Controller
 
             'q19' => implode(',', $request->input('q19')),
 
-            'q20' => implode(',', $request->input('q20')), 
+            'q20' => implode(',', $request->input('q20')),
 
             'q21' => implode(',', $request->input('q21')),
 
@@ -282,7 +281,7 @@ class ExhaustFanController extends Controller
 
             'q30' => implode(',', $request->input('q30')),
 
-            'q31' => implode(',', $request->input('q31')), 
+            'q31' => implode(',', $request->input('q31')),
 
             'q32' => implode(',', $request->input('q32')),
 

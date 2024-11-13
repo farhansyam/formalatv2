@@ -78,6 +78,7 @@ class EquipmentController extends Controller
         $equipment->jenis = $request->jenis;
         $equipment->customer = $request->customer;
         $equipment->brand = $request->brand;
+        $equipment->model = $request->model;
         $equipment->serial_number = $request->serial_number;
         $equipment->nameplate = $request->nameplate;
         $equipment->tahun_installasi = $request->tahun_installasi;
@@ -243,6 +244,7 @@ class EquipmentController extends Controller
         $equipment = Equipment::find($request->id);
         $equipment->jenis = $request->jenis;
         $equipment->customer = $request->customer;
+        $equipment->model = $request->model;
         $equipment->brand = $request->brand;
         $equipment->serial_number = $request->serial_number;
         $equipment->nameplate = $request->nameplate;

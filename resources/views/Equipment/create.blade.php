@@ -24,19 +24,19 @@
                 <option value="20">Ac Cassette</option>
                 <option value="21">Split Duct</option>
                 <option value="2">Cooled Water Chiller</option>
-                <option value="3">AHUP</option>
-                <option value="4">PAC</option>
-                <option value="5">Cold Storage</option>
-                <option value="6">Cooling Unit & AC Panel</option>
-                <option value="7">Mini Chiller</option>
-                <option value="8">Evaporative Air Cooler</option>
+                {{-- <option value="3">AHUP</option> --}}
+                {{-- <option value="4">PAC</option> --}}
+                {{-- <option value="5">Cold Storage</option> --}}
+                {{-- <option value="6">Cooling Unit & AC Panel</option> --}}
+                {{-- <option value="7">Mini Chiller</option> --}}
+                {{-- <option value="8">Evaporative Air Cooler</option> --}}
                 <option value="9">AHU</option>
-                <option value="10">Cooling tower</option>
-                <option value="11">Humidifier</option>
-                <option value="12">Dehumidifier</option>
-                <option value="13">FCU (Fan Cooling Unit)</option>
+                {{-- <option value="10">Cooling tower</option> --}}
+                {{-- <option value="11">Humidifier</option> --}}
+                {{-- <option value="12">Dehumidifier</option> --}}
+                {{-- <option value="13">FCU (Fan Cooling Unit)</option> --}}
                 <option value="14">Exhaust Fan</option>
-                <option value="15">Pompa</option>
+                {{-- <option value="15">Pompa</option>
                 <option value="16">Spot Cooling</option>
                 <option value="17">Water Mist</option>
                 <option value="18">Chiller Centrifugal</option>
@@ -46,11 +46,10 @@
                 <option value="25">Piping & Accs</option>
                 <option value="26">Panel SCR</option>
                 <option value="27">ATCS</option>
-                <option value="28">Lakos Filter</option>
+                <option value="28">Lakos Filter</option> --}}
               </select>
             </div>
             <div class="col-md-6 mb-3">
-
               <label for="">Brand</label>
                 <select name="brand" id="" class="form-select">
                 @foreach ($brand as $data)

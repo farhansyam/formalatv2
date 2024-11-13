@@ -8,7 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class AirCooledWaterChiller extends Model
 {
     protected $fillable = [
-       'id',
+        'id',
+        "enginerlist",
+        "start",
+        "stop",
+        "tanggal_survey",
         'id_equipment',
         'q1',
         'q2',

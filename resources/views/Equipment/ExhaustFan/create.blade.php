@@ -1,5 +1,17 @@
 @extends('layouts.back2')
 @section('content')
+<style>
+        table {
+  border: 11px solid black;
+  border-collapse: collapse; /* Optional: makes the border look cleaner */
+}
+
+table td, table th {
+  border: 2px solid black; /* Ensures cells have the same border */
+  padding: 8px; /* Optional: adds padding for readability */
+  
+}
+</style>
     <!-- --------------------------------------------------- -->
     <!-- Header End -->
     <!-- --------------------------------------------------- -->
@@ -49,39 +61,39 @@
 
                                     <input type="hidden"required  name="id" value="{{ $id }}">
                                             <tr>
-                                                <td> <p>Lokasi :</p><input type="text" class="form-control text-center"required  name="q1[]" value=""></td>
-                                                <td> <p>Lokasi :</p><input type="text" class="form-control text-center"required  name="q1[]" value=""></td>
-                                                <td> <p>Lokasi :</p><input type="text" class="form-control text-center"required  name="q1[]" value=""></td>
+                                                <td> <p>Lokasi :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q1[]" value=""></td>
+                                                <td> <p>Lokasi :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q1[]" value=""></td>
+                                                <td> <p>Lokasi :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q1[]" value=""></td>
                                             </tr>
                                             
                                             <tr>
-                                                <td> <p>Code Unit :</p><input type="text" class="form-control text-center"required  name="q2[]" value=""></td>
-                                                <td> <p>Code Unit :</p><input type="text" class="form-control text-center"required  name="q2[]" value=""></td>
-                                                <td> <p>Code Unit :</p><input type="text" class="form-control text-center"required  name="q2[]" value=""></td>
+                                                <td> <p>Code Unit :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q2[]" value=""></td>
+                                                <td> <p>Code Unit :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q2[]" value=""></td>
+                                                <td> <p>Code Unit :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q2[]" value=""></td>
                                             </tr>
                                             
                                             <tr>
-                                                <td><p>No Unit :</p><input type="text" class="form-control text-center"required  name="q3[]" value=""></td>
-                                                <td><p>No Unit :</p><input type="text" class="form-control text-center"required  name="q3[]" value=""></td>
-                                                <td><p>No Unit :</p><input type="text" class="form-control text-center"required  name="q3[]" value=""></td>
+                                                <td><p>No Unit :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q3[]" value=""></td>
+                                                <td><p>No Unit :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q3[]" value=""></td>
+                                                <td><p>No Unit :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q3[]" value=""></td>
                                             </tr>
                                             
                                             <tr>
-                                                <td><p>Model : </p><input type="text" class="form-control text-center"required  name="q4[]" value=""></td>
-                                                <td><p>Model : </p><input type="text" class="form-control text-center"required  name="q4[]" value=""></td>
-                                                <td><p>Model : </p><input type="text" class="form-control text-center"required  name="q4[]" value=""></td>
+                                                <td><p>Model : </p><input type="text" placeholder="?" class="form-control text-center"required  name="q4[]" value=""></td>
+                                                <td><p>Model : </p><input type="text" placeholder="?" class="form-control text-center"required  name="q4[]" value=""></td>
+                                                <td><p>Model : </p><input type="text" placeholder="?" class="form-control text-center"required  name="q4[]" value=""></td>
                                             </tr>
                                             
                                             <tr>
-                                                <td><p>No Seri :</p><input type="text" class="form-control text-center"required  name="q5[]" value=""></td>
-                                                <td><p>No Seri :</p><input type="text" class="form-control text-center"required  name="q5[]" value=""></td>
-                                                <td><p>No Seri :</p><input type="text" class="form-control text-center"required  name="q5[]" value=""></td>
+                                                <td><p>No Seri :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q5[]" value=""></td>
+                                                <td><p>No Seri :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q5[]" value=""></td>
+                                                <td><p>No Seri :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q5[]" value=""></td>
                                             </tr>
                                             
                                             <tr>
-                                                <td><p>Capacity :</p><input type="text" class="form-control text-center"required  name="q6[]" value=""></td>
-                                                <td><p>Capacity :</p><input type="text" class="form-control text-center"required  name="q6[]" value=""></td>
-                                                <td><p>Capacity :</p><input type="text" class="form-control text-center"required  name="q6[]" value=""></td>
+                                                <td><p>Capacity :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q6[]" value=""></td>
+                                                <td><p>Capacity :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q6[]" value=""></td>
+                                                <td><p>Capacity :</p><input type="text" placeholder="?" class="form-control text-center"required  name="q6[]" value=""></td>
                                             </tr>
                                         
                                         </tbody>
@@ -120,63 +132,63 @@
                                         <tr>
                                             <td>1</td>
                                             <td>Check & Cleaning fan motor</td>
-                                            <td><input type="text" class="form-control text-center"required  name="q7[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q7[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q7[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q7[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q7[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q7[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q7[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q7[]"></td>
                                           </tr>
 
                                           <tr>
                                             <td>2</td>
                                             <td>Check & Cleaning blower</td>
-                                            <td><input type="text" class="form-control text-center"required  name="q8[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q8[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q8[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q8[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q8[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q8[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q8[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q8[]"></td>
                                           </tr>
 
                                           <tr>
                                             <td>3</td>
                                             <td>Check & Cleaning filter</td>
-                                            <td><input type="text" class="form-control text-center"required  name="q9[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q9[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q9[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q9[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q9[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q9[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q9[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q9[]"></td>
                                            
                                           </tr>
 
                                           <tr>
                                             <td>4</td>
                                             <td>Check & Cleaning damper</td>
-                                            <td><input type="text" class="form-control text-center"required  name="q10[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q10[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q10[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q10[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q10[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q10[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q10[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q10[]"></td>
                                            
                                           </tr>
 
                                           <tr>
                                             <td>5</td>
                                             <td>Check & Cleaning difusser</td>
-                                            <td><input type="text" class="form-control text-center"required  name="q11[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q11[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q11[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q11[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q11[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q11[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q11[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q11[]"></td>
                                            
                                           </tr>
 
@@ -184,13 +196,13 @@
                                           <tr>
                                             <td>6</td>
                                             <td>Greasing bearing blower</td>
-                                            <td><input type="text" class="form-control text-center"required  name="q12[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q12[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q12[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q12[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q12[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q12[]"></td>
-                                            <td><input type="text" class="form-control text-center"required  name="q12[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]"></td>
+                                            <td><input type="text" placeholder="?" class="form-control text-center"required  name="q12[]"></td>
                                          
                                           </tr>
 
@@ -242,59 +254,59 @@
                                                     <p>After</p>
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q13[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q13[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q13[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q13[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q13[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q13[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q14[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q14[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q14[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q14[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q14[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q14[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q15[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q15[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q15[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q15[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q15[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q15[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q16[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q16[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q16[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q16[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q16[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q16[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q17[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q17[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q17[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q17[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q17[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q17[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q18[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q18[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q18[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q18[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q18[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q18[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q19[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q19[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q19[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q19[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q19[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q19[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q20[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q20[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q20[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q20[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q20[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q20[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q21[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q21[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q21[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q21[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q21[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q21[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q22[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q22[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q22[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q22[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q22[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q22[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q23[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q23[]">
-                                                    <input type="text" class="form-control text-center" style="width: 100px"required  name="q23[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q23[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q23[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center" style="width: 100px"required  name="q23[]">
                                                 </td>
                                             
                                               </tr>
@@ -307,59 +319,59 @@
                                                     <p>After</p>
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q24[]">
-                                                    <input type="text" class="form-control text-center"required  name="q24[]">
-                                                    <input type="text" class="form-control text-center"required  name="q24[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q24[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q24[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q24[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q25[]">
-                                                    <input type="text" class="form-control text-center"required  name="q25[]">
-                                                    <input type="text" class="form-control text-center"required  name="q25[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q25[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q25[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q25[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q26[]">
-                                                    <input type="text" class="form-control text-center"required  name="q26[]">
-                                                    <input type="text" class="form-control text-center"required  name="q26[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q26[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q26[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q26[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q27[]">
-                                                    <input type="text" class="form-control text-center"required  name="q27[]">
-                                                    <input type="text" class="form-control text-center"required  name="q27[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q27[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q27[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q27[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q28[]">
-                                                    <input type="text" class="form-control text-center"required  name="q28[]">
-                                                    <input type="text" class="form-control text-center"required  name="q28[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q28[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q28[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q28[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q29[]">
-                                                    <input type="text" class="form-control text-center"required  name="q29[]">
-                                                    <input type="text" class="form-control text-center"required  name="q29[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q29[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q29[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q29[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q30[]">
-                                                    <input type="text" class="form-control text-center"required  name="q30[]">
-                                                    <input type="text" class="form-control text-center"required  name="q30[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q30[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q30[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q30[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q31[]">
-                                                    <input type="text" class="form-control text-center"required  name="q31[]">
-                                                    <input type="text" class="form-control text-center"required  name="q31[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q31[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q31[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q31[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q32[]">
-                                                    <input type="text" class="form-control text-center"required  name="q32[]">
-                                                    <input type="text" class="form-control text-center"required  name="q32[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q32[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q32[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q32[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q33[]">
-                                                    <input type="text" class="form-control text-center"required  name="q33[]">
-                                                    <input type="text" class="form-control text-center"required  name="q33[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q33[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q33[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q33[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q34[]">
-                                                    <input type="text" class="form-control text-center"required  name="q34[]">
-                                                    <input type="text" class="form-control text-center"required  name="q34[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q34[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q34[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q34[]">
                                                 </td>
                                             
                                               </tr>
@@ -372,59 +384,59 @@
                                                     <p>After</p>
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q35[]">
-                                                    <input type="text" class="form-control text-center"required  name="q35[]">
-                                                    <input type="text" class="form-control text-center"required  name="q35[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q35[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q35[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q35[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q36[]">
-                                                    <input type="text" class="form-control text-center"required  name="q36[]">
-                                                    <input type="text" class="form-control text-center"required  name="q36[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q36[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q36[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q36[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q37[]">
-                                                    <input type="text" class="form-control text-center"required  name="q37[]">
-                                                    <input type="text" class="form-control text-center"required  name="q37[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q37[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q37[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q37[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q38[]">
-                                                    <input type="text" class="form-control text-center"required  name="q38[]">
-                                                    <input type="text" class="form-control text-center"required  name="q38[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q38[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q38[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q38[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q39[]">
-                                                    <input type="text" class="form-control text-center"required  name="q39[]">
-                                                    <input type="text" class="form-control text-center"required  name="q39[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q39[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q39[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q39[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q40[]">
-                                                    <input type="text" class="form-control text-center"required  name="q40[]">
-                                                    <input type="text" class="form-control text-center"required  name="q40[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q40[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q40[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q40[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q41[]">
-                                                    <input type="text" class="form-control text-center"required  name="q41[]">
-                                                    <input type="text" class="form-control text-center"required  name="q41[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q41[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q41[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q41[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q42[]">
-                                                    <input type="text" class="form-control text-center"required  name="q42[]">
-                                                    <input type="text" class="form-control text-center"required  name="q42[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q42[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q42[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q42[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q43[]">
-                                                    <input type="text" class="form-control text-center"required  name="q43[]">
-                                                    <input type="text" class="form-control text-center"required  name="q43[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q43[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q43[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q43[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q44[]">
-                                                    <input type="text" class="form-control text-center"required  name="q44[]">
-                                                    <input type="text" class="form-control text-center"required  name="q44[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q44[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q44[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q44[]">
                                                 </td>
                                                 <td>
-                                                    <input type="text" class="form-control text-center"required  name="q45[]">
-                                                    <input type="text" class="form-control text-center"required  name="q45[]">
-                                                    <input type="text" class="form-control text-center"required  name="q45[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q45[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q45[]">
+                                                    <input type="text" placeholder="?" class="form-control text-center"required  name="q45[]">
                                                 </td>
                                            
                                               </tr>

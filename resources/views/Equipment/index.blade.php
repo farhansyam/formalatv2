@@ -85,13 +85,10 @@
                     kapasitas(PK)
                   </th>
                   <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2" class="border tablesaw-priority-2">
-                    Area Site
-                  </th>
-                  <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2" class="border tablesaw-priority-2">
                     Site
                   </th>
                   <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2" class="border tablesaw-priority-2">
-                    Room
+                    Customer
                   </th>
                   <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2" class="border tablesaw-priority-2">
                     Last PM Date
@@ -214,9 +211,8 @@
                     @endif
                   </td>
                   <td class="tablesaw-priority-3">{{$data->kapasitas}}</td>
-                  <td class="tablesaw-priority-3">{{$data->area}}</td>
                   <td class="tablesaw-priority-3">{{$data->site}}</td>
-                  <td class="tablesaw-priority-3">{{$data->room}}</td>
+                  <td class="tablesaw-priority-3">{{$data->customer}}</td>
                   <td class="tablesaw-priority-3">{{$data->update_pm}}</td>
                   <td class="tablesaw-priority-3">{{$data->update_ts}}</td>
                   <td class="tablesaw-priority-1">

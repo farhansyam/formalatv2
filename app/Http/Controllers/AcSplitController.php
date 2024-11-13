@@ -42,6 +42,10 @@ class AcSplitController extends Controller
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
         $qData = [
             'q' => $request->input('q'),
+            'tanggal_survey' => $request->input('tanggal_survey'),
+            'enginerlist' => $request->input('enginerlist'),
+            'start' => $request->input('start'),
+            'stop' => $request->input('stop'),
             'temuan' => $request->input('temuan'),
             'running_hour' => $request->input('running_hour'),
             'status' => $request->input('status'),
@@ -110,7 +114,7 @@ class AcSplitController extends Controller
             'q30' => implode(',', $request->input('q30')),
 
 
-            'q31' => implode(',', $request->input('q31')),
+            'q31' => 'Ac Split',
         ];
         $qData['q'] = $request->input('q');
         $qData['temuan'] = $request->input('temuan');
@@ -211,6 +215,10 @@ class AcSplitController extends Controller
 
         // Menambahkan input tambahan ke dalam array $qData
         $qData['q'] = $request->input('q');
+        $qData['tanggal_survey'] = $request->input('tanggal_survey');
+        $qData['enginerlist'] = $request->input('enginerlist');
+        $qData['start'] = $request->input('start');
+        $qData['stop'] = $request->input('stop');
         $qData['temuan'] = $request->input('temuan');
         $qData['running_hour'] = $request->input('running_hour');
         $qData['status'] = $request->input('status');

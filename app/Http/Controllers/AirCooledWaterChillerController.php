@@ -18,10 +18,10 @@ class AirCooledWaterChillerController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function create2($id)
+    public function create2($id)
     {
         $equipmentId = Equipment::find($id); // Placeholder value
-        
+
         return view('equipment.AirCooledWaterChiller.create', compact('id'));
     }
 
@@ -41,13 +41,20 @@ class AirCooledWaterChillerController extends Controller
      */
     public function store(Request $request)
     {
-// dd($request->q56);
+        // dd($request->q56);
+
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
-        $qData = [];
+        $qData = [
+            'tanggal_survey' => $request->input('tanggal_survey'),
+            'enginerlist' => $request->input('enginerlist'),
+            'start' => $request->input('start'),
+            'stop' => $request->input('stop'),
+        ];
+
+        // Loop untuk mengambil data 'q1' hingga 'q60'
         for ($i = 1; $i <= 60; $i++) {
-            $qData['q' . $i] = implode(',', $request->input('q' . $i));
+            $qData['q' . $i] = implode(',', (array) $request->input('q' . $i));
         }
-    
         // Simpan data ke dalam model AirCooledWaterChiller
         $AirCooledWaterChiller = AirCooledWaterChiller::create($qData);
         if ($request->file('gambar')) {
@@ -79,33 +86,33 @@ class AirCooledWaterChillerController extends Controller
             }
         }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
-            $history = new History();
-            $history->type = "Air Cooled Water Chiller"; // Sesuaikan dengan jenis equipment
-            $history->id_act = $AirCooledWaterChiller->id;
-            $history->id_equipment = $request->id;
-            $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
-            $history->save();
-            return redirect()->route('equipment.show',$request->id)->with('success', 'Task list telah disimpan.');
+        $history = new History();
+        $history->type = "PM"; // Sesuaikan dengan jenis equipment
+        $history->id_act = $AirCooledWaterChiller->id;
+        $history->id_equipment = $request->id;
+        $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
+        $history->save();
+        return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
-    
-    
 
-    
+
+
+
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\AirCooledWaterChiller  $AirCooledWaterChiller
      * @return \Illuminate\Http\Response
      */
-    public function show(AirCooledWaterChiller $AirCooledWaterChiller,$id)
+    public function show(AirCooledWaterChiller $AirCooledWaterChiller, $id)
     {
         $history = History::find($id);
         $acwc = AirCooledWaterChiller::find($history->id_act);
         $id = $history->id_equipment;
         $gambar = GambarAct::where('id_act', $history->id_act)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
-        return view('equipment.AirCooledWaterChiller.show', compact('acwc','id','gambar','gambar2'));
+        return view('equipment.AirCooledWaterChiller.show', compact('acwc', 'id', 'gambar', 'gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -113,7 +120,7 @@ class AirCooledWaterChillerController extends Controller
      * @param  \App\Models\AirCooledWaterChiller  $AirCooledWaterChiller
      * @return \Illuminate\Http\Response
      */
-    public function edit(AirCooledWaterChiller $AirCooledWaterChiller,$id)
+    public function edit(AirCooledWaterChiller $AirCooledWaterChiller, $id)
     {
         $history = History::find($id);
         $acwc = AirCooledWaterChiller::find($history->id_act);
@@ -121,8 +128,7 @@ class AirCooledWaterChillerController extends Controller
         $idh = $history->id;
         $gambar = GambarAct::where('id_act', $history->id_act)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
-        return view('equipment.AirCooledWaterChiller.edit', compact('acwc','id','idh','gambar','gambar2'));
-        
+        return view('equipment.AirCooledWaterChiller.edit', compact('acwc', 'id', 'idh', 'gambar', 'gambar2'));
     }
 
 
@@ -132,9 +138,16 @@ class AirCooledWaterChillerController extends Controller
         $acs = AirCooledWaterChiller::find($history->id_act);
 
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
-        $qData = [];
+        $qData = [
+            'tanggal_survey' => $request->input('tanggal_survey'),
+            'enginerlist' => $request->input('enginerlist'),
+            'start' => $request->input('start'),
+            'stop' => $request->input('stop'),
+        ];
+
+        // Loop untuk mengambil data 'q1' hingga 'q60'
         for ($i = 1; $i <= 60; $i++) {
-            $qData['q' . $i] = implode(',', $request->input('q' . $i));
+            $qData['q' . $i] = implode(',', (array) $request->input('q' . $i));
         }
         // Simpan data ke dalam model CoolingUnit
         $acs->update($qData); // Atau bisa juga menggunakan $acs->fill($qData) diikuti dengan $acs->save();

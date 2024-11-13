@@ -18,6 +18,25 @@
                         <form action="{{ route('acwc.update',$idh) }}" method="POST" enctype="multipart/form-data">
                             @csrf
                             @method('PUT')
+                             <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input type="date" name="tanggal_survey" value="{{$acwc->tanggal_survey}}" required class="form-control"></td>
+            <td><textarea name="enginerlist" id="" cols="60" rows="10">{{$acwc->enginerlist}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" value="{{$acwc->start}}" required></td>
+            <td><input type="time" name="end" class="form-control" value="{{$acwc->stop}}" id=""></td>
+        </tr>
+            
+</table>
                             <input type="hidden" name="id_equipment" value="{{$id}}">
                             <table class="table table-bordered" id="personelTeamTable">
                                 <thead>

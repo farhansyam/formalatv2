@@ -61,15 +61,58 @@
                   </p>
                   <p class=TableParagraph align=center style='margin-top:.8pt;margin-right:
                      0in;margin-bottom:0in;margin-left:77.95pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:14.0pt'><b><span style='font-size:11.5pt'>AIR<span
-                     style='letter-spacing:.1pt'> </span>CONDITIONER<span style='letter-spacing:
-                     .1pt'> </span><span style='letter-spacing:-.1pt'>SERIES</span></span></b></p>
+                     center;line-height:14.0pt'><b><span style='font-size:11.5pt'>AC<span
+                     style='letter-spacing:.1pt'> </span>SPLIT<span style='letter-spacing:
+                     .1pt'> </span><span style='letter-spacing:-.1pt'></span></span></b></p>
                </td>
                <td width=97 colspan=2 valign=top style='width:73.0pt;border-top:solid black 1.5pt;
                   border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
                   background:#F2F2F2;padding:0in 0in 0in 0in;height:28.5pt'>
                   <p class=TableParagraph style='margin-left:1.5pt;line-height:7.5pt'><span
-                     style='font-size:6.5pt;color:black'>FORM <span style='letter-spacing:-.25pt'>NO.</span></span></p>
+                     style='font-size:6.5pt;color:black'>FORM <span style='letter-spacing:-.25pt'>NO. <br>
+                     <?php
+                    // Array untuk memetakan angka ke jenis
+                    $jenis = [
+                      1 => "AC Split",
+                      2 => "Cooled Water Chiller",
+                      3 => "AHUP",
+                      4 => "PAC",
+                      5 => "Cold Storage",
+                      6 => "Cooling Unit & AC Panel",
+                      7 => "Mini Chiller",
+                      8 => "Evaporative Air Cooler",
+                      9 => "AHU",
+                      10 => "Cooling tower",
+                      11 => "Humidifier",
+                      12 => "Dehumidifier",
+                      13 => "FCU (Fan Cooling Unit)",
+                      14 => "Exhaust Fan",
+                      15 => "Pompa",
+                      16 => "Spot Cooling",
+                      17 => "Water Mist",
+                      18 => "Chiller Centrifugal",
+                      19 => "Floor Standing",
+                      20 => "Ac Cassette",
+                      21 => "Split Duct",
+                      22 => "Air Cooled Chiller",
+                      23 => "Centralize Chiller",
+                      24 => "Ultrasonic Humidifier",
+                      25 => "Piping & Accs",
+                      26 => "Panel SCR",
+                      27 => "ATCS",
+                      28 => "Lakos Filter"
+                    ];
+                    // Ambil singkatan dari jenis berdasarkan angka
+                    $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
+                    $singkatan2 = strtoupper($history->type);
+                    $bulan = strtoupper($history->created_at->format('m'));
+                    $tahun = strtoupper($history->created_at->format('y'));
+                    // Mengambil karakter terakhir
+                    echo strtoupper($singkatan1 .'-'. $singkatan2 .'-'. $bulan .'-'.$tahun.'-'.$formattedId = sprintf('%05d', $equipment->id));
+                    // Mengambil karakter pertama
+
+
+                    ?></span></span></p>
                </td>
             </tr>
             <tr style='height:11.7pt'>
@@ -99,14 +142,14 @@
                   padding:0in 0in 0in 0in;height:10.5pt'>
                   <p class=TableParagraph style='margin-left:1.85pt;line-height:9.3pt'><span
                      style='font-size:8.0pt'>Model<span style='letter-spacing:.15pt'> </span>Unit <span
-                     style='letter-spacing:-.5pt'>:</span></span></p>
+                     style='letter-spacing:-.5pt'>:{{$equipment->model}}</span></span></p>
                </td>
                <td width=162 colspan=2 rowspan=3 valign=top style='width:121.5pt;border:
                   none;border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:10.5pt'>
                   <p class=TableParagraph style='margin-left:1.8pt;line-height:9.55pt'><span
                      style='font-size:8.0pt'>Team<span style='letter-spacing:.1pt'> </span>Engineer<span
                      style='letter-spacing:.25pt'> </span>List<span style='letter-spacing:.25pt'> </span><span
-                     style='letter-spacing:-.5pt'>:</span></span></p>
+                     style='letter-spacing:-.5pt'>: {{$Acs->enginerlist}}</span></span></p>
                </td>
                <td width=34 valign=top style='width:25.4pt;border:none;border-bottom:solid black 1.5pt;
                   padding:0in 0in 0in 0in;height:10.5pt'>
@@ -120,7 +163,7 @@
                </td>
                <td width=48 valign=top style='width:35.65pt;border:none;border-bottom:solid black 1.5pt;
                   padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'> {{$Acs->tanggal_survey}}</span></p>
                </td>
                <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
                   none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
@@ -134,7 +177,7 @@
                   solid black 1.0pt;padding:0in 0in 0in 0in;height:10.5pt'>
                   <p class=TableParagraph style='margin-left:1.4pt;line-height:9.5pt'><span
                      style='font-size:8.0pt'>Code<span style='letter-spacing:.05pt'> </span>unit<span
-                     style='letter-spacing:1.9pt'>  </span><span style='letter-spacing:-.5pt'>:</span></span></p>
+                     style='letter-spacing:1.9pt'>  </span><span style='letter-spacing:-.5pt'>: {{$equipment->kode}}</span></span></p>
                </td>
                <td width=51 valign=top style='width:38.1pt;border:none;border-bottom:solid black 1.0pt;
                   padding:0in 0in 0in 0in;height:10.5pt'>
@@ -149,14 +192,14 @@
                <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
                   none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
                   padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>{{$equipment->serial_number}}</span></p>
                </td>
                <td width=150 colspan=4 valign=top style='width:112.4pt;border-top:none;
                   border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
                   padding:0in 0in 0in 0in;height:10.5pt'>
                   <p class=TableParagraph style='margin-left:1.4pt;line-height:9.5pt'><span
                      style='font-size:8.0pt'>Start<span style='letter-spacing:.1pt'> </span>PM<span
-                     style='letter-spacing:1.95pt'> </span><span style='letter-spacing:-.5pt'>:</span></span></p>
+                     style='letter-spacing:1.95pt'> </span><span style='letter-spacing:-.5pt'>: {{$Acs->start}}</span></span></p>
                </td>
             </tr>
             <tr style='height:10.9pt'>
@@ -165,7 +208,9 @@
                   padding:0in 0in 0in 0in;height:10.9pt'>
                   <p class=TableParagraph style='margin-left:1.4pt;line-height:9.7pt'><span
                      style='font-size:8.0pt'>Nomor<span style='letter-spacing:.15pt'> </span>Unit<span
-                     style='letter-spacing:.3pt'> </span><span style='letter-spacing:-.5pt'>:</span></span></p>
+                     style='letter-spacing:.3pt'> </span><span style='letter-spacing:-.5pt'>: {{
+                    sprintf('%05d', $equipment->id);
+                        }}</span></span></p>
                </td>
                <td width=51 valign=top style='width:38.1pt;border:none;padding:0in 0in 0in 0in;
                   height:10.9pt'>
@@ -175,17 +220,17 @@
                <td width=18 valign=top style='width:13.75pt;border:none;padding:0in 0in 0in 0in;
                   height:10.9pt'>
                   <p class=TableParagraph style='margin-left:2.55pt;line-height:9.7pt'><span
-                     style='font-size:8.0pt;letter-spacing:-.5pt'>:</span></p>
+                     style='font-size:8.0pt;letter-spacing:-.5pt'>: </span></p>
                </td>
                <td width=108 valign=top style='width:81.25pt;border:none;border-right:solid black 1.0pt;
                   padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>{{$equipment->reguler}}</span></p>
                </td>
                <td width=150 colspan=4 valign=top style='width:112.4pt;border:none;
                   border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:10.9pt'>
                   <p class=TableParagraph style='margin-left:1.4pt;line-height:9.7pt'><span
                      style='font-size:8.0pt'>Close<span style='letter-spacing:.05pt'> </span>PM<span
-                     style='letter-spacing:.05pt'> </span><span style='letter-spacing:-.5pt'>:</span></span></p>
+                     style='letter-spacing:.05pt'> </span><span style='letter-spacing:-.5pt'>: {{$Acs->stop}}</span></span></p>
                </td>
             </tr>
             <tr style='height:13.4pt'>
@@ -203,60 +248,20 @@
                   height:13.4pt'>
                   <p class=TableParagraph style='margin-top:1.0pt;margin-right:0in;margin-bottom:
                      0in;margin-left:39.9pt;margin-bottom:.0001pt'><b><span style='font-size:9.0pt;
-                     color:white;letter-spacing:-.1pt'>REFRIGERANT</span></b><b><span
+                     color:white;letter-spacing:-.1pt'></span></b><b><span
                      style='font-size:9.0pt;color:white;letter-spacing:.35pt'> </span></b><b><span
-                     style='font-size:9.0pt;color:white;letter-spacing:-.2pt'>TYPE</span></b></p>
+                     style='font-size:9.0pt;color:white;letter-spacing:-.2pt'></span></b></p>
                </td>
             </tr>
             <tr style='height:22.15pt'>
                <td width=109 colspan=3 valign=top style='width:81.55pt;border:none;
                   border-left:solid black 1.5pt;padding:0in 0in 0in 0in;height:22.15pt'>
                   <p class=TableParagraph style='margin-top:3.65pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:12.3pt;margin-bottom:.0001pt'><b><span style='font-size:11.5pt'>@if($Acs->q31 == "Ac Split Wall")
+                     0in;margin-left:12.3pt;margin-bottom:.0001pt'><b><span style='font-size:11.5pt'>
               <span style="font-family: DejaVu Sans; font-size: 18px;">&#9745;</span>
-              @endif
-                     </span></b><b><span style='font-size:8.0pt'>AC<span style='letter-spacing:
-                        -.05pt'> </span>Split<span style='letter-spacing:.05pt'> </span><span
-                        style='letter-spacing:-.2pt'>Wall</span></span></b>
-                  </p>
-               </td>
-               <td width=96 colspan=2 valign=top style='width:72.05pt;border:none;
-                  padding:0in 0in 0in 0in;height:22.15pt'>
-                  <p class=TableParagraph style='margin-top:3.65pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:17.05pt;margin-bottom:.0001pt'><b><span style='font-size:
-                     11.5pt'>@if($Acs->q31 == "Ac Cassette")
-              <span style="font-family: DejaVu Sans; font-size: 18px;">&#9745;</span>
-              @endif
-                     
-                  </span></b><b><span style='font-size:8.0pt'>AC<span
-                     style='letter-spacing:-.05pt'> </span><span style='letter-spacing:-.1pt'>Cassette</span></span></b></p>
-               </td>
-               <td width=18 valign=top style='width:13.75pt;border:none;padding:0in 0in 0in 0in;
-                  height:22.15pt'>
-                  <p class=TableParagraph><span style='font-size:8.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-               </td>
-               <td width=108 valign=top style='width:81.25pt;border:none;padding:0in 0in 0in 0in;
-                  height:22.15pt'>
-                  <p class=TableParagraph align=center style='margin-top:3.65pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.3pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:11.5pt'>@if($Acs->q31 == "Ac Floor Standing")
-              <span style="font-family: DejaVu Sans; font-size: 18px;">&#9745;</span>
-              @endif<span style='letter-spacing:.1pt'>
                      </span></span></b><b><span style='font-size:8.0pt'>AC<span style='letter-spacing:
-                        .05pt'> </span>Floor<span style='letter-spacing:.05pt'> </span><span
-                        style='letter-spacing:-.1pt'>Standing</span></span></b>
-                  </p>
-               </td>
-               <td width=109 valign=top style='width:82.1pt;border:none;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:22.15pt'>
-                  <p class=TableParagraph align=center style='margin-top:3.65pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.8pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:11.5pt'>@if($Acs->q31 == "Ac Split Standing")
-              <span style="font-family: DejaVu Sans; font-size: 18px;">&#9745;</span>
-              @endif<span style='letter-spacing:.05pt'>
-                     </span></span></b><b><span style='font-size:8.0pt'>AC<span style='letter-spacing:
-                        -.05pt'> </span>Split<span style='letter-spacing:.05pt'> </span><span
-                        style='letter-spacing:-.2pt'>Duct</span></span></b>
+                        .05pt'> </span><span style='letter-spacing:.05pt'> </span><span
+                        style='letter-spacing:-.1pt'>Split</span></span></b>
                   </p>
                </td>
                <td width=202 colspan=5 valign=top style='width:151.8pt;border:none;
@@ -266,7 +271,7 @@
                      center'><b><span style='font-size:11.5pt'><span style='letter-spacing:.05pt'>
                      </span></span></b><b><span style='font-size:8.0pt'><span style='letter-spacing:
                         -.05pt'> </span><span style='letter-spacing:.05pt'> </span><span
-                        style='letter-spacing:-.2pt'>{{$Acs->q}}</span></span></b>
+                        style='letter-spacing:-.2pt'>REFRIGERANT TYPE : &nbsp;{{$equipment->jenis_freon}}</span></span></b>
                   </p>
                </td>
             </tr>
