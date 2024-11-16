@@ -12,6 +12,7 @@ class Akun extends Model
     protected $fillable = [
         'name',
         'email',
+        'akses',
         'password',
         'customer',
         'site',

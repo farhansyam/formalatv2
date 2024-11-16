@@ -10,7 +10,7 @@
   <div class="col-12">
     <div class="card">
       <div class="border-bottom title-part-padding">
-        <h4 class="card-title mb-0 text-center">Tambah User</h4>
+        <h4 class="card-title mb-0 text-center">Edit User</h4>
       </div>
       <div class="card-body">
         <form action="{{ route('akun.update',$akun->id) }}" method="POST" enctype="multipart/form-data">
@@ -21,10 +21,20 @@
               <label for="">Username</label>
               <input type="text" name="name" class="form-control" id="" value="{{$akun->name}}" required="">
             </div>
+            
             <div class="col-md-6 mb-8">
               <label for="">Email</label>
               <input type="email" name="email" class="form-control" id="" value="{{$akun->email}}" required="">
             </div>
+            <div class="col-md-12 mb-8">
+            <label for="role">Role</label>
+            <select name="role" id="role" class="form-control" required>
+                <option value="admin">Admin</option>
+                <option value="user">User</option>
+                <option value="spv">SPV</option>
+                <option value="team_lead">Team Lead</option>
+            </select>
+        </div>
             <div class="col-md-6 mb-8">
               <label for="">Password Baru</label>
               <input type="password" name="password" id="" cols="30" rows="10" class="form-control">

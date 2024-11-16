@@ -65,6 +65,14 @@
               <span class="hide-menu">Main Menu</span>
             </li>
 
+            <li class="sidebar-item" style="">
+              <a class="sidebar-link" href="" aria-expanded="true">
+                <span>
+                  <i class="ti ti-user"></i>
+                </span>
+                <span class="hide-menu">{{auth()->user()->role_sipm}}</span></span>
+              </a>
+            </li>
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('dashboard')}}" aria-expanded="false">
                 <span>
@@ -119,7 +127,8 @@
             <!-- Dashboard -->
             <!-- =================== -->
             @if (auth()->user()->role_id == 1)
-            <li class="sidebar-item">
+           @if(auth()->user()->role_sipm != 'admin')
+               <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('akun.index')}}" aria-expanded="false">
                 <span>
                   <i class="ti ti-users"></i>
@@ -135,7 +144,7 @@
                 <span class="hide-menu">Authority</span>
               </a>
             </li>
-
+            @endif
             @endif
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('customer.index')}}" aria-expanded="false">

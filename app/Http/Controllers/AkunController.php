@@ -41,17 +41,26 @@ class AkunController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->role == 'admin') {
+            $akses = 4;
+        } else {
+            $akses = 3;
+        }
         $data = [
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'role_sipm' => $request->role,
+            'akses' => $akses,
         ];
 
         // Tentukan penyimpanan customer atau site berdasarkan role
         if ($request->role === 'user') {
             $data['customer'] = $request->customer;
             $data['site'] = null; // Kosongkan site jika role adalah user
+        } elseif ($request->role == 'admin') {
+            $data['site'] = null; // Gabungkan array site menjadi string
+            $data['customer'] = null; // Kosongkan customer jika role bukan user
         } else {
             $data['site'] = implode(',', $request->site); // Gabungkan array site menjadi string
             $data['customer'] = null; // Kosongkan customer jika role bukan user
