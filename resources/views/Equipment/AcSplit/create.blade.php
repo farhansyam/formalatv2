@@ -51,7 +51,13 @@ option:first-of-type {
             <th>Engineer List</th>
         </tr>
         <tr>
-            <td><input type="date" name="tanggal_survey" required class="form-control"></td>
+            <td><input type="date" name="tanggal_survey" required class="form-control"><br>
+                <label for="">Jadwal</label>
+                <select name="tanggal_schedule" id="" required class="form-select" style="color: black">
+                    @foreach ($schedule as $data)
+                    <option value="{{$data->schedule}}">{{$data->schedule}}</option>
+                    @endforeach
+                </select></td>
             <td><textarea name="enginerlist" id="" cols="60" rows="10"></textarea></td>
         </tr>
         <tr>
@@ -530,8 +536,8 @@ option:first-of-type {
 <td><input type="text" class="form-control" name="running_hour" required></td>
             <td><select onchange="setColor(this);" name="status" id="" class="form-select">
                                                 <option value="?">?</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                    <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
                 </select></td>
         </tr>
             

@@ -16,7 +16,7 @@
     <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
       <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Gambar</p>
     </td>
-    <td style="width: 15%; border: solid black 1pt; padding: 5px; text-align: center;">
+    <td style="width: 50%; border: solid black 1pt; padding: 5px; text-align: center;">
       <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Info</p>
     </td>
     <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
@@ -33,7 +33,7 @@
     </td>
     <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
       <p class="TableParagraph" style="margin: 0;">
-        <img width="100" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g1->gambar)) }}" />
+        <img width="200" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g1->gambar)) }}" />
       </p>
     </td>
     <td style="width: 15%; border: solid black 1pt; padding: 5px; text-align: center;">
@@ -57,7 +57,7 @@
     <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
       <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Gambar</p>
     </td>
-    <td style="width: 15%; border: solid black 1pt; padding: 5px; text-align: center;">
+    <td style="width: 50%; border: solid black 1pt; padding: 5px; text-align: center;">
       <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Info</p>
     </td>
     <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
@@ -74,7 +74,7 @@
     </td>
     <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
       <p class="TableParagraph" style="margin: 0;">
-        <img width="100" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g2->gambar)) }}" />
+        <img width="200" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g2->gambar)) }}" />
       </p>
     </td>
     <td style="width: 15%; border: solid black 1pt; padding: 5px; text-align: center;">

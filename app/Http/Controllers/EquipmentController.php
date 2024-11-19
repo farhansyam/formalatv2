@@ -35,6 +35,8 @@ class EquipmentController extends Controller
     {
 
         $room = Room::all();
+        $area = Area::all();
+
         $equipment = Equipment::all();
         if (auth()->user()->role_sipm == 'user') {
             $equipment = Equipment::Where('customer', auth()->user()->customer)->get();
@@ -45,7 +47,7 @@ class EquipmentController extends Controller
         if (auth()->user()->role_sipm == 'team_lead') {
             $equipment = Equipment::Where('site', auth()->user()->site)->get();
         }
-        return view('Equipment.index', compact('equipment', 'room'));
+        return view('Equipment.index', compact('equipment', 'room', 'area'));
     }
 
     /**
@@ -190,6 +192,7 @@ class EquipmentController extends Controller
     {
         $history = History::where('id_equipment', $equipment->id)->get();
         $schedule = ItemSchedule::where('id_equipement', $equipment->id_combine)->orderBy('schedule', 'ASC')->get();
+
         return view('Equipment.show', compact('equipment', 'history', 'schedule'));
     }
     public function search(Request $request)
@@ -207,8 +210,10 @@ class EquipmentController extends Controller
 
         // Jika ditemukan, cari riwayat berdasarkan ID peralatan
         $history = History::where('id_equipment', $kode_baru2)->get();
+        $schedule = ItemSchedule::where('id_equipement', $equipment->id_combine)->orderBy('schedule', 'ASC')->get();
+
         // Kembalikan tampilan 'show' dengan data peralatan dan riwayat
-        return view('Equipment.show', compact('equipment', 'history'));
+        return view('Equipment.show', compact('equipment', 'history', 'schedule'));
     }
 
 

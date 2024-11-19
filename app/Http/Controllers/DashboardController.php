@@ -13,7 +13,8 @@ use App\Models\ServiceReport;
 
 class DashboardController extends Controller
 {
-    function index(){
+    function index()
+    {
         $customer = Customer::all();
         $troubleshoot = ServiceReport::count();
         $equipment = Equipment::count();
@@ -22,6 +23,6 @@ class DashboardController extends Controller
         $now = Carbon::now();
         $month = $now->month;
         $history = History::whereMonth('created_at', $month)->get();
-        return view('index',compact('customer','equipment','survey','history','troubleshoot'));
+        return view('index', compact('customer', 'equipment', 'survey', 'history', 'troubleshoot'));
     }
 }

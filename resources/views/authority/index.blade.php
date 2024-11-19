@@ -29,6 +29,12 @@
                   <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2" class="border tablesaw-priority-2">
                     Email
                   </th>
+                  <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2" class="border tablesaw-priority-2">
+                    Username
+                  </th>
+                  <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="2" class="border tablesaw-priority-2">
+                    Role
+                  </th>
                   <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1" class="border tablesaw-priority-1">
                     <abbr title="Rotten Tomato Rating">Option</abbr>
                   </th>
@@ -43,6 +49,12 @@
                   <td>{{$no++}}</td>
                   <td class="tablesaw-priority-3">
                     {{$data->email}}
+                  </td>
+                  <td class="tablesaw-priority-3">
+                    {{$data->user->name}}
+                  </td>
+                  <td class="tablesaw-priority-3">
+                    {{$data->user->role_sipm}}
                   </td>
                   <td class="tablesaw-priority-1">
                     <div style="display: flex; align-items: center;">

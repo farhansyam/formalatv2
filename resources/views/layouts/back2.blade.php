@@ -89,7 +89,6 @@
                 <span class="hide-menu">Equipment</span>
               </a>
             </li>
-            @if(auth()->user()->role_sipm != 'user')
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('schedule.index')}}" aria-expanded="false">
                 <span>
@@ -98,6 +97,8 @@
                 <span class="hide-menu">Schedule</span>
               </a>
             </li>
+            @if(auth()->user()->role_sipm != 'user')
+
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('part.index')}}" aria-expanded="false">
                 <span>

@@ -8,6 +8,7 @@ use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
 use App\Models\GambarAct2;
+use App\Models\ItemSchedule;
 use Illuminate\Http\Request;
 use App\Models\ListKebutuhanBeritaAcara;
 
@@ -20,9 +21,11 @@ class AcSplitController extends Controller
      */
     public function create2($id)
     {
-        $equipmentId = Equipment::find($id); // Placeholder value
+
         $equipment = Equipment::find($id);
-        return view('equipment.AcSplit.create', compact('id', 'equipment'));
+        $schedule = ItemSchedule::where('id_equipement', $equipment->id_combine)->where('status', '#ffb6b6')->orderBy('schedule', 'ASC')->get();
+
+        return view('equipment.AcSplit.create', compact('id', 'equipment', 'schedule'));
     }
 
     /**
@@ -39,9 +42,21 @@ class AcSplitController extends Controller
      */
     public function store(Request $request)
     {
+
+        if ($request->status == 'Completed') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#13DEB9';
+            $schedule->save();
+        }
+        if ($request->status == 'On Progres') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#FFAE1F';
+            $schedule->save();
+        }
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
         $qData = [
             'q' => $request->input('q'),
+            'tanggal_schedule' => $request->input('tanggal_schedule'),
             'tanggal_survey' => $request->input('tanggal_survey'),
             'enginerlist' => $request->input('enginerlist'),
             'start' => $request->input('start'),
@@ -161,6 +176,8 @@ class AcSplitController extends Controller
         $history->id_equipment = $request->id_equipment;
         $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
         $history->save();
+
+
         return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
@@ -282,6 +299,8 @@ class AcSplitController extends Controller
         $Acs = AcSplit::find($history->id_act);
         $gambar = GambarAct::where('id_act', $history->id_act)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+
+
         // Render view blade dengan gambar QR
         $pdfContent = view('pdf.acs', ['history' => $history, 'Acs' => $Acs, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
 

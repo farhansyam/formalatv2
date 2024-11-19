@@ -9,5 +9,5 @@ class ItemSchedule extends Model
 {
     use HasFactory;
     protected $table = 'list_item_schedule';
-    public $fillable = ['id_schedule', 'id_equipement','status','schedule','id_eq','customer'];
+    public $fillable = ['id_schedule', 'id_equipement', 'status', 'schedule', 'id_eq', 'customer', 'site'];
 }

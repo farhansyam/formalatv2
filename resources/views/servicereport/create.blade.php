@@ -225,15 +225,15 @@
                 </div>
                 <div class="col-md-12 mb-3">
                   <label for="">Trouble Desc :</label>
-                  <textarea class="form-control" name="deskripsi" id="" cols="10" rows="4"></textarea>
+                  <textarea class="form-control" required  name="deskripsi" id="" cols="10" rows="4"></textarea>
                 </div>
                 <div class="col-md-12 mb-2">
                   <label for="">Action :</label>
-                  <textarea class="form-control" name="tindakan" id="" cols="10" rows="4"></textarea>
+                  <textarea class="form-control" required name="tindakan" id="" cols="10" rows="4"></textarea>
                 </div>
                 <div class="col-md-12 mb-2">
                   <label for="">Rekomendasi Teknisi Lapangan :</label>
-                  <textarea class="form-control" name="rekomendasi_teknisi_lapangan" id="" cols="10" rows="4"></textarea>
+                  <textarea class="form-control" required name="rekomendasi_teknisi_lapangan" id="" cols="10" rows="4"></textarea>
                 </div>
               </div>
               <h5 class="text-center" style="background-color: black;color:white">List Kebutuhan Part material dan jasa </h5>
@@ -252,10 +252,10 @@
                   <!-- Initial row -->
                   <tr>
                     <td>1</td>
-                    <td><input type="text" class="form-control" name="deskripsilist[]"></td>
-                    <td><input type="text" class="form-control" name="modelpart[]"></td>
-                    <td><input type="number" class="form-control" name="qty[]"></td>
-                    <td><input type="text" class="form-control" name="keterangan[]"></td>
+                    <td><input required  type="text" class="form-control" name="deskripsilist[]"></td>
+                    <td><input required type="text" class="form-control" name="modelpart[]"></td>
+                    <td><input required type="number" class="form-control" name="qty[]"></td>
+                    <td><input required type="text" class="form-control" name="keterangan[]"></td>
                     <td></td>
                   </tr>
                 </tbody>

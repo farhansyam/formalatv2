@@ -47,7 +47,7 @@
             <label for="role">Role</label>
             <select name="role" id="role" class="form-control" required>
                 <option value="admin">Admin</option>
-                <option value="user">User</option>
+                <option value="customer">Customer</option>
                 <option value="spv">SPV</option>
                 <option value="team_lead">Team Lead</option>
             </select>

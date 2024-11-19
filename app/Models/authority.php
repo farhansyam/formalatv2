@@ -9,4 +9,10 @@ class authority extends Model
 {
     use HasFactory;
     protected $table = 'authority';
+
+
+    public function user()
+    {
+        return $this->belongsTo(Akun::class, 'id_user', 'id');
+    }
 }

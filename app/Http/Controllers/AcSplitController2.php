@@ -8,6 +8,7 @@ use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
 use App\Models\GambarAct2;
+use App\Models\ItemSchedule;
 use Illuminate\Http\Request;
 use App\Models\ListKebutuhanBeritaAcara;
 
@@ -22,7 +23,9 @@ class AcSplitController2 extends Controller
     {
         $equipmentId = Equipment::find($id); // Placeholder value
         $equipment = Equipment::find($id);
-        return view('equipment.AcSplit2.create', compact('id', 'equipment'));
+        $schedule = ItemSchedule::where('id_equipement', $equipment->id_combine)->where('status', '#ffb6b6')->orderBy('schedule', 'ASC')->get();
+
+        return view('equipment.AcSplit2.create', compact('id', 'equipment', 'schedule'));
     }
 
     /**
@@ -39,10 +42,21 @@ class AcSplitController2 extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->status == 'Completed') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#13DEB9';
+            $schedule->save();
+        }
+        if ($request->status == 'On Progres') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#FFAE1F';
+            $schedule->save();
+        }
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
         $qData = [
             'q' => $request->input('q'),
             'tanggal_survey' => $request->input('tanggal_survey'),
+            'tanggal_schedule' => $request->input('tanggal_schedule'),
             'enginerlist' => $request->input('enginerlist'),
             'start' => $request->input('start'),
             'stop' => $request->input('stop'),

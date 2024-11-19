@@ -13,6 +13,7 @@ class AcSplit extends Model
         "start",
         "stop",
         "tanggal_survey",
+        "tanggal_schedule",
         "status",
         'rekomendasi',
         'running_hour',

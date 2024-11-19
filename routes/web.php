@@ -59,6 +59,7 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 |
 */
 
+
 Route::get('/pdf/preview/{filename}', function ($filename) {
         // Path ke file PDF
         $filePath = public_path($filename);
@@ -68,6 +69,8 @@ Route::get('/pdf/preview/{filename}', function ($filename) {
 })->name('pdf.preview');
 Auth::routes();
 
+
+Route::get('/eq', [DashboardController::class, 'eq'])->name('eq')->middleware('auth');
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::resource('customer', CustomerController::class)->name('index', 'customer.index')->middleware('auth');
 Route::resource('kapasitas', KapasitasController::class)->name('index', 'kapasitas.index')->middleware('auth');
@@ -88,6 +91,14 @@ Route::delete('history/delete/{id}', [EquipmentController::class, 'history_desto
 Route::get('history/approve/{id}', [EquipmentController::class, 'history_approve'])->name('history.approve')->middleware('auth');
 Route::get('equipment/pp/{id}', [EquipmentController::class, 'printpp'])->name('equipment.printp')->middleware('auth');
 Route::post('equipment/search', [EquipmentController::class, 'search'])->name('equipment.search')->middleware('auth');
+Route::get('schedulee/progres', [ScheduleController::class, 'progres'])->name('schedulee.progres')->middleware('auth');
+Route::get('schedulee/complete', [ScheduleController::class, 'finish'])->name('schedulee.complete')->middleware('auth');
+Route::get('schedulegetprogres', [ScheduleController::class, 'GetScheduleProgres'])->name('schedulegetprogres')->middleware('auth');
+Route::get('schedulegetcomplete', [ScheduleController::class, 'GetScheduleComplete'])->name('schedulegetcomplete')->middleware('auth');
+Route::get('schedulee/all', [ScheduleController::class, 'all'])->name('schedulee.all')->middleware('auth');
+Route::get('schedulegetall', [ScheduleController::class, 'GetScheduleAll'])->name('schedulegetAll')->middleware('auth');
+Route::get('schedulegsession/{id}', [ScheduleController::class, 'schedulession'])->name('schedulesession')->middleware('auth');
+
 Route::get('scheduleget', [ScheduleController::class, 'GetSchedule'])->name('scheduleget')->middleware('auth');
 Route::get('part', [EquipmentController::class, 'part'])->name('part.index')->middleware('auth');
 Route::get('part/{id}', [EquipmentController::class, 'partshow'])->name('part.show')->middleware('auth');

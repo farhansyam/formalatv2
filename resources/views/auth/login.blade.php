@@ -44,7 +44,7 @@
                         <div class="card mb-0">
                             <div class="card-body">
                                 <a href="" class="text-nowrap logo-img text-center d-block mb-5 w-100">
-                                    <img src="../../dist/images/logos/1.jpeg" width="180" alt="">
+                                    <img src="../../dist/images/logos/1.jpeg" width="300" alt="">
                                 </a>
                                 <div class="position-relative text-center my-4">
                                     <p class="mb-0 fs-4 px-3 d-inline-block bg-white text-dark z-index-5 position-relative">Login</p>
