@@ -34,8 +34,8 @@ class TroubleshootController extends Controller
     public function create($id)
     {
         $equipment = Equipment::find($id);
-        
-        return view('servicereport.create',compact('equipment'));
+
+        return view('servicereport.create', compact('equipment'));
     }
 
     /**
@@ -50,27 +50,39 @@ class TroubleshootController extends Controller
 
 
         // Simpan data formberitaacara
+        // dd($request);
         $formBeritaAcara = ServiceReport::create($request->all());
+        if (request()->has('ids')) {
+            $items = ListKebutuhanBeritaAcara::where(
+                'id',
+                request()->ids
+            )->get();
+
+            foreach ($items as $item) {
+                $item->status = $formBeritaAcara->id;
+                $item->save();
+            }
+        }
 
         // Lakukan multiple insert ke listkebutuhanberitaacara
-        $deskripsilist = $request->input('deskripsilist');
-        $modelpart = $request->input('modelpart');
-        $qty = $request->input('qty');
-        $keterangan = $request->input('keterangan');
-        $type = "FormserviceReport";
+        // $deskripsilist = $request->input('deskripsilist');
+        // $modelpart = $request->input('modelpart');
+        // $qty = $request->input('qty');
+        // $keterangan = $request->input('keterangan');
+        // $type = "FormserviceReport";
 
-        // Loop untuk menyimpan data listkebutuhanberitaacara
-        foreach (range(0, count($deskripsilist) - 1) as $index) {
-            // dd($deskripsilist[$index]);
-            ListKebutuhanBeritaAcara::create([
-                'id_beritaacara' => $formBeritaAcara->id,
-                'deskripsilist' => $deskripsilist[$index], // Ubah menjadi 'deskripsi'
-                'modelpart' => $modelpart[$index], // Ubah menjadi 'modelpart'
-                'qty' => $qty[$index], // Ubah menjadi 'qty'
-                'keterangan' => $keterangan[$index], // Ubah menjadi 'keterangan'
-                'type' => $type, // Ubah menjadi 'keterangan'
-            ]);
-        }
+        // // Loop untuk menyimpan data listkebutuhanberitaacara
+        // // foreach (range(0, count($deskripsilist) - 1) as $index) {
+        // //     // dd($deskripsilist[$index]);
+        // //     ListKebutuhanBeritaAcara::create([
+        // //         'id_beritaacara' => $formBeritaAcara->id,
+        // //         'deskripsilist' => $deskripsilist[$index], // Ubah menjadi 'deskripsi'
+        // //         'modelpart' => $modelpart[$index], // Ubah menjadi 'modelpart'
+        // //         'qty' => $qty[$index], // Ubah menjadi 'qty'
+        // //         'keterangan' => $keterangan[$index], // Ubah menjadi 'keterangan'
+        // //         'type' => $type, // Ubah menjadi 'keterangan'
+        // //     ]);
+        // // }
 
         if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
@@ -120,12 +132,12 @@ class TroubleshootController extends Controller
      */
     public function show($id)
     {
-        
+
         $service = ServiceReport::find($id);
         $list = ListKebutuhanBeritaAcara::where('type', 'FormserviceReport')->where('id_beritaacara', $id)->get();
         $gambar = GambarAct::where('id_act', $id)->get();
         $gambar2 = GambarAct2::where('id_act', $id)->get();
-        return view('servicereport.show', compact('service', 'list','gambar','gambar2'));
+        return view('servicereport.show', compact('service', 'list', 'gambar', 'gambar2'));
     }
 
     /**
@@ -162,7 +174,7 @@ class TroubleshootController extends Controller
         //
     }
 
-        public function print($id)
+    public function print($id)
     {
         $history = History::find($id);
         $ServiceReport = ServiceReport::find($id);
@@ -171,7 +183,7 @@ class TroubleshootController extends Controller
         $gambar2 = GambarAct2::where('id_act', $id)->get();
 
         // Render view blade dengan gambar QR
-        $pdfContent = view('pdf.troubleshoot', ['history' => $history, 'ServiceReport' =>$ServiceReport, 'list' =>$list, 'gambar' =>$gambar, 'gambar2' => $gambar2])->render();
+        $pdfContent = view('pdf.troubleshoot', ['history' => $history, 'ServiceReport' => $ServiceReport, 'list' => $list, 'gambar' => $gambar, 'gambar2' => $gambar2])->render();
 
         // Buat objek DOMPDF
         $dompdf = new Dompdf();
@@ -189,9 +201,9 @@ class TroubleshootController extends Controller
         $filename = 'equipment_qrcode_' . time() . '.pdf';
 
         // Simpan PDF ke server sementara
-      // Simpan PDF ke folder public
-    $pdfFilePath = public_path($filename);
-    file_put_contents($pdfFilePath, $dompdf->output());
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
 
         // Tautan untuk membuka pratinjau PDF di tab baru
         $previewLink = route('pdf.preview', ['filename' => $filename]);

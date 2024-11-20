@@ -16,6 +16,15 @@
           </div>
           <script src="{{asset('dist/libs/jquery/dist/jquery.min.js')}}"></script>
           <div class="card-body">
+            <h1>Status :  @if ($parts[0]->status == '0')
+              Open</h1>
+                    <a href="{{ route('ts.create', ['id' => $parts[0]->id_eq, 'jenis' => 'parts','ids' => $parts[0]->id] ) }}" type="button" class="btn btn-danger">
+                          Form TS
+                        </a>
+              @else
+                  <h1>Close</h1>
+                    <a href=" {{ route('troubleshoot.show', $parts[0]->status) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail TS</button></a>
+            @endif
             <table class="table table-striped table-hover table-bordered table no-wrap tablesaw-columntoggle" data-tablesaw-mode="columntoggle" id="example">
               <thead>
                 <tr>

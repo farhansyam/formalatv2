@@ -37,16 +37,45 @@ class EquipmentController extends Controller
         $room = Room::all();
         $area = Area::all();
 
-        $equipment = Equipment::all();
+        $equipment = Equipment::query();
+
+        // Filter berdasarkan role user
         if (auth()->user()->role_sipm == 'user') {
-            $equipment = Equipment::Where('customer', auth()->user()->customer)->get();
+            $equipment->where('customer', auth()->user()->customer);
         }
-        if (auth()->user()->role_sipm == 'spv') {
-            $equipment = Equipment::Where('site', auth()->user()->site)->get();
+
+        if (auth()->user()->role_sipm == 'spv' || auth()->user()->role_sipm == 'team_lead') {
+            $equipment->where('site', auth()->user()->site);
         }
-        if (auth()->user()->role_sipm == 'team_lead') {
-            $equipment = Equipment::Where('site', auth()->user()->site)->get();
+
+        // Filter berdasarkan parameter customer
+        if (request()->has('customer')) {
+            $equipment->where('customer', request()->get('customer'));
         }
+
+        // Filter berdasarkan parameter bulan (update_ts atau update_pm)
+        if (request()->has('bulan')) {
+            $equipment->where(function ($query) {
+                $bulan = request()->get('bulan');
+                $query->whereMonth('update_ts', $bulan)
+                    ->orWhereMonth('update_pm', $bulan);
+            });
+        }
+
+        // Ambil data setelah semua filter diterapkan
+        $equipment = $equipment->get()->map(function ($item) {
+            // Tentukan waktu terbaru antara update_ts dan update_pm
+            $item->latest_update = $item->update_ts && $item->update_pm
+                ? max($item->update_ts, $item->update_pm)
+                : ($item->update_ts ?? $item->update_pm);
+
+            return $item;
+        });
+
+        // Sortir data berdasarkan waktu terbaru
+        $equipment = $equipment->sortByDesc('latest_update');
+
+
         return view('Equipment.index', compact('equipment', 'room', 'area'));
     }
 
@@ -435,7 +464,11 @@ class EquipmentController extends Controller
 
     function part()
     {
-        $history = History::all();
+        $history = History::where('type', 'Survei')->get();
+        foreach ($history as $data) {
+            $data->listCount = ListKebutuhanBeritaAcara::where('id_beritaacara', $data->id_act)->count();
+        }
+
         return view('part.index', compact('history'));
     }
     function partshow($id)

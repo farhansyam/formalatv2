@@ -27,12 +27,12 @@
                   <label for="">No Kontak</label>
                   <input type="text" name="no_kontak" class="form-control" id="" value="" required="">
                   <label for="">Alamat</label>
-                  <textarea class="form-control" name="alamat" id="" cols="10" rows="4">{{$equipment->customer()->alamat}}</textarea>
+                  <textarea class="form-control" required name="alamat" id="" cols="10" rows="4">{{$equipment->customer()->alamat}}</textarea>
 
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="">Engineer List</label>
-                  <textarea class="form-control" name="engineer_list" id="" cols="10" rows="4"></textarea>
+                  <textarea class="form-control" name="engineer_list" required id="" cols="10" rows="4"></textarea>
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="">Tanggal Survey</label>

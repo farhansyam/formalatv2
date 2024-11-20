@@ -24,7 +24,7 @@ class FormBeritaAcaraController extends Controller
     public function create($id)
     {
         $equipment = Equipment::find($id);
-        return view('formberitaacara.create',compact('id','equipment'));
+        return view('formberitaacara.create', compact('id', 'equipment'));
     }
 
     public function store(Request $request)
@@ -43,8 +43,7 @@ class FormBeritaAcaraController extends Controller
         $type = "FormBeritaAcara";
 
         // Loop untuk menyimpan data listkebutuhanberitaacara
-       if($request->input('deskripsilist'))
-       {
+        if ($request->input('deskripsilist')) {
             foreach (range(0, count($deskripsilist) - 1) as $index) {
                 // dd($deskripsilist[$index]);
                 ListKebutuhanBeritaAcara::create([
@@ -54,12 +53,12 @@ class FormBeritaAcaraController extends Controller
                     'qty' => $qty[$index], // Ubah menjadi 'qty'
                     'keterangan' => $keterangan[$index], // Ubah menjadi 'keterangan'
                     'type' => $type, // Ubah menjadi 'keterangan'
+                    'id_eq' => $request->id_equipment, // Ubah menjadi 'keterangan'
                 ]);
             }
-       }
-       
-        if($request->file('gambar'))
-        {
+        }
+
+        if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
                 $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
                 $gambar->move(public_path('gambar'), $gambarname);
@@ -73,8 +72,7 @@ class FormBeritaAcaraController extends Controller
                 ]);
             }
         }
-        if($request->file('gambar2'))
-        {
+        if ($request->file('gambar2')) {
             foreach ($request->file('gambar2') as $index2 => $gambar2) {
                 $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
                 $gambar2->move(public_path('gambar2'), $gambarname2);
@@ -90,15 +88,15 @@ class FormBeritaAcaraController extends Controller
         }
 
         $history = new History();
-        $history->type = "Survei"; 
+        $history->type = "Survei";
         $history->id_act = $formBeritaAcara->id;
         $history->id_equipment = $request->id_equipment;
         $history->id_user = "1";
         $equipment = Equipment::find($request->id_equipment);
         $history->customer = $equipment->customer;
-        $history->save();        
+        $history->save();
 
-    return redirect()->route('equipment.show',$request->id_equipment)->with('success', 'Form Berita Acara telah disimpan.');
+        return redirect()->route('equipment.show', $request->id_equipment)->with('success', 'Form Berita Acara telah disimpan.');
     }
 
 
@@ -109,7 +107,7 @@ class FormBeritaAcaraController extends Controller
         $list = ListKebutuhanBeritaAcara::where('type', 'FormBeritaAcara')->where('id_beritaacara', $id)->get();
         $gambar = GambarAct::where('id_act', $id)->get();
         $gambar2 = GambarAct2::where('id_act', $id)->get();
-        return view('formberitaacara.show', compact('beritaacara','list','gambar','gambar2'));
+        return view('formberitaacara.show', compact('beritaacara', 'list', 'gambar', 'gambar2'));
     }
 
     public function edit($id)
@@ -149,7 +147,7 @@ class FormBeritaAcaraController extends Controller
         $gambar2 = GambarAct2::where('id_act', $id)->get();
 
         // Render view blade dengan gambar QR
-        $pdfContent = view('pdf.survey', ['history' => $history, 'beritaacara' =>$beritaacara, 'list' =>$list, 'gambar' =>$gambar, 'gambar2' => $gambar2])->render();
+        $pdfContent = view('pdf.survey', ['history' => $history, 'beritaacara' => $beritaacara, 'list' => $list, 'gambar' => $gambar, 'gambar2' => $gambar2])->render();
 
         // Buat objek DOMPDF
         $dompdf = new Dompdf();
@@ -167,9 +165,9 @@ class FormBeritaAcaraController extends Controller
         $filename = 'equipment_qrcode_' . time() . '.pdf';
 
         // Simpan PDF ke server sementara
-      // Simpan PDF ke folder public
-    $pdfFilePath = public_path($filename);
-    file_put_contents($pdfFilePath, $dompdf->output());
+        // Simpan PDF ke folder public
+        $pdfFilePath = public_path($filename);
+        file_put_contents($pdfFilePath, $dompdf->output());
 
         // Tautan untuk membuka pratinjau PDF di tab baru
         $previewLink = route('pdf.preview', ['filename' => $filename]);

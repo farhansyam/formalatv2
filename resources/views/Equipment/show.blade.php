@@ -1070,9 +1070,12 @@
                                                             @if ($data->type == "Survei")
                                                             <a href=" {{ route('survey.print', $data->id_act) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                             <a href=" {{ route('formberitaacara.show', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail</button></a>
+                                                            <a href=" {{ route('formberitaacara.edit', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-warning">Edit</button></a>
                                                             @else
                                                             <a href=" {{ route('troubleshoot.print', $data->id_act) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                             <a href=" {{ route('troubleshoot.show', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail</button></a>
+                                                            <a href=" {{ route('troubleshoot.edit', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-warning">Edit</button></a>
+
                                                             @endif
                                                             @endif
                                                           @if(auth()->user()->role_sipm != 'user')

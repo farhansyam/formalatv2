@@ -10,6 +10,10 @@ class AirCooledWaterChiller extends Model
     protected $fillable = [
         'id',
         "enginerlist",
+        "tanggal_schedule",
+        "temuan",
+        "rekomendasi",
+        "status",
         "start",
         "stop",
         "tanggal_survey",

@@ -24,7 +24,11 @@
             <th>Engineer List</th>
         </tr>
         <tr>
-            <td><input type="date" name="tanggal_survey" value="{{$acwc->tanggal_survey}}" required class="form-control"></td>
+            <td><input type="date" name="tanggal_survey" value="{{$acwc->tanggal_survey}}" required class="form-control"><br>
+                 <label for="">Jadwal</label>
+                <select name="tanggal_schedule" id="" required class="form-select" style="color: black">
+                    <option value="{{$acwc->tanggal_schedule}}">{{$acwc->tanggal_schedule}}</option>
+                </select></td>  
             <td><textarea name="enginerlist" id="" cols="60" rows="10">{{$acwc->enginerlist}}</textarea></td>
         </tr>
         <tr>
@@ -583,7 +587,32 @@
                             </table>
                             </tbody>
                             </table>
+
+                                                                                     <table class="table table-bordered" id="">
+        <tbody><tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10">{{$acwc->temuan}}</textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$acwc->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td colspan="2"><select onchange="setColor(this);" name="status" id="" class="form-select">
+                    <option value="{{$acwc->status}}">{{$acwc->status}}</option>
+
+                                                <option value="?">?</option>
+                    <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
+                </select></td>
+        </tr>
+            
+</tbody></table>
                             @include('formimage.formkosong')
+                            
                             <button class="btn btn-info px-4 mt-3" type="submit">Submit form</button>
                         </form>
                         @include('formimage.edit')

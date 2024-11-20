@@ -29,14 +29,20 @@ table td, table th {
                         <div class="card-body">
                             <form action="{{ route('ahu.store') }}" id="myForm" method="POST" enctype="multipart/form-data">
                                 @csrf
-                                <table class="table table-bordered" id="">
+                                                                         <table class="table table-bordered" id="">
         <tr>
             <th>Tanggal</th>
             <th>Engineer List</th>
         </tr>
         <tr>
-            <td><input type="date" name="tanggal" required class="form-control"></td>
-            <td><textarea name="enginer_list" id="" cols="60" rows="10"></textarea></td>
+            <td><input type="date" name="tanggal" required class="form-control"><br>
+                <label for="">Jadwal</label>
+                <select name="tanggal_schedule" id="" required class="form-select" style="color: black">
+                    @foreach ($schedule as $data)
+                    <option value="{{$data->schedule}}">{{$data->schedule}}</option>
+                    @endforeach
+                </select></td>
+            <td><textarea name="enginerlist" id="" cols="60" rows="10"></textarea></td>
         </tr>
         <tr>
             <th>Start Time</th>
@@ -44,7 +50,7 @@ table td, table th {
         </tr>
         <tr>
 <td><input type="time" class="form-control" name="start" required></td>
-            <td><input type="time" name="end" class="form-control" id=""></td>
+            <td><input type="time" name="stop" class="form-control" id=""></td>
         </tr>
             
 </table>
@@ -739,7 +745,7 @@ table td, table th {
                                             </script>
                                         </tbody>
                                     </table>
-                                                  <table class="table table-bordered" id="">
+      <table class="table table-bordered" id="">
         <tr>
             <th>Temuan</th>
             <th>Rekomendasi</th>
@@ -752,9 +758,10 @@ table td, table th {
             <th>Job Complete</th>
         </tr>
         <tr>
-            <td><select name="status" id="" class="form-select">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+            <td colspan="2"><select onchange="setColor(this);" name="status" id="" class="form-select">
+                                                <option value="?">?</option>
+                    <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
                 </select></td>
         </tr>
             

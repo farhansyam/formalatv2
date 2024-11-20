@@ -23,7 +23,11 @@
             <th>Engineer List</th>
         </tr>
         <tr>
-            <td><input  disabled type="date" name="tanggal" required class="form-control" value="{{$ahu->tanggal}}"></td>
+            <td><input  disabled type="date" name="tanggal" required class="form-control" value="{{$ahu->tanggal}}"><br>
+                <label for="">Jadwal</label>
+                <select disabled name="tanggal_schedule" id="" required class="form-select" style="color: black">
+                    <option value="{{$ahu->tanggal_schedule}}">{{$ahu->tanggal_schedule}}</option>
+                </select></td>
             <td><textarea disabled name="enginer_list" id="" cols="60" rows="10">{{$ahu->enginer_list}}</textarea></td>
         </tr>
         <tr>
@@ -739,18 +743,15 @@
             <th>Rekomendasi</th>
         </tr>
         <tr>
-            <td><textarea name="temuan" id="" cols="60" rows="10">{{$ahu->temuan}}</textarea></td>
-            <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$ahu->rekomendasi}}</textarea></td>
+            <td><textarea disabled name="temuan" id="" cols="60" rows="10">{{$ahu->temuan}}</textarea></td>
+            <td><textarea disabled name="rekomendasi" id="" cols="60" rows="10">{{$ahu->rekomendasi}}</textarea></td>
         </tr>
         <tr>
-            <th>Running Hour</th>
             <th>Job Complete</th>
         </tr>
         <tr>
-            <td><input type="number" class="form-control" name="running_hour" value="{{$ahu->running_hour}}"></td>
-            <td><select name="status" id="" class="form-select">
+            <td colspan="2"><select name="status" id="" class="form-select">
                     <option value="{{$ahu->status}}">{{$ahu->status}}</option>
-                    <option value="No">No</option>
                 </select></td>
         </tr>
             

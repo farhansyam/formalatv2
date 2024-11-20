@@ -22,7 +22,12 @@
             <th>Engineer List</th>
         </tr>
         <tr>
-            <td><input type="date" name="tanggal" required class="form-control" value="{{$ef->tanggal}}"></td>
+            <td><input type="date" name="tanggal" required class="form-control" value="{{$ef->tanggal}}">
+                <br>
+                <label for="">Jadwal</label>
+                <select name="tanggal_schedule" id="" required class="form-select" style="color: black">
+                    <option value="{{$ef->tanggal_schedule}}">{{$ef->tanggal_schedule}}</option>
+                </select></td>
             <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$ef->enginer_list}}</textarea></td>
         </tr>
         <tr>
@@ -437,7 +442,7 @@
             <th>Job Complete</th>
         </tr>
         <tr>
-            <td><td><select name="status" id="" class="form-select">
+            <td><select name="intensive" id="" class="form-select">
                     <option value="{{$ef->intensive}}">{{$ef->intensive}}</option>
                     <option value="No">No</option>
                     <option value="Yes">Yes</option>
@@ -445,8 +450,8 @@
                 </select></td>
             <td><select name="status" id="" class="form-select">
                     <option value="{{$ef->status}}">{{$ef->status}}</option>
-                    <option value="No">No</option>
-                    <option value="Yes">Yes</option>
+                     <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
                 </select></td>
         </tr>
             @include('formimage.formkosong')

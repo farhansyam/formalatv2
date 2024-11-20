@@ -1,4 +1,25 @@
 <br>
+                                                         <table class="table table-bordered" id="">
+        <tbody><tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10"></textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td colspan="2"><select onchange="setColor(this);" name="status" id="" class="form-select">
+                                                <option value="?">?</option>
+                    <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
+                </select></td>
+        </tr>
+            
+</tbody></table>
 <h5 class="text-center" style="background-color: black;color:white">Tambahkan Foto Equipment</h5>
 <table class="table table-bordered" id="GambarTable">
     <thead>

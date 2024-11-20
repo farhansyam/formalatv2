@@ -24,8 +24,12 @@
             <th>Engineer List</th>
         </tr>
         <tr>
-            <td><input  type="date" name="tanggal" required class="form-control" value="{{$ahu->tanggal}}"></td>
-            <td><textarea name="enginer_list" id="" cols="60" rows="10">{{$ahu->enginer_list}}</textarea></td>
+            <td><input  type="date" name="tanggal" required class="form-control" value="{{$ahu->tanggal}}">    
+<br>
+                 <label for="">Jadwal</label>
+                <select name="tanggal_schedule" id="" required class="form-select" style="color: black">
+                    <option value="{{$ahu->tanggal_schedule}}">{{$ahu->tanggal_schedule}}</option>
+                </select></td>            <td><textarea name="enginerlist" id="" cols="60" rows="10">{{$ahu->enginer_list}}</textarea></td>
         </tr>
         <tr>
             <th>Start Time</th>
@@ -65,6 +69,7 @@
                                 <tbody>
 
                                     <input type="hidden" required name="id" value="{{ $id }}">
+                                    <input type="hidden" required name="id2" value="{{ $id2 }}">
                                     <tr>
                                         <td>1</td>
                                         <td>Check Pressure Different in/out Prefilter</td>
@@ -740,14 +745,13 @@
             <td><textarea name="rekomendasi" id="" cols="60" rows="10">{{$ahu->rekomendasi}}</textarea></td>
         </tr>
         <tr>
-            <th>Running Hour</th>
             <th>Job Complete</th>
         </tr>
         <tr>
-            <td><input type="number" class="form-control" name="running_hour" value="{{$ahu->running_hour}}"></td>
-            <td><select name="status" id="" class="form-select">
+            <td colspan="2"><select name="status" id="" class="form-select">
                     <option value="{{$ahu->status}}">{{$ahu->status}}</option>
-                    <option value="No">No</option>
+                         <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
                 </select></td>
         </tr>
             

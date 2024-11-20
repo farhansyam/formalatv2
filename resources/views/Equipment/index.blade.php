@@ -61,7 +61,64 @@
                   <td>
                     {{ strtoupper(substr(str_replace(' ', '', $jenis[$data->jenis] ?? ''), 0, 3) . $data->kode_room . sprintf('%05d', $data->id)) }}
                   </td>
-                  <td>{{ $jenis[$data->jenis] ?? '-' }}</td>
+                   <td class="tablesaw-priority-3">@if($data->jenis == 1)
+                    {{ "AC Split" }}
+                    @elseif($data->jenis == 2)
+                    {{ "Cooled Water Chiller" }}
+                    @elseif($data->jenis == 3)
+                    {{ "AHUP" }}
+                    @elseif($data->jenis == 4)
+                    {{ "PAC" }}
+                    @elseif($data->jenis == 5)
+                    {{ "Cold Storage" }}
+                    @elseif($data->jenis == 6)
+                    {{ "Cooling Unit & AC Panel" }}
+                    @elseif($data->jenis == 7)
+                    {{ "Mini Chiller" }}
+                    @elseif($data->jenis == 8)
+                    {{ "Evaporative Air Cooler" }}
+                    @elseif($data->jenis == 9)
+                    {{ "AHU" }}
+                    @elseif($data->jenis == 10)
+                    {{ "Cooling tower" }}
+                    @elseif($data->jenis == 11)
+                    {{ "Humidifier" }}
+                    @elseif($data->jenis == 12)
+                    {{ "Dehumidifier" }}
+                    @elseif($data->jenis == 13)
+                    {{ "FCU (Fan Cooling Unit)" }}
+                    @elseif($data->jenis == 14)
+                    {{ "Exhaust Fan" }}
+                    @elseif($data->jenis == 15)
+                    {{ "Pompa" }}
+                    @elseif($data->jenis == 16)
+                    {{ "Spot Cooling" }}
+                    @elseif($data->jenis == 17)
+                    {{ "Water Mist" }}
+                    @elseif($data->jenis == 18)
+                    {{ "Chiller Centrifugal" }}
+                    @elseif($data->jenis == 19)
+                    {{ "Floor Standing" }}
+                    @elseif($data->jenis == 20)
+                    {{ "Ac Cassette" }}
+                    @elseif($data->jenis == 21)
+                    {{ "Split Duct" }}
+                    @elseif($data->jenis == 22)
+                    {{ "Air Cooled Chiller" }}
+                    @elseif($data->jenis == 23)
+                    {{ "Centralize Chiller" }}
+                    @elseif($data->jenis == 24)
+                    {{ "Ultrasonic Humidifier" }}
+                    @elseif($data->jenis == 25)
+                    {{ "Piping & Accs" }}
+                    @elseif($data->jenis == 26)
+                    {{ "Panel SCR" }}
+                    @elseif($data->jenis == 27)
+                    {{ "ATCS" }}
+                    @elseif($data->jenis == 28)
+                    {{ "Lakos Filter" }}
+                    @endif
+                  </td>
                   <td>{{ $data->kapasitas }}</td>
                   <td>{{ $data->site }}</td>
                   <td>{{ $data->customer }}</td>

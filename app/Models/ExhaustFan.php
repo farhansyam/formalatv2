@@ -8,8 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class ExhaustFan extends Model
 {
     protected $fillable = [
-        'tanggal', 'start', 'end', 'enginer_list', 'temuan', 'rekomendasi', 'status', 'intensive',
-       'id',
+        'tanggal',
+        'start',
+        'end',
+        'enginer_list',
+        'tanggal_schedule',
+        'temuan',
+        'rekomendasi',
+        'status',
+        'intensive',
+        'id',
         'id_equipment',
         'q1',
         'q2',

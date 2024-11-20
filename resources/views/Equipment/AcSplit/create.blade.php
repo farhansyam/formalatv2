@@ -529,12 +529,10 @@ option:first-of-type {
             <td><textarea name="rekomendasi" id="" cols="60" rows="10"></textarea></td>
         </tr>
         <tr>
-            <th>Running Hour</th>
             <th>Job Complete</th>
         </tr>
         <tr>
-<td><input type="text" class="form-control" name="running_hour" required></td>
-            <td><select onchange="setColor(this);" name="status" id="" class="form-select">
+            <td colspan="2"><select onchange="setColor(this);" name="status" id="" class="form-select">
                                                 <option value="?">?</option>
                     <option value="Completed">Completed</option>
                     <option value="On Progres">On Progres</option>

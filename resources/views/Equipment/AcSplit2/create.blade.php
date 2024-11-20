@@ -16,21 +16,18 @@ table td, table th {
 }
 /* with the :focus here, we would show grey when not using the element */
  .form-select {
-        color: #ff0000;
+        color: rgb(255, 0, 0);
     }
-    select {
-  color: black;
-}
 
 /* with the :focus here, we show grey when using the element */
 select:focus {
-  color: #170000;
-}   
+  color: #9e9e9e;
+}
 option {
   color: black;
 }
 option:first-of-type {
-  color: #ff0000;
+  color: #9e9e9e;
 }
 </style>
 <div class="container-fluid">
@@ -54,7 +51,13 @@ option:first-of-type {
             <th>Engineer List</th>
         </tr>
         <tr>
-            <td><input type="date" name="tanggal_survey" required class="form-control"></td>
+            <td><input type="date" name="tanggal_survey" required class="form-control"><br>
+                <label for="">Jadwal</label>
+                <select name="tanggal_schedule" id="" required class="form-select" style="color: black">
+                    @foreach ($schedule as $data)
+                    <option value="{{$data->schedule}}">{{$data->schedule}}</option>
+                    @endforeach
+                </select></td>
             <td><textarea name="enginerlist" id="" cols="60" rows="10"></textarea></td>
         </tr>
         <tr>
@@ -69,7 +72,7 @@ option:first-of-type {
 </table>
               </div>
                         <div class="border-bottom title-part-padding">
-                            <h4 class="card-title mb-0 text-center" style="background-color: black;color:white">Task List Split Duct</h4>
+                            <h4 class="card-title mb-0 text-center" style="background-color: black;color:white">Task List AC Split</h4>
                         </div>
                         <div class="card-body">
 
@@ -118,13 +121,12 @@ option:first-of-type {
                                                 <option value="Ok">Ok</option>
                                                 <option value="Not Ok">Not Ok</option>
                                             </select></td>
-                                            <script>
-                                                function setColor(dropdown){
+                                    </tr>
+<script>
+    function setColor(dropdown){
     dropdown.style.color = "black";
 };
-                                            </script>
-                                    </tr>
-
+</script>
                                     <tr>
                                         <td class="text-center">2</td>
                                         <td class="text-center">Cek kondisi filter, pastikan tidak kotor dan tidak rusak (cleaning jika kotor)</td>
@@ -517,7 +519,7 @@ option:first-of-type {
                                 </tbody>
 
                             </table>
-                            <table class="table table-bordered" id="">
+                              <table class="table table-bordered" id="">
         <tr>
             <th>Temuan</th>
             <th>Rekomendasi</th>
@@ -527,15 +529,13 @@ option:first-of-type {
             <td><textarea name="rekomendasi" id="" cols="60" rows="10"></textarea></td>
         </tr>
         <tr>
-            <th>Running Hour</th>
             <th>Job Complete</th>
         </tr>
         <tr>
-<td><input type="text" class="form-control" name="running_hour" required></td>
-            <td><select onchange="setColor(this);" name="status" id="" class="form-select">
+            <td colspan="2"><select onchange="setColor(this);" name="status" id="" class="form-select">
                                                 <option value="?">?</option>
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                    <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
                 </select></td>
         </tr>
             

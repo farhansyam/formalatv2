@@ -34,7 +34,13 @@ table td, table th {
             <th>Engineer List</th>
         </tr>
         <tr>
-            <td><input type="date" name="tanggal" required class="form-control"></td>
+            <td><input type="date" name="tanggal" required class="form-control"><br>
+                <label for="">Jadwal</label>
+                <select name="tanggal_schedule" id="" required class="form-select" style="color: black">
+                    @foreach ($schedule as $data)
+                    <option value="{{$data->schedule}}">{{$data->schedule}}</option>
+                    @endforeach
+                </select></td>
             <td><textarea name="enginer_list" id="" cols="60" rows="10"></textarea></td>
         </tr>
         <tr>
@@ -463,8 +469,8 @@ table td, table th {
                     <option value="No">No</option>
                 </select></td>
             <td><select name="status" id="" class="form-select">
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                       <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
                 </select></td>
         </tr>
             

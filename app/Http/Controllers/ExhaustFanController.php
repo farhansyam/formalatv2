@@ -8,6 +8,7 @@ use App\Models\Equipment;
 use App\Models\GambarAct;
 use App\Models\ExhaustFan;
 use App\Models\GambarAct2;
+use App\Models\ItemSchedule;
 use Illuminate\Http\Request;
 
 class ExhaustFanController extends Controller
@@ -21,7 +22,9 @@ class ExhaustFanController extends Controller
 
     public function create2($id)
     {
-        return view('equipment.ExhaustFan.create', compact('id'));
+        $equipment = Equipment::find($id);
+        $schedule = ItemSchedule::where('id_equipement', $equipment->id_combine)->where('status', '#ffb6b6')->orderBy('schedule', 'ASC')->get();
+        return view('equipment.ExhaustFan.create', compact('id', 'schedule'));
     }
     /**
      * Show the form for creating a new resource.
@@ -40,7 +43,16 @@ class ExhaustFanController extends Controller
     {
 
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
-
+        if ($request->status == 'Completed') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#13DEB9';
+            $schedule->save();
+        }
+        if ($request->status == 'On Progres') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#FFAE1F';
+            $schedule->save();
+        }
         $qData = [
             'q1' => implode(',', $request->input('q1')),
 
@@ -139,6 +151,7 @@ class ExhaustFanController extends Controller
             'start' => $request->input('start'),
             'end' => $request->input('end'),
             'intensive' => $request->input('intensive'),
+            'tanggal_schedule' => $request->input('tanggal_schedule'),
         ];
 
         // Simpan data ke dalam model ExhaustFan
@@ -178,6 +191,9 @@ class ExhaustFanController extends Controller
         $history->id_equipment = $request->id;
         $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
         $history->save();
+        $equipment = Equipment::find($request->id);
+        $equipment->update_pm = date('Y-m-d');
+        $equipment->save();
         return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
@@ -219,6 +235,16 @@ class ExhaustFanController extends Controller
 
     public function update(Request $request, $id)
     {
+        if ($request->status == 'Completed') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#13DEB9';
+            $schedule->save();
+        }
+        if ($request->status == 'On Progres') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#FFAE1F';
+            $schedule->save();
+        }
         $ef = ExhaustFan::find($id);
         $qData = [
             'q1' => implode(',', $request->input('q1')),
@@ -314,6 +340,8 @@ class ExhaustFanController extends Controller
             'start' => $request->input('start'),
             'end' => $request->input('end'),
             'intensive' => $request->input('intensive'),
+            'tanggal_schedule' => $request->input('tanggal_schedule'),
+
 
         ];
         $ef->update($qData);

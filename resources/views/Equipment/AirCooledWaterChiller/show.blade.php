@@ -17,6 +17,28 @@
                     <div class="card-body">
                         <form action="{{ route('acwc.store') }}" method="POST">
                             @csrf
+                                              <table class="table table-bordered" id="">
+        <tr>
+            <th>Tanggal</th>
+            <th>Engineer List</th>
+        </tr>
+        <tr>
+            <td><input disabled type="date" value="{{$acwc->tanggal_survey}}" name="tanggal_survey" required class="form-control">   <label for="">Jadwal</label>
+                <select disabled  name="tanggal_schedule" id="" required class="form-select" style="color: black">
+                    <option value="{{$acwc->schedule}}">{{$acwc->schedule}}</option>
+                </select></td>  
+            <td><textarea name="enginerlist" id="" cols="60" rows="10" disabled>{{$acwc->enginerlist}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Start Time</th>
+            <th>Stop Time</th>
+        </tr>
+        <tr>
+<td><input type="time" class="form-control" name="start" value="{{$acwc->start}}" disabled required></td>
+            <td><input type="time" name="stop" class="form-control" value="{{$acwc->end}}" disabled id=""></td>
+        </tr>
+            
+</table>
                             <table class="table table-bordered" id="personelTeamTable">
                                 <thead>
                                     <tr>
@@ -560,6 +582,29 @@
                             </table>
                             </tbody>
                             </table>
+                                                                                                                 <table class="table table-bordered" id="">
+        <tbody><tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea disabled name="temuan" id="" cols="60" rows="10">{{$acwc->temuan}}</textarea></td>
+            <td><textarea disabled name="rekomendasi" id="" cols="60" rows="10">{{$acwc->rekomendasi}}</textarea></td>
+        </tr>
+        <tr>
+            <th>Job Complete</th>
+        </tr>
+        <tr>
+            <td colspan="2"><select disabled onchange="setColor(this);" name="status" id="" class="form-select">
+                    <option value="{{$acwc->status}}">{{$acwc->status}}</option>
+
+                                                <option value="?">?</option>
+                    <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
+                </select></td>
+        </tr>
+            
+</tbody></table>
                             @include('formimage.show')
 
                         </form>

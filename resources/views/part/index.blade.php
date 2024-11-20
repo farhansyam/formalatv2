@@ -46,6 +46,9 @@
                     Tanggal Submit Form
                   </th>
                   <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1" class="border tablesaw-priority-1">
+                    <abbr title="Rotten Tomato Rating">Jumlah</abbr>
+                  </th>
+                  <th scope="col" data-tablesaw-sortable-col="" data-tablesaw-priority="1" class="border tablesaw-priority-1">
                     <abbr title="Rotten Tomato Rating">Option</abbr>
                   </th>
                 </tr>
@@ -164,6 +167,7 @@
                   <td class="tablesaw-priority-3">{{$data->equipment1()->site}}</td>
                   <td class="tablesaw-priority-3">{{$data->equipment1()->room}}</td>
                   <td class="tablesaw-priority-3">{{ \Carbon\Carbon::parse($data->created_at)->format('d F Y') }}</td>
+                  <td class="tablesaw-priority-3">{{$data->listCount}}</td>
                   <td class="tablesaw-priority-1">
                     <div style="display: flex; align-items: center;">
                       <a href="{{ route('part.show', $data->id_act) }}" style="text-decoration: none;">

@@ -388,16 +388,14 @@
             <td><textarea disabled name="rekomendasi" id="" cols="60" rows="10">{{$acs->rekomendasi}}</textarea></td>
         </tr>
         <tr>
-            <th>Running Hour</th>
             <th>Job Complete</th>
         </tr>
         <tr>
-<td><input type="text" class="form-control" name="running_hour" value="{{$acs->running_hour}}" disabled></td>
-            <td><select name="status" id="" class="form-select" disabled>
+<td colspan="2">        <select name="status" id="" class="form-select" disabled>
                     <option value="{{$acs->status}}">{{$acs->status}}</option>
 
-                    <option value="Yes">Yes</option>
-                    <option value="No">No</option>
+                     <option value="Completed">Completed</option>
+                    <option value="On Progres">On Progres</option>
                 </select></td>
         </tr>
             

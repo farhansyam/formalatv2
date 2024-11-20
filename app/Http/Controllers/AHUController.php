@@ -8,6 +8,7 @@ use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
 use App\Models\GambarAct2;
+use App\Models\ItemSchedule;
 use Illuminate\Http\Request;
 
 class AHUController extends Controller
@@ -21,7 +22,9 @@ class AHUController extends Controller
     public function create2($id)
     {
 
-        return view('equipment.AHU.create', compact('id'));
+        $equipment = Equipment::find($id);
+        $schedule = ItemSchedule::where('id_equipement', $equipment->id_combine)->where('status', '#ffb6b6')->orderBy('schedule', 'ASC')->get();
+        return view('equipment.AHU.create', compact('id', 'schedule'));
     }
 
 
@@ -42,6 +45,17 @@ class AHUController extends Controller
     public function store(Request $request)
     {
 
+
+        if ($request->status == 'Completed') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#13DEB9';
+            $schedule->save();
+        }
+        if ($request->status == 'On Progres') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#FFAE1F';
+            $schedule->save();
+        }
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
 
         $qData = [
@@ -144,9 +158,11 @@ class AHUController extends Controller
             'rekomendasi' => $request->input('rekomendasi'),
             'status' => $request->input('status'),
             'temuan' => $request->input('temuan'),
-            'enginer_list' => $request->input('enginer_list'),
+            'enginer_list' => $request->input('enginerlist'),
             'start' => $request->input('start'),
             'end' => $request->input('end'),
+            'tanggal_schedule' => $request->input('tanggal_schedule'),
+
         ];
 
         // Simpan data ke dalam model AHU
@@ -186,6 +202,9 @@ class AHUController extends Controller
         $history->id_equipment = $request->id;
         $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
         $history->save();
+        $equipment = Equipment::find($request->id);
+        $equipment->update_pm = date('Y-m-d');
+        $equipment->save();
         return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
@@ -217,15 +236,28 @@ class AHUController extends Controller
     public function edit(AHU $AHU, $id)
     {
         $history = History::find($id);
+        $id2 = $id;
         $ahu = AHU::findOrFail($history->id_act); // Sesuaikan dengan model AHU
         $id = $history->id_equipment;
         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
-        return view('equipment.AHU.edit', compact('ahu', 'id', 'gambar', 'gambar2'));
+        return view('equipment.AHU.edit', compact('ahu', 'id', 'gambar', 'gambar2', 'id2'));
     }
 
     public function update(Request $request, $id)
     {
+
+        $history = History::find($request->id2);
+        if ($request->status == 'Completed') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $history->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#13DEB9';
+            $schedule->save();
+        }
+        if ($request->status == 'On Progres') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $history->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#FFAE1F';
+            $schedule->save();
+        }
         $qData = [
             'q1' => implode(',', $request->input('q1')),
 
@@ -326,7 +358,7 @@ class AHUController extends Controller
             'rekomendasi' => $request->input('rekomendasi'),
             'status' => $request->input('status'),
             'temuan' => $request->input('temuan'),
-            'enginer_list' => $request->input('enginer_list'),
+            'enginer_list' => $request->input('enginerlist'),
             'start' => $request->input('start'),
             'end' => $request->input('end'),
         ];

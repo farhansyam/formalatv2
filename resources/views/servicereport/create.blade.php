@@ -31,7 +31,13 @@
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="">Engineer List</label>
-                  <textarea class="form-control" name="engineer_list" id="" cols="10" rows="4"></textarea>
+                  <textarea class="form-control" name="engineer_list" id="" cols="10" rows="4"></textarea><br>
+                @if (request()->has('jenis') && request()->jenis)
+    <label for="">Notes</label>
+    <input type="text" class="form-control" value="Close Part Proposal" disabled id="">
+    <input type="hidden" name="ids" value="{{ request()->ids }}">
+@endif
+
                 </div>
                 <div class="col-md-4 mb-3">
                   <label for="">Tanggal Survey</label>
@@ -236,7 +242,7 @@
                   <textarea class="form-control" required name="rekomendasi_teknisi_lapangan" id="" cols="10" rows="4"></textarea>
                 </div>
               </div>
-              <h5 class="text-center" style="background-color: black;color:white">List Kebutuhan Part material dan jasa </h5>
+              {{-- <h5 class="text-center" style="background-color: black;color:white">List Kebutuhan Part material dan jasa </h5>
               <table class="table table-bordered" id="personelTeamTable">
                 <thead>
                   <tr>
@@ -259,8 +265,8 @@
                     <td></td>
                   </tr>
                 </tbody>
-              </table>
-              <button type="button" class="btn btn-primary" id="addPersonelTeam">Add List</button><br>
+              </table> --}}
+              {{-- <button type="button" class="btn btn-primary" id="addPersonelTeam">Add List</button><br> --}}
               @include('formimage.image')
               <button class="btn btn-info px-4 mt-3" type="submit">
                 Submit form

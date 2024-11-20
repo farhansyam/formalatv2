@@ -7,6 +7,7 @@ use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
 use App\Models\GambarAct2;
+use App\Models\ItemSchedule;
 use Illuminate\Http\Request;
 use App\Models\AirCooledWaterChiller;
 
@@ -21,8 +22,9 @@ class AirCooledWaterChillerController extends Controller
     public function create2($id)
     {
         $equipmentId = Equipment::find($id); // Placeholder value
+        $schedule = ItemSchedule::where('id_equipement', $equipmentId->id_combine)->where('status', '#ffb6b6')->orderBy('schedule', 'ASC')->get();
 
-        return view('equipment.AirCooledWaterChiller.create', compact('id'));
+        return view('equipment.AirCooledWaterChiller.create', compact('id', 'schedule'));
     }
 
 
@@ -42,13 +44,27 @@ class AirCooledWaterChillerController extends Controller
     public function store(Request $request)
     {
         // dd($request->q56);
+        if ($request->status == 'Completed') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#13DEB9';
+            $schedule->save();
+        }
+        if ($request->status == 'On Progres') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#FFAE1F';
+            $schedule->save();
+        }
 
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
         $qData = [
             'tanggal_survey' => $request->input('tanggal_survey'),
             'enginerlist' => $request->input('enginerlist'),
+            'tanggal_schedule' => $request->input('tanggal_schedule'),
             'start' => $request->input('start'),
             'stop' => $request->input('stop'),
+            'temuan' => $request->input('temuan'),
+            'status' => $request->input('status'),
+            'rekomendasi' => $request->input('rekomendasi'),
         ];
 
         // Loop untuk mengambil data 'q1' hingga 'q60'
@@ -92,6 +108,9 @@ class AirCooledWaterChillerController extends Controller
         $history->id_equipment = $request->id;
         $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
         $history->save();
+        $equipment = Equipment::find($request->id_equipment);
+        $equipment->update_pm = date('Y-m-d');
+        $equipment->save();
         return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
@@ -134,15 +153,30 @@ class AirCooledWaterChillerController extends Controller
 
     public function update(Request $request, $id)
     {
+        // dd($request->q56);
+        if ($request->status == 'Completed') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#13DEB9';
+            $schedule->save();
+        }
+        if ($request->status == 'On Progres') {
+            $schedule = ItemSchedule::where('schedule', $request->tanggal_schedule)->where('id_eq', $request->id_equipment)->orderBy('schedule', 'ASC')->first();
+            $schedule->status = '#FFAE1F';
+            $schedule->save();
+        }
         $history = History::find($id);
         $acs = AirCooledWaterChiller::find($history->id_act);
 
         // Mengumpulkan nilai dari tiga input menjadi satu string dengan pemisah koma untuk setiap pertanyaan
         $qData = [
             'tanggal_survey' => $request->input('tanggal_survey'),
+            'tanggal_schedule' => $request->input('tanggal_schedule'),
             'enginerlist' => $request->input('enginerlist'),
             'start' => $request->input('start'),
             'stop' => $request->input('stop'),
+            'temuan' => $request->input('temuan'),
+            'status' => $request->input('status'),
+            'rekomendasi' => $request->input('rekomendasi'),
         ];
 
         // Loop untuk mengambil data 'q1' hingga 'q60'
@@ -182,7 +216,7 @@ class AirCooledWaterChillerController extends Controller
                 ]);
             }
         }
-        return redirect()->route('acwc.show', $history->id);
+        return redirect()->route('equipment.show', $request->id_equipment);
     }
     public function print($id)
     {

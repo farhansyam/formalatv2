@@ -43,11 +43,20 @@ p
               @endphp
 
               <h6 class="mb-0 ms-3">TOTAL PM THIS MONTH : <br><br>
-               <div class="d-flex justify-content-between mt-2">
-                <div class="bg-danger text-white px-2 py-1 rounded">Pending: {{ $pending }}</div>
-                <div class="bg-warning text-white px-2 py-1 rounded">In Progress: {{ $progres }}</div>
-                <div class="bg-success text-white px-2 py-1 rounded">Completed: {{ $completed }}</div>
-                </div>
+              <div class="d-flex justify-content-between mt-2">
+  <a href="{{ route('equipment.index', ['customer' => $data->nama, 'bulan' => now()->format('m')]) }}" 
+     class="bg-danger text-white px-2 py-1 rounded text-decoration-none">
+    Pending: {{ $pending }}
+  </a>
+  <a href="{{ route('equipment.index', ['customer' => $data->nama, 'bulan' => now()->format('m')]) }}" 
+     class="bg-warning text-white px-2 py-1 rounded text-decoration-none">
+    In Progress: {{ $progres }}
+  </a>
+  <a href="{{ route('equipment.index', ['customer' => $data->nama, 'bulan' => now()->format('m')]) }}" 
+     class="bg-success text-white px-2 py-1 rounded text-decoration-none">
+    Completed: {{ $completed }}
+  </a>
+</div>
               </h6>
             </div>
           </div>
@@ -78,11 +87,21 @@ p
 
                   @endphp
                  <h6 class="mb-0 ms-3">TOTAL PM LAST MONTH : <br><br>
-               <div class="d-flex justify-content-between mt-2">
-                <div class="bg-danger text-white px-2 py-1 rounded">Pending: {{ $pendinglastmonth }}</div>
-                <div class="bg-warning text-white px-2 py-1 rounded">In Progress: {{ $progreslastmonth }}</div>
-                <div class="bg-success text-white px-2 py-1 rounded">Completed: {{ $completelastmonth }}</div>
-        </div>
+              <div class="d-flex justify-content-between mt-2">
+  <a href="{{ route('equipment.index', ['customer' => $data->nama, 'bulan' => now()->subMonth()->format('m')]) }}" 
+     class="bg-danger text-white px-2 py-1 rounded text-decoration-none">
+    Pending: {{ $pendinglastmonth }}
+  </a>
+  <a href="{{ route('equipment.index', ['customer' => $data->nama, 'bulan' => now()->subMonth()->format('m')]) }}" 
+     class="bg-warning text-white px-2 py-1 rounded text-decoration-none">
+    In Progress: {{ $progreslastmonth }}
+  </a>
+  <a href="{{ route('equipment.index', ['customer' => $data->nama, 'bulan' => now()->subMonth()->format('m')]) }}" 
+     class="bg-success text-white px-2 py-1 rounded text-decoration-none">
+    Completed: {{ $completelastmonth }}
+  </a>
+</div>
+
               </h6>
             </div>
           </div>
@@ -111,20 +130,21 @@ p
                 ->where('status', '#13DEB9')
                  ->count();
                   @endphp
-                 <div class="d-flex justify-content-between mt-2">
-  <a href="{{ route('eq', ['customer' => $data->id, 'bulan' => now()->format('m')]) }}" 
+<div class="d-flex justify-content-between mt-2">
+  <a href="{{ route('equipment.index', ['customer' => $data->id, 'bulan' => now()->subMonths(2)->format('m')]) }}" 
      class="bg-danger text-white px-2 py-1 rounded text-decoration-none">
-    Pending: {{ $pending }}
+    Pending: {{ $pending2month }}
   </a>
-  <a href="{{ route('eq', ['customer' => $data->id, 'bulan' => now()->format('m'), 'status' => 'progress']) }}" 
+  <a href="{{ route('equipment.index', ['customer' => $data->id, 'bulan' => now()->subMonths(2)->format('m')]) }}" 
      class="bg-warning text-white px-2 py-1 rounded text-decoration-none">
-    In Progress: {{ $progres }}
+    In Progress: {{ $progres2month }}
   </a>
-  <a href="{{ route('eq', ['customer' => $data->id, 'bulan' => now()->format('m'), 'status' => 'completed']) }}" 
+  <a href="{{ route('equipment.index', ['customer' => $data->id, 'bulan' => now()->subMonths(2)->format('m')]) }}" 
      class="bg-success text-white px-2 py-1 rounded text-decoration-none">
-    Completed: {{ $completed }}
+    Completed: {{ $complete2month }}
   </a>
 </div>
+
               </h6>
             </div>
           </div>
