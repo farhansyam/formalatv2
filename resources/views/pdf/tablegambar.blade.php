@@ -74,7 +74,7 @@
     </td>
     <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
       <p class="TableParagraph" style="margin: 0;">
-        <img width="200" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g2->gambar)) }}" />
+        <img width="200" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar2/') . $g2->gambar)) }}" />
       </p>
     </td>
     <td style="width: 15%; border: solid black 1pt; padding: 5px; text-align: center;">

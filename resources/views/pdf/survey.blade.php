@@ -76,7 +76,7 @@
   </style>
 </head>
 
-<body lang="EN-US" style="word-wrap: break-word">
+<body lang="EN-US" style="word-wrap: break-word" style="margin-left: 70px">
   <div class="WordSection1">
     <table class="MsoNormalTable" border="1" cellspacing="0" cellpadding="0" style="border-collapse: collapse; border: none">
       <tr style="height: 25.6pt">
@@ -225,6 +225,50 @@
             ">
           <p class="TableParagraph" style="margin-left: 1.5pt; line-height: 10.65pt">
             <span lang="id" style="font-size: 9pt">Tanggal Survey<span style="letter-spacing: 0.05pt"> </span>:{{$beritaacara->tanggal_survey}}</span>
+            <br>
+            <span style="font-size: 9pt">Form No :   <?php
+                    // Array untuk memetakan angka ke jenis
+                    $jenis = [
+                      1 => "AC Split",
+                      2 => "Cooled Water Chiller",
+                      3 => "AHUP",
+                      4 => "PAC",
+                      5 => "Cold Storage",
+                      6 => "Cooling Unit & AC Panel",
+                      7 => "Mini Chiller",
+                      8 => "Evaporative Air Cooler",
+                      9 => "AHU",
+                      10 => "Cooling tower",
+                      11 => "Humidifier",
+                      12 => "Dehumidifier",
+                      13 => "FCU (Fan Cooling Unit)",
+                      14 => "Exhaust Fan",
+                      15 => "Pompa",
+                      16 => "Spot Cooling",
+                      17 => "Water Mist",
+                      18 => "Chiller Centrifugal",
+                      19 => "Floor Standing",
+                      20 => "Ac Cassette",
+                      21 => "Split Duct",
+                      22 => "Air Cooled Chiller",
+                      23 => "Centralize Chiller",
+                      24 => "Ultrasonic Humidifier",
+                      25 => "Piping & Accs",
+                      26 => "Panel SCR",
+                      27 => "ATCS",
+                      28 => "Lakos Filter"
+                    ];
+                    // Ambil singkatan dari jenis berdasarkan angka
+                    $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
+                    $singkatan2 = strtoupper($history->type);
+                    $bulan = strtoupper($history->created_at->format('m'));
+                    $tahun = strtoupper($history->created_at->format('y'));
+                    // Mengambil karakter terakhir
+                    echo strtoupper($singkatan1 .'-'. $singkatan2 .'-'. $bulan .'-'.$tahun.'-'.$formattedId = sprintf('%05d', $equipment->id));
+                    // Mengambil karakter pertama
+
+
+                    ?></span>
           </p>
         </td>
       </tr>
@@ -1330,338 +1374,87 @@
     </p>
   </div>
 
-  <div class="page-break"></div>
-
-  <table>
-    <tr>
-      <td style="background-color: black; color: #ffff; text-align: center; text-decoration:solid;" colspan="4"><b>Foto Equipment</b>
-      </td>
-    </tr>
-    <tr style="height: 11pt">
-      <td width="44" valign="top" style="
-                      width: 32.75pt;
-                      border-top: none;
-                      border-left: solid black 1.5pt;
-                      border-bottom: solid black 1pt;
-                      border-right: solid black 1pt;
-                      padding: 0in 0in 0in 0in;
-                      height: 11pt;
-                    ">
-        <p class="TableParagraph" align="center" style="margin-left: 1.75pt; text-align: center; line-height: 10pt">
-          <span lang="id" style="font-size: 9pt">No</span>
-        </p>
-      </td>
-      <td width="500" valign="top" style="
-                      width: 500.8pt;
-                      border-top: none;
-                      border-left: none;
-                      border-bottom: solid black 1pt;
-                      border-right: solid black 1pt;
-                      padding: 0in 0in 0in 0in;
-                      height: 11pt;
-                    ">
-        <p class="TableParagraph" align="center" style="
-                        margin-top: 0in;
-                        margin-right: 35.85pt;
-                        margin-bottom: 0in;
-                        margin-left: 38pt;
-                        margin-bottom: 0.0001pt;
-                        text-align: center;
-                        line-height: 10pt;
-                      ">
-          <span lang="id" style="font-size: 9pt">Gambar</span>
-        </p>
-      </td>
-      <td width="125" valign="top" style="
-                      width: 93.65pt;
-                      border-top: none;
-                      border-left: none;
-                      border-bottom: solid black 1pt;
-                      border-right: solid black 1pt;
-                      padding: 0in 0in 0in 0in;
-                      height: 11pt;
-                        text-align: center;
-
-                    ">
-        <p class="TableParagraph" style="margin-left: 10.05pt; line-height: 10pt">
-          <span lang="id" style="font-size: 9pt">Info<span style="letter-spacing: 0.15pt"> </span></span>
-        </p>
-      </td>
-      <td width="52" valign="top" style="
-                      width: 38.95pt;
-                      border-top: none;
-                      border-left: none;
-                      border-bottom: solid black 1pt;
-                      border-right: solid black 1pt;
-                      padding: 0in 0in 0in 0in;
-                      height: 11pt;
-                    ">
-        <p class="TableParagraph" align="center" style="
-                        margin-top: 0in;
-                        margin-right: 10.25pt;
-                        margin-bottom: 0in;
-                        margin-left: 12.8pt;
-                        margin-bottom: 0.0001pt;
-                        text-align: center;
-                        line-height: 10pt;
-                      ">
-          <span lang="id" style="font-size: 9pt">Keterangan</span>
-        </p>
-      </td>
-    </tr>
-    @php
-    $no = 1;
-    @endphp
-    @foreach($gambar as $g1)
-    <tr style="height: 11pt">
-      <td width="44" valign="top" style="
-                            width: 32.75pt;
-                            border-top: none;
-                            border-left: solid black 1.5pt;
-                            border-bottom: solid black 3pt;
-                            border-right: solid black 1pt;
-                            padding: 0in 0in 0in 0in;
-                            height: 11pt;
-                            text-align: center;
-                        ">
-        <p class="TableParagraph">
-          <span lang="id" style="
-                                    font-size: 12pt;
-                                    font-family: &quot;Times New Roman&quot;, serif;
-                                ">{{$no++}}</span>
-        </p>
-      </td>
-      <td width="146" valign="top" style="
-                            width: 109.8pt;
-                            border-top: none;
-                            border-left: none;
-                            border-bottom: solid black 3pt;
-                            border-right: solid black 1pt;
-                            padding: 0in 0in 0in 0in;
-                            height: 11pt;
-                            text-align: center;
-                        ">
-        <p class="TableParagraph">
-          <span lang="id" style="
-                                    font-size: 12pt;
-                                    font-family: &quot;Times New Roman&quot;, serif;
-                                "><br><br><br><br><img width="100" height="" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g1->gambar)) }}" />
-          </span>
-        </p>
-      </td>
-      <td width="125" valign="top" style="
-                            width: 93.65pt;
-                            border-top: none;
-                            border-left: none;
-                            border-bottom: solid black 3pt;
-                            border-right: solid black 1pt;
-                            padding: 0in 0in 0in 0in;
-                            height: 11pt;
-                            text-align: center;
-                        ">
-        <p class="TableParagraph">
-          <span lang="id" style="
-                                    font-size: 12pt;
-                                    font-family: &quot;Times New Roman&quot;, serif;
-                                ">{{$g1->info}}</span>
-        </p>
-      </td>
-      <td width="52" valign="top" style="
-                            width: 38.95pt;
-                            border-top: none;
-                            border-left: none;
-                            border-bottom: solid black 3pt;
-                            border-right: solid black 1pt;
-                            padding: 0in 0in 0in 0in;
-                            height: 11pt;
-                            text-align: center;
-                        ">
-        <p class="TableParagraph">
-          <span lang="id" style="
-                                    font-size: 12pt;
-                                    font-family: &quot;Times New Roman&quot;, serif;
-                                ">{{$g1->keterangan}}</span>
-        </p>
-      </td>
-    </tr>
-    @endforeach
+  {{-- <div class="page-break"></div> --}}
 
 
-    <tr height="0">
-      <td width="44" style="border: none"></td>
-      <td width="146" style="border: none"></td>
-      <td width="125" style="border: none"></td>
-      <td width="52" style="border: none"></td>
-      <td width="118" style="border: none"></td>
-      <td width="97" style="border: none"></td>
-      <td width="97" style="border: none"></td>
-    </tr>
-  </table>
-  <table>
-    <tr>
-      <td style="background-color: black; color: #ffff; text-align: center; text-decoration:solid;" colspan="4"><b>Foto Parameter</b>
-      </td>
-    </tr>
-    <tr style="height: 11pt">
-      <td width="44" valign="top" style="
-                      width: 32.75pt;
-                      border-top: none;
-                      border-left: solid black 1.5pt;
-                      border-bottom: solid black 1pt;
-                      border-right: solid black 1pt;
-                      padding: 0in 0in 0in 0in;
-                      height: 11pt;
-                    ">
-        <p class="TableParagraph" align="center" style="margin-left: 1.75pt; text-align: center; line-height: 10pt">
-          <span lang="id" style="font-size: 9pt">No</span>
-        </p>
-      </td>
-      <td width="500" valign="top" style="
-                      width: 500.8pt;
-                      border-top: none;
-                      border-left: none;
-                      border-bottom: solid black 1pt;
-                      border-right: solid black 1pt;
-                      padding: 0in 0in 0in 0in;
-                      height: 11pt;
-                    ">
-        <p class="TableParagraph" align="center" style="
-                        margin-top: 0in;
-                        margin-right: 35.85pt;
-                        margin-bottom: 0in;
-                        margin-left: 38pt;
-                        margin-bottom: 0.0001pt;
-                        text-align: center;
-                        line-height: 10pt;
-                      ">
-          <span lang="id" style="font-size: 9pt">Gambar</span>
-        </p>
-      </td>
-      <td width="125" valign="top" style="
-                      width: 93.65pt;
-                      border-top: none;
-                      border-left: none;
-                      border-bottom: solid black 1pt;
-                      border-right: solid black 1pt;
-                      padding: 0in 0in 0in 0in;
-                      height: 11pt;
-                        text-align: center;
-
-                    ">
-        <p class="TableParagraph" style="margin-left: 10.05pt; line-height: 10pt">
-          <span lang="id" style="font-size: 9pt">Info<span style="letter-spacing: 0.15pt"> </span></span>
-        </p>
-      </td>
-      <td width="52" valign="top" style="
-                      width: 38.95pt;
-                      border-top: none;
-                      border-left: none;
-                      border-bottom: solid black 1pt;
-                      border-right: solid black 1pt;
-                      padding: 0in 0in 0in 0in;
-                      height: 11pt;
-                    ">
-        <p class="TableParagraph" align="center" style="
-                        margin-top: 0in;
-                        margin-right: 10.25pt;
-                        margin-bottom: 0in;
-                        margin-left: 12.8pt;
-                        margin-bottom: 0.0001pt;
-                        text-align: center;
-                        line-height: 10pt;
-                      ">
-          <span lang="id" style="font-size: 9pt">Keterangan</span>
-        </p>
-      </td>
-    </tr>
-    @php
-    $no = 1;
-    @endphp
-    @foreach($gambar2 as $g2)
-    <tr style="height: 11pt">
-      <td width="44" valign="top" style="
-                            width: 32.75pt;
-                            border-top: none;
-                            border-left: solid black 1.5pt;
-                            border-bottom: solid black 3pt;
-                            border-right: solid black 1pt;
-                            padding: 0in 0in 0in 0in;
-                            height: 11pt;
-                            text-align: center;
-                        ">
-        <p class="TableParagraph">
-          <span lang="id" style="
-                                    font-size: 12pt;
-                                    font-family: &quot;Times New Roman&quot;, serif;
-                                ">{{$no++}}</span>
-        </p>
-      </td>
-      <td width="146" valign="top" style="
-                            width: 109.8pt;
-                            border-top: none;
-                            border-left: none;
-                            border-bottom: solid black 3pt;
-                            border-right: solid black 1pt;
-                            padding: 0in 0in 0in 0in;
-                            height: 11pt;
-                            text-align: center;
-                        ">
-        <p class="TableParagraph">
-          <span lang="id" style="
-                                    font-size: 12pt;
-                                    font-family: &quot;Times New Roman&quot;, serif;
-                                "><br><br><br><br><img width="100" height="" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g2->gambar)) }}" />
-          </span>
-        </p>
-      </td>
-      <td width="125" valign="top" style="
-                            width: 93.65pt;
-                            border-top: none;
-                            border-left: none;
-                            border-bottom: solid black 3pt;
-                            border-right: solid black 1pt;
-                            padding: 0in 0in 0in 0in;
-                            height: 11pt;
-                            text-align: center;
-                        ">
-        <p class="TableParagraph">
-          <span lang="id" style="
-                                    font-size: 12pt;
-                                    font-family: &quot;Times New Roman&quot;, serif;
-                                ">{{$g2->info}}</span>
-        </p>
-      </td>
-      <td width="52" valign="top" style="
-                            width: 38.95pt;
-                            border-top: none;
-                            border-left: none;
-                            border-bottom: solid black 3pt;
-                            border-right: solid black 1pt;
-                            padding: 0in 0in 0in 0in;
-                            height: 11pt;
-                            text-align: center;
-                        ">
-        <p class="TableParagraph">
-          <span lang="id" style="
-                                    font-size: 12pt;
-                                    font-family: &quot;Times New Roman&quot;, serif;
-                                ">{{$g2->keterangan}}</span>
-        </p>
-      </td>
-    </tr>
-    @endforeach
-
-
-    <tr height="0">
-      <td width="44" style="border: none"></td>
-      <td width="146" style="border: none"></td>
-      <td width="125" style="border: none"></td>
-      <td width="52" style="border: none"></td>
-      <td width="118" style="border: none"></td>
-      <td width="97" style="border: none"></td>
-      <td width="97" style="border: none"></td>
-    </tr>
-  </table>
 </body>
+ <table style="width: 100%; border-collapse: collapse;">
+  <tr>
+    <td style="background-color: black; color: #fff; text-align: center; border: solid black 1pt;" colspan="4"><b>Foto Equipment</b></td>
+  </tr>
+  <tr style="height: 11pt">
+    <td style="width: 5%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">No</p>
+    </td>
+    <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Gambar</p>
+    </td>
+    <td style="width: 50%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Info</p>
+    </td>
+    <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Keterangan</p>
+    </td>
+  </tr>
+  @php
+  $no = 1;
+  @endphp
+  @foreach($gambar as $g1)
+  <tr style="height: 11pt">
+    <td style="width: 5%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$no++}}</p>
+    </td>
+    <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0;">
+        <img width="200" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g1->gambar)) }}" />
+      </p>
+    </td>
+    <td style="width: 15%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$g1->info}}</p>
+    </td>
+    <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$g1->keterangan}}</p>
+    </td>
+  </tr>
+  @endforeach
 
+  <tr>
+    <td style="background-color: black; color: #fff; text-align: center; border: solid black 1pt;" colspan="4"><b>Foto Parameter</b></td>
+  </tr>
+  <tr style="height: 11pt">
+    <td style="width: 5%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">No</p>
+    </td>
+    <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Gambar</p>
+    </td>
+    <td style="width: 50%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Info</p>
+    </td>
+    <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Keterangan</p>
+    </td>
+  </tr>
+  @php
+  $no = 1;
+  @endphp
+  @foreach($gambar2 as $g2)
+  <tr style="height: 11pt">
+    <td style="width: 5%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$no++}}</p>
+    </td>
+    <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0;">
+        <img width="200" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar2/') . $g2->gambar)) }}" />
+      </p>
+    </td>
+    <td style="width: 15%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$g2->info}}</p>
+    </td>
+    <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
+      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$g2->keterangan}}</p>
+    </td>
+  </tr>
+  @endforeach
+</table>
 </html>

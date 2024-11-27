@@ -34,7 +34,7 @@
               <select id="roomFilter" class="form-select" style="width: auto;">
                 <option value="">Filter Site</option>
                 @foreach ($area as $data)
-                  <option value="{{ $data->site }}">{{ $data->site }}</option>
+                  <option value="{{ $data->area }}">{{ $data->area }}</option>
                 @endforeach
               </select>
               @endif
@@ -59,7 +59,7 @@
                 <tr>
                   <td>{{ $index + 1 }}</td>
                   <td>
-                    {{ strtoupper(substr(str_replace(' ', '', $jenis[$data->jenis] ?? ''), 0, 3) . $data->kode_room . sprintf('%05d', $data->id)) }}
+                    {{$data->id_combine}}
                   </td>
                    <td class="tablesaw-priority-3">@if($data->jenis == 1)
                     {{ "AC Split" }}
@@ -120,7 +120,7 @@
                     @endif
                   </td>
                   <td>{{ $data->kapasitas }}</td>
-                  <td>{{ $data->site }}</td>
+                  <td>{{ $data->area }}</td>
                   <td>{{ $data->customer }}</td>
                   <td>{{ $data->update_pm }}</td>
                   <td>{{ $data->update_ts }}</td>

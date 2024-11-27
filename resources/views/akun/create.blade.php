@@ -61,47 +61,46 @@
     <!-- Tambahkan JavaScript Select2 dan jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-
-    <script>
-        $(document).ready(function () {
-            // Inisialisasi Select2 untuk elemen site
-            $('#site').select2({
-                tags: true,
-                placeholder: "Select or add sites",
-                allowClear: true
-            });
-
-            // Fungsi untuk memperbarui field yang perlu ditampilkan
-            function updateFields() {
-                const role = $('#role').val();
-                const customerField = $('#customer-field');
-                const siteField = $('#site-field');
-
-                if (role === 'user') {
-                    customerField.removeClass('d-none');
-                    siteField.addClass('d-none');
-                    $('#customer').prop('required', true);
-                    $('#site').prop('required', false);
-                } else if (role === 'admin') {
-                    customerField.addClass('d-none');
-                    siteField.addClass('d-none');
-                    $('#customer').prop('required', false);
-                    $('#site').prop('required', false);
-                } else {
-                    customerField.addClass('d-none');
-                    siteField.removeClass('d-none');
-                    $('#customer').prop('required', false);
-                    $('#site').prop('required', true);
-                }
-            }
-
-            // Panggil fungsi updateFields saat halaman dimuat pertama kali
-            updateFields();
-
-            // Event listener untuk memperbarui field saat role diubah
-            $('#role').change(updateFields);
+<script>
+    $(document).ready(function () {
+        // Inisialisasi Select2 untuk elemen site
+        $('#site').select2({
+            tags: true,
+            placeholder: "Select or add sites",
+            allowClear: true
         });
-    </script>
+
+        // Fungsi untuk memperbarui field yang perlu ditampilkan
+        function updateFields() {
+            const role = $('#role').val();
+            const customerField = $('#customer-field');
+            const siteField = $('#site-field');
+
+            if (role === 'customer') {  // Change 'user' to 'customer' here
+                customerField.removeClass('d-none');
+                siteField.addClass('d-none');
+                $('#customer').prop('required', true);
+                $('#site').prop('required', false);
+            } else if (role === 'admin') {
+                customerField.addClass('d-none');
+                siteField.addClass('d-none');
+                $('#customer').prop('required', false);
+                $('#site').prop('required', false);
+            } else {
+                customerField.addClass('d-none');
+                siteField.removeClass('d-none');
+                $('#customer').prop('required', false);
+                $('#site').prop('required', true);
+            }
+        }
+
+        // Panggil fungsi updateFields saat halaman dimuat pertama kali
+        updateFields();
+
+        // Event listener untuk memperbarui field saat role diubah
+        $('#role').change(updateFields);
+    });
+</script>
 
 
               <button class="btn btn-info px-4 mt-3" type="submit">

@@ -8,6 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class AHU extends Model
 {
     protected $fillable = [
+        'approved_by',
+        'created_by',
+        'approved_date',
+        'date_completed',
         'tanggal',
         'start',
         'end',

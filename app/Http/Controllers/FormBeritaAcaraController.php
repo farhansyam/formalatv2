@@ -86,15 +86,18 @@ class FormBeritaAcaraController extends Controller
                 ]);
             }
         }
-
+        $equipment = Equipment::find($request->id_equipment);
         $history = new History();
         $history->type = "Survei";
         $history->id_act = $formBeritaAcara->id;
         $history->id_equipment = $request->id_equipment;
         $history->id_user = "1";
+        $history->site = $equipment->site;
         $equipment = Equipment::find($request->id_equipment);
         $history->customer = $equipment->customer;
         $history->save();
+
+
 
         return redirect()->route('equipment.show', $request->id_equipment)->with('success', 'Form Berita Acara telah disimpan.');
     }
@@ -102,7 +105,6 @@ class FormBeritaAcaraController extends Controller
 
     public function show($id)
     {
-        $history = History::find($id);
         $beritaacara = FormBeritaAcara::find($id);
         $list = ListKebutuhanBeritaAcara::where('type', 'FormBeritaAcara')->where('id_beritaacara', $id)->get();
         $gambar = GambarAct::where('id_act', $id)->get();
@@ -110,44 +112,82 @@ class FormBeritaAcaraController extends Controller
         return view('formberitaacara.show', compact('beritaacara', 'list', 'gambar', 'gambar2'));
     }
 
+
+
     public function edit($id)
     {
         $beritaacara = FormBeritaAcara::find($id);
-        return view('formberitaacara.edit', compact('beritaacara'));
+        $list = ListKebutuhanBeritaAcara::where('type', 'FormBeritaAcara')->where('id_beritaacara', $id)->get();
+        $gambar = GambarAct::where('id_act', $id)->get();
+        $gambar2 = GambarAct2::where('id_act', $id)->get();
+        return view('formberitaacara.edit', compact('beritaacara', 'list', 'gambar', 'gambar2'));
     }
 
     public function update(Request $request, $id)
     {
         // Validasi input dari form
-
         $beritaacara = FormBeritaAcara::find($id);
         $beritaacara->update($request->all());
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
+
+                GambarAct::create([
+                    'id_act' => $beritaacara->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $beritaacara->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
+                ]);
+            }
+        }
+
 
         // Redirect atau lakukan apa yang diperlukan setelah berhasil memperbarui
-
-        return redirect()->route('formberitaacara.index');
+        return redirect()->route('equipment.show', $request->id_equipment)->with('success', 'Form Berita Acara telah disimpan.');
     }
-
     public function destroy($id)
     {
+        // Hapus semua data di tabel History yang terkait dengan id_equipment
+        History::where('id_equipment', $id)->delete();
+
+        // Temukan dan hapus data dari FormBeritaAcara
         $beritaacara = FormBeritaAcara::find($id);
-        $beritaacara->delete();
+
+        if ($beritaacara) {
+            $beritaacara->delete();
+        }
 
         // Redirect atau lakukan apa yang diperlukan setelah berhasil menghapus
-
-        return redirect()->route('formberitaacara.index');
+        return redirect()->route('formberitaacara.index')->with('success', 'Data berhasil dihapus.');
     }
 
     public function print($id)
     {
         $history = History::find($id);
-        $beritaacara = FormBeritaAcara::find($id);
+        $beritaacara = FormBeritaAcara::find($history->id_act);
         $list = ListKebutuhanBeritaAcara::where('type', 'FormBeritaAcara')->where('id_beritaacara', $id)->get();
         $gambar = GambarAct::where('id_act', $id)->get();
         $gambar2 = GambarAct2::where('id_act', $id)->get();
+        $equipment = Equipment::find($history->id_equipment);
 
         // Render view blade dengan gambar QR
-        $pdfContent = view('pdf.survey', ['history' => $history, 'beritaacara' => $beritaacara, 'list' => $list, 'gambar' => $gambar, 'gambar2' => $gambar2])->render();
+        $pdfContent = view('pdf.survey', ['history' => $history, 'beritaacara' => $beritaacara, 'list' => $list, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
 
         // Buat objek DOMPDF
         $dompdf = new Dompdf();

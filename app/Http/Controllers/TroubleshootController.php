@@ -51,7 +51,13 @@ class TroubleshootController extends Controller
 
         // Simpan data formberitaacara
         // dd($request);
-        $formBeritaAcara = ServiceReport::create($request->all());
+        $formBeritaAcara = ServiceReport::create([
+            $request->all(),
+            'created_by' => auth()->user()->name,
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null
+        ]);
+
+
         if (request()->has('ids')) {
             $items = ListKebutuhanBeritaAcara::where(
                 'id',
@@ -65,24 +71,32 @@ class TroubleshootController extends Controller
         }
 
         // Lakukan multiple insert ke listkebutuhanberitaacara
-        // $deskripsilist = $request->input('deskripsilist');
-        // $modelpart = $request->input('modelpart');
-        // $qty = $request->input('qty');
-        // $keterangan = $request->input('keterangan');
-        // $type = "FormserviceReport";
+        $deskripsilist = $request->input('deskripsilist');
+        $modelpart = $request->input('modelpart');
+        $qty = $request->input('qty');
+        $keterangan = $request->input('keterangan');
+        $type = "FormserviceReport";
 
-        // // Loop untuk menyimpan data listkebutuhanberitaacara
-        // // foreach (range(0, count($deskripsilist) - 1) as $index) {
-        // //     // dd($deskripsilist[$index]);
-        // //     ListKebutuhanBeritaAcara::create([
-        // //         'id_beritaacara' => $formBeritaAcara->id,
-        // //         'deskripsilist' => $deskripsilist[$index], // Ubah menjadi 'deskripsi'
-        // //         'modelpart' => $modelpart[$index], // Ubah menjadi 'modelpart'
-        // //         'qty' => $qty[$index], // Ubah menjadi 'qty'
-        // //         'keterangan' => $keterangan[$index], // Ubah menjadi 'keterangan'
-        // //         'type' => $type, // Ubah menjadi 'keterangan'
-        // //     ]);
-        // // }
+        // Pastikan bahwa $deskripsilist adalah array dan memiliki nilai
+        if (is_array($deskripsilist) && count($deskripsilist) > 0) {
+            // Loop untuk menyimpan data listkebutuhanberitaacara
+            foreach (range(0, count($deskripsilist) - 1) as $index) {
+                // Hanya simpan jika semua field terkait index ini memiliki nilai
+                if (!empty($deskripsilist[$index]) || !empty($modelpart[$index]) || !empty($qty[$index]) || !empty($keterangan[$index])) {
+                    ListKebutuhanBeritaAcara::create([
+                        'id_beritaacara' => $formBeritaAcara->id,
+                        'deskripsilist' => $deskripsilist[$index],
+                        'modelpart' => $modelpart[$index],
+                        'qty' => $qty[$index],
+                        'keterangan' => $keterangan[$index],
+                        'type' => $type,
+                        'status' => $request->status,
+                        'priority' => $request->defect_level,
+                    ]);
+                }
+            }
+        }
+
 
         if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
@@ -95,6 +109,7 @@ class TroubleshootController extends Controller
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
+                    'type' => 'TS',
                 ]);
             }
         }
@@ -109,11 +124,14 @@ class TroubleshootController extends Controller
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index],
                     'info' => $request->info2[$index],
+                    'type' => 'TS',
+
                 ]);
             }
         }
         $history = new History();
-        $history->type = "Troubleshoot";
+        $history->type2 = "TS2"; // Sesuaikan dengan jenis equipment
+        $history->type = "TS";
         $history->id_act = $formBeritaAcara->id;
         $history->id_equipment = $request->id_equipment;
         $history->id_user = auth()->user()->id;
@@ -132,11 +150,12 @@ class TroubleshootController extends Controller
      */
     public function show($id)
     {
+        $history = History::find($id);
+        $service = ServiceReport::find($history->id_act);
+        $list = ListKebutuhanBeritaAcara::where('type', 'FormserviceReport')->where('id_beritaacara', $history->id_act)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'TS')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'TS')->get();
 
-        $service = ServiceReport::find($id);
-        $list = ListKebutuhanBeritaAcara::where('type', 'FormserviceReport')->where('id_beritaacara', $id)->get();
-        $gambar = GambarAct::where('id_act', $id)->get();
-        $gambar2 = GambarAct2::where('id_act', $id)->get();
         return view('servicereport.show', compact('service', 'list', 'gambar', 'gambar2'));
     }
 
@@ -148,7 +167,14 @@ class TroubleshootController extends Controller
      */
     public function edit($id)
     {
-        //
+        $history = History::find($id);
+        $service = ServiceReport::find($history->id_act);
+
+        $list = ListKebutuhanBeritaAcara::where('type', 'FormserviceReport')->where('id_beritaacara', $history->id_act)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'TS')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'TS')->get();
+
+        return view('servicereport.edit', compact('service', 'list', 'gambar', 'gambar2', 'history'));
     }
 
     /**
@@ -160,7 +186,100 @@ class TroubleshootController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validasi input dari form
+        $beritaacara = ServiceReport::find($id);
+        // Lakukan multiple insert ke listkebutuhanberitaacara
+        $deskripsilist = $request->input('deskripsilist');
+        $modelpart = $request->input('modelpart');
+        $qty = $request->input('qty');
+        $keterangan = $request->input('keterangan');
+        $type = "FormserviceReport";
+        if (is_array($deskripsilist) && count($deskripsilist) > 0) {
+            // Dapatkan ID dari data lama untuk membandingkan
+            $existingIds = ListKebutuhanBeritaAcara::where('id_beritaacara', $beritaacara->id)
+                ->pluck('id')
+                ->toArray();
+
+            $incomingIds = [];
+            foreach (
+                range(
+                    0,
+                    count($deskripsilist) - 1
+                ) as $index
+            ) {
+                // Hanya proses jika semua field terkait index ini memiliki nilai
+                if (
+                    !empty($deskripsilist[$index]) || !empty($modelpart[$index]) || !empty($qty[$index]) || !empty($keterangan[$index])
+                ) {
+                    $data = [
+                        'id_beritaacara' => $beritaacara->id,
+                        'deskripsilist' => $deskripsilist[$index],
+                        'modelpart' => $modelpart[$index],
+                        'qty' => $qty[$index],
+                        'keterangan' => $keterangan[$index],
+                        'type' => $type,
+                        'status' => $request->status,
+                        'priority' => $request->defect_level,
+                    ];
+
+                    if (!empty($idlist[$index])) {
+                        // Jika ID ada, update data
+                        $record = ListKebutuhanBeritaAcara::find($idlist[$index]);
+                        if ($record) {
+                            $record->update($data);
+                        }
+                        $incomingIds[] = $idlist[$index];
+                    } else {
+                        // Jika ID tidak ada, buat data baru
+                        $newRecord = ListKebutuhanBeritaAcara::create($data);
+                        $incomingIds[] = $newRecord->id;
+                    }
+                }
+            }
+
+            // Hapus data yang tidak ada di incomingIds
+            $toDelete = array_diff($existingIds, $incomingIds);
+            ListKebutuhanBeritaAcara::whereIn('id', $toDelete)->delete();
+        }
+
+        $beritaacara->update([
+            $request->all(),
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
+        ]);
+        if ($request->file('gambar')) {
+            foreach ($request->file('gambar') as $index => $gambar) {
+                $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
+                $gambar->move(public_path('gambar'), $gambarname);
+
+                GambarAct::create([
+                    'id_act' => $beritaacara->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname,
+                    'keterangan' => $request->keterangangambar[$index],
+                    'type' => 'TS',
+                    'info' => $request->info[$index],
+                ]);
+            }
+        }
+        if ($request->file('gambar2')) {
+            foreach ($request->file('gambar2') as $index2 => $gambar2) {
+                $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();
+                $gambar2->move(public_path('gambar2'), $gambarname2);
+
+                GambarAct2::create([
+                    'id_act' => $beritaacara->id,
+                    'id_equipement' => $request->id_equipment,
+                    'gambar' => $gambarname2,
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'type' => 'TS',
+                    'info' => $request->info2[$index2],
+                ]);
+            }
+        }
+
+
+        // Redirect atau lakukan apa yang diperlukan setelah berhasil memperbarui
+        return redirect()->route('equipment.show', $request->id_equipment)->with('success', 'Form Berita Acara telah disimpan.');
     }
 
     /**
@@ -177,13 +296,13 @@ class TroubleshootController extends Controller
     public function print($id)
     {
         $history = History::find($id);
-        $ServiceReport = ServiceReport::find($id);
-        $list = ListKebutuhanBeritaAcara::where('type', 'FormserviceReport')->where('id_beritaacara', $id)->get();
-        $gambar = GambarAct::where('id_act', $id)->get();
-        $gambar2 = GambarAct2::where('id_act', $id)->get();
-
+        $ServiceReport = ServiceReport::find($history->id_act);
+        $list = ListKebutuhanBeritaAcara::where('type', 'FormserviceReport')->where('id_beritaacara', $history->id_act)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'TS')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'TS')->get();
+        $equipment = Equipment::find($history->id_equipment);
         // Render view blade dengan gambar QR
-        $pdfContent = view('pdf.troubleshoot', ['history' => $history, 'ServiceReport' => $ServiceReport, 'list' => $list, 'gambar' => $gambar, 'gambar2' => $gambar2])->render();
+        $pdfContent = view('pdf.troubleshoot', ['history' => $history, 'ServiceReport' => $ServiceReport, 'list' => $list, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
 
         // Buat objek DOMPDF
         $dompdf = new Dompdf();

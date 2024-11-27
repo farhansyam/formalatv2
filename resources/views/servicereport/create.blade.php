@@ -1,4 +1,4 @@
-@extends('layouts.back2')
+  @extends('layouts.back2')
 @section('content')
 <!-- --------------------------------------------------- -->
 <!-- Header End -->
@@ -21,7 +21,7 @@
               <div class="row">
                 <div class="col-md-4 mb-3">
                   <label for="">Customer</label>
-                  <input type="text" name="customer" class="form-control" id="" value="{{$equipment->customer}}" required="">
+                  <input readOnly="true"  type="text" name="customer" class="form-control" id="" value="{{$equipment->customer}}" required="">
                   <input type="hidden" name="id_equipment" class="form-control" id="" value="{{$equipment->id}}" required="">
                   <label for="">No Kontak</label>
                   <input type="text" name="no_kontak" class="form-control" id="" value="" required="">
@@ -198,6 +198,7 @@
               <h5 class="text-center" style="background-color: black;color:white">Catatan Equipment </h5>
               <div class="row">
                 <div class="col-md-6 mb-3">
+                  <br>
                   <label for="">Jenis Equipment</label>
                   <input type="text" name="jenis_equipment" class="form-control" id="" value='@if($equipment->jenis == 1){{"AC Split"}}
                     @elseif($equipment->jenis == 2){{"AHUP"}}@elseif($equipment->jenis == 3)@elseif($equipment->jenis == 4)
@@ -216,13 +217,7 @@
                 <div class="col-md-6 mb-3">
                   <br>
                   <label for="">Name Plate : &nbsp;</label>
-                  <input type="radio" required name="name_plate" value="ada" class="form-check-input">
-                  <label class="form-check-label" for="">&nbsp; &nbsp;Ada</label>
-
-                  <input type="radio" required name="name_plate" value="tidak ada" class="form-check-input">
-                  <label class="form-check-label" for=""> &nbsp;&nbsp;Tidak Ada</label>
-                  <br>
-                  <br>
+                  <input readOnly="true" type="text" required name="name_plate" value="{{$equipment->nameplate}}" class="form-control">
 
                   <label for="">Tahun Pembuatan</label>
                   <input type="text" name="tahun_pembuatan" class="form-control" id="" value="{{$equipment->tahun_pembuatan}}" required="">
@@ -242,7 +237,7 @@
                   <textarea class="form-control" required name="rekomendasi_teknisi_lapangan" id="" cols="10" rows="4"></textarea>
                 </div>
               </div>
-              {{-- <h5 class="text-center" style="background-color: black;color:white">List Kebutuhan Part material dan jasa </h5>
+              <h5 class="text-center" style="background-color: black;color:white">List Kebutuhan Part material dan jasa </h5>
               <table class="table table-bordered" id="personelTeamTable">
                 <thead>
                   <tr>
@@ -265,9 +260,165 @@
                     <td></td>
                   </tr>
                 </tbody>
-              </table> --}}
-              {{-- <button type="button" class="btn btn-primary" id="addPersonelTeam">Add List</button><br> --}}
-              @include('formimage.image')
+              </table> 
+              <button type="button" class="btn btn-primary" id="addPersonelTeam">Add List</button><br>
+              <br>
+                                                         <table class="table table-bordered" id="">
+        <tbody><tr>
+            <th>Temuan</th>
+            <th>Rekomendasi</th>
+        </tr>
+        <tr>
+            <td><textarea name="temuan" id="" cols="60" rows="10"></textarea></td>
+            <td><textarea name="rekomendasi" id="" cols="60" rows="10"></textarea></td>
+        </tr>
+        <tr>
+            <th>Status</th>
+        </tr>
+        <tr>
+            <td colspan="2"><select onchange="setColor(this);" name="status" id="" class="form-select">
+                                                <option value="?">?</option>
+                    <option value="Pengadaaan">Pengadaaan</option>
+                    <option value="On Schedule">On Schedule</option>
+                    <option value="On Progress">On Progress</option>
+                    <option value="Complete (Close)">Complete (Close)</option>
+                </select></td>
+        </tr>
+            
+</tbody>
+</table>
+
+<h5 class="text-center" style="background-color: black;color:white">Tambahkan Foto Equipment</h5>
+<table class="table table-bordered" id="GambarTable">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Gambar</th>
+            <th>Info</th>
+            <th>Keterangan</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Initial row -->
+        <tr>
+            <td>1</td>
+            <td><input type="file" class="form-control" name="gambar[]" required></td>
+            <td><input type="text" class="form-control" name="info[]" required></td>
+            <td><select name="keterangangambar[]" id="" class="form-select">
+                    <option value="Before">Before</option>
+                    <option value="After">After</option>
+                </select></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary" id="addGambar">Add Gambar</button>
+<br>
+<script src="{{asset('dist/libs/jquery/dist/jquery.min.js')}}"></script>
+
+<script>
+    $(document).ready(function() {
+        var personelCounter = 1;
+        var pekerjaanCounter = 1;
+
+        // Add a new row for Nama Personel Team
+        $("#addGambar").click(function() {
+            personelCounter++;
+            var newRow = `
+        <tr>
+            <td>${personelCounter}</td>
+            <td><input type="file" class="form-control" name="gambar[]"></td>
+            <td><input type="text" class="form-control" name="info[]"></td>
+            <td><select name="keterangangambar[]" id="" class="form-select">
+                      <option value="Before">Before</option>
+                      <option value="After">After</option>
+                    </select></td>
+            <td><button type="button" class="btn btn-danger remove-row">X</button></td>
+
+        </tr>
+    `;
+            $("#GambarTable tbody").append(newRow);
+        });
+    });
+
+
+    // Remove a row from the Nama Personel Team table
+    $("#GambarTable").on("click", ".remove-row", function() {
+        $(this).closest("tr").remove();
+        personelCounter--;
+        // Update the row numbers
+        $("#GambarTable tbody tr").each(function(index) {
+            $(this).find("td:first").text(index + 1);
+        });
+    });
+</script>
+<br>
+<h5 class="text-center" style="background-color: black;color:white">Tambahkan Foto Parameter</h5>
+<table class="table table-bordered" id="GambarTableParameter">
+    <thead>
+        <tr>
+            <th>No</th>
+            <th>Gambar</th>
+            <th>Info</th>
+            <th>Keterangan</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Initial row -->
+        <tr>
+            <td>1</td>
+            <td><input type="file" class="form-control" name="gambar2[]" required></td>
+            <td><input type="text" class="form-control" name="info2[]" required></td>
+            <td><select name="keterangangambar2[]" id="" class="form-select">
+                    <option value="Before">Before</option>
+                    <option value="After">After</option>
+                </select></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+<button type="button" class="btn btn-primary" id="addGambar2">Add Gambar</button>
+<br>
+<script src="{{asset('dist/libs/jquery/dist/jquery.min.js')}}"></script>
+
+<script>
+    $(document).ready(function() {
+        var personelCounter = 1;
+        var pekerjaanCounter = 1;
+
+        // Add a new row for Nama Personel Team
+        $("#addGambar2").click(function() {
+            personelCounter++;
+            var newRow = `
+        <tr>
+            <td>${personelCounter}</td>
+            <td><input type="file" class="form-control" name="gambar2[]"></td>
+            <td><input type="text" class="form-control" name="info2[]"></td>
+            <td><select name="keterangangambar2[]" id="" class="form-select">
+                      <option value="Before">Before</option>
+                      <option value="After">After</option>
+                    </select></td>
+            <td><button type="button" class="btn btn-danger remove-row">X</button></td>
+
+        </tr>
+    `;
+            $("#GambarTableParameter tbody").append(newRow);
+        });
+    });
+
+
+    // Remove a row from the Nama Personel Team table
+    $("#GambarTableParameter").on("click", ".remove-row", function() {
+        $(this).closest("tr").remove();
+        personelCounter--;
+        // Update the row numbers
+        $("#GambarTableParameter tbody tr").each(function(index) {
+            $(this).find("td:first").text(index + 1);
+        });
+    });
+</script>
               <button class="btn btn-info px-4 mt-3" type="submit">
                 Submit form
               </button>

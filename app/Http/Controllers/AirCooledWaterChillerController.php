@@ -64,6 +64,8 @@ class AirCooledWaterChillerController extends Controller
             'stop' => $request->input('stop'),
             'temuan' => $request->input('temuan'),
             'status' => $request->input('status'),
+            'created_by' => auth()->user()->name,
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
             'rekomendasi' => $request->input('rekomendasi'),
         ];
 
@@ -84,6 +86,8 @@ class AirCooledWaterChillerController extends Controller
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
+                    'type' => 'ACWC',
+
                 ]);
             }
         }
@@ -98,19 +102,23 @@ class AirCooledWaterChillerController extends Controller
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index2],
                     'info' => $request->info2[$index2],
+                    'type' => 'ACWC',
+
                 ]);
             }
         }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
-        $history = new History();
-        $history->type = "PM"; // Sesuaikan dengan jenis equipment
-        $history->id_act = $AirCooledWaterChiller->id;
-        $history->id_equipment = $request->id;
-        $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
-        $history->save();
         $equipment = Equipment::find($request->id_equipment);
         $equipment->update_pm = date('Y-m-d');
         $equipment->save();
+        $history = new History();
+        $history->site = $equipment->site; // Sesuaikan dengan jenis equipment
+        $history->type2 = "PMACWC"; // Sesuaikan dengan jenis equipment
+        $history->type = "PM"; // Sesuaikan dengan jenis equipment
+        $history->id_act = $AirCooledWaterChiller->id;
+        $history->id_equipment = $request->id_equipment;
+        $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
+        $history->save();
         return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
@@ -129,8 +137,8 @@ class AirCooledWaterChillerController extends Controller
         $history = History::find($id);
         $acwc = AirCooledWaterChiller::find($history->id_act);
         $id = $history->id_equipment;
-        $gambar = GambarAct::where('id_act', $history->id_act)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'ACWC')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'ACWC')->get();
         return view('equipment.AirCooledWaterChiller.show', compact('acwc', 'id', 'gambar', 'gambar2'));
     }
     /**
@@ -145,8 +153,8 @@ class AirCooledWaterChillerController extends Controller
         $acwc = AirCooledWaterChiller::find($history->id_act);
         $id = $history->id_equipment;
         $idh = $history->id;
-        $gambar = GambarAct::where('id_act', $history->id_act)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'ACWC')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'ACWC')->get();
         return view('equipment.AirCooledWaterChiller.edit', compact('acwc', 'id', 'idh', 'gambar', 'gambar2'));
     }
 
@@ -174,6 +182,8 @@ class AirCooledWaterChillerController extends Controller
             'enginerlist' => $request->input('enginerlist'),
             'start' => $request->input('start'),
             'stop' => $request->input('stop'),
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
+
             'temuan' => $request->input('temuan'),
             'status' => $request->input('status'),
             'rekomendasi' => $request->input('rekomendasi'),
@@ -198,6 +208,7 @@ class AirCooledWaterChillerController extends Controller
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
+                    'type' => 'ACWC',
                     'info' => $request->info[$index],
                 ]);
             }
@@ -212,6 +223,7 @@ class AirCooledWaterChillerController extends Controller
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index],
+                    'type' => 'ACWC',
                     'info' => $request->info2[$index],
                 ]);
             }
@@ -223,8 +235,8 @@ class AirCooledWaterChillerController extends Controller
         $history = History::find($id);
         $equipment = Equipment::find($history->id_equipment);
         $acwc = AirCooledWaterChiller::find($history->id_act);
-        $gambar = GambarAct::where('id_act', $history->id_act)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'ACWC')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'ACWC')->get();
 
         // Render view blade dengan gambar QR
         $pdfContent = view('pdf.acwc', ['history' => $history, 'acwc' => $acwc, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();

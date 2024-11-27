@@ -9,5 +9,5 @@ class GambarAct2 extends Model
 {
     use HasFactory;
     protected $table = 'gambargeneral2';
-    public $fillable = ['id_act','id_equipement','keterangan','gambar','info'];
+    public $fillable = ['id_act', 'id_equipement', 'keterangan', 'gambar', 'info', 'type'];
 }

@@ -8,7 +8,91 @@ p
   <div class="row">
     @if (auth()->user()->role_sipm == 'user')
     <h2>Welcome {{auth()->user()->role_sipm}}</h2>
-    @elseif (auth()->user()->role_sipm == 'spv')  
+    @elseif (auth()->user()->role_sipm == 'spv' || auth()->user()->role_sipm == 'tean_lead') 
+    <div class="col-md-12">
+    @foreach ($groupedBySite as $site => $data)
+        <br>
+        <h5>Site : {{ $site }}</h5>
+        <div class="row" style="background-color: #9edda8;">
+            <!-- Bulan Ini -->
+            <div class="col-sm-6 col-xl-4">
+                <br>
+                <div class="card bg-light-warning shadow-none">
+                    <div class="card-body p-2">
+                        <h6 class="mb-0 ms-3">TOTAL PM THIS MONTH : <br><br>
+                            <div class="d-flex justify-content-between mt-2">
+                                <a href="{{ route('equipment.index', ['site' => $site, 'bulan' => now()->format('m')]) }}" 
+                                   class="bg-danger text-white px-2 py-1 rounded text-decoration-none">
+                                    Pending: {{ $data['bulan_ini']['pending'] ?? 0 }}
+                                </a>
+                                <a href="{{ route('equipment.index', ['site' => $site, 'bulan' => now()->format('m')]) }}" 
+                                   class="bg-warning text-white px-2 py-1 rounded text-decoration-none">
+                                    In Progress: {{ $data['bulan_ini']['progress'] ?? 0 }}
+                                </a>
+                                <a href="{{ route('equipment.index', ['site' => $site, 'bulan' => now()->format('m')]) }}" 
+                                   class="bg-success text-white px-2 py-1 rounded text-decoration-none">
+                                    Completed: {{ $data['bulan_ini']['completed'] ?? 0 }}
+                                </a>
+                            </div>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bulan Lalu -->
+            <div class="col-sm-6 col-xl-4">
+                <br>
+                <div class="card bg-light-danger shadow-none">
+                    <div class="card-body p-2">
+                        <h6 class="mb-0 ms-3">TOTAL PM LAST MONTH : <br><br>
+                            <div class="d-flex justify-content-between mt-2">
+                                <a href="{{ route('equipment.index', ['site' => $site, 'bulan' => now()->subMonth()->format('m')]) }}" 
+                                   class="bg-danger text-white px-2 py-1 rounded text-decoration-none">
+                                    Pending: {{ $data['bulan_lalu']['pending'] ?? 0 }}
+                                </a>
+                                <a href="{{ route('equipment.index', ['site' => $site, 'bulan' => now()->subMonth()->format('m')]) }}" 
+                                   class="bg-warning text-white px-2 py-1 rounded text-decoration-none">
+                                    In Progress: {{ $data['bulan_lalu']['progress'] ?? 0 }}
+                                </a>
+                                <a href="{{ route('equipment.index', ['site' => $site, 'bulan' => now()->subMonth()->format('m')]) }}" 
+                                   class="bg-success text-white px-2 py-1 rounded text-decoration-none">
+                                    Completed: {{ $data['bulan_lalu']['completed'] ?? 0 }}
+                                </a>
+                            </div>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dua Bulan Lalu -->
+            <div class="col-sm-6 col-xl-4">
+                <br>
+                <div class="card bg-light-primary shadow-none">
+                    <div class="card-body p-2">
+                        <h6 class="mb-0 ms-3">TOTAL PM 2 MONTH AGO : <br><br>
+                            <div class="d-flex justify-content-between mt-2">
+                                <a href="{{ route('equipment.index', ['site' => $site, 'bulan' => now()->subMonths(2)->format('m')]) }}" 
+                                   class="bg-danger text-white px-2 py-1 rounded text-decoration-none">
+                                    Pending: {{ $data['dua_bulan_lalu']['pending'] ?? 0 }}
+                                </a>
+                                <a href="{{ route('equipment.index', ['site' => $site, 'bulan' => now()->subMonths(2)->format('m')]) }}" 
+                                   class="bg-warning text-white px-2 py-1 rounded text-decoration-none">
+                                    In Progress: {{ $data['dua_bulan_lalu']['progress'] ?? 0 }}
+                                </a>
+                                <a href="{{ route('equipment.index', ['site' => $site, 'bulan' => now()->subMonths(2)->format('m')]) }}" 
+                                   class="bg-success text-white px-2 py-1 rounded text-decoration-none">
+                                    Completed: {{ $data['dua_bulan_lalu']['completed'] ?? 0 }}
+                                </a>
+                            </div>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    @endforeach
+    <br>
+</div>
+ {{-- ---------- --}}
     @elseif (auth()->user()->role_sipm == 'team_lead')  
     @else
       <div class="col-md-12">

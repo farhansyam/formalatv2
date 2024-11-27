@@ -9,6 +9,7 @@ class AcSplit extends Model
 {
     protected $fillable = [
         "q",
+        "site",
         "enginerlist",
         "start",
         "stop",

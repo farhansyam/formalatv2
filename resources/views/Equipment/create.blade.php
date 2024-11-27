@@ -185,7 +185,7 @@
                   padding: 5px;
                 }
               </style>
-              <input class="form-control" type="file" id="fileInput" multiple accept="image/*" name="foto[]">
+              <input class="form-control" required type="file" id="fileInput" multiple accept="image/*" name="foto[]">
               <div class="preview-images-zone"></div>
               <!-- Bootstrap Bundle with Popper -->
 

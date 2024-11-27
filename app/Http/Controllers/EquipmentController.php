@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AcSplit;
+use App\Models\AHU;
+use App\Models\AirCooledWaterChiller;
 use Dompdf\Dompdf;
 use App\Models\Area;
 use App\Models\Room;
@@ -11,6 +14,7 @@ use App\Models\History;
 use App\Models\Reguler;
 use App\Models\Customer;
 use App\Models\Equipment;
+use App\Models\ExhaustFan;
 use App\Models\GambarAct;
 use App\Models\Kapasitas;
 use App\Models\GambarAct2;
@@ -20,6 +24,7 @@ use App\Models\FormBeritaAcara;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Storage;
 use App\Models\ListKebutuhanBeritaAcara;
+use App\Models\ServiceReport;
 use Illuminate\Support\Facades\Response;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\View; // Import the View facade
@@ -33,30 +38,65 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-
+        // Ambil data room dan area
         $room = Room::all();
         $area = Area::all();
 
+        // Mulai query Equipment
         $equipment = Equipment::query();
 
         // Filter berdasarkan role user
         if (auth()->user()->role_sipm == 'user') {
+            // Filter untuk role "user"
             $equipment->where('customer', auth()->user()->customer);
         }
 
         if (auth()->user()->role_sipm == 'spv' || auth()->user()->role_sipm == 'team_lead') {
-            $equipment->where('site', auth()->user()->site);
+            // Filter berdasarkan parameter 'customer'
+            if (request()->has('customer') && request()->get('customer')) {
+                $equipment->where('customer', request()->get('customer'));
+            }
+
+            // Filter berdasarkan parameter 'site'
+            if (request()->has('site') && request()->get('site')) {
+                $equipment->where('area', request()->get('site'));
+            }
+
+            // Filter berdasarkan parameter 'bulan'
+            if (request()->has('bulan') && request()->get('bulan')) {
+                $bulan = request()->get('bulan');
+                $equipment->where(function ($query) use ($bulan) {
+                    $query->whereMonth('update_ts', $bulan)
+                        ->orWhereMonth('update_pm', $bulan);
+                });
+            }
+
+            // Ambil daftar site dari user
+            $userSites = auth()->user()->site;
+
+            if (!empty($userSites)) {
+                if (strpos($userSites, ',') !== false) {
+                    // Jika memiliki banyak site, gunakan whereIn
+                    $siteArray = explode(',', $userSites);
+                    $equipment->whereIn('area', $siteArray);
+                } else {
+                    // Jika hanya memiliki satu site, gunakan where biasa
+                    $equipment->where('area', $userSites);
+                }
+            }
         }
 
-        // Filter berdasarkan parameter customer
+        // Filter global tambahan
         if (request()->has('customer')) {
             $equipment->where('customer', request()->get('customer'));
         }
+        if (request()->has('site')) {
+            $equipment->where('area', request()->get('site')); // Fix typo dari 'request()->get('customer')'
+        }
 
-        // Filter berdasarkan parameter bulan (update_ts atau update_pm)
         if (request()->has('bulan')) {
-            $equipment->where(function ($query) {
-                $bulan = request()->get('bulan');
+            $bulan = request()->get('bulan');
+            $equipment->where(function ($query) use ($bulan) {
                 $query->whereMonth('update_ts', $bulan)
                     ->orWhereMonth('update_pm', $bulan);
             });
@@ -75,6 +115,8 @@ class EquipmentController extends Controller
         // Sortir data berdasarkan waktu terbaru
         $equipment = $equipment->sortByDesc('latest_update');
 
+        // Debugging untuk memeriksa query
+        // dd($equipment->toArray());
 
         return view('Equipment.index', compact('equipment', 'room', 'area'));
     }
@@ -385,12 +427,49 @@ class EquipmentController extends Controller
         $equipment->delete();
         return redirect()->route('equipment.index');
     }
-    public function history_approve($equipment)
+    public function history_approve($id_act, $type)
     {
-        History::where('id_act', $equipment)->update(['approval' => 'Approve']);
+        // Use a single block to handle the approval logic for different types
+        $act = null;
+
+        switch ($type) {
+            case 'PMACS':
+                $act = AcSplit::find($id_act);
+                break;
+            case 'PMAHU':
+                $act = AHU::find($id_act);
+                break;
+            case 'PMACWC':
+                $act = AirCooledWaterChiller::find($id_act);
+                break;
+            case 'PMEXA':
+                $act = ExhaustFan::find($id_act);
+                break;
+            case 'TS2':
+                $act = ServiceReport::find($id_act);
+                break;
+        }
+
+        if ($act) {
+            // Update the approval information for the found act
+            $act->update([
+                'approved_by' => auth()->user()->name,
+                'approved_date' => now()->format('Y-m-d') // Using `now()` is cleaner
+            ]);
+        }
+
+        // Update the history record
+        $history = History::where('id_act', $id_act)->where('type2', $type)->first();
+
+        if ($history) {
+            $history->update([
+                'approval' => 'Approved'
+            ]);
+        }
 
         return back();
     }
+
 
     function scan()
     {
@@ -464,16 +543,45 @@ class EquipmentController extends Controller
 
     function part()
     {
-        $history = History::where('type', 'Survei')->get();
-        foreach ($history as $data) {
-            $data->listCount = ListKebutuhanBeritaAcara::where('id_beritaacara', $data->id_act)->count();
+        $history = History::query();
+        $area = Area::all();
+        // Filter berdasarkan role user
+        if (auth()->user()->role_sipm == 'spv' || auth()->user()->role_sipm == 'team_lead') {
+            $userSites = auth()->user()->site;
+
+            // Check if the user's site contains multiple values separated by a comma
+            if (strpos($userSites, ',') !== false) {
+                // If multiple sites, split into an array
+                $siteArray = explode(',', $userSites);
+                $history->whereIn('site', $siteArray);  // Use whereIn for multiple sites
+            } else {
+                // If it's a single site, use where
+                $history->where('site', $userSites);  // Use where for a single site
+            }
         }
 
-        return view('part.index', compact('history'));
+        // Filter berdasarkan type
+        $history = $history->where('type', 'TS')->get();
+
+        // Tambahkan properti listCount ke setiap item di $history
+        foreach ($history as $data) {
+            $data->listCount = ListKebutuhanBeritaAcara::where('id_beritaacara', $data->id_act)->count();
+            $data->priority = ListKebutuhanBeritaAcara::where('id_beritaacara', $data->id_act)->first()->priority;
+            $data->status = ListKebutuhanBeritaAcara::where('id_beritaacara', $data->id_act)->first()->status;
+        }
+
+        // Filter $history untuk hanya menyimpan data dengan listCount > 1
+        $filteredHistory = $history->filter(function ($data) {
+            return $data->listCount > 1;
+        });
+
+
+        return view('part.index', compact('history', 'area'));
     }
     function partshow($id)
     {
         $parts = ListKebutuhanBeritaAcara::where('id_beritaacara', $id)->get();
-        return view('part.show', compact('parts'));
+        $history = History::where('id_act', $parts[0]->id_beritaacara)->first();
+        return view('part.show', compact('parts', 'history'));
     }
 }

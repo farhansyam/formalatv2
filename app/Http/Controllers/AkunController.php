@@ -91,7 +91,9 @@ class AkunController extends Controller
      */
     public function edit(Akun $akun)
     {
-        return view('akun.edit', compact('akun'));
+        $customer = Customer::all();
+        $area = Area::all();
+        return view('akun.edit', compact('akun', 'customer', 'area'));
     }
 
     /**
@@ -101,16 +103,49 @@ class AkunController extends Controller
      * @param  \App\Models\Akun  $akun
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Akun $akun)
+    public function update(Request $request, $id)
     {
-        $akun->update([
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'name' => $request->name
-        ]);
+        // Validasi data
 
-        return redirect()->route('akun.index');
+
+        // Temukan data akun berdasarkan ID
+        $akun = Akun::findOrFail($id);
+
+        // Tentukan akses berdasarkan role
+        $akses = $request->role === 'admin' ? 4 : 3;
+
+        // Persiapkan data untuk diupdate
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+            'role_sipm' => $request->role,
+            'akses' => $akses,
+        ];
+
+        // Hash password jika diisi
+        if ($request->filled('password')) {
+            $data['password'] = Hash::make($request->password);
+        }
+
+        // Tentukan penyimpanan customer atau site berdasarkan role
+        if ($request->role === 'customer') {
+            $data['customer'] = $request->customer;
+            $data['site'] = null; // Kosongkan site jika role adalah customer
+        } elseif ($request->role === 'admin') {
+            $data['customer'] = null; // Kosongkan customer jika role adalah admin
+            $data['site'] = null; // Kosongkan site jika role adalah admin
+        } else {
+            $data['customer'] = null; // Kosongkan customer jika role bukan customer
+            $data['site'] = implode(',', $request->site); // Gabungkan array site menjadi string
+        }
+
+        // Update data ke dalam database
+        $akun->update($data);
+
+        // Redirect ke halaman index
+        return redirect()->route('akun.index')->with('success', 'Data akun berhasil diperbarui.');
     }
+
 
     /**
      * Remove the specified resource from storage.

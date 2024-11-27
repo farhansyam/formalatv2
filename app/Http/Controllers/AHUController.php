@@ -158,6 +158,8 @@ class AHUController extends Controller
             'rekomendasi' => $request->input('rekomendasi'),
             'status' => $request->input('status'),
             'temuan' => $request->input('temuan'),
+            'created_by' => auth()->user()->name,
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
             'enginer_list' => $request->input('enginerlist'),
             'start' => $request->input('start'),
             'end' => $request->input('end'),
@@ -178,6 +180,7 @@ class AHUController extends Controller
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
+                    'type' => 'AHU',
                 ]);
             }
         }
@@ -192,19 +195,23 @@ class AHUController extends Controller
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index],
                     'info' => $request->info2[$index],
+                    'type' => 'AHU',
+
                 ]);
             }
         }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
+        $equipment = Equipment::find($request->id);
+        $equipment->update_pm = date('Y-m-d');
+        $equipment->save();
         $history = new History();
+        $history->site = $equipment->site; // Sesuaikan dengan jenis equipment
+        $history->type2 = "PMAHU"; // Sesuaikan dengan jenis equipment
         $history->type = "PM"; // Sesuaikan dengan jenis equipment
         $history->id_act = $AHU->id;
         $history->id_equipment = $request->id;
         $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
         $history->save();
-        $equipment = Equipment::find($request->id);
-        $equipment->update_pm = date('Y-m-d');
-        $equipment->save();
         return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
@@ -222,8 +229,8 @@ class AHUController extends Controller
     {
         $history = History::find($id);
         $ahu = AHU::findOrFail($history->id_act); // Sesuaikan dengan model AHU
-        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->where('type', 'AHU')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->where('type', 'AHU')->get();
         $id = $history->id_equipment;
         return view('equipment.AHU.show', compact('ahu', 'id', 'gambar', 'gambar2'));
     }
@@ -239,8 +246,8 @@ class AHUController extends Controller
         $id2 = $id;
         $ahu = AHU::findOrFail($history->id_act); // Sesuaikan dengan model AHU
         $id = $history->id_equipment;
-        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->where('type', 'AHU')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->where('type', 'AHU')->get();
         return view('equipment.AHU.edit', compact('ahu', 'id', 'gambar', 'gambar2', 'id2'));
     }
 
@@ -356,6 +363,8 @@ class AHUController extends Controller
             'running_hour' => $request->input('running_hour'),
             'tanggal' => $request->input('tanggal'),
             'rekomendasi' => $request->input('rekomendasi'),
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
+
             'status' => $request->input('status'),
             'temuan' => $request->input('temuan'),
             'enginer_list' => $request->input('enginerlist'),
@@ -379,6 +388,7 @@ class AHUController extends Controller
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
+                    'type' => 'AHU',
                     'info' => $request->info[$index],
                 ]);
             }
@@ -393,6 +403,7 @@ class AHUController extends Controller
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index2],
+                    'type' => 'AHU',
                     'info' => $request->info2[$index2],
                 ]);
             }

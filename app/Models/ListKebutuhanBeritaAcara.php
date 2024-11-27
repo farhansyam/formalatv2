@@ -14,7 +14,8 @@ class ListKebutuhanBeritaAcara extends Model
         'keterangan',
         'id_beritaacara',
         'type',
-        'status',p
+        'priority',
+        'status',
         'id_eq',
     ];
     public $table = "listkebutuhanberitaacara";

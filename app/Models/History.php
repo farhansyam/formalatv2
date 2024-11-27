@@ -9,6 +9,7 @@ class History extends Model
 {
     use HasFactory;
     protected $table = 'history';
+    public $fillable = ['id', 'type', 'id_act', 'id_equipment', 'id_user', 'customer', 'approval', 'site', 'type2'];
 
 
     public function equipment()

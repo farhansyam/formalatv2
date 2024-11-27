@@ -57,6 +57,8 @@ class AcSplitController3 extends Controller
         $qData = [
             'q' => $request->input('q'),
             'tanggal_schedule' => $request->input('tanggal_schedule'),
+            'created_by' => auth()->user()->name,
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
             'tanggal_survey' => $request->input('tanggal_survey'),
             'enginerlist' => $request->input('enginerlist'),
             'start' => $request->input('start'),
@@ -151,6 +153,8 @@ class AcSplitController3 extends Controller
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
+                    'type' => 'ACS',
+
                 ]);
             }
         }
@@ -165,21 +169,24 @@ class AcSplitController3 extends Controller
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index],
                     'info' => $request->info2[$index],
+                    'type' => 'ACS',
+
                 ]);
             }
         }
 
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
+        $equipment = Equipment::find($request->id_equipment);
+        $equipment->update_pm = date('Y-m-d');
+        $equipment->save();
         $history = new History();
+        $history->site = $equipment->site; // Sesuaikan dengan jenis equipment
         $history->type = "PM"; // Sesuaikan dengan jenis equipment
+        $history->type2 = "PMACS"; // Sesuaikan dengan jenis equipment
         $history->id_act = $AcSplit->id;
         $history->id_equipment = $request->id_equipment;
         $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
         $history->save();
-        $equipment = Equipment::find($request->id_equipment);
-        $equipment->update_pm = date('Y-m-d');
-        $equipment->save();
-
 
         return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
@@ -195,8 +202,9 @@ class AcSplitController3 extends Controller
     {
         $history = History::find($id);
         $acs = AcSplit::find($history->id_act);
-        $gambar = GambarAct::where('id_act', $history->id_act)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'ACS')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'ACS')->get();
+
         return view('Equipment.AcSplit3.show', compact('acs', 'gambar', 'gambar2', 'id'));
     }
 
@@ -210,8 +218,9 @@ class AcSplitController3 extends Controller
     {
         $history = History::find($id);
         $acs = AcSplit::find($history->id_act);
-        $gambar = GambarAct::where('id_act', $history->id_act)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'ACS')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'ACS')->get();
+
         return view('Equipment.AcSplit3.edit', compact('acs', 'gambar', 'gambar2', 'id'));
     }
 
@@ -242,7 +251,9 @@ class AcSplitController3 extends Controller
         $qData = [
             'q' => $request->input('q'),
             'tanggal_schedule' => $request->input('tanggal_schedule'),
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
             'tanggal_survey' => $request->input('tanggal_survey'),
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
             'enginerlist' => $request->input('enginerlist'),
             'start' => $request->input('start'),
             'stop' => $request->input('stop'),
@@ -352,6 +363,7 @@ class AcSplitController3 extends Controller
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
+                    'type' => 'ACS',
                 ]);
             }
         }
@@ -366,6 +378,7 @@ class AcSplitController3 extends Controller
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index2],
                     'info' => $request->info2[$index2],
+                    'type' => 'ACS',
                 ]);
             }
         }
@@ -388,8 +401,8 @@ class AcSplitController3 extends Controller
         $history = History::find($id);
         $equipment = Equipment::find($history->id_equipment);
         $Acs = AcSplit::find($history->id_act);
-        $gambar = GambarAct::where('id_act', $history->id_act)->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->get();
+        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'ACS')->get();
+        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'ACS')->get();
 
 
         // Render view blade dengan gambar QR

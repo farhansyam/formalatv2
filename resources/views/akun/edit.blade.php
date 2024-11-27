@@ -1,4 +1,8 @@
 @extends('layouts.back2')
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
 @section('content')
 <!-- --------------------------------------------------- -->
 <!-- Header End -->
@@ -13,40 +17,112 @@
         <h4 class="card-title mb-0 text-center">Edit User</h4>
       </div>
       <div class="card-body">
-        <form action="{{ route('akun.update',$akun->id) }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('akun.update', $akun->id) }}" method="POST" enctype="multipart/form-data">
           @csrf
           @method('PUT')
           <div class="row">
-            <div class="col-md-6 mb-8">
-              <label for="">Username</label>
-              <input type="text" name="name" class="form-control" id="" value="{{$akun->name}}" required="">
-            </div>
+            <!-- Tambahkan CSS Select2 -->
             
-            <div class="col-md-6 mb-8">
-              <label for="">Email</label>
-              <input type="email" name="email" class="form-control" id="" value="{{$akun->email}}" required="">
-            </div>
+
             <div class="col-md-12 mb-8">
-            <label for="role">Role</label>
-            <select name="role" id="role" class="form-control" required>
-                <option value="admin">Admin</option>
-                <option value="customer">Customer</option>
-                <option value="spv">SPV</option>
-                <option value="team_lead">Team Lead</option>
-            </select>
-        </div>
-            <div class="col-md-6 mb-8">
-              <label for="">Password Baru</label>
-              <input type="password" name="password" id="" cols="30" rows="10" class="form-control">
+                <label for="username">Username</label>
+                <input type="text" name="name" class="form-control" id="username" value="{{ $akun->name }}" required>
             </div>
-            <button class="btn btn-info px-4 mt-3" type="submit">
-              Submit
-            </button>
-        </form>
-      </div>
+
+            <div class="col-md-12 mb-8">
+                <label for="email">Email</label>
+                <input type="email" name="email" class="form-control" id="email" value="{{ $akun->email }}" required>
+            </div>
+
+            <div class="col-md-12 mb-8 d-none" id="customer-field">
+                <label for="customer">Customer</label>
+                <select name="customer" class="form-control" id="customer">
+                    @foreach ($customer as $c)
+                        <option value="{{ $c->nama }}" {{ $akun->customer == $c->nama ? 'selected' : '' }}>
+                            {{ $c->nama }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="col-md-12 mb-8 d-none" id="site-field">
+                <label for="site">Site</label>
+                <select name="site[]" class="form-control" id="site" multiple="multiple">
+                    @foreach ($area as $s)
+                        <option value="{{ $s->site }}" 
+                            {{ in_array($s->site, explode(',', $akun->site ?? '')) ? 'selected' : '' }}>
+                            {{ $s->site }}
+                        </option>
+                    @endforeach
+                </select>
+            </div>
+
+            <div class="col-md-12 mb-8">
+                <label for="role">Role</label>
+                <select name="role" id="role" class="form-control" required>
+                    <option value="admin" {{ $akun->role_sipm == 'admin' ? 'selected' : '' }}>Admin</option>
+                    <option value="customer" {{ $akun->role_sipm == 'customer' ? 'selected' : '' }}>Customer</option>
+                    <option value="spv" {{ $akun->role_sipm == 'spv' ? 'selected' : '' }}>SPV</option>
+                    <option value="team_lead" {{ $akun->role_sipm == 'team_lead' ? 'selected' : '' }}>Team Lead</option>
+                </select>
+            </div>
+
+            <div class="col-md-12 mb-8">
+                <label for="password">Password Baru</label>
+                <input type="password" name="password" class="form-control" id="password">
+                <small class="text-muted">Kosongkan jika tidak ingin mengubah password.</small>
+            </div>
+        </div>
+
+        <!-- Tambahkan JavaScript Select2 dan jQuery -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // Inisialisasi Select2 untuk elemen site
+                $('#site').select2({
+                    tags: true,
+                    placeholder: "Select or add sites",
+                    allowClear: true
+                });
+
+                // Fungsi untuk memperbarui field yang perlu ditampilkan
+                function updateFields() {
+                    const role = $('#role').val();
+                    const customerField = $('#customer-field');
+                    const siteField = $('#site-field');
+
+                    if (role === 'customer') {
+                        customerField.removeClass('d-none');
+                        siteField.addClass('d-none');
+                        $('#customer').prop('required', true);
+                        $('#site').prop('required', false);
+                    } else if (role === 'admin') {
+                        customerField.addClass('d-none');
+                        siteField.addClass('d-none');
+                        $('#customer').prop('required', false);
+                        $('#site').prop('required', false);
+                    } else {
+                        customerField.addClass('d-none');
+                        siteField.removeClass('d-none');
+                        $('#customer').prop('required', false);
+                        $('#site').prop('required', true);
+                    }
+                }
+
+                // Panggil fungsi updateFields saat halaman dimuat pertama kali
+                updateFields();
+
+                // Event listener untuk memperbarui field saat role diubah
+                $('#role').change(updateFields);
+            });
+        </script>
+
+        <button class="btn btn-info px-4 mt-3" type="submit">Submit</button>
+      </form>
     </div>
   </div>
 </div>
-
+</div>
 
 @endsection

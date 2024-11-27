@@ -19,10 +19,10 @@ class PACController extends Controller
      */
 
 
-     public function create2($id)
+    public function create2($id)
     {
         $equipmentId = Equipment::find($id); // Placeholder value
-        
+
         return view('equipment.PAC.create', compact('id'));
     }
 
@@ -61,13 +61,14 @@ class PACController extends Controller
         ];
 
         // Merging $qData with $data
-        $mergedData = array_merge($data,
+        $mergedData = array_merge(
+            $data,
             $qData
         );
 
         // Simpan data ke dalam model PAC
         $PAC = PAC::create($mergedData);
- if ($request->file('gambar')) {
+        if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
                 $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
                 $gambar->move(public_path('gambar'), $gambarname);
@@ -96,32 +97,32 @@ class PACController extends Controller
             }
         }
         // Pastikan $request->id_equipment tidak null sebelum menyimpan ke dalam tabel History
-            $history = new History();
-            $history->type = "PAC"; // Sesuaikan dengan jenis equipment
-            $history->id_act = $PAC->id;
-            $history->id_equipment = $request->id;
-            $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
-            $history->save();
-            return redirect()->route('equipment.show',$request->id)->with('success', 'Task list telah disimpan.');
+        $history = new History();
+        $history->type = "PAC"; // Sesuaikan dengan jenis equipment
+        $history->id_act = $PAC->id;
+        $history->id_equipment = $request->id;
+        $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
+        $history->save();
+        return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
     }
 
-    
-    
 
-    
+
+
+
     /**
      * Display the specified resource.
      *
      * @param  \App\Models\PAC  $PAC
      * @return \Illuminate\Http\Response
      */
-    public function show(PAC $PAC,$id)
+    public function show(PAC $PAC, $id)
     {
         $history = History::find($id);
         $PAC = PAC::findOrFail($history->id_act); // Sesuaikan dengan model PAC
         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
-        return view('equipment.PAC.show', compact('PAC','id','gambar','gambar2'));
+        return view('equipment.PAC.show', compact('PAC', 'id', 'gambar', 'gambar2'));
     }
     /**
      * Show the form for editing the specified resource.
@@ -129,7 +130,7 @@ class PACController extends Controller
      * @param  \App\Models\PAC  $PAC
      * @return \Illuminate\Http\Response
      */
-    public function edit(PAC $PAC,$id)
+    public function edit(PAC $PAC, $id)
     {
         $history = History::find($id);
         $PAC = PAC::findOrFail($history->id_act); // Sesuaikan dengan model PAC
@@ -137,10 +138,10 @@ class PACController extends Controller
         $gambar = GambarAct::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('id_equipement', $history->id_equipment)->get();
         return view('equipment.PAC.edit', compact('PAC', 'id', 'gambar', 'gambar2'));
-        
     }
 
-    function update(Request $request,$id){
+    function update(Request $request, $id)
+    {
 
         $qData = [];
         for ($i = 1; $i <= 77; $i++) {
@@ -200,9 +201,6 @@ class PACController extends Controller
         }
         $pac->save();
         return redirect()->route('equipment.show', $request->id_equipment)->with('success', 'Task list telah disimpan.');
-
-
-
     }
 
     public function print($id)
@@ -242,5 +240,4 @@ class PACController extends Controller
         // Redirect ke pratinjau PDF
         return redirect()->away($previewLink);
     }
-
 }

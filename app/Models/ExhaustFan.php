@@ -9,6 +9,10 @@ class ExhaustFan extends Model
 {
     protected $fillable = [
         'tanggal',
+        'approved_by',
+        'created_by',
+        'approved_date',
+        'date_completed',
         'start',
         'end',
         'enginer_list',

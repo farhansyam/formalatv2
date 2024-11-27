@@ -221,8 +221,12 @@
               <!--/span-->
             </div>
             <hr>
-            @if(auth()->user()->role_sipm == 'user')
-            @else
+          @if(auth()->user()->role_sipm == 'user' || auth()->user()->role_sipm == 'spv')
+    <!--<h1>AAA</h1>-->
+@else
+    <!--<h1>BBB</h1>-->
+
+
             @if($schedule->count() > 0)
 
             @foreach ($schedule as $d )
@@ -231,12 +235,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="row">
-                      <div class="col-md-4 col-sm-12 mb-2">
-                        <a href="{{ route('survey.create', $equipment->id) }}" class="btn btn-primary w-100">
-                          <i class="fs-5"></i> Form Survey
-                        </a>
-                      </div>
-                      <div class="col-md-4 col-sm-12 mb-2">
+                      <div class="col-md-6 col-sm-12 mb-2">
 
                         @if($equipment->jenis == 1)
                         <a href="{{route('ac-split.create2',$equipment->id)}}">
@@ -447,7 +446,7 @@
                         </a>
                         @endif
                       </div>
-                      <div class="col-md-4 col-sm-12 mb-2">
+                      <div class="col-md-6 col-sm-12 mb-2">
                         <a href="{{ route('ts.create', $equipment->id) }}" type="button" class="btn btn-danger w-100">
                           Form TS
                         </a>
@@ -464,12 +463,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="row">
-                    <div class="col-md-4 col-sm-12 mb-2">
-                      <a href="{{ route('survey.create', $equipment->id) }}" class="btn btn-primary w-100">
-                        <i class="fs-5"></i> Form Survey
-                      </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12 mb-2">
+                    <div class="col-md-6 col-sm-12 mb-2">
 
                       @if($equipment->jenis == 1)
                       <button type="button" class="btn btn-light w-100" onclick="CheckPM()">
@@ -615,12 +609,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="row">
-                    <div class="col-md-4 col-sm-12 mb-2">
-                      <a href="{{ route('survey.create', $equipment->id) }}" class="btn btn-primary w-100">
-                        <i class="fs-5"></i> Form Survey
-                      </a>
-                    </div>
-                    <div class="col-md-4 col-sm-12 mb-2">
+                    <div class="col-md-6 col-sm-12 mb-2">
 
                       @if($equipment->jenis == 1)
                       <button type="button" class="btn btn-light w-100" onclick="CheckPM()">
@@ -747,7 +736,7 @@
                         @endif
 
                     </div>
-                    <div class="col-md-4 col-sm-12 mb-2">
+                    <div class="col-md-6 col-sm-12 mb-2">
                       <a href="{{ route('ts.create', $equipment->id) }}" type="button" class="btn btn-danger w-100">
                         Form TS
                       </a>
@@ -894,20 +883,20 @@
                     <td class="bg-transparent">{{$data->created_at}}</td>
                     <td class="text-end rounded-end bg-transparent">
 
-                      @if($data->type != "Survei" && $data->type !="Troubleshoot")
+                      @if($data->type != "Survei" && $data->type !="TS")
                       @if($equipment->jenis == 1)
                       <div style="display: flex; align-items: center;">
                         
                         <a href=" {{ route('ac-split.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                         <a href="{{ route('ac-split.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                         <a href="{{ route('ac-split.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
   @endif                        @elseif($equipment->jenis == 2)
                         <div style="display: flex; align-items: center;">
                           <a href=" {{ route('acwc.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                           <a href="{{ route('acwc.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                           <a href="{{ route('acwc.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                           @endif
@@ -915,7 +904,7 @@
                           <div style="display: flex; align-items: center;">
                             <a href=" {{ route('auhp.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                             <a href="{{ route('auhp.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                             <a href="{{ route('auhp.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                             @endif
@@ -923,7 +912,7 @@
                             <div style="display: flex; align-items: center;">
                               <a href=" {{ route('pac.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                               <a href="{{ route('pac.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                               <a href="{{ route('pac.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                               @endif
@@ -931,7 +920,7 @@
                               <div style="display: flex; align-items: center;">
                               <a href=" {{ route('cs.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                 <a href="{{ route('cs.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                 <a href="{{ route('cs.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                 @endif
@@ -939,7 +928,7 @@
                                 <div style="display: flex; align-items: center;">
                               <a href=" {{ route('cu.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                   <a href="{{ route('cu.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                   <a href="{{ route('cu.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                   @endif
@@ -947,7 +936,7 @@
                                   <div style="display: flex; align-items: center;">
                                      <a href=" {{ route('mini-chilleer.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                     <a href="{{ route('mini-chilleer.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                     <a href="{{ route('mini-chilleer.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                     @endif
@@ -955,7 +944,7 @@
                                     <div style="display: flex; align-items: center;">
                                      <a href=" {{ route('evaporator-aircooler.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                       <a href="{{ route('evaporator-aircooler.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                       <a href="{{ route('evaporator-aircooler.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                       @endif
@@ -963,7 +952,7 @@
                                       <div style="display: flex; align-items: center;">
                                       <a href=" {{ route('ahu.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                         <a href="{{ route('ahu.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                         <a href="{{ route('ahu.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                         @endif
@@ -971,7 +960,7 @@
                                         <div style="display: flex; align-items: center;">
                                          <a href=" {{ route('cooling-tower.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                           <a href="{{ route('cooling-tower.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                           <a href="{{ route('cooling-tower.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                           @endif
@@ -979,7 +968,7 @@
                                           <div style="display: flex; align-items: center;">
                                             <a href="{{ route('humidifier.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                             <a href="{{ route('humidifier.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                             <a href="{{ route('humidifier.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                             @endif
@@ -987,7 +976,7 @@
                                             <div style="display: flex; align-items: center;">
                                             <a href="{{ route('dehumidifier.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                               <a href="{{ route('dehumidifierr.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                               <a href="{{ route('dehumidifierr.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                               @endif
@@ -995,7 +984,7 @@
                                               <div style="display: flex; align-items: center;">
                                                 <a href="{{ route('fcuu.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                 <a href="{{ route('fcuu.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                                 <a href="{{ route('fcuu.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                                 @endif
@@ -1003,7 +992,7 @@
                                                 <div style="display: flex; align-items: center;">
                                                  <a href="{{ route('exhaust-fan.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                   <a href="{{ route('exhaust-fan.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                                   <a href="{{ route('exhaust-fan.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                                   @endif
@@ -1011,7 +1000,7 @@
                                                   <div style="display: flex; align-items: center;">
                                                     <a href="{{ route('pompaa.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                     <a href="{{ route('pompaa.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                                     <a href="{{ route('pompaa.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                                     @endif
@@ -1019,7 +1008,7 @@
                                                     <div style="display: flex; align-items: center;">
                                                       <a href="{{ route('spoot-cooling.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                       <a href="{{ route('spoot-cooling.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                                       <a href="{{ route('spoot-cooling.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                                       @endif
@@ -1027,7 +1016,7 @@
                                                       <div style="display: flex; align-items: center;">
                                                         <a href="{{ route('water-mist.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                         <a href="{{ route('water-mist.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                                         <a href="{{ route('water-mist.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                                         @endif
@@ -1035,7 +1024,7 @@
                                                         <div style="display: flex; align-items: center;">
                                                           <a href="{{ route('chiller-centrifugall.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
                                                           <a href="{{ route('chiller-centrifugall.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                                           <a href="{{ route('chiller-centrifugall.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
   @endif                                                        @elseif($equipment->jenis == 19)
@@ -1043,7 +1032,7 @@
                                                          <a href=" {{ route('ac-split3.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
 
                                                           <a href="{{ route('ac-split3.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                                           <a href="{{ route('ac-split3.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
   @endif                                                        @elseif($equipment->jenis == 20)
@@ -1051,7 +1040,7 @@
                                                          <a href=" {{ route('ac-split4.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
 
                                                           <a href="{{ route('ac-split4.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                                           <a href="{{ route('ac-split4.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
   @endif                                                        @elseif($equipment->jenis == 21)
@@ -1059,7 +1048,7 @@
                                                          <a href=" {{ route('ac-split2.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
 
                                                           <a href="{{ route('ac-split2.show',$data->id) }}" class=""><button class="badge bg-primary" style="margin-right: 10px;">Detail</button></a>
-                  @if(auth()->user()->role_sipm != 'user')
+                 @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
 
                                                           <a href="{{ route('ac-split2.edit',$data->id) }}" class=""><button class="badge bg-warning" style="margin-right: 10px;">Edit</button></a>
                                                           @endif
@@ -1067,19 +1056,15 @@
                                                           @else
                                                           <div style="display: flex; align-items: center;">
 
-                                                            @if ($data->type == "Survei")
-                                                            <a href=" {{ route('survey.print', $data->id_act) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
-                                                            <a href=" {{ route('formberitaacara.show', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail</button></a>
-                                                            <a href=" {{ route('formberitaacara.edit', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-warning">Edit</button></a>
-                                                            @else
-                                                            <a href=" {{ route('troubleshoot.print', $data->id_act) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
-                                                            <a href=" {{ route('troubleshoot.show', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail</button></a>
-                                                            <a href=" {{ route('troubleshoot.edit', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-warning">Edit</button></a>
+                                                            <a href=" {{ route('troubleshoot.print', $data->id) }}" target="_blank" class="" style="margin-right: 10px;"><button class="badge bg-success">Print</button></a>
+                                                            <a href=" {{ route('troubleshoot.show', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-primary">Detail</button></a>
+                                                           @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
+                                                            <a href=" {{ route('troubleshoot.edit', $data->id) }}" class="" style="margin-right: 10px;"><button class="badge bg-warning">Edit</button></a>
 
                                                             @endif
                                                             @endif
-                                                          @if(auth()->user()->role_sipm != 'user')
-
+                                                          @if(auth()->user()->role_sipm != 'user' && auth()->user()->role_sipm != 'spv')
+                                                              
                                                             <form action="{{ route('history.destroy', $data->id) }}" method="POST">
                                                               @csrf
                                                               @method('DELETE')
@@ -1088,7 +1073,7 @@
                                                           @endif
                                                           @if($data->approval == 'Waiting') 
                                                           @if(auth()->user()->role_sipm == 'spv')
-                                                            <a href=" {{ route('history.approve', $data->id_act) }}" class="" style="margin-right: 10px;"><button class="badge bg-warning">Approve</button></a>
+                                                            <a href="{{ route('history.approve', [$data->id_act, $data->type2]) }}" class="" style="margin-right: 10px;"><button class="badge bg-warning">Approve</button></a>
                                                           @endif  
                                                           @endif  
 
