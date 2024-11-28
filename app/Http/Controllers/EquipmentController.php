@@ -420,13 +420,25 @@ class EquipmentController extends Controller
      */
     public function destroy(Equipment $equipment)
     {
+        // Hapus semua history yang terkait dengan equipment
         $history = History::where('id_equipment', $equipment->id)->get();
         foreach ($history as $record) {
             $record->delete();
         }
+
+        // Hapus semua item schedule yang terkait dengan equipment
+        $itemschedule = ItemSchedule::where('id_eq', $equipment->id)->get();
+        foreach ($itemschedule as $item) {
+            $item->delete();
+        }
+
+        // Hapus data equipment itu sendiri
         $equipment->delete();
-        return redirect()->route('equipment.index');
+
+        // Redirect ke halaman index dengan pesan sukses
+        return redirect()->route('equipment.index')->with('success', 'Equipment deleted successfully.');
     }
+
     public function history_approve($id_act, $type)
     {
         // Use a single block to handle the approval logic for different types
@@ -520,7 +532,10 @@ class EquipmentController extends Controller
 
     function history_destoroy(History $history, $id)
     {
+
         $history = History::find($id);
+        $itemschedule = ItemSchedule::where('id_act', $history->id_act)->first();
+        $itemschedule->delete();
         if ($history->type == "Survei") {
             $survey = FormBeritaAcara::find($history->id_act);
             $survey->delete();

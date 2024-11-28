@@ -1033,7 +1033,69 @@
                      "Times New Roman",serif'>&nbsp;</span></p>
                 </td>
             </tr>
-                <tr style="height: 14pt">
+      <tr style="height: 14pt">
+  <td colspan="7" style="
+        width: 509.85pt;
+        border: none;
+        background: black;
+        padding: 0;
+        height: 14pt;
+        text-align: center;
+      ">
+    <p class="TableParagraph" style="
+          margin: 0;
+          text-align: center;
+          line-height: 14pt;
+        ">
+      <b><span lang="id" style="font-size: 9pt; color: white;">APPROVAL</span></b>
+    </p>
+  </td>
+</tr>
+<tr style="height: 11pt">
+  <td colspan="3" style="
+        width: 93.65pt;
+        border: solid black 1pt;
+        border-top: none;
+        padding: 5px;
+        height: 11pt;
+        text-align: left;
+        vertical-align: top;
+      ">
+    <p class="TableParagraph" style="
+          margin: 0;
+          line-height: 10pt;
+        ">
+      <span lang="id" style="font-size: 9pt;">
+        CREATED BY <br>
+        Created By: {{$ServiceReport->created_by}} <br>
+        Completed Date: {{$ServiceReport->date_completed}}
+      </span>
+    </p>
+  </td>
+  <td colspan="6" style="
+        width: 38.95pt;
+        border: solid black 1pt;
+        border-top: none;
+        padding: 5px;
+        height: 11pt;
+        text-align: center;
+        vertical-align: top;
+      ">
+    <p class="TableParagraph" style="
+          margin: 0;
+          line-height: 10pt;
+        ">
+      <span lang="id" style="font-size: 9pt;">
+        APPROVAL STATUS <br>
+        Approval Status: {{$history->approval}} <br>
+        Approval By: {{$ServiceReport->approved_by}} <br>
+        Approved Date: {{$ServiceReport->approved_date}}
+      </span>
+    </p>
+  </td>
+</tr>
+
+      <tr style="height: 14pt">
         <td width="680" colspan="7" valign="top" style="
               width: 509.85pt;
               border: none;

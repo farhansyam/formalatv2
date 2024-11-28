@@ -23,5 +23,4 @@ class ImportController extends Controller
     {
         return view('equipment.import');
     }
-
 }

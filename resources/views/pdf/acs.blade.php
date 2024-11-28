@@ -1738,61 +1738,61 @@
                      style='letter-spacing:-.5pt'>: {{$Acs->rekomendasi}}</span></span></b></p>
                </td>
             </tr>
-            <tr style='height:13.4pt'>
-               <td width=643 colspan=13 valign=top style='width:482.5pt;border-top:none;
+        <tr style='height:12.55pt'>
+               <td width=600 colspan=13 valign=top style='width:482.5pt;border-top:none;
                   border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
-                  background:black;padding:0in 0in 0in 0in;height:13.4pt'>
-                  <p class=TableParagraph align=center style='margin-top:1.25pt;margin-right:
-                     .15pt;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>RESUME</span></b></p>
+                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
+                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
+                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
+                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>APPROVAL</span></b></p>
                </td>
             </tr>
-           <tr style="height:22.2pt">
-    <td width="441" colspan="8" valign="top" style="width:330.7pt;border-top:none; border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt; padding:0in 0in 0in 0in;height:22.2pt">
-        <p class="TableParagraph" style="margin-top:5.0pt;margin-right:0in;margin-bottom:0in;margin-left:20.45pt;margin-bottom:.0001pt">
-            <b>
-                <span style="font-size:9.5pt">JOB
-                    <span style="letter-spacing:.85pt"></span>COMPLETED
-                    <span style="letter-spacing:1.0pt"></span>
-               </span>
-            </b>
-            <b>
-                <span style="font-size:8.0pt;color:#E26B0A;position:relative;top:-.5pt">⃝
-                    <span style="letter-spacing:.05pt"></span>
-                    <span style="letter-spacing:-.25pt">{{$Acs->status}}</span>
-                </span>
-            </b>
-            <b>
-                <span style="font-size:8.0pt;position:relative;top:-.5pt">, please check on <span style="letter-spacing:-.1pt">NOTES</span></span>
-            </b>
-        </p>
-    </td>
-    <td width="202" colspan="5" valign="top" style="width:151.8pt;border:none; border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:22.2pt">
-        <p class="TableParagraph" style="margin-top:5.9pt;margin-right:0in;margin-bottom:0in;margin-left:1.45pt;margin-bottom:.0001pt">
-            <b>
-                <span style="font-size:8.0pt">RUNNING
-                    <span style="letter-spacing:.05pt"></span>HOURS
-                    <span style="letter-spacing:.05pt"></span>
-                    <span style="letter-spacing:-.5pt">: {{$Acs->running_hour}}</span>
-                </span>
-            </b>
-        </p>
+        <tr style='height:12.55pt'>
+               <td width=300 colspan=6 valign=top style='width:482.5pt;border-top:none;
+                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
+                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
+                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
+                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
+                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>CREATED BY</span></b></p>
+               </td>
+               <td width=300 colspan=7 valign=top style='width:482.5pt;border-top:none;
+                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
+                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
+                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
+                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
+                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>APPROVAL STATUS</span></b></p>
+               </td>
+            </tr>
+            <tr style='height:68.75pt'>
+               <td width=331 colspan=7 valign=top style='width:248.6pt;border-top:none;
+                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
+                  padding:0in 0in 0in 0in;height:68.75pt'>
+                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Created By<span style='letter-spacing:.15pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$Acs->created_by}}</span></span></b></p>
+                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Completed Date <span style='letter-spacing:.15pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$Acs->date_completed}}</span></span></b></p>
+               </td>
+               <td width=312 colspan=6 valign=top style='width:233.9pt;border:none;
+                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:68.75pt'>
+                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Status Approval<span style='letter-spacing:.3pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$history->approval}}</span></span></b></p>
+                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Approved By<span style='letter-spacing:.3pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$Acs->approved_by}}</span></span></b></p>
+                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Approved Date<span style='letter-spacing:.3pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$Acs->approved_date}}</span></span></b></p>
+               </td>
+            </tr>
     </td>
 </tr>
 
          
             
          </table>
-         <p class=MsoBodyText>Keterangan<span style='letter-spacing:-.15pt'> </span>:<span
-            style='letter-spacing:-.25pt'> </span>Lembar<span style='letter-spacing:-.25pt'>
-            </span>1<span style='letter-spacing:-.2pt'> </span>untuk<span style='letter-spacing:
-               -.15pt'> </span>Teknisi;<span style='letter-spacing:-.3pt'> </span>Lembar<span
-               style='letter-spacing:-.25pt'> </span>2<span style='letter-spacing:-.2pt'> </span>untuk<span
-               style='letter-spacing:-.15pt'> </span>User;<span style='letter-spacing:-.25pt'>
-            </span>Lembar<span style='letter-spacing:-.25pt'> </span>3<span
-               style='letter-spacing:-.2pt'> </span>Arsip<span style='letter-spacing:-.25pt'> </span><span
-               style='letter-spacing:-.1pt'>Kantor</span>
-         </p>
       </div>
    <style>
     .page-break {

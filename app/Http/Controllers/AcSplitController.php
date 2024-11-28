@@ -186,6 +186,11 @@ class AcSplitController extends Controller
         $history->id_user = auth()->user()->id; // Gunakan ID user yang sedang login
         $history->save();
 
+        $schedule = ItemSchedule::where('id_eq', $request->id_equipment)->where('schedule', $request->tanggal_schedule)->first();
+        $schedule->update([
+            'id_act' => $AcSplit->id
+        ]);
+
 
 
         return redirect()->route('equipment.show', $request->id)->with('success', 'Task list telah disimpan.');
@@ -366,6 +371,7 @@ class AcSplitController extends Controller
                 ]);
             }
         }
+
         if ($request->file('gambar2')) {
             foreach ($request->file('gambar2') as $index2 => $gambar2) {
                 $gambarname2 = time() . '_' . $index2 . '.' . $gambar2->getClientOriginalExtension();

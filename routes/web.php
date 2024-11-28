@@ -87,7 +87,7 @@ Route::resource('equipment', EquipmentController::class)->name('index', 'equipme
 Route::get('equipment/print/{id}', [EquipmentController::class, 'print'])->name('equipment.print')->middleware('auth');
 Route::delete('gambar1/delete/{id}', [EquipmentController::class, 'gambar1_destroy'])->name('gambar.destroy')->middleware('auth');
 Route::delete('gambar2/delete/{id}', [EquipmentController::class, 'gambar2_destroy'])->name('gambar2.destroy')->middleware('auth');
-Route::delete('history/delete/{id}', [EquipmenteController::class, 'history_destoroy'])->name('history.destroy')->middleware('auth');
+Route::delete('history/delete/{id}', [EquipmentController::class, 'history_destoroy'])->name('history.destroy')->middleware('auth');
 Route::get('history/approve/{id}/{type2}', [EquipmentController::class, 'history_approve'])->name('history.approve')->middleware('auth');
 Route::get('equipment/pp/{id}', [EquipmentController::class, 'printpp'])->name('equipment.printp')->middleware('auth');
 Route::post('equipment/search', [EquipmentController::class, 'search'])->name('equipment.search')->middleware('auth');

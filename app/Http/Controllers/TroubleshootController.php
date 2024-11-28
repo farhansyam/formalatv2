@@ -46,7 +46,6 @@ class TroubleshootController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->all());
 
 
         // Simpan data formberitaacara
@@ -54,10 +53,23 @@ class TroubleshootController extends Controller
         $formBeritaAcara = ServiceReport::create([
             $request->all(),
             'created_by' => auth()->user()->name,
-            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
+            'customer' => $request->customer, // Pastikan field ini ada di $request
+            'no_kontak' => $request->no_kontak, // Pastikan field ini ada di $request
+            'alamat' => $request->alamat, // Pastikan field ini ada di $request
+            'engineer_list' => $request->engineer_list, // Pastikan field ini ada di $request
+            'tanggal_survey' => $request->tanggal_survey, // Pastikan field ini ada di $request
+            'jenis_equipment' => $request->jenis_equipment, // Pastikan field ini ada di $request
+            'brand' => $request->brand, // Pastikan field ini ada di $request
+            'serial' => $request->serial, // Pastikan field ini ada di $request
+
+            'rekomendasi_teknisi_lapangan' => $request->rekomendasi_teknisi_lapangan, // Pastikan field ini ada di $request
+            'tindakan' => $request->tindakan, // Pastikan field ini ada di $request
+            'tahun_install' => $request->tahun_install, // Pastikan field ini ada di $request
+            'deskripsi' => $request->deskripsi, // Pastikan field ini ada di $request
+            'tahun_pembuatan' => $request->tahun_pembuatan, // Pastikan field ini ada di $request
+            'name_plate' => $request->name_plate, // Pastikan field ini ada di $request
         ]);
-
-
         if (request()->has('ids')) {
             $items = ListKebutuhanBeritaAcara::where(
                 'id',
@@ -130,14 +142,17 @@ class TroubleshootController extends Controller
             }
         }
         $history = new History();
-        $history->type2 = "TS2"; // Sesuaikan dengan jenis equipment
         $history->type = "TS";
+        $history->type2 = "TS2"; // Sesuaikan dengan jenis equipment
+
         $history->id_act = $formBeritaAcara->id;
         $history->id_equipment = $request->id_equipment;
         $history->id_user = auth()->user()->id;
         $history->save();
         $equipment = Equipment::find($request->id_equipment);
         $equipment->update_ts = date('Y-m-d');
+        $equipment->priority = $request->defect_level;
+        $equipment->status_ts = $request->status;
         $equipment->save();
         return redirect()->route('equipment.show', $request->id_equipment)->with('success', 'Form Berita Acara telah disimpan.');
     }
@@ -236,7 +251,11 @@ class TroubleshootController extends Controller
                     }
                 }
             }
-
+            $equipment = Equipment::find($request->id_equipment);
+            $equipment->update_ts = date('Y-m-d');
+            $equipment->priority = $request->defect_level;
+            $equipment->status_ts = $request->status;
+            $equipment->save();
             // Hapus data yang tidak ada di incomingIds
             $toDelete = array_diff($existingIds, $incomingIds);
             ListKebutuhanBeritaAcara::whereIn('id', $toDelete)->delete();
@@ -244,7 +263,7 @@ class TroubleshootController extends Controller
 
         $beritaacara->update([
             $request->all(),
-            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null,
+            'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null
         ]);
         if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
@@ -256,8 +275,9 @@ class TroubleshootController extends Controller
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname,
                     'keterangan' => $request->keterangangambar[$index],
-                    'type' => 'TS',
                     'info' => $request->info[$index],
+                    'type' => 'TS',
+
                 ]);
             }
         }
@@ -271,14 +291,16 @@ class TroubleshootController extends Controller
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
                     'keterangan' => $request->keterangangambar2[$index2],
-                    'type' => 'TS',
                     'info' => $request->info2[$index2],
+                    'type' => 'TS',
+
                 ]);
             }
         }
 
 
         // Redirect atau lakukan apa yang diperlukan setelah berhasil memperbarui
+
         return redirect()->route('equipment.show', $request->id_equipment)->with('success', 'Form Berita Acara telah disimpan.');
     }
 

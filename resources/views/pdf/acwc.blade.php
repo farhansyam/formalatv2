@@ -3723,171 +3723,63 @@
                   </td>
                <td style='height:11.15pt;border:none' width=0 height=15></td>
             </tr>
-            <tr style='height:13.3pt'>
-               <td width=243 colspan=5 valign=top style='width:182.55pt;border:none;
-                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:13.3pt'>
-                  <p class=TableParagraph><span style='font-size:8.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+           
+
+         </table>
+         <table>
+             <tr style='height:12.55pt'>
+               <td width=600 colspan=13 valign=top style='width:482.5pt;border-top:none;
+                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
+                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
+                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
+                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
+                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>APPROVAL</span></b></p>
                </td>
-               <td width=145 colspan=3 valign=top style='width:108.65pt;border:none;
-                  border-right:solid white 1.5pt;background:black;padding:0in 0in 0in 0in;
-                  height:13.3pt'>
-                  <p class=TableParagraph align=center style='margin-top:1.35pt;margin-right:
-                     .1pt;margin-bottom:0in;margin-left:.6pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:8.5pt;color:white;letter-spacing:-.1pt'>RESUME</span></b></p>
-               </td>
-               <td width=406 colspan=13 valign=top style='width:304.8pt;border:none;
-                  border-right:solid black 1.5pt;background:black;padding:0in 0in 0in 0in;
-                  height:13.3pt'>
-                  <p class=TableParagraph style='margin-top:1.35pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:.75pt;margin-bottom:.0001pt'><b><span style='font-size:8.5pt;
-                     color:white'>APPROVAL<span style='letter-spacing:.8pt'> </span><span
-                     style='letter-spacing:-.1pt'>SIGNING</span></span></b></p>
-               </td>
-               <td style='height:13.3pt;border:none' width=0 height=18></td>
             </tr>
-            <tr style='height:34.8pt'>
-               <td width=243 colspan=5 valign=top style='width:182.55pt;border:none;
-                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:34.8pt'>
-                  <p class=TableParagraph><span style='font-size:8.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+        <tr style='height:12.55pt'>
+               <td width=300 colspan=6 valign=top style='width:482.5pt;border-top:none;
+                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
+                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
+                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
+                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
+                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>CREATED BY</span></b></p>
                </td>
-               <td width=145 colspan=3 valign=top style='width:108.65pt;border:none;
-                  border-right:solid black 1.5pt;background:#D9D9D9;padding:0in 0in 0in 0in;
-                  height:34.8pt'>
-                  <p class=TableParagraph style='margin-top:1.65pt'><span style='font-size:
-                     8.5pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph style='margin-top:.05pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:20.2pt;margin-bottom:.0001pt'><b><span style='font-size:8.5pt;
-                     color:black'>JOB<span style='letter-spacing:.6pt'> </span>COMPLETED<span
-                     style='letter-spacing:.7pt'> </span><span style='letter-spacing:-.5pt'>?</span></span></b></p>
+               <td width=300 colspan=7 valign=top style='width:482.5pt;border-top:none;
+                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
+                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
+                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
+                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
+                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>APPROVAL STATUS</span></b></p>
                </td>
-               <td width=126 colspan=4 rowspan=4 valign=top style='width:94.55pt;border:
-                  none;border-bottom:solid black 1.5pt;padding:0in 0in 0in 0in;height:34.8pt'>
-                  <p class=TableParagraph align=center style='margin-right:.1pt;text-align:
-                     center;line-height:10.3pt'><b><span style='font-size:8.5pt'>Approved<span
-                     style='letter-spacing:.7pt'> </span><span style='letter-spacing:-.25pt'>by</span></span></b></p>
-                  <p class=TableParagraph align=center style='margin-top:1.6pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;text-align:
-                     center'><span style='font-size:8.5pt;letter-spacing:-.2pt'>ISS,</span></p>
-                  <p class=TableParagraph><span style='font-size:8.5pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph><span style='font-size:8.5pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph style='margin-top:5.8pt'><span style='font-size:8.5pt;
-                     font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph align=center style='margin-right:.05pt;text-align:
-                     center'><span style='font-size:8.5pt'>( </span><u><span style='font-size:
-                     8.5pt;font-family:"Times New Roman",serif'>                                  </span></u><span
-                     style='font-size:8.5pt;letter-spacing:-.5pt'>)</span></p>
-                  <p class=TableParagraph style='margin-top:.9pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:13.0pt;margin-bottom:.0001pt'><span style='font-size:8.5pt'>No.<span
-                     style='letter-spacing:.2pt'> </span><span style='letter-spacing:-.25pt'>HP.</span></span></p>
-               </td>
-               <td width=138 colspan=5 rowspan=4 valign=top style='width:103.75pt;
-                  border:none;border-bottom:solid black 1.5pt;padding:0in 0in 0in 0in;
-                  height:34.8pt'>
-                  <p class=TableParagraph align=center style='margin-top:.15pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:.4pt;margin-bottom:.0001pt;text-align:center'><b><span
-                     style='font-size:8.5pt'>Verified<span style='letter-spacing:.35pt'> </span><span
-                     style='letter-spacing:-.25pt'>By</span></span></b></p>
-                  <p class=TableParagraph align=center style='margin-top:1.15pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:.6pt;margin-bottom:.0001pt;text-align:center'><span
-                     style='font-size:8.5pt;letter-spacing:-.1pt'>Supervisor,</span></p>
-                  <p class=TableParagraph><span style='font-size:8.5pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph><span style='font-size:8.5pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph style='margin-top:6.05pt'><span style='font-size:
-                     8.5pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph align=center style='margin-left:.65pt;text-align:
-                     center'><span style='font-size:8.5pt'>( </span><u><span style='font-size:
-                     8.5pt;font-family:"Times New Roman",serif'>                                  </span></u><span
-                     style='font-size:8.5pt;letter-spacing:-.5pt'>)</span></p>
-                  <p class=TableParagraph style='margin-top:1.5pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:9.65pt;margin-bottom:.0001pt'><span style='font-size:8.5pt'>No.<span
-                     style='letter-spacing:.2pt'> </span><span style='letter-spacing:-.25pt'>HP.</span></span></p>
-               </td>
-               <td width=142 colspan=4 rowspan=4 valign=top style='width:106.5pt;border-top:
-                  none;border-left:none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:34.8pt'>
-                  <p class=TableParagraph align=center style='margin-top:.15pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:1.3pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:8.5pt'>Service<span style='letter-spacing:
-                     .7pt'> </span><span style='letter-spacing:-.35pt'>By</span></span></b></p>
-                  <p class=TableParagraph align=center style='margin-top:1.15pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:1.0pt;margin-bottom:.0001pt;text-align:
-                     center'><span style='font-size:8.5pt'>Team<span style='letter-spacing:.45pt'>
-                     </span><span style='letter-spacing:-.1pt'>Leader/Staf,</span></span>
-                  </p>
-                  <p class=TableParagraph><span style='font-size:8.5pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph><span style='font-size:8.5pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph style='margin-top:6.05pt'><span style='font-size:
-                     8.5pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph align=center style='margin-left:1.3pt;text-align:
-                     center'><span style='font-size:8.5pt'>( </span><u><span style='font-size:
-                     8.5pt;font-family:"Times New Roman",serif'>                                  </span></u><span
-                     style='font-size:8.5pt;letter-spacing:-.5pt'>)</span></p>
-                  <p class=TableParagraph style='margin-top:1.5pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:11.7pt;margin-bottom:.0001pt'><span style='font-size:8.5pt'>No.<span
-                     style='letter-spacing:.2pt'> </span><span style='letter-spacing:-.25pt'>HP.</span></span></p>
-               </td>
-               <td style='height:34.8pt;border:none' width=0 height=46></td>
             </tr>
-            <tr style='height:20.65pt'>
-               <td width=243 colspan=5 valign=top style='width:182.55pt;border:none;
-                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:20.65pt'>
-                  <p class=TableParagraph><span style='font-size:8.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
+            <tr style='height:68.75pt'>
+               <td width=331 colspan=7 valign=top style='width:248.6pt;border-top:none;
+                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
+                  padding:0in 0in 0in 0in;height:68.75pt'>
+                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Created By<span style='letter-spacing:.15pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$acwc->created_by}}</span></span></b></p>
+                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Completed Date <span style='letter-spacing:.15pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$acwc->date_completed}}</span></span></b></p>
                </td>
-               <td width=145 colspan=3 valign=top style='width:108.65pt;border:none;
-                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:20.65pt'>
-                  <p class=TableParagraph align=center style='margin-top:5.95pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:.6pt;margin-bottom:.0001pt;text-align:center'><b><span
-                     style='font-size:8.5pt'>⃝<span style='letter-spacing:.3pt'> </span><span
-                     style='letter-spacing:-.25pt'>YES</span></span></b></p>
+               <td width=312 colspan=6 valign=top style='width:233.9pt;border:none;
+                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:68.75pt'>
+                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Status Approval<span style='letter-spacing:.3pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$history->approval}}</span></span></b></p>
+                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Approved By<span style='letter-spacing:.3pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$acwc->approved_by}}</span></span></b></p>
+                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
+                     style='font-size:8.0pt'>Approved Date<span style='letter-spacing:.3pt'> </span><span
+                     style='letter-spacing:-.5pt'>: {{$acwc->approved_date}}</span></span></b></p>
                </td>
-               <td style='height:20.65pt;border:none' width=0 height=28></td>
-            </tr>
-            <tr style='height:14.1pt'>
-               <td width=243 colspan=5 valign=top style='width:182.55pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:14.1pt'>
-                  <p class=TableParagraph><span style='font-size:8.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-               </td>
-               <td width=145 colspan=3 valign=top style='width:108.65pt;border:none;
-                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:14.1pt'>
-                  <p class=TableParagraph style='margin-top:2.9pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:9.4pt;margin-bottom:.0001pt;line-height:10.2pt'><b><span
-                     style='font-size:8.5pt'>⃝<span style='letter-spacing:2.55pt'> </span>NO,<span
-                     style='letter-spacing:.3pt'> </span>please<span style='letter-spacing:.35pt'>
-                     </span>check<span style='letter-spacing:.25pt'> </span><span
-                        style='letter-spacing:-.25pt'>on</span></span></b>
-                  </p>
-               </td>
-               <td style='height:14.1pt;border:none' width=0 height=19></td>
-            </tr>
-            <tr style='height:11.85pt'>
-               <td width=455 colspan=7 valign=top style='width:341.25pt;border:solid black 1.5pt;
-                  border-top:none;background:#D9D9D9;padding:0in 0in 0in 0in;height:11.85pt'>
-                  <p class=TableParagraph style='margin-top:.6pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:.55pt;margin-bottom:.0001pt'><b><i><span style='font-size:
-                     7.0pt;color:black'>Keterangan<span style='letter-spacing:.4pt'> </span>:<span
-                     style='letter-spacing:.5pt'> </span>Lembar<span style='letter-spacing:.3pt'> </span>1<span
-                     style='letter-spacing:.3pt'> </span>untuk<span style='letter-spacing:.4pt'> </span>Teknisi;<span
-                     style='letter-spacing:.45pt'> </span>Lembar<span style='letter-spacing:.4pt'>
-                     </span>2<span style='letter-spacing:.3pt'> </span>untuk<span
-                        style='letter-spacing:.45pt'> </span>User;<span style='letter-spacing:.4pt'> </span>Lembar<span
-                        style='letter-spacing:.3pt'> </span>3<span style='letter-spacing:.3pt'> </span>Arsip<span
-                        style='letter-spacing:.45pt'> </span><span style='letter-spacing:-.1pt'>Kantor</span></span></i></b>
-                  </p>
-               </td>
-               <td width=145 colspan=3 valign=top style='width:108.65pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:11.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     .35pt;margin-bottom:0in;margin-left:.6pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.85pt'><b><span style='font-size:8.5pt;letter-spacing:
-                     -.1pt'>NOTES</span></b></p>
-               </td>
-               <td style='height:11.85pt;border:none' width=0 height=16></td>
             </tr>
          </table>
          <p class=MsoNormal>&nbsp;</p>
       </div>
+
       @include('pdf.tablegambar')
    </body>
 </html>

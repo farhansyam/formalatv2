@@ -33,9 +33,10 @@
               <!-- Filter Site -->
               <select id="roomFilter" class="form-select" style="width: auto;">
                 <option value="">Filter Site</option>
-                @foreach ($area as $data)
-                  <option value="{{ $data->area }}">{{ $data->area }}</option>
-                @endforeach
+            @foreach ($area->unique('area') as $data)
+    <option value="{{ $data->area }}">{{ $data->area }}</option>
+@endforeach
+
               </select>
               @endif
             </div>
@@ -44,13 +45,16 @@
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Id</th>
-                  <th>Jenis</th>
-                  <th>Kapasitas (PK)</th>
-                  <th>Site</th>
-                  <th>Customer</th>
+                   <th>Site</th>
+                  <th>ID HVAC</th>
+                  <th>Jenis HVAC</th>
+            
+                 
+                 
                   <th>Last PM Date</th>
                   <th>Last TS Date</th>
+                  <th>Status TS</th>
+                  <th>Priority</th>
                   <th>Option</th>
                 </tr>
               </thead>
@@ -58,6 +62,7 @@
                 @foreach ($equipment as $index => $data)
                 <tr>
                   <td>{{ $index + 1 }}</td>
+                   <td>{{ $data->area }}</td>
                   <td>
                     {{$data->id_combine}}
                   </td>
@@ -119,11 +124,12 @@
                     {{ "Lakos Filter" }}
                     @endif
                   </td>
-                  <td>{{ $data->kapasitas }}</td>
-                  <td>{{ $data->area }}</td>
-                  <td>{{ $data->customer }}</td>
+             
+              
                   <td>{{ $data->update_pm }}</td>
                   <td>{{ $data->update_ts }}</td>
+                    <td>{{$data->status_ts}}</td>
+                <td>{{$data->priority}}</td>
                   <td>
                     <div class="d-flex gap-2">
                       <a href="{{ route('equipment.show', $data->id) }}" class="btn btn-success">Detail</a>
