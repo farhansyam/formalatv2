@@ -19,6 +19,9 @@
                 <a href="{{ route('import.form') }}" class="me-2">
                   <button class="btn btn-success">Import Excel</button>
                 </a>
+                <a href="{{ route('equipment.export') }}" class="me-2">
+                  <button class="btn btn-success">Export to Excel</button>
+                </a>
               @endif
 
               <!-- Filter Bulan -->

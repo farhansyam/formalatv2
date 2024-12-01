@@ -425,7 +425,10 @@ class AcSplitController extends Controller
         $dompdf->render();
 
         // Menghasilkan nama file unik
-        $filename = 'equipment_qrcode_' . time() . '.pdf';
+        $formattedDate = \Carbon\Carbon::parse($Acs->tanggal_survey)->format('dmy');
+
+        // Menghasilkan nama file unik
+        $filename = $history->type . $formattedDate . ' ' . $equipment->area . ' ' . '-' . ' ' . $equipment->id_combine . '.pdf';
 
         // Simpan PDF ke server sementara
         // Simpan PDF ke folder public

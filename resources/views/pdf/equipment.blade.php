@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Black & White</title>
+    <title>{{$equipment->area}} - {{$equipment->id_combine}}</title>
 
     <style type="text/css">
         body {
@@ -250,7 +250,7 @@
                     <th>&nbsp;&nbsp;</th>
                     <th>&nbsp;&nbsp;</th>
                     <th>Site</th>
-                    <th>: {{$equipment->site}}</th>
+                    <th>: {{$equipment->area}}</th>
                     <th></th>
                 </tr>
                 <tr>
@@ -261,7 +261,7 @@
                     <th>&nbsp;&nbsp;</th>
                     <th>&nbsp;&nbsp;</th>
                     <th>Area Site</th>
-                    <th>: {{$equipment->area}}</th>
+                    <th>: {{$equipment->site}}</th>
                     <th></th>
                 </tr>
                 <tr>

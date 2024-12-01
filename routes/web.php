@@ -1,29 +1,36 @@
 <?php
 
+use Carbon\Carbon;
 use App\Models\AcSplit;
 use App\Models\ExhaustFan;
 use App\Models\ColdStorage;
 use App\Models\CoolingUnit;
+use Illuminate\Http\Request;
+use App\Exports\HistoryExport;
+use App\Exports\EquipmentExport;
 use App\Models\ChillerCentrifugal;
 use App\Models\EvaporatorAirCooler;
+use Illuminate\Support\Facades\Auth;
+use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Route;
 use SebastianBergmann\Type\Parameter;
 use App\Http\Controllers\AHUController;
 use App\Http\Controllers\FCUController;
 use App\Http\Controllers\PACController;
+
 use App\Http\Controllers\AkunController;
 use App\Http\Controllers\AreaController;
 use App\Http\Controllers\AUHPController;
 use App\Http\Controllers\RoomController;
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\FreonController;
 use App\Http\Controllers\PompaController;
-
 use App\Http\Controllers\ImportController;
 use App\Http\Controllers\AcSplitController;
+use App\Http\Controllers\RegulerController;
 use App\Http\Controllers\AcSplitController2;
 use App\Http\Controllers\AcSplitController3;
 use App\Http\Controllers\AcSplitController4;
-use App\Http\Controllers\RegulerController;
 use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TasklistController;
@@ -45,7 +52,6 @@ use App\Http\Controllers\FormBeritaAcaraController;
 use App\Http\Controllers\ChillerCentrifugalController;
 use App\Http\Controllers\EvaporatorAirCoolerController;
 use App\Http\Controllers\AirCooledWaterChillerController;
-use App\Http\Controllers\BrandController;
 use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 
 /*
@@ -69,6 +75,25 @@ Route::get('/pdf/preview/{filename}', function ($filename) {
 })->name('pdf.preview');
 Auth::routes();
 
+
+
+Route::get('/export', [EquipmentController::class, 'exportindex'])->name('equipment.exportindex');
+
+Route::get('/history/export', function (Request $request) {
+        $site = $request->input('site');
+        $jenis = $request->input('jenis');
+        $startDate = $request->input('start_date');
+        $endDate = $request->input('end_date');
+
+        return Excel::download(
+                new HistoryExport($site, $jenis, $startDate, $endDate),
+                'history-' . now()->format('Y-m-d') . '.xlsx'
+        );
+})->name('history.export');
+
+Route::get('/equipment/export', function () {
+        return Excel::download(new EquipmentExport, 'equipment.xlsx');
+})->name('equipment.export2¥');
 
 Route::get('/eq', [DashboardController::class, 'eq'])->name('eq')->middleware('auth');
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');

@@ -3,49 +3,50 @@
 <div class="row">
   <div class="col-lg-12">
     <div class="card">
-      <div class="card-header bg-primary">
-        <h5 class="mb-0 text-white"><?php
-                                    // Array untuk memetakan angka ke jenis
-                                    $jenis = [
-                                      1 => "AC Split",
-                                      2 => "Cooled Water Chiller",
-                                      3 => "AHUP",
-                                      4 => "PAC",
-                                      5 => "Cold Storage",
-                                      6 => "Cooling Unit & AC Panel",
-                                      7 => "Mini Chiller",
-                                      8 => "Evaporative Air Cooler",
-                                      9 => "AHU",
-                                      10 => "Cooling tower",
-                                      11 => "Humidifier",
-                                      12 => "Dehumidifier",
-                                      13 => "FCU (Fan Cooling Unit)",
-                                      14 => "Exhaust Fan",
-                                      15 => "Pompa",
-                                      16 => "Spot Cooling",
-                                      17 => "Water Mist",
-                                      18 => "Chiller Centrifugal",
-                                      19 => "Floor Standing",
-                                      20 => "Ac Cassette",
-                                      21 => "Split Duct",
-                                      22 => "Air Cooled Chiller",
-                                      23 => "Centralize Chiller",
-                                      24 => "Ultrasonic Humidifier",
-                                      25 => "Piping & Accs",
-                                      26 => "Panel SCR",
-                                      27 => "ATCS",
-                                      28 => "Lakos Filter"
-                                    ];
-                                    // Ambil singkatan dari jenis berdasarkan angka
-                                    $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
-                                    $singkatan2 = strtoupper($equipment->kode_room);
+      <div class="card-header bg-primary d-flex justify-content-between align-items-center">
+    <h5 class="mb-0 text-white">
+        <?php
+        // Array untuk memetakan angka ke jenis
+        $jenis = [
+          1 => "AC Split",
+          2 => "Cooled Water Chiller",
+          3 => "AHUP",
+          4 => "PAC",
+          5 => "Cold Storage",
+          6 => "Cooling Unit & AC Panel",
+          7 => "Mini Chiller",
+          8 => "Evaporative Air Cooler",
+          9 => "AHU",
+          10 => "Cooling tower",
+          11 => "Humidifier",
+          12 => "Dehumidifier",
+          13 => "FCU (Fan Cooling Unit)",
+          14 => "Exhaust Fan",
+          15 => "Pompa",
+          16 => "Spot Cooling",
+          17 => "Water Mist",
+          18 => "Chiller Centrifugal",
+          19 => "Floor Standing",
+          20 => "Ac Cassette",
+          21 => "Split Duct",
+          22 => "Air Cooled Chiller",
+          23 => "Centralize Chiller",
+          24 => "Ultrasonic Humidifier",
+          25 => "Piping & Accs",
+          26 => "Panel SCR",
+          27 => "ATCS",
+          28 => "Lakos Filter"
+        ];
+        // Ambil singkatan dari jenis berdasarkan angka
+        $singkatan1 = isset($jenis[$equipment->jenis]) ? substr(str_replace(' ', '', ucwords(strtolower($jenis[$equipment->jenis]))), 0, 3) : '';
+        $singkatan2 = strtoupper($equipment->kode_room);
 
-                                    echo strtoupper($singkatan1 . $singkatan2 . $formattedId = sprintf('%05d', $equipment->id));
-                                    // Mengambil karakter pertama
+        echo strtoupper($singkatan1 . $singkatan2 . $formattedId = sprintf('%05d', $equipment->id));
+        ?>
+    </h5>
+    <a href='{{ route('equipment.print', $equipment->id) }}'><button class="btn btn-success">Print</button></a>
+</div>
 
-
-                                    ?></h5>
-      </div>
       <div class="form-horizontal">
         <div class="form-body">
           <div class="card-body">
@@ -174,7 +175,7 @@
                 <div class="form-group row">
                   <label class="control-label text-end col-md-3">Area:</label>
                   <div class="col-md-9">
-                    <p class="form-control-static">{{$equipment->area}}</p>
+                    <p class="form-control-static">{{$equipment->site}}</p>
                   </div>
                 </div>
               </div>
@@ -215,6 +216,14 @@
                   <label class="control-label text-end col-md-4">PM Regulerly :</label>
                   <div class="col-md-8">
                     <p class="form-control-static">{{$equipment->reguler}}</p>
+                  </div>
+                </div>
+              </div>
+               <div class="col-md-6">
+                <div class="form-group row">
+                  <label class="control-label text-end col-md-3">Other Info :</label>
+                  <div class="col-md-9">
+                    <p class="form-control-static">{{$equipment->other}}</p>
                   </div>
                 </div>
               </div>
@@ -523,7 +532,7 @@
                         Form PM Fan Cooling Unit
                       </button>
                       @elseif($equipment->jenis == 14)
-                      <button>
+                     
                         <button type="button" class="btn btn-light w-100" onclick="CheckPM()">
                           Form PM Exhaust Fan
                         </button>
@@ -669,7 +678,7 @@
                         Form PM Fan Cooling Unit
                       </button>
                       @elseif($equipment->jenis == 14)
-                      <button>
+                   
                         <button type="button" class="btn btn-light w-100" onclick="CheckPM()">
                           Form PM Exhaust Fan
                         </button>

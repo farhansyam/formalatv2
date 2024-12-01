@@ -26,7 +26,7 @@ class DashboardController extends Controller
         $month = $now->month;
         $history = History::whereMonth('created_at', $month)->get();
 
-        if (auth()->user()->role_sipm == 'user' || auth()->user()->role_sipm == 'spv') {
+        if (auth()->user()->role_sipm == 'user' || auth()->user()->role_sipm == 'spv' || auth()->user()->role_sipm == 'team_lead') {
             // Ambil nilai site dari user
             $sites = explode(',', auth()->user()->site); // Pisahkan jika multiple, tetap sebagai array jika single
 

@@ -10,7 +10,7 @@
   <div class="col-12">
     <div class="card">
       <div class="border-bottom title-part-padding">
-        <h4 class="card-title mb-0 text-center">Tambah Schedule</h4>
+        <h4 class="card-title mb-0 text-center">Edit Schedule</h4>
       </div>
       <div class="card-body">
         <form action="{{ route('schedule.update',$schedule->id) }}" method="POST" enctype="multipart/form-data">
@@ -23,10 +23,10 @@
               <input type="hidden" name="id" class="form-control" id="" value="{{$schedule->id}}" required="">
               <label for="">Id Equipment</label>
               <select name="id_equipment" id="" class="form-select" required>
-                <option value="{{$schedule->id}}">{{$formattedId = sprintf('%05d', $schedule->id_equipement)}}EQ</option>
+                <option value="{{$schedule->id}}">{{$schedule->id_equipement}}</option>
 
                 @foreach ($equipment as $data)
-                <option value="{{$data->id}}">{{$formattedId = sprintf('%05d', $data->id)}}EQ</option>
+                <option value="{{$data->id_combine}}">{{$data->id_combine}}</option>
                 @endforeach
               </select>
               <button class="btn btn-info px-4 mt-3" type="submit">

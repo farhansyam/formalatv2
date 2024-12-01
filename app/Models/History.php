@@ -12,12 +12,17 @@ class History extends Model
     public $fillable = ['id', 'type', 'id_act', 'id_equipment', 'id_user', 'customer', 'approval', 'site', 'type2'];
 
 
-    public function equipment()
+    public function equipment3()
     {
         return Equipment::where('id', $this->id_equipment);
     }
     public function equipment1()
     {
         return Equipment::where('id', $this->id_equipment)->first();
+    }
+
+    public function equipment()
+    {
+        return $this->belongsTo(Equipment::class, 'id_equipment');
     }
 }

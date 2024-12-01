@@ -18,7 +18,8 @@ class ScheduleController extends Controller
     public function index()
     {
         $area = Area::all();
-        return view('schedule.index', compact('area'));
+        $itemSchedule = ItemSchedule::all();
+        return view('schedule.index', compact('area', 'itemSchedule'));
     }
     public function all()
     {
@@ -110,7 +111,7 @@ class ScheduleController extends Controller
      * @param  \App\Models\Schedule  $schedule
      * @return \Illuminate\Http\Response
      */
-    public function edit(Schedule $schedule)
+    public function edit(ItemSchedule $schedule)
     {
         $equipment = Equipment::all();
         return view('schedule.edit', compact('schedule', 'equipment'));
@@ -123,7 +124,7 @@ class ScheduleController extends Controller
      * @param  \App\Models\Schedule  $schedule
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Schedule $schedule)
+    public function update(Request $request, ItemSchedule $schedule)
     {
         $schedule->schedule = $request->schedule;
         $schedule->id_equipement = $request->id_equipment;
@@ -137,7 +138,7 @@ class ScheduleController extends Controller
      * @param  \App\Models\Schedule  $schedule
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Schedule $schedule)
+    public function destroy(ItemSchedule $schedule)
     {
 
         $schedule->delete();
@@ -146,20 +147,12 @@ class ScheduleController extends Controller
 
     function GetSchedule()
     {
-        if (session()->has('site')) {
-            if (session('site') === 'all') {
-                // Jika session 'site' bernilai 'all', ambil semua data
-                $events = ItemSchedule::where('status', '#ffb6b6')->get();
-            } else {
-                // Jika session 'site' memiliki nilai tertentu, filter berdasarkan 'site'
-                $events = ItemSchedule::where('status', '#ffb6b6')
-                    ->where('site', session('site'))
-                    ->get();
-            }
+        if (session()->has('site') && session('site') !== 'all') {
+            $events = ItemSchedule::where('site', session('site'))->get();
         } else {
-            // Jika tidak ada session 'site', ambil semua data
-            $events = ItemSchedule::where('status', '#ffb6b6')->get();
+            $events = ItemSchedule::all();
         }
+
 
         $data_arr = [];
 
@@ -246,12 +239,12 @@ class ScheduleController extends Controller
     }
     function GetScheduleAll()
     {
-        if (session('site') === 'all') {
-            $events = ItemSchedule::all();
-        } else {
-
+        if (session()->has('site') && session('site') !== 'all') {
             $events = ItemSchedule::where('site', session('site'))->get();
+        } else {
+            $events = ItemSchedule::all();
         }
+
 
         $data_arr = [];
 

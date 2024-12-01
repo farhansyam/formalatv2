@@ -181,7 +181,72 @@ document.addEventListener('DOMContentLoaded', function () {
 </div>
 
 </div>
-<script>
 
-</script>
+<div class="container-fluid">
+    <table class="table table-bordered mt-4" id="example">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>ID HVAC</th>
+                <th>Site</th>
+                <th>Schedule</th>
+                <th>Option</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($itemSchedule as $index => $data)
+            <tr>
+                <td>{{ $index + 1 }}</td>
+                <td style="background-color: {{$data->status}}">
+                    {{ $data->id_equipement }}
+                </td>
+                <td>{{ $data->site }}</td>
+                <td>{{ $data->schedule }}</td>
+                <td>
+                    @if($data->status != '#13DEB9' && $data->status != '#FFAE1F')
+                    <div class="d-flex gap-2">
+                        <!-- Tombol Edit -->
+                        <a href="{{ route('schedule.edit', $data->id) }}" class="btn btn-warning btn-sm">
+                            Edit
+                        </a>
+                        <!-- Tombol Delete -->
+                        <form action="{{ route('schedule.destroy', $data->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this schedule?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger btn-sm">
+                                Delete
+                            </button>
+                        </form>
+                    </div>
+                    @endif
+                </td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+
+
+            <script>
+              document.addEventListener('DOMContentLoaded', function () {
+                const filterRows = () => {
+                  const month = document.getElementById('monthFilter').value;
+                  const room = document.getElementById('roomFilter')?.value.toLowerCase() || '';
+                  document.querySelectorAll('#example tbody tr').forEach(row => {
+                    const lastTSDate = row.children[7].textContent; // Mengambil data dari kolom "Last TS Date"
+                    const tsMonth = new Date(lastTSDate).getMonth() + 1;
+
+                    const roomText = row.children[4].textContent.toLowerCase();
+                    row.style.display = 
+                      (month === '' || tsMonth == month) &&
+                      (room === '' || roomText.includes(room))
+                      ? '' : 'none';
+                  });
+                };
+
+                document.getElementById('monthFilter').addEventListener('change', filterRows);
+                document.getElementById('roomFilter')?.addEventListener('change', filterRows);
+              });
+            </script>
+            </div>
 @endsection

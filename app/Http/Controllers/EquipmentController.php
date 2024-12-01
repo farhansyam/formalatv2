@@ -2,32 +2,36 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AcSplit;
-use App\Models\AHU;
-use App\Models\AirCooledWaterChiller;
 use Dompdf\Dompdf;
+use App\Models\AHU;
 use App\Models\Area;
 use App\Models\Room;
 use App\Models\Brand;
 use App\Models\Freon;
+use App\Models\AcSplit;
 use App\Models\History;
 use App\Models\Reguler;
 use App\Models\Customer;
 use App\Models\Equipment;
-use App\Models\ExhaustFan;
 use App\Models\GambarAct;
 use App\Models\Kapasitas;
+use App\Models\ExhaustFan;
 use App\Models\GambarAct2;
 use App\Models\ItemSchedule;
-use Illuminate\Http\Request;
+use App\Models\ServiceReport;
+use App\Exports\HistoryExport;
 use App\Models\FormBeritaAcara;
+use App\Exports\EquipmentExport;
 use Illuminate\Routing\Controller;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\AirCooledWaterChiller;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\ListKebutuhanBeritaAcara;
-use App\Models\ServiceReport;
 use Illuminate\Support\Facades\Response;
 use SimpleSoftwareIO\QrCode\Facades\QrCode;
 use Illuminate\Support\Facades\View; // Import the View facade
+
 
 class EquipmentController extends Controller
 {
@@ -38,65 +42,42 @@ class EquipmentController extends Controller
      */
     public function index()
     {
-        // Ambil data room dan area
+
         $room = Room::all();
         $area = Area::all();
 
-        // Mulai query Equipment
         $equipment = Equipment::query();
 
         // Filter berdasarkan role user
         if (auth()->user()->role_sipm == 'user') {
-            // Filter untuk role "user"
             $equipment->where('customer', auth()->user()->customer);
         }
 
         if (auth()->user()->role_sipm == 'spv' || auth()->user()->role_sipm == 'team_lead') {
-            // Filter berdasarkan parameter 'customer'
-            if (request()->has('customer') && request()->get('customer')) {
-                $equipment->where('customer', request()->get('customer'));
-            }
-
-            // Filter berdasarkan parameter 'site'
-            if (request()->has('site') && request()->get('site')) {
-                $equipment->where('area', request()->get('site'));
-            }
-
-            // Filter berdasarkan parameter 'bulan'
-            if (request()->has('bulan') && request()->get('bulan')) {
-                $bulan = request()->get('bulan');
-                $equipment->where(function ($query) use ($bulan) {
-                    $query->whereMonth('update_ts', $bulan)
-                        ->orWhereMonth('update_pm', $bulan);
-                });
-            }
-
-            // Ambil daftar site dari user
             $userSites = auth()->user()->site;
 
-            if (!empty($userSites)) {
-                if (strpos($userSites, ',') !== false) {
-                    // Jika memiliki banyak site, gunakan whereIn
-                    $siteArray = explode(',', $userSites);
-                    $equipment->whereIn('area', $siteArray);
-                } else {
-                    // Jika hanya memiliki satu site, gunakan where biasa
-                    $equipment->where('area', $userSites);
-                }
+            // Check if the user's site contains multiple values separated by a comma
+            if (strpos($userSites, ',') !== false) {
+                // If multiple sites, split into an array
+                $siteArray = explode(',', $userSites);
+                $equipment->whereIn('area', $siteArray);  // Use whereIn for multiple sites
+            } else {
+                // If it's a single site, use where
+                $equipment->where('area', $userSites);  // Use where for a single site
             }
         }
 
-        // Filter global tambahan
+
+
+        // Filter berdasarkan parameter customer
         if (request()->has('customer')) {
             $equipment->where('customer', request()->get('customer'));
         }
-        if (request()->has('site')) {
-            $equipment->where('area', request()->get('site')); // Fix typo dari 'request()->get('customer')'
-        }
 
+        // Filter berdasarkan parameter bulan (update_ts atau update_pm)
         if (request()->has('bulan')) {
-            $bulan = request()->get('bulan');
-            $equipment->where(function ($query) use ($bulan) {
+            $equipment->where(function ($query) {
+                $bulan = request()->get('bulan');
                 $query->whereMonth('update_ts', $bulan)
                     ->orWhereMonth('update_pm', $bulan);
             });
@@ -115,8 +96,6 @@ class EquipmentController extends Controller
         // Sortir data berdasarkan waktu terbaru
         $equipment = $equipment->sortByDesc('latest_update');
 
-        // Debugging untuk memeriksa query
-        // dd($equipment->toArray());
 
         return view('Equipment.index', compact('equipment', 'room', 'area'));
     }
@@ -447,6 +426,7 @@ class EquipmentController extends Controller
         switch ($type) {
             case 'PMACS':
                 $act = AcSplit::find($id_act);
+
                 break;
             case 'PMAHU':
                 $act = AHU::find($id_act);
@@ -511,7 +491,7 @@ class EquipmentController extends Controller
         $dompdf->render();
 
         // Menghasilkan nama file unik
-        $filename = 'equipment_qrcode_' . time() . '.pdf';
+        $filename = $equipment->area . $equipment->id_combine . '.pdf';
 
         // Simpan PDF ke server sementara
         $output = $dompdf->output();
@@ -598,5 +578,25 @@ class EquipmentController extends Controller
         $parts = ListKebutuhanBeritaAcara::where('id_beritaacara', $id)->get();
         $history = History::where('id_act', $parts[0]->id_beritaacara)->first();
         return view('part.show', compact('parts', 'history'));
+    }
+
+    function exportindex()
+    {
+        $area = Area::all();
+        return view('export.index', compact('area'));
+    }
+    public function export(Request $request)
+    {
+        $site = request()->input('site');
+        $jenis = request()->input('jenis');
+        $startDate = request()->input('start_date');
+        $endDate = request()->input('end_date');
+
+        $fileName = 'history-' . now()->format('Y-m-d') . '.xlsx';
+
+        return Excel::download(
+            new HistoryExport($site, $jenis, $startDate, $endDate),
+            $fileName
+        );
     }
 }
