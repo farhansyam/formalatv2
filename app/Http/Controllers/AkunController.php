@@ -158,4 +158,35 @@ class AkunController extends Controller
         $akun->delete();
         return redirect()->route('akun.index');
     }
+
+    public function signindex()
+    {
+        return view('akun.signindex');
+    }
+    public function signcreate()
+    {
+        return view('akun.signcreate');
+    }
+
+    public function signstore(Request $request)
+    {
+        // Validasi input
+        $request->validate([
+            'sign' => 'required|file|mimes:jpeg,png,jpg|max:2048', // Sesuaikan aturan validasi
+        ]);
+
+        // Ambil file dari request
+        $gambar = $request->file('sign');
+        $gambarname = time() . '_' . $gambar->getClientOriginalName();
+
+        // Pindahkan file ke folder 'gambar' di direktori publik
+        $gambar->move(public_path('gambar'), $gambarname);
+
+        // Perbarui tanda tangan pengguna
+        $user = auth()->user();
+        $user->sign = 'gambar/' . $gambarname; // Pastikan field 'sign' ada di tabel users
+        $user->save();
+
+        return redirect()->route('akun.signindex')->with('success', 'Tanda tangan berhasil disimpan!');
+    }
 }

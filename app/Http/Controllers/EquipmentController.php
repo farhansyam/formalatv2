@@ -18,14 +18,15 @@ use App\Models\Kapasitas;
 use App\Models\ExhaustFan;
 use App\Models\GambarAct2;
 use App\Models\ItemSchedule;
+use Illuminate\Http\Request;
 use App\Models\ServiceReport;
 use App\Exports\HistoryExport;
 use App\Models\FormBeritaAcara;
 use App\Exports\EquipmentExport;
 use Illuminate\Routing\Controller;
 use Maatwebsite\Excel\Facades\Excel;
+
 use App\Models\AirCooledWaterChiller;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\ListKebutuhanBeritaAcara;
 use Illuminate\Support\Facades\Response;
@@ -510,19 +511,43 @@ class EquipmentController extends Controller
         return view('pdf.equipment', compact('equipment'));
     }
 
-    function history_destoroy(History $history, $id)
+    public function history_destoroy(History $history, $id)
     {
+        try {
+            // Temukan data history berdasarkan ID
+            $history = History::find($id);
+            if (!$history) {
+                return response()->json(['error' => "History with ID $id not found."], 404);
+            }
 
-        $history = History::find($id);
-        $itemschedule = ItemSchedule::where('id_act', $history->id_act)->first();
-        $itemschedule->delete();
-        if ($history->type == "Survei") {
-            $survey = FormBeritaAcara::find($history->id_act);
-            $survey->delete();
+            // Cari item schedule terkait
+            $itemSchedule = ItemSchedule::where('id_act', $history->id_act)->first();
+
+            // Jika item schedule ditemukan, hapus terlebih dahulu
+            if ($itemSchedule) {
+                $itemSchedule->delete();
+            }
+
+            // Jika tipe history adalah "Survei", hapus data survei
+            if ($history->type == "Survei") {
+                $survey = FormBeritaAcara::find($history->id_act);
+                if ($survey) {
+                    $survey->delete();
+                }
+            }
+
+            // Hapus data history
+            $history->delete();
+
+            // Kembalikan ke halaman sebelumnya dengan pesan sukses
+            return back()->with('success', 'Data successfully deleted.');
+        } catch (\Throwable $e) {
+            // Log error dan kembalikan pesan error
+            \Log::error("Error deleting history: " . $e->getMessage());
+            return back()->with('error', 'An error occurred while deleting data.');
         }
-        $history->delete();
-        return back();
     }
+
     function gambar1_destroy(GambarAct $gambar, $id)
     {
         $gambar = GambarAct::find($id);
@@ -577,7 +602,8 @@ class EquipmentController extends Controller
     {
         $parts = ListKebutuhanBeritaAcara::where('id_beritaacara', $id)->get();
         $history = History::where('id_act', $parts[0]->id_beritaacara)->first();
-        return view('part.show', compact('parts', 'history'));
+        $equipment = Equipment::find($history->id_equipment);
+        return view('part.show', compact('parts', 'history', 'equipment'));
     }
 
     function exportindex()

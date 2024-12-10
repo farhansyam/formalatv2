@@ -12,7 +12,7 @@
       <div class="col-12">
         <div class="card">
           <div class="border-bottom title-part-padding">
-            <h4 class="card-title mb-0 text-center">Detail Part Proposal</h4>
+            <h4 class="card-title mb-0 text-center">Detail Part Proposal {{$equipment->id_combine}}</h4>
           </div>
           <script src="{{asset('dist/libs/jquery/dist/jquery.min.js')}}"></script>
           <div class="card-body">

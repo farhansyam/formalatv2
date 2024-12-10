@@ -93,7 +93,7 @@ Route::get('/history/export', function (Request $request) {
 
 Route::get('/equipment/export', function () {
         return Excel::download(new EquipmentExport, 'equipment.xlsx');
-})->name('equipment.export2¥');
+})->name('equipment.export');
 
 Route::get('/eq', [DashboardController::class, 'eq'])->name('eq')->middleware('auth');
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
@@ -107,6 +107,9 @@ Route::resource('reguler', RegulerController::class)->name('index', 'reguler.ind
 Route::resource('authority', AuthorityController::class)->name('index', 'authority.index')->middleware('auth');
 Route::resource('room', RoomController::class)->name('index', 'room.index')->middleware('auth');
 Route::resource('akun', AkunController::class)->name('index', 'akun.index')->middleware('auth');
+Route::get('sign', [AkunController::class, 'signindex'])->name('akun.signindex')->middleware('auth');
+Route::get('signcreate', [AkunController::class, 'signcreate'])->name('akun.signcreate')->middleware('auth');
+Route::post('signstore', [AkunController::class, 'signstore'])->name('akun.signstore')->middleware('auth');
 Route::resource('schedule', ScheduleController::class)->name('schedule', 'schedule.index')->middleware('auth');
 Route::resource('equipment', EquipmentController::class)->name('index', 'equipment.index')->middleware('auth');
 Route::get('equipment/print/{id}', [EquipmentController::class, 'print'])->name('equipment.print')->middleware('auth');

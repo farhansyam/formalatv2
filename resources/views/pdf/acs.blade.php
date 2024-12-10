@@ -1,76 +1,109 @@
 <html>
-   <head>
-      <meta http-equiv=Content-Type content="text/html; charset=utf-8">
-      <meta name=Generator content="Microsoft Word 15 (filtered)">
-      <style>
-         <!--
-            /* Font Definitions */
-            @font-face
-            {font-family:"Cambria Math";
-            panose-1:2 4 5 3 5 4 6 3 2 4;}
-            @font-face
-            {font-family:Calibri;
-            panose-1:2 15 5 2 2 2 4 3 2 4;}
-            /* Style Definitions */
-            p.MsoNormal, li.MsoNormal, div.MsoNormal
-            {margin:0in;
-            text-autospace:none;
-            font-size:11.0pt;
-            font-family:"Calibri",sans-serif;}
-            p.MsoBodyText, li.MsoBodyText, div.MsoBodyText
-            {margin-top:2.5pt;
-            margin-right:0in;
-            margin-bottom:0in;
-            margin-left:7.1pt;
-            text-autospace:none;
-            font-size:7.5pt;
-            font-family:"Calibri",sans-serif;
-            font-weight:bold;
-            font-style:italic;}
-            p.TableParagraph, li.TableParagraph, div.TableParagraph
-            {mso-style-name:"Table Paragraph";
-            margin:0in;
-            text-autospace:none;
-            font-size:11.0pt;
-            font-family:"Calibri",sans-serif;}
-            .MsoChpDefault
-            {font-family:"Calibri",sans-serif;}
-            .MsoPapDefault
-            {text-autospace:none;}
-            @page WordSection1
-            {size:595.5pt 842.0pt;
-            margin:38.0pt 45.0pt 14.0pt 56.0pt;}
-            div.WordSection1
-            {page:WordSection1;}
-      </style>
-   </head>
-   <body lang=EN-US style='word-wrap:break-word'>
-      <div class=WordSection1>
-         <table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0
-            style='margin-left:6.55pt;border-collapse:collapse;border:none'>
-            <tr style='height:28.5pt'>
-               <td width=546 colspan=11 valign=top style='width:409.5pt;border-top:solid black 1.5pt;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:28.5pt'>
-                  <p class=TableParagraph align=center style='margin-top:0in;margin-right:.1pt;
-                     margin-bottom:0in;margin-left:77.95pt;margin-bottom:.0001pt;text-align:center;
-                     line-height:12.65pt'><b><span style='font-size:11.5pt'>SERVICE<span
-                     style='letter-spacing:-.15pt'> </span>REPORT<span style='letter-spacing:-.05pt'>
-                     </span>PREVENTIVE<span style='letter-spacing:-.05pt'> </span><span
-                        style='letter-spacing:-.1pt'>MAINTENANCE</span></span></b>
-                  </p>
-                  <p class=TableParagraph align=center style='margin-top:.8pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:77.95pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:14.0pt'><b><span style='font-size:11.5pt'>AC<span
-                     style='letter-spacing:.1pt'> </span>SPLIT<span style='letter-spacing:
-                     .1pt'> </span><span style='letter-spacing:-.1pt'></span></span></b></p>
-               </td>
-               <td width=97 colspan=2 valign=top style='width:73.0pt;border-top:solid black 1.5pt;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  background:#F2F2F2;padding:0in 0in 0in 0in;height:28.5pt'>
-                  <p class=TableParagraph style='margin-left:1.5pt;line-height:7.5pt'><span
-                     style='font-size:6.5pt;color:black'>FORM <span style='letter-spacing:-.25pt'>NO. <br>
-                     <?php
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Style-Type" content="text/css" />
+    <meta name="generator" content="Aspose.Words for .NET 24.11.1" />
+    <title>FORM SERVICE REPORT (FORMAT SI-PM).xlsx</title>
+    <style type="text/css">
+        body {
+            widows: 0;
+            orphans: 0;
+            font-family: Calibri;
+            font-size: 11pt
+        }
+
+        p {
+            margin: 0pt
+        }
+
+        table {
+            margin-top: 0pt;
+            margin-bottom: 0pt
+        }
+
+        .ListParagraph {
+            margin: 0pt;
+            text-align: left;
+            line-height: normal;
+            widows: 0;
+            orphans: 0;
+            font-family: Calibri;
+            font-size: 11pt;
+            -aw-style-name: list-paragraph
+        }
+
+        .TableParagraph {
+            margin: 0pt;
+            text-align: left;
+            line-height: normal;
+            widows: 0;
+            orphans: 0;
+            font-family: Calibri;
+            font-size: 11pt;
+            -aw-style-name: 'Table Paragraph'
+        }
+
+        .TableNormal {}
+    </style>
+</head>
+
+<body>
+    <div>
+      <table cellspacing="0" style="border-collapse:collapse; width:100%;">
+    <tr style="height:30.65pt">
+        <!-- Kolom Gambar -->
+        <td style="background-color:rgb(255, 255, 255); padding:10px; border:1.5pt solid #000000; text-align:center;">
+            <img src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/sign.png'))) }}" 
+                 alt="Logo" style="max-width:100%; height:auto;">
+        </td>
+        <!-- Kolom Judul -->
+        <td colspan="8" style="background-color:rgb(255, 255, 255); color:rgb(0, 0, 0); padding:10px; border:1.5pt solid #000000;">
+            <p style="margin:0; font-family:Arial; font-weight:bold;">PT. DIKARI TATA UDARA INDONESIA</p>
+            <p style="margin:0; font-family:Arial; font-size:7pt;">AIR CONDITIONING DIVISION</p>
+            <p style="margin:0; font-family:Arial; font-size:6pt;">Sales, Design, Service, Installation, Preventive Maintenance</p>
+        </td>
+        <!-- Kolom Status -->
+        <td colspan="4" style="padding:10px; border:1.5pt solid #000000; text-align:center;">
+            <p style="margin:0; font-size:6pt; font-weight:bold;">Status Approval</p>
+            <p style="margin:0; font-size:9.5pt; font-weight:bold; color:#00b04f;">APPROVED</p>
+        </td>
+    </tr>
+
+            <tr style="height:17.2pt">
+                <td colspan="13"
+                    style="width:486.6pt; border-right-style:solid;border-top-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top">
+          <p class="TableParagraph" style="margin-top:0.35pt; margin-right:116.8pt; margin-left:118.7pt; text-align:center; font-size:12.5pt; white-space:nowrap;">
+    <span style="font-weight:bold">SERVICE</span><span style="font-weight:bold; letter-spacing:0.1pt"> </span><span style="font-weight:bold">REPORT</span><span style="font-weight:bold; letter-spacing:0.2pt"> </span><span style="font-weight:bold">PM</span><span style="font-weight:bold; letter-spacing:0.15pt"> </span><span style="font-weight:bold">AC</span><span style="font-weight:bold; letter-spacing:0.25pt"> </span><span style="font-weight:bold">SERIES</span><span style="font-weight:bold; letter-spacing:0.25pt"> </span><span style="font-weight:bold">-</span><span style="font-weight:bold; letter-spacing:0.1pt"> </span><span style="font-weight:bold">AC</span><span style="font-weight:bold; letter-spacing:0.25pt"> </span><span style="font-weight:bold">SPLIT</span><span style="font-weight:bold; letter-spacing:0.2pt"> </span><span style="font-weight:bold">WALL</span>
+</p>
+
+                </td>
+            </tr>
+            <tr style="height:11pt">
+                <td colspan="5"
+                    style="width:198.02pt; border-right:2.25pt solid #ffffff; vertical-align:top; background-color:#000000">
+                    <p class="TableParagraph"
+                        style="margin-right:72.3pt; margin-left:75.2pt; text-align:center; font-size:7.5pt"><span
+                            style="font-weight:bold; color:#ffffff">GENERAL</span><span
+                            style="font-weight:bold; letter-spacing:0.3pt; color:#ffffff"> </span><span
+                            style="font-weight:bold; color:#ffffff">DATA</span></p>
+                </td>
+                <td colspan="8"
+                    style="width:287.82pt; border-left:2.25pt solid #ffffff; vertical-align:top; background-color:#000000">
+                    <p class="TableParagraph"
+                        style="margin-right:127.35pt; margin-left:128.2pt; text-align:center; font-size:7.5pt"><span
+                            style="font-weight:bold; color:#ffffff">TASK</span><span
+                            style="font-weight:bold; letter-spacing:0.15pt; color:#ffffff"> </span><span
+                            style="font-weight:bold; color:#ffffff">LIST</span></p>
+                </td>
+            </tr>
+            <tr style="height:9.15pt">
+                <td colspan="5" rowspan="6"
+                    style="width:197.65pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:1.15pt; line-height:8.2pt"><span
+                            style="font-size:7.5pt">Form No.</span><span
+                            style="width:51.26pt; font-family:'Times New Roman'; font-size:7.5pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span
+                            style="font-size:7.5pt">:   <?php
                     // Array untuk memetakan angka ke jenis
                     $jenis = [
                       1 => "AC Split",
@@ -108,1780 +141,1366 @@
                     $bulan = strtoupper($history->created_at->format('m'));
                     $tahun = strtoupper($history->created_at->format('y'));
                     // Mengambil karakter terakhir
-                    echo strtoupper($singkatan1 .'-'. $singkatan2 .'-'. $bulan .'-'.$tahun.'-'.$formattedId = sprintf('%05d', $equipment->id));
+                    echo strtoupper($singkatan1 .'-'. $singkatan2 .'-'.$formattedId = sprintf('%05d', $equipment->id).'-'. $formattedId2 = sprintf('%04d',$Acs->id));
                     // Mengambil karakter pertama
 
 
-                    ?></span></span></p>
-               </td>
+                    ?></span></p>
+                    <p class="TableParagraph" style="margin-top:0.9pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Created</span><span style="letter-spacing:1.95pt"> </span><span>Date</span><span
+                            style="width:39.38pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span
+                            style="vertical-align:0.5pt">: {{$Acs->tanggal_survey}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.9pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Modified</span><span style="letter-spacing:0.25pt"> </span><span>Date</span><span
+                            style="width:35.79pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>: {{$Acs->date_completed}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:1.3pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Supervisor</span><span
+                            style="width:47.36pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$Acs->approved_by}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:1.3pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Team</span><span style="letter-spacing:0.15pt"> </span><span>Leader</span><span
+                            style="width:40.22pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$Acs->created_by}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:1.15pt; margin-left:1.15pt; line-height:9.1pt"><span
+                            style="font-size:7.5pt">Technician</span><span
+                            style="font-size:7.5pt; letter-spacing:0.25pt"> </span><span
+                            style="font-size:7.5pt">List</span><span
+                            style="width:35.05pt; font-family:'Times New Roman'; font-size:7.5pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span
+                            style="font-size:7.5pt">:{{$Acs->enginerlist}}</span></p>
+                </td>
+                <td colspan="6"
+                    style="width:237.98pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:0.75pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph"
+                        style="margin-right:95.45pt; margin-left:96.95pt; text-align:center; line-height:8.15pt"><span
+                            style="font-size:7.5pt; font-weight:bold">INDOOR</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.2pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">UNIT</span></p>
+                </td>
+                <td
+                    style="width:26.85pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:8.7pt; line-height:8.15pt"><span
+                            style="font-size:7pt; font-weight:bold">Std.</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:2.25pt; line-height:8.15pt"><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.05pt">Aktual</span></p>
+                </td>
             </tr>
-            <tr style='height:11.7pt'>
-               <td width=643 colspan=13 valign=top style='width:482.5pt;border:solid black 1.5pt;
-                  border-top:none;padding:0in 0in 0in 0in;height:11.7pt'>
-                  <p class=TableParagraph align=right style='margin-top:1.0pt;margin-right:
-                     -.75pt;margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;text-align:
-                     right'><b><span style='font-size:7.5pt;letter-spacing:-.1pt'>Tipe</span></b><b><span
-                     style='font-size:7.5pt'> <span style='letter-spacing:-.1pt'>Form </span><span
-                     style='letter-spacing:-.2pt'>PM01</span></span></b></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>1.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>cover</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>unit :</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>bersih,</span><span
+                            style="-aw-import:spaces">&#xa0; </span><span>skrup lengkap</span><span
+                            style="letter-spacing:0.05pt"> </span><span>dan tidak</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>ada</span><span style="letter-spacing:-0.05pt">
+                        </span><span>kerusakan</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.5pt'>
-               <td width=154 colspan=4 valign=top style='width:115.5pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:
-                  solid black 1.0pt;padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.3pt'><span
-                     style='position:relative;z-index:-1660205056'><span style='left:0px;
-                     position:absolute;left:10px;top:-54px;width:110px;height:50px'><img
-                     width=110 height=50
-                     src="01%20Tasklist%20AC-FLOOR-CASST-SPDCT_files/image001.png"></span></span><span
-                     style='font-size:8.0pt;letter-spacing:-.1pt'>Lokasi</span><span
-                     style='font-size:8.0pt'>        <span style='letter-spacing:-.5pt'>: {{$equipment->site}}</span></span></p>
-               </td>
-               <td width=177 colspan=3 valign=top style='width:133.1pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-left:1.85pt;line-height:9.3pt'><span
-                     style='font-size:8.0pt'>Model<span style='letter-spacing:.15pt'> </span>Unit <span
-                     style='letter-spacing:-.5pt'>:{{$equipment->model}}</span></span></p>
-               </td>
-               <td width=162 colspan=2 rowspan=3 valign=top style='width:121.5pt;border:
-                  none;border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.55pt'><span
-                     style='font-size:8.0pt'>Team<span style='letter-spacing:.1pt'> </span>Engineer<span
-                     style='letter-spacing:.25pt'> </span>List<span style='letter-spacing:.25pt'> </span><span
-                     style='letter-spacing:-.5pt'>: {{$Acs->enginerlist}}</span></span></p>
-               </td>
-               <td width=34 valign=top style='width:25.4pt;border:none;border-bottom:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.3pt'><span
-                     style='font-size:8.0pt;letter-spacing:-.2pt'>Date</span></p>
-               </td>
-               <td width=19 valign=top style='width:14.0pt;border:none;border-bottom:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-left:8.8pt;line-height:9.3pt'><span
-                     style='font-size:8.0pt;letter-spacing:-.5pt'>:</span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border:none;border-bottom:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'> {{$Acs->tanggal_survey}}</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.5pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-               </td>
+            <tr style="height:9.65pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:1pt; margin-left:1.05pt; font-size:6pt">
+                        <span>2.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kondisi filter</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>:</span><span style="letter-spacing:-0.05pt">
+                        </span><span>pastikan</span><span style="letter-spacing:0.05pt"> </span><span>tidak</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kotor</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>dan</span><span style="letter-spacing:0.05pt">
+                        </span><span>tidak</span><span style="letter-spacing:-0.05pt"> </span><span>rusak</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>(cleaning jika</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>kotor)</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.05pt; margin-left:10.25pt; font-size:7pt">
+                        <span>OK</span>
+                    </p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.5pt'>
-               <td width=154 colspan=4 valign=top style='width:115.5pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:
-                  solid black 1.0pt;padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.5pt'><span
-                     style='font-size:8.0pt'>Code<span style='letter-spacing:.05pt'> </span>unit<span
-                     style='letter-spacing:1.9pt'>  </span><span style='letter-spacing:-.5pt'>: {{$equipment->kode}}</span></span></p>
-               </td>
-               <td width=51 valign=top style='width:38.1pt;border:none;border-bottom:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-left:1.85pt;line-height:9.5pt'><span
-                     style='font-size:8.0pt'>No. <span style='letter-spacing:-.2pt'>Seri</span></span></p>
-               </td>
-               <td width=18 valign=top style='width:13.75pt;border:none;border-bottom:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-left:2.75pt;line-height:9.5pt'><span
-                     style='font-size:8.0pt;letter-spacing:-.5pt'>:</span></p>
-               </td>
-               <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>{{$equipment->serial_number}}</span></p>
-               </td>
-               <td width=150 colspan=4 valign=top style='width:112.4pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.5pt'><span
-                     style='font-size:8.0pt'>Start<span style='letter-spacing:.1pt'> </span>PM<span
-                     style='letter-spacing:1.95pt'> </span><span style='letter-spacing:-.5pt'>: {{$Acs->start}}</span></span></p>
-               </td>
+            <tr style="height:9.65pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:1pt; margin-left:1.05pt; font-size:6pt">
+                        <span>3.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kondisi fin evap</span><span
+                            style="letter-spacing:0.05pt"> </span><span>:</span><span style="letter-spacing:-0.05pt">
+                        </span><span>pastikan tidak kotor</span><span style="letter-spacing:-0.1pt">
+                        </span><span>dan</span><span style="letter-spacing:0.05pt"> </span><span>tidak</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>rusak (cleaning</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>jika</span><span style="letter-spacing:-0.1pt">
+                        </span><span>kotor)</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.05pt; margin-left:10.25pt; font-size:7pt">
+                        <span>OK</span>
+                    </p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.9pt'>
-               <td width=154 colspan=4 valign=top style='width:115.5pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.7pt'><span
-                     style='font-size:8.0pt'>Nomor<span style='letter-spacing:.15pt'> </span>Unit<span
-                     style='letter-spacing:.3pt'> </span><span style='letter-spacing:-.5pt'>: {{
-                    sprintf('%05d', $equipment->id);
-                        }}</span></span></p>
-               </td>
-               <td width=51 valign=top style='width:38.1pt;border:none;padding:0in 0in 0in 0in;
-                  height:10.9pt'>
-                  <p class=TableParagraph style='margin-left:1.85pt;line-height:9.7pt'><span
-                     style='font-size:8.0pt;letter-spacing:-.1pt'>Periode</span></p>
-               </td>
-               <td width=18 valign=top style='width:13.75pt;border:none;padding:0in 0in 0in 0in;
-                  height:10.9pt'>
-                  <p class=TableParagraph style='margin-left:2.55pt;line-height:9.7pt'><span
-                     style='font-size:8.0pt;letter-spacing:-.5pt'>: </span></p>
-               </td>
-               <td width=108 valign=top style='width:81.25pt;border:none;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>{{$equipment->reguler}}</span></p>
-               </td>
-               <td width=150 colspan=4 valign=top style='width:112.4pt;border:none;
-                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.7pt'><span
-                     style='font-size:8.0pt'>Close<span style='letter-spacing:.05pt'> </span>PM<span
-                     style='letter-spacing:.05pt'> </span><span style='letter-spacing:-.5pt'>: {{$Acs->stop}}</span></span></p>
-               </td>
+            <tr style="height:9.65pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:1pt; margin-left:1.05pt; font-size:6pt">
+                        <span>4.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek kondisi</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>blower</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>fan : pastikan tidak kotor</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>dan</span><span style="letter-spacing:0.05pt">
+                        </span><span>tidak</span><span style="letter-spacing:-0.05pt"> </span><span>rusak
+                            (cleaning</span><span style="letter-spacing:-0.05pt"> </span><span>jika</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kotor)</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.05pt; margin-left:10.25pt; font-size:7pt">
+                        <span>OK</span>
+                    </p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:13.4pt'>
-               <td width=441 colspan=8 valign=top style='width:330.7pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid white 1.5pt;
-                  background:black;padding:0in 0in 0in 0in;height:13.4pt'>
-                  <p class=TableParagraph style='margin-top:1.0pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:91.15pt;margin-bottom:.0001pt'><b><span style='font-size:
-                     9.0pt;color:white'>TYPE<span style='letter-spacing:-.3pt'> </span>OF<span
-                     style='letter-spacing:-.3pt'> </span>AIR<span style='letter-spacing:-.25pt'> </span>CONDITIONER<span
-                     style='letter-spacing:-.3pt'> </span><span style='letter-spacing:-.1pt'>EQUIPMENT</span></span></b></p>
-               </td>
-               <td width=202 colspan=5 valign=top style='width:151.8pt;border:none;
-                  border-right:solid black 1.5pt;background:black;padding:0in 0in 0in 0in;
-                  height:13.4pt'>
-                  <p class=TableParagraph style='margin-top:1.0pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:39.9pt;margin-bottom:.0001pt'><b><span style='font-size:9.0pt;
-                     color:white;letter-spacing:-.1pt'></span></b><b><span
-                     style='font-size:9.0pt;color:white;letter-spacing:.35pt'> </span></b><b><span
-                     style='font-size:9.0pt;color:white;letter-spacing:-.2pt'></span></b></p>
-               </td>
+            <tr style="height:9.65pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:1pt; margin-left:1.1pt; font-size:6pt">
+                        <span>5.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek kondisi</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>drain</span><span
+                            style="letter-spacing:0.05pt"> </span><span>sistem</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>: pastikan tidak ada</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>lendir</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>dan tidak tersumbat</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph"
+                        style="margin-top:0.05pt; margin-right:3.1pt; text-align:right; font-size:7pt">
+                        <span>Lancar</span>
+                    </p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:22.15pt'>
-               <td width=109 colspan=3 valign=top style='width:81.55pt;border:none;
-                  border-left:solid black 1.5pt;padding:0in 0in 0in 0in;height:22.15pt'>
-                  <p class=TableParagraph style='margin-top:3.65pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:12.3pt;margin-bottom:.0001pt'><b><span style='font-size:11.5pt'>
-              <span style="font-family: DejaVu Sans; font-size: 18px;">&#9745;</span>
-                     </span></span></b><b><span style='font-size:8.0pt'>AC<span style='letter-spacing:
-                        .05pt'> </span><span style='letter-spacing:.05pt'> </span><span
-                        style='letter-spacing:-.1pt'>Split</span></span></b>
-                  </p>
-               </td>
-               <td width=202 colspan=5 valign=top style='width:151.8pt;border:none;
-                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:22.15pt'>
-                    <p class=TableParagraph align=center style='margin-top:3.65pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.8pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:11.5pt'><span style='letter-spacing:.05pt'>
-                     </span></span></b><b><span style='font-size:8.0pt'><span style='letter-spacing:
-                        -.05pt'> </span><span style='letter-spacing:.05pt'> </span><span
-                        style='letter-spacing:-.2pt'>REFRIGERANT TYPE : &nbsp;{{$equipment->jenis_freon}}</span></span></b>
-                  </p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="5" style="width:199.15pt; vertical-align:top; background-color:#000000">
+                    <p class="TableParagraph" style="margin-left:66.95pt; line-height:8.35pt"><span
+                            style="font-size:7.5pt; font-weight:bold; color:#ffffff">EQUIPMENT</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.35pt; color:#ffffff">
+                        </span><span style="font-size:7.5pt; font-weight:bold; color:#ffffff">PROFILE</span></p>
+                </td>
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.1pt; font-size:6pt">
+                        <span>6.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>putaran blower</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>:</span><span style="letter-spacing:-0.05pt">
+                        </span><span>pastikan aliran udara</span><span style="letter-spacing:-0.05pt">
+                        </span><span>pada</span><span style="letter-spacing:-0.1pt"> </span><span>evaporator</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>lancar</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-right:3.1pt; text-align:right; line-height:8.25pt"><span
+                            style="font-size:7pt">Lancar</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:12.2pt'>
-               <td width=643 colspan=13 valign=top style='width:482.5pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
-                  background:black;padding:0in 0in 0in 0in;height:12.2pt'>
-                  <p class=TableParagraph align=center style='margin-top:.55pt;margin-right:
-                     .2pt;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:10.7pt'><b><span style='font-size:9.0pt;color:white'>TASK<span
-                     style='letter-spacing:-.3pt'> </span><span style='letter-spacing:-.2pt'>LIST</span></span></b></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="5" rowspan="15"
+                    style="width:197.65pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:1.15pt; line-height:8.4pt"><span
+                            style="font-size:7.5pt">Customer</span><span
+                            style="width:49.97pt; font-family:'Times New Roman'; font-size:7.5pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span
+                            style="font-size:7.5pt">:{{$equipment->customer}}</span></p>
+                    <p class="TableParagraph" style="margin-top:0.9pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Site</span><span
+                            style="width:68.24pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$equipment->area}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.95pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Area</span><span style="letter-spacing:0.15pt"> </span><span>-</span><span
+                            style="letter-spacing:0.2pt"> </span><span>Room</span><span
+                            style="width:41.71pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$equipment->site}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.9pt; margin-left:1.15pt; font-size:7.5pt"><span>ID
+                            Si-PM</span><span
+                            style="width:53.7pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>: {{$equipment->id_combine}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.95pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Brand</span><span
+                            style="width:61.48pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$equipment->brand}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.9pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Type/Model</span><span
+                            style="width:42.27pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$equipment->model}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.95pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Serial</span><span style="letter-spacing:0.1pt"> </span><span>No.</span><span
+                            style="width:50.44pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>: {{$equipment->serial_number}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.9pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Kapasitas</span><span
+                            style="width:50.94pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$equipment->area}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.95pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Running</span><span style="letter-spacing:0.2pt"> </span><span>Hours</span><span
+                            style="width:34.75pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$equipment->jamoperasi}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.9pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Name</span><span style="letter-spacing:0.1pt"> </span><span>Plate</span><span
+                            style="width:44.37pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$equipment->nameplate}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.95pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Thn.</span><span style="letter-spacing:0.2pt"> </span><span>Pembuatan</span><span
+                            style="width:29.41pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$equipment->tahun_pembuatan}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.9pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Tahun</span><span style="letter-spacing:0.25pt"> </span><span>Install</span><span
+                            style="width:40.58pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span>:{{$equipment->tahun_installasi}}</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.9pt; margin-left:1.15pt; font-size:7.5pt">
+                        <span>Equipment</span><span style="letter-spacing:0.2pt"> </span><span>Notes</span><span
+                            style="width:26.6pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:80.8pt">&#xa0;</span><span
+                            style="vertical-align:0.5pt">:{{$equipment->other}}</span>
+                    </p>
+                </td>
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.1pt; font-size:6pt">
+                        <span>7.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek Insulasi pipa</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>:</span><span style="letter-spacing:-0.05pt">
+                        </span><span>pastikan</span><span style="letter-spacing:0.05pt"> </span><span>semua</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>pipa, tidak</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>rusak atau</span><span
+                            style="letter-spacing:0.05pt"> </span><span>kondensasi</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:11.25pt'>
-               <td width=63 colspan=2 valign=top style='width:47.6pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:
-                  solid black 1.0pt;background:#D9D9D9;padding:0in 0in 0in 0in;height:11.25pt'>
-                  <p class=TableParagraph align=center style='margin-left:1.8pt;text-align:
-                     center;line-height:10.25pt'><b><span style='font-size:9.0pt;color:black;
-                     letter-spacing:-.25pt'>No.</span></b></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  background:#D9D9D9;padding:0in 0in 0in 0in;height:11.25pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.15pt;text-align:
-                     center;line-height:10.25pt'><b><span style='font-size:9.0pt;color:black'>Item<span
-                     style='letter-spacing:-.4pt'> </span><span style='letter-spacing:-.1pt'>Checked</span></span></b></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  background:#D9D9D9;padding:0in 0in 0in 0in;height:11.25pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     2.15pt;margin-bottom:0in;margin-left:0in;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.95pt'><b><span style='font-size:9.0pt;color:black;
-                     letter-spacing:-.1pt'>Standar</span></b></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  background:#D9D9D9;padding:0in 0in 0in 0in;height:11.25pt'>
-                  <p class=TableParagraph style='margin-top:.65pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:7.6pt;margin-bottom:.0001pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt;color:black;letter-spacing:-.1pt'>Actual</span></b></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.1pt; font-size:6pt">
+                        <span>8.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>bocor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>refrigerant :</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>tidak ada</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>oli</span><span style="letter-spacing:-0.05pt">
+                        </span><span>di area</span><span style="letter-spacing:-0.1pt"> </span><span>indoor,</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>bak drain &amp;</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>sambungan</span><span
+                            style="letter-spacing:0.05pt"> </span><span>pipa</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph"
+                        style="margin-top:0.65pt; margin-right:0.4pt; text-align:right; font-size:6pt">
+                        <span>No</span><span style="letter-spacing:0.05pt"> </span><span>Bocor</span>
+                    </p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=546 colspan=11 valign=top style='width:409.5pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:
-                  solid black 1.0pt;padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-left:1.5pt;line-height:9.9pt'><span
-                     style='font-size:9.0pt'>INTENSIVE<span style='letter-spacing:-.55pt'> </span>SAFETY<span
-                     style='letter-spacing:-.45pt'> </span>BRIEFING<span style='letter-spacing:
-                     -.5pt'> </span><span style='letter-spacing:-.2pt'>TEAM</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.1pt; font-size:6pt">
+                        <span>9.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek modul</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>indoor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>: pastikan kabel terkoneksi dan tidak
+                            rusak</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.75pt'>
-               <td width=36 rowspan=14 valign=top style='width:27.35pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:
-                  solid black 1.0pt;padding:0in 0in 0in 0in;height:10.75pt'>
-                  <p class=TableParagraph style='margin-top:6.5pt'><span style='font-size:9.0pt;
-                     font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph style='margin-top:0in;margin-right:9.4pt;margin-bottom:
-                     0in;margin-left:10.75pt;margin-bottom:.0001pt;text-align:justify;text-indent:
-                     1.9pt;line-height:105%'><span style='font-size:9.0pt;line-height:105%;
-                     letter-spacing:-.5pt'>I</span><span style='font-size:9.0pt;line-height:105%'>
-                     <span style='letter-spacing:-.5pt'>N</span> <span style='letter-spacing:-.5pt'>D</span>
-                     <span style='letter-spacing:-.5pt'>O</span> <span style='letter-spacing:-.5pt'>O</span>
-                     <span style='letter-spacing:-.5pt'>R</span></span>
-                  </p>
-                  <p class=TableParagraph style='margin-top:1.25pt'><span style='font-size:
-                     9.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph style='margin-top:0in;margin-right:9.4pt;margin-bottom:
-                     0in;margin-left:10.85pt;margin-bottom:.0001pt;text-align:justify;line-height:
-                     105%'><span style='font-size:9.0pt;line-height:105%;letter-spacing:-.5pt'>U</span><span
-                     style='font-size:9.0pt;line-height:105%'> <span style='letter-spacing:-.5pt'>N</span>
-                     <span style='letter-spacing:-.5pt'>I</span><span style='letter-spacing:2.0pt'>
-                     </span><span style='letter-spacing:-.5pt'>T</span></span>
-                  </p>
-               </td>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.75pt'>
-                  <p class=TableParagraph align=center style='margin-top:.15pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.5pt'>1</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.75pt'>
-                  <p class=TableParagraph style='margin-top:.15pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>cover<span
-                     style='letter-spacing:.3pt'> </span>unit,<span style='letter-spacing:.2pt'> </span>pastikan<span
-                     style='letter-spacing:.2pt'> </span>bersih,<span style='letter-spacing:2.25pt'>
-                     </span>skrup<span style='letter-spacing:.2pt'> </span>masih<span
-                        style='letter-spacing:.2pt'> </span>lengkap<span style='letter-spacing:.2pt'>
-                     </span>dan<span style='letter-spacing:.15pt'> </span>tidak<span
-                        style='letter-spacing:.2pt'> </span>ada<span style='letter-spacing:.3pt'> </span>kerusakan<span
-                        style='letter-spacing:.2pt'> </span>pada<span style='letter-spacing:.3pt'> </span>cover<span
-                        style='letter-spacing:.3pt'> </span><span style='letter-spacing:-.2pt'>unit</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.75pt'>
-                  <p class=TableParagraph align=center style='margin-top:.15pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.75pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>
-                
-                 <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q1}}</span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.1pt; font-size:6pt">
+                        <span>10.</span><span style="letter-spacing:-0.1pt"> </span><span>Kencangkan</span><span
+                            style="letter-spacing:0.05pt"> </span><span>semua</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>koneksi kabel pada</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>terminal indoor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>unit</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph"
+                        style="margin-top:0.65pt; margin-right:1.45pt; text-align:right; font-size:6pt">
+                        <span>Kencang</span>
+                    </p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.5pt'>2</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>kondisi<span
-                     style='letter-spacing:.25pt'> </span>filter,<span style='letter-spacing:.2pt'>
-                     </span>pastikan<span style='letter-spacing:.25pt'> </span>tidak<span
-                        style='letter-spacing:.15pt'> </span>kotor<span style='letter-spacing:.2pt'> </span>dan<span
-                        style='letter-spacing:.15pt'> </span>tidak<span style='letter-spacing:.15pt'>
-                     </span>rusak<span style='letter-spacing:.2pt'> </span>(cleaning<span
-                        style='letter-spacing:.15pt'> </span>jika<span style='letter-spacing:.3pt'> </span><span
-                        style='letter-spacing:-.1pt'>kotor)</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph><span style='font-size:7.0pt;font-family:"Times New Roman",serif'>
-                
-                 <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q2}}</span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>11.</span><span style="letter-spacing:-0.1pt"> </span><span>Test</span><span
+                            style="letter-spacing:0.05pt"> </span><span>running : pastikan tidak ada</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>suara</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>atau</span><span style="letter-spacing:0.05pt">
+                        </span><span>vibrasi</span><span style="letter-spacing:-0.05pt"> </span><span>yang</span><span
+                            style="letter-spacing:0.05pt"> </span><span>abnormal</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.5pt'>3</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.3pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.1pt'> </span>kondisi<span
-                     style='letter-spacing:.25pt'> </span>fin<span style='letter-spacing:.25pt'> </span>evap,<span
-                     style='letter-spacing:.15pt'> </span>pastikan<span style='letter-spacing:
-                     .25pt'> </span>tidak<span style='letter-spacing:.15pt'> </span>kotor<span
-                     style='letter-spacing:.15pt'> </span>dan<span style='letter-spacing:.15pt'> </span>tidak<span
-                     style='letter-spacing:.15pt'> </span>rusak<span style='letter-spacing:.1pt'> </span>(cleaning<span
-                     style='letter-spacing:.15pt'> </span>jika<span style='letter-spacing:.25pt'> </span><span
-                     style='letter-spacing:-.1pt'>kotor)</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                 <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q3}}</span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>12.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek setpoint</span><span
+                            style="letter-spacing:0.05pt"> </span><span>remote</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>: pastikan</span><span
+                            style="letter-spacing:0.05pt"> </span><span>mode</span><span style="letter-spacing:-0.1pt">
+                        </span><span>cool sesuai temperature</span><span style="letter-spacing:-0.1pt">
+                        </span><span>yang</span><span style="letter-spacing:0.05pt"> </span><span>diinginkan</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.5pt'>4</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>kondisi<span
-                     style='letter-spacing:.3pt'> </span>blower<span style='letter-spacing:.2pt'> </span>fan,<span
-                     style='letter-spacing:.2pt'> </span>pastikan<span style='letter-spacing:.15pt'>
-                     </span>tidak<span style='letter-spacing:.2pt'> </span>kotor<span
-                        style='letter-spacing:.3pt'> </span>dan<span style='letter-spacing:.3pt'> </span>tidak<span
-                        style='letter-spacing:.2pt'> </span>rusak<span style='letter-spacing:.15pt'> </span>(cleaning<span
-                        style='letter-spacing:.2pt'> </span>jika<span style='letter-spacing:.3pt'> </span><span
-                        style='letter-spacing:-.1pt'>kotor)</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                    <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q4}}</span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>13.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek timer</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>pada</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>remote</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>: pastikan sesuai dengan</span><span
+                            style="letter-spacing:0.05pt"> </span><span>kebutuhan</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.5pt'>5</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.1pt'> </span>kondisi<span
-                     style='letter-spacing:.2pt'> </span>drain<span style='letter-spacing:.25pt'> </span>sistem,<span
-                     style='letter-spacing:.1pt'> </span>bersihkan<span style='letter-spacing:
-                     .25pt'> </span>lendir<span style='letter-spacing:.1pt'> </span>yang<span
-                     style='letter-spacing:.1pt'> </span>menempel<span style='letter-spacing:.25pt'>
-                     </span>dan<span style='letter-spacing:.2pt'> </span>pastikan<span
-                        style='letter-spacing:.25pt'> </span>tidak<span style='letter-spacing:.1pt'> </span><span
-                        style='letter-spacing:-.1pt'>tersumbat</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     2.15pt;margin-bottom:0in;margin-left:4.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.1pt'>Lancar</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q1}}</span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>14.</span><span style="letter-spacing:-0.15pt"> </span><span>Check</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>baterai</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>pada</span><span style="letter-spacing:-0.1pt">
+                        </span><span>remote,</span><span style="letter-spacing:-0.05pt"> </span><span>lakukan
+                            penggantian jika</span><span style="letter-spacing:-0.1pt"> </span><span>diperlukan</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.5pt'>6</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.25pt'> </span>putaran<span
-                     style='letter-spacing:.3pt'> </span>blower,<span style='letter-spacing:.3pt'>
-                     </span>pastikan<span style='letter-spacing:.3pt'> </span>aliran<span
-                        style='letter-spacing:.4pt'> </span>udara<span style='letter-spacing:.45pt'> </span>pada<span
-                        style='letter-spacing:.25pt'> </span>evaporator<span style='letter-spacing:
-                        .3pt'> </span><span style='letter-spacing:-.1pt'>lancar</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     2.15pt;margin-bottom:0in;margin-left:4.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.1pt'>Lancar</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q6}}</span></p>    
-                </span></p></td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph"
+                        style="margin-top:0.4pt; margin-right:95.35pt; margin-left:96.95pt; text-align:center; font-size:6pt">
+                        <span style="font-weight:bold">OUTDOOR</span><span
+                            style="font-weight:bold; letter-spacing:0.1pt"> </span><span
+                            style="font-weight:bold">UNIT</span>
+                    </p>
+                </td>
+                <td
+                    style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.5pt'>7</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>Insulasi<span
-                     style='letter-spacing:.2pt'> </span>pipa,<span style='letter-spacing:.15pt'> </span>pastikan<span
-                     style='letter-spacing:.3pt'> </span>semua<span style='letter-spacing:.3pt'> </span>pipa<span
-                     style='letter-spacing:.2pt'> </span>terinsulasi,<span style='letter-spacing:
-                     .15pt'> </span>tidak<span style='letter-spacing:.2pt'> </span>ada<span
-                     style='letter-spacing:.3pt'> </span>yang<span style='letter-spacing:.15pt'> </span>rusak<span
-                     style='letter-spacing:.2pt'> </span>atau<span style='letter-spacing:.2pt'> </span><span
-                     style='letter-spacing:-.1pt'>kondensasi</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q7}}</span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>15.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>cover</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>unit : pastikan bersih, skrup
+                            lengkap</span><span style="letter-spacing:0.05pt"> </span><span>dan tidak rusak</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.5pt'>8</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>kebocoran<span
-                     style='letter-spacing:.2pt'> </span>refrigerant,<span style='letter-spacing:
-                     .2pt'> </span>pastikan<span style='letter-spacing:.3pt'> </span>tidak<span
-                     style='letter-spacing:.15pt'> </span>ada<span style='letter-spacing:.3pt'> </span>oli<span
-                     style='letter-spacing:.3pt'> </span>di<span style='letter-spacing:.2pt'> </span>area<span
-                     style='letter-spacing:.3pt'> </span>indoor,<span style='letter-spacing:.15pt'>
-                     </span>bak<span style='letter-spacing:.2pt'> </span>drain<span
-                        style='letter-spacing:.2pt'> </span>dan<span style='letter-spacing:.15pt'> </span>sambungan<span
-                        style='letter-spacing:.3pt'> </span><span style='letter-spacing:-.2pt'>pipa</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.75pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:1.95pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:7.5pt'>Tdk.<span
-                     style='letter-spacing:-.35pt'> </span><span style='letter-spacing:-.1pt'>Bocor</span></span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q8}}</span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>16.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kondisi fin kondensor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>:</span><span style="letter-spacing:-0.05pt">
+                        </span><span>pastikan</span><span style="letter-spacing:0.05pt"> </span><span>bersih dan tidak
+                            rusak</span><span style="letter-spacing:-0.05pt"> </span><span>(cleaning jika</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>kotor)</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     .05pt;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.5pt'>9</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>modul<span
-                     style='letter-spacing:.2pt'> </span>indoor,<span style='letter-spacing:.2pt'>
-                     </span>pastikan<span style='letter-spacing:.2pt'> </span>koneksi<span
-                        style='letter-spacing:.3pt'> </span>kabelnya<span style='letter-spacing:.3pt'>
-                     </span>dan<span style='letter-spacing:.3pt'> </span>pastikan<span
-                        style='letter-spacing:.3pt'> </span>tidak<span style='letter-spacing:.2pt'> </span>ada<span
-                        style='letter-spacing:.3pt'> </span>kerusakan<span style='letter-spacing:
-                        .15pt'> </span>pada<span style='letter-spacing:.3pt'> </span><span
-                        style='letter-spacing:-.1pt'>modul</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                    <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q9}}</span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>17.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek fan outdoor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>: terpasang dgn</span><span
+                            style="letter-spacing:0.05pt"> </span><span>baik, tidak</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kotor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>&amp; rusak</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>(cleaning jika</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kotor)</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>10</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Kencangkan<span style='letter-spacing:.2pt'> </span>semua<span
-                     style='letter-spacing:.35pt'> </span>koneksi<span style='letter-spacing:.2pt'>
-                     </span>kabel<span style='letter-spacing:.35pt'> </span>pada<span
-                        style='letter-spacing:.2pt'> </span>terminal<span style='letter-spacing:.25pt'>
-                     </span>indoor<span style='letter-spacing:.2pt'> </span><span
-                        style='letter-spacing:-.2pt'>unit</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.1pt'>Kencang</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q10}}</span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>18.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek putaran fan</span><span
+                            style="letter-spacing:0.05pt"> </span><span>outdoor</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>: pastikan</span><span
+                            style="letter-spacing:0.05pt"> </span><span>aliran udara</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>pada</span><span style="letter-spacing:-0.1pt">
+                        </span><span>kondensor</span><span style="letter-spacing:-0.05pt"> </span><span>lancar</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>11</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Test<span style='letter-spacing:.3pt'> </span>running,<span
-                     style='letter-spacing:.25pt'> </span>pastikan<span style='letter-spacing:
-                     .25pt'> </span>tidak<span style='letter-spacing:.2pt'> </span>ada<span
-                     style='letter-spacing:.35pt'> </span>suara<span style='letter-spacing:.35pt'>
-                     </span>atau<span style='letter-spacing:.2pt'> </span>vibrasi<span
-                        style='letter-spacing:.25pt'> </span>yang<span style='letter-spacing:.25pt'> </span><span
-                        style='letter-spacing:-.1pt'>abnormal</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q11}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>19.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek Insulasi</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>pipa</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>:</span><span style="letter-spacing:-0.05pt">
+                        </span><span>semua</span><span style="letter-spacing:-0.05pt"> </span><span>pipa</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>terinsulasi</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>baik dan tidak rusak/kondensasi</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>12</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.2pt'> </span>setpoint<span
-                     style='letter-spacing:.25pt'> </span>pada<span style='letter-spacing:.25pt'> </span>remote,<span
-                     style='letter-spacing:.2pt'> </span>pastikan<span style='letter-spacing:.25pt'>
-                     </span>pada<span style='letter-spacing:.3pt'> </span>mode<span
-                        style='letter-spacing:.35pt'> </span>cool<span style='letter-spacing:.35pt'> </span>semuai<span
-                        style='letter-spacing:.2pt'> </span>temperature<span style='letter-spacing:
-                        .25pt'> </span>yang<span style='letter-spacing:.2pt'> </span><span
-                        style='letter-spacing:-.1pt'>diinginkan</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q12}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>20.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kebocoran</span><span
+                            style="letter-spacing:0.05pt"> </span><span>refrigerant : tidak</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>ada</span><span style="letter-spacing:-0.1pt">
+                        </span><span>oli di</span><span style="letter-spacing:-0.05pt"> </span><span>area</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kondensor</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>&amp;</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>sambungan</span><span
+                            style="letter-spacing:0.05pt"> </span><span>pipa</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph"
+                        style="margin-top:0.65pt; margin-right:0.4pt; text-align:right; font-size:6pt">
+                        <span>No</span><span style="letter-spacing:0.05pt"> </span><span>Bocor</span>
+                    </p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>13</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.25pt'> </span>timer<span
-                     style='letter-spacing:.25pt'> </span>pada<span style='letter-spacing:.35pt'> </span>remote,<span
-                     style='letter-spacing:.3pt'> </span>pastikan<span style='letter-spacing:.25pt'>
-                     </span>sesuai<span style='letter-spacing:.25pt'> </span>dengan<span
-                        style='letter-spacing:.25pt'> </span><span style='letter-spacing:-.1pt'>kebutuhan</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q13}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="5" style="width:199.15pt; vertical-align:top; background-color:#000000">
+                    <p class="TableParagraph" style="margin-left:41.25pt; line-height:7.85pt"><span
+                            style="font-family:Arial; font-size:7pt; font-weight:bold; letter-spacing:-0.05pt; color:#ffffff">HASIL</span><span
+                            style="font-family:Arial; font-size:7pt; font-weight:bold; letter-spacing:-0.45pt; color:#ffffff">
+                        </span><span
+                            style="font-family:Arial; font-size:7pt; font-weight:bold; color:#ffffff">PENGUKURAN</span><span
+                            style="font-family:Arial; font-size:7pt; font-weight:bold; letter-spacing:-0.35pt; color:#ffffff">
+                        </span><span
+                            style="font-family:Arial; font-size:7pt; font-weight:bold; color:#ffffff">PARAMETER</span>
+                    </p>
+                </td>
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>21.</span><span style="letter-spacing:-0.05pt"> </span><span>Kencangkan</span><span
+                            style="letter-spacing:0.05pt"> </span><span>semua</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>koneksi kabel pada</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>terminal outdoor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>unit</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>14</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.3pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt'>Check<span style='letter-spacing:.3pt'> </span>baterai<span
-                     style='letter-spacing:.25pt'> </span>pada<span style='letter-spacing:.35pt'> </span>remote,<span
-                     style='letter-spacing:.2pt'> </span>lakukan<span style='letter-spacing:.25pt'>
-                     </span>penggantian<span style='letter-spacing:.35pt'> </span>jika<span
-                        style='letter-spacing:.35pt'> </span><span style='letter-spacing:-.1pt'>diperlukan</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q14}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="2"
+                    style="width:78.82pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:0.75pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:23.85pt; line-height:8.15pt"><span
+                            style="font-size:7pt; font-weight:bold">Parameter</span></p>
+                </td>
+                <td
+                    style="width:38.85pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:7pt; line-height:8.15pt"><span
+                            style="font-size:7pt; font-weight:bold">Standard</span></p>
+                </td>
+                <td
+                    style="width:38.35pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:10.75pt; line-height:8.15pt"><span
+                            style="font-size:7pt; font-weight:bold">Before</span></p>
+                </td>
+                <td
+                    style="width:39.38pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:0.75pt; border-bottom-style:solid; border-bottom-width:0.75pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:13.75pt; line-height:8.15pt"><span
+                            style="font-size:7pt; font-weight:bold">After</span></p>
+                </td>
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>22.</span><span style="letter-spacing:-0.05pt"> </span><span>Cek Kapasitor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>kompressor</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.5pt'>
-               <td width=36 rowspan=13 valign=top style='width:27.35pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:solid black 1.5pt;border-right:
-                  solid black 1.0pt;padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-top:.6pt'><span style='font-size:9.0pt;
-                     font-family:"Times New Roman",serif'>{{$Acs->q}}</span></p>
-                  <p class=TableParagraph style='margin-top:0in;margin-right:9.4pt;margin-bottom:
-                     0in;margin-left:10.75pt;margin-bottom:.0001pt;text-align:justify;line-height:
-                     105%'><span style='font-size:9.0pt;line-height:105%;letter-spacing:-.5pt'>O</span><span
-                     style='font-size:9.0pt;line-height:105%'> <span style='letter-spacing:-.5pt'>U</span>
-                     <span style='letter-spacing:-.5pt'>T</span> <span style='letter-spacing:-.5pt'>D</span>
-                     <span style='letter-spacing:-.5pt'>O</span> <span style='letter-spacing:-.5pt'>O</span>
-                     <span style='letter-spacing:-.5pt'>R</span></span>
-                  </p>
-                  <p class=TableParagraph><span style='font-size:9.0pt;font-family:"Times New Roman",serif'>&nbsp;</span></p>
-                  <p class=TableParagraph style='margin-top:0in;margin-right:9.4pt;margin-bottom:
-                     0in;margin-left:10.85pt;margin-bottom:.0001pt;text-align:justify;line-height:
-                     11.5pt'><span style='font-size:9.0pt;letter-spacing:-.5pt'>U</span><span
-                     style='font-size:9.0pt'> <span style='letter-spacing:-.5pt'>N</span> <span
-                     style='letter-spacing:-.5pt'>I</span><span style='letter-spacing:2.0pt'> </span><span
-                     style='letter-spacing:-.5pt'>T</span></span></p>
-               </td>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.2pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.25pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>15</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph style='margin-top:.25pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:1.8pt;margin-bottom:.0001pt;line-height:9.25pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>cover<span
-                     style='letter-spacing:.3pt'> </span>unit,<span style='letter-spacing:.15pt'> </span>pastikan<span
-                     style='letter-spacing:.2pt'> </span>bersih,<span style='letter-spacing:.15pt'>
-                     </span>skrup<span style='letter-spacing:.3pt'> </span>masih<span
-                        style='letter-spacing:.25pt'> </span>lengkap<span style='letter-spacing:.3pt'>
-                     </span>dan<span style='letter-spacing:.3pt'> </span>tidak<span
-                        style='letter-spacing:.15pt'> </span>ada<span style='letter-spacing:.3pt'> </span>kerusakan<span
-                        style='letter-spacing:.15pt'> </span>pada<span style='letter-spacing:.3pt'> </span>cover<span
-                        style='letter-spacing:.25pt'> </span><span style='letter-spacing:-.2pt'>unit</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.25pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.5pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q15}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="2" rowspan="2"
+                    style="width:78.82pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:4.5pt; margin-left:11.95pt; font-size:7.5pt"><span
+                            style="font-weight:bold">Temperature</span><span
+                            style="font-weight:bold; letter-spacing:0.1pt"> </span><span
+                            style="font-weight:bold">(</span><span style="font-weight:bold; letter-spacing:0.2pt">
+                        </span><span style="font-weight:bold">C</span><span
+                            style="font-weight:bold; letter-spacing:0.2pt"> </span><span
+                            style="font-weight:bold">)</span></p>
+                </td>
+                <td rowspan="2" style="width:38.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td rowspan="2" style="width:38.35pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td rowspan="2"
+                    style="width:39.38pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>23.</span><span style="letter-spacing:-0.05pt"> </span><span>Cek</span><span
+                            style="letter-spacing:0.05pt"> </span><span>Kapasitor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>motor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>fan</span><span style="letter-spacing:0.1pt">
+                        </span><span>kondensor</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>16</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>kondisi<span
-                     style='letter-spacing:.3pt'> </span>fin<span style='letter-spacing:.3pt'> </span>kondensor,<span
-                     style='letter-spacing:.2pt'> </span>pastikan<span style='letter-spacing:.15pt'>
-                     </span>tidak<span style='letter-spacing:.2pt'> </span>kotor<span
-                        style='letter-spacing:.3pt'> </span>dan<span style='letter-spacing:.3pt'> </span>tidak<span
-                        style='letter-spacing:.2pt'> </span>rusak<span style='letter-spacing:.15pt'> </span>(cleaning<span
-                        style='letter-spacing:.2pt'> </span>jika<span style='letter-spacing:.3pt'> </span><span
-                        style='letter-spacing:-.1pt'>kotor)</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q16}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>24.</span><span style="letter-spacing:-0.1pt"> </span><span>Test</span><span
+                            style="letter-spacing:0.05pt"> </span><span>running : pastikan tidak ada</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>suara</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>atau</span><span style="letter-spacing:0.05pt">
+                        </span><span>vibrasi</span><span style="letter-spacing:-0.05pt"> </span><span>yang</span><span
+                            style="letter-spacing:0.05pt"> </span><span>abnormal</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>17</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>kondisi<span
-                     style='letter-spacing:.25pt'> </span>fan<span style='letter-spacing:.3pt'> </span>outdoor,<span
-                     style='letter-spacing:.15pt'> </span>pastikan<span style='letter-spacing:
-                     .3pt'> </span>terpasang<span style='letter-spacing:.15pt'> </span>dengan<span
-                     style='letter-spacing:.2pt'> </span>baik,<span style='letter-spacing:.15pt'> </span>tidak<span
-                     style='letter-spacing:.15pt'> </span>kotor<span style='letter-spacing:.3pt'> </span>&amp;<span
-                     style='letter-spacing:.05pt'> </span>tidak<span style='letter-spacing:.2pt'> </span>rusak<span
-                     style='letter-spacing:.15pt'> </span>(cleaning<span style='letter-spacing:
-                     .15pt'> </span>jika<span style='letter-spacing:.3pt'> </span><span
-                     style='letter-spacing:-.1pt'>kotor)</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q17}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="2" rowspan="2"
+                    style="width:78.82pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:4.5pt; margin-left:18.2pt; font-size:7.5pt"><span
+                            style="font-weight:bold">Pressure</span><span
+                            style="font-weight:bold; letter-spacing:0.25pt"> </span><span
+                            style="font-weight:bold">(Psi)</span></p>
+                </td>
+                <td rowspan="2" style="width:38.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td rowspan="2" style="width:38.35pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td rowspan="2"
+                    style="width:39.38pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>25.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek ampere</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>kompressor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>dan sesuaikan</span><span
+                            style="letter-spacing:0.05pt"> </span><span>dengan kapasitas</span><span
+                            style="letter-spacing:0.05pt"> </span><span>di</span><span style="letter-spacing:-0.05pt">
+                        </span><span>nameplate</span><span style="letter-spacing:-0.05pt"> </span><span>unit</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>18</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.2pt'> </span>putaran<span
-                     style='letter-spacing:.25pt'> </span>fan<span style='letter-spacing:.25pt'> </span>outdoor,<span
-                     style='letter-spacing:.25pt'> </span>pastikan<span style='letter-spacing:
-                     .25pt'> </span>aliran<span style='letter-spacing:.35pt'> </span>udara<span
-                     style='letter-spacing:.35pt'> </span>pada<span style='letter-spacing:.25pt'> </span>kondensor<span
-                     style='letter-spacing:.25pt'> </span><span style='letter-spacing:-.1pt'>lancar</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q18}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>26.</span><span style="letter-spacing:-0.1pt"> </span><span>Cek ampere</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>motor</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>fan</span><span style="letter-spacing:0.05pt">
+                        </span><span>kondensor,</span><span style="letter-spacing:-0.05pt">
+                        </span><span>pastikan</span><span style="letter-spacing:0.05pt">
+                        </span><span>kapasitasnya</span><span style="letter-spacing:-0.1pt"> </span><span>sesuai
+                            nameplate</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>19</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>Insulasi<span
-                     style='letter-spacing:.2pt'> </span>pipa,<span style='letter-spacing:.15pt'> </span>pastikan<span
-                     style='letter-spacing:.3pt'> </span>semua<span style='letter-spacing:.3pt'> </span>pipa<span
-                     style='letter-spacing:.2pt'> </span>terinsulasi,<span style='letter-spacing:
-                     .15pt'> </span>tidak<span style='letter-spacing:.2pt'> </span>ada<span
-                     style='letter-spacing:.3pt'> </span>yang<span style='letter-spacing:.15pt'> </span>rusak<span
-                     style='letter-spacing:.2pt'> </span>atau<span style='letter-spacing:.2pt'> </span><span
-                     style='letter-spacing:-.1pt'>kondensasi</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q19}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="2" rowspan="2"
+                    style="width:78.82pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:4.5pt; margin-left:21.55pt; font-size:7.5pt"><span
+                            style="font-weight:bold">Ampere</span><span style="font-weight:bold; letter-spacing:0.15pt">
+                        </span><span style="font-weight:bold">(A)</span></p>
+                </td>
+                <td rowspan="2"
+                    style="width:38.85pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td rowspan="2"
+                    style="width:38.35pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td rowspan="2"
+                    style="width:39.38pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="6"
+                    style="width:237.98pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.65pt; margin-left:1.05pt; font-size:6pt">
+                        <span>27.</span><span style="letter-spacing:-0.15pt"> </span><span>Cek</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>tekanan kompressor</span><span
+                            style="letter-spacing:-0.1pt"> </span><span>disesuaikan dengan</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>tipe</span><span style="letter-spacing:-0.1pt">
+                        </span><span>referigerant</span>
+                    </p>
+                </td>
+                <td style="width:26.85pt; border-style:solid; border-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:10.25pt; line-height:8.25pt"><span
+                            style="font-size:7pt">OK</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-style:solid; border-width:0.75pt 1.5pt 0.75pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>20</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>kebocoran<span
-                     style='letter-spacing:.2pt'> </span>refrigerant,<span style='letter-spacing:
-                     .2pt'> </span>pastikan<span style='letter-spacing:.3pt'> </span>tidak<span
-                     style='letter-spacing:.2pt'> </span>ada<span style='letter-spacing:.35pt'> </span>oli<span
-                     style='letter-spacing:.3pt'> </span>di<span style='letter-spacing:.2pt'> </span>area<span
-                     style='letter-spacing:.3pt'> </span>kondensor<span style='letter-spacing:
-                     .2pt'> </span>dan<span style='letter-spacing:.2pt'> </span>sambungan<span
-                     style='letter-spacing:.3pt'> </span><span style='letter-spacing:-.2pt'>pipa</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.35pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:1.95pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:8.75pt'><span style='font-size:7.5pt'>Tdk.<span
-                     style='letter-spacing:-.35pt'> </span><span style='letter-spacing:-.1pt'>Bocor</span></span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q20}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9pt">
+                <td colspan="6"
+                    style="width:237.98pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td
+                    style="width:26.85pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td
+                    style="width:21.12pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>21</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Kencangkan<span style='letter-spacing:.2pt'> </span>semua<span
-                     style='letter-spacing:.35pt'> </span>koneksi<span style='letter-spacing:.25pt'>
-                     </span>kabel<span style='letter-spacing:.35pt'> </span>pada<span
-                        style='letter-spacing:.2pt'> </span>terminal<span style='letter-spacing:.25pt'>
-                     </span>outdoor<span style='letter-spacing:.35pt'> </span><span
-                        style='letter-spacing:-.2pt'>unit</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q21}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:11.6pt">
+                <td colspan="13" style="width:488.1pt; vertical-align:top; background-color:#000000">
+                    <p class="TableParagraph"
+                        style="margin-top:0.6pt; margin-right:194.55pt; margin-left:196.4pt; text-align:center; font-size:7pt">
+                        <span style="font-family:Arial; font-weight:bold; color:#ffffff">DOKUMENTASI</span><span
+                            style="font-family:Arial; font-weight:bold; letter-spacing:-0.35pt; color:#ffffff">
+                        </span><span style="font-family:Arial; font-weight:bold; color:#ffffff">BEFORE</span><span
+                            style="font-family:Arial; font-weight:bold; letter-spacing:-0.25pt; color:#ffffff">
+                        </span><span style="font-family:Arial; font-weight:bold; color:#ffffff">PM</span>
+                    </p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>22</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.2pt'> </span>Kapasitor<span
-                     style='letter-spacing:.2pt'> </span><span style='letter-spacing:-.1pt'>kompressor</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q22}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.05pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:77.8pt; line-height:8.1pt"><span
+                            style="font-size:7.5pt; font-weight:bold">PARAMETER</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.35pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">(BEFORE</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.35pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">PM)</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:69.5pt; line-height:8.1pt"><span
+                            style="font-size:7.5pt; font-weight:bold">KONDISI</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.35pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">KOMPONEN</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.25pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">(BEFORE</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.3pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">PM)</span></p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>23</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>Kapasitor<span
-                     style='letter-spacing:.15pt'> </span>motor<span style='letter-spacing:.25pt'>
-                     </span>fan<span style='letter-spacing:.25pt'> </span><span style='letter-spacing:
-                        -.1pt'>kondensor</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q23}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:12.75pt">
+                <td colspan="2"
+                    style="width:78.45pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:14.7pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Temperature</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">(</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.15pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">C</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.15pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">)</span></p>
+                </td>
+                <td colspan="2"
+                    style="width:77.2pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:20.2pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Pressure</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.35pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">(Psi)</span></p>
+                </td>
+                <td colspan="2"
+                    style="width:78.45pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:24.2pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Ampere</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.3pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">(A)</span></p>
+                </td>
+                <td style="width:77.9pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:27.4pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Coil</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">Evap</span></p>
+                </td>
+                <td colspan="3"
+                    style="width:77.65pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:19.05pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Coil</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.4pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">Condensor</span></p>
+                </td>
+                <td colspan="3" rowspan="2"
+                    style="width:90.2pt; border-top-style:solid; border-top-width:1.5pt; border-right-style:solid; border-right-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:32.55pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Bak</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.2pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">Drain</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.45pt; font-size:9.5pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:29.65pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>24</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Test<span style='letter-spacing:.3pt'> </span>running,<span
-                     style='letter-spacing:.25pt'> </span>pastikan<span style='letter-spacing:
-                     .25pt'> </span>tidak<span style='letter-spacing:.2pt'> </span>ada<span
-                     style='letter-spacing:.35pt'> </span>suara<span style='letter-spacing:.35pt'>
-                     </span>atau<span style='letter-spacing:.2pt'> </span>vibrasi<span
-                        style='letter-spacing:.25pt'> </span>yang<span style='letter-spacing:.25pt'> </span><span
-                        style='letter-spacing:-.1pt'>abnormal</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q24}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:74.2pt">
+                <td
+                    style="width:75.78pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.25pt; font-size:15pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-right:20.15pt; margin-left:22.7pt; text-align:center"><span
+                            style="color:#006fc0">IMAGE</span></p>
+                </td>
+                <td
+                    style="width:2.3pt; border-right-style:solid; border-right-width:0.75pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="2"
+                    style="width:77.95pt; border-style:solid; border-width:0.75pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.25pt; font-size:15pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:23.95pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
+                <td colspan="2"
+                    style="width:79.2pt; border-style:solid double solid solid; border-width:0.75pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.25pt; font-size:15pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:24.55pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
+                <td
+                    style="width:78.65pt; border-style:solid double; border-width:0.75pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.25pt; font-size:15pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:23.9pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
+                <td colspan="3"
+                    style="width:78.4pt; border-style:solid solid solid double; border-width:0.75pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.45pt; font-size:14.5pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:23.8pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>25</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.2pt'> </span>ampere<span
-                     style='letter-spacing:.3pt'> </span>kompressor<span style='letter-spacing:
-                     .25pt'> </span>dan<span style='letter-spacing:.2pt'> </span>sesuaikan<span
-                     style='letter-spacing:.25pt'> </span>dengan<span style='letter-spacing:.3pt'>
-                     </span>kapasitas<span style='letter-spacing:.25pt'> </span>di<span
-                        style='letter-spacing:.3pt'> </span>nameplate<span style='letter-spacing:
-                        .2pt'> </span><span style='letter-spacing:-.2pt'>unit</span></span>
-                  </p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q25}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:12.8pt">
+                <td colspan="13" style="width:488.1pt; vertical-align:top; background-color:#000000">
+                    <p class="TableParagraph"
+                        style="margin-top:1.75pt; margin-right:194.55pt; margin-left:196.4pt; text-align:center; font-size:7pt">
+                        <span style="font-family:Arial; font-weight:bold; color:#ffffff">DOKUMENTASI</span><span
+                            style="font-family:Arial; font-weight:bold; letter-spacing:-0.35pt; color:#ffffff">
+                        </span><span style="font-family:Arial; font-weight:bold; color:#ffffff">AFTER</span><span
+                            style="font-family:Arial; font-weight:bold; letter-spacing:-0.35pt; color:#ffffff">
+                        </span><span style="font-family:Arial; font-weight:bold; color:#ffffff">PM</span>
+                    </p>
+                </td>
             </tr>
-            <tr style='height:10.1pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>26</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:9.15pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.2pt'> </span>ampere<span
-                     style='letter-spacing:.3pt'> </span>motor<span style='letter-spacing:.2pt'> </span>fan<span
-                     style='letter-spacing:.2pt'> </span>kondensor<span style='letter-spacing:
-                     .2pt'> </span>dan<span style='letter-spacing:.25pt'> </span>sesuaikan<span
-                     style='letter-spacing:.2pt'> </span>dengan<span style='letter-spacing:.3pt'> </span>kapasitas<span
-                     style='letter-spacing:.2pt'> </span>di<span style='letter-spacing:.35pt'> </span>nameplate<span
-                     style='letter-spacing:.2pt'> </span><span style='letter-spacing:-.2pt'>unit</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:9.15pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:10.1pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q26}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:9.05pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:80.1pt; line-height:8.1pt"><span
+                            style="font-size:7.5pt; font-weight:bold">PARAMETER</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.35pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">(AFTER</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.35pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">PM)</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top; background-color:#d9d9d9">
+                    <p class="TableParagraph" style="margin-left:71.8pt; line-height:8.1pt"><span
+                            style="font-size:7.5pt; font-weight:bold">KONDISI</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.3pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">KOMPONEN</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.3pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">(AFTER</span><span
+                            style="font-size:7.5pt; font-weight:bold; letter-spacing:0.35pt"> </span><span
+                            style="font-size:7.5pt; font-weight:bold">PM)</span></p>
+                </td>
             </tr>
-            <tr style='height:9.75pt'>
-               <td width=27 valign=top style='width:20.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:9.75pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.2pt;text-align:
-                     center;line-height:8.8pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>27</span></p>
-               </td>
-               <td width=483 colspan=9 valign=top style='width:361.9pt;border:none;
-                  border-right:solid black 1.0pt;padding:0in 0in 0in 0in;height:9.75pt'>
-                  <p class=TableParagraph style='margin-left:1.8pt;line-height:8.8pt'><span
-                     style='font-size:8.0pt'>Cek<span style='letter-spacing:.15pt'> </span>tekanan<span
-                     style='letter-spacing:.3pt'> </span>kompressor<span style='letter-spacing:
-                     .2pt'> </span>disesuaikan<span style='letter-spacing:.3pt'> </span>dengan<span
-                     style='letter-spacing:.15pt'> </span>tipe<span style='letter-spacing:.2pt'> </span><span
-                     style='letter-spacing:-.1pt'>referigerant</span></span></p>
-               </td>
-               <td width=48 valign=top style='width:35.65pt;border:none;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:9.75pt'>
-                  <p class=TableParagraph align=center style='margin-left:2.0pt;text-align:
-                     center;line-height:8.8pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>OK</span></p>
-               </td>
-               <td width=50 valign=top style='width:37.35pt;border:none;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:9.75pt'>
-                   <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>{{$Acs->q27}}</span></p>    
-                </span></p><
-               </td>
+            <tr style="height:11.7pt">
+                <td colspan="2"
+                    style="width:78.45pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:14.7pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Temperature</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">(</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.15pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">C</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.15pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">)</span></p>
+                </td>
+                <td colspan="2" rowspan="3"
+                    style="width:77.2pt; border-top-style:solid; border-top-width:1.5pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:20.2pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Pressure</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.35pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">(Psi)</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.3pt; font-size:9pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:23.55pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
+                <td colspan="2"
+                    style="width:78.45pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:24.15pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Ampere</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.3pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">(A)</span></p>
+                </td>
+                <td rowspan="3"
+                    style="width:77.9pt; border-top-style:solid; border-top-width:1.5pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top; -aw-border-left:0.75pt thin-thick-medium-gap">
+                    <p class="TableParagraph" style="margin-left:27pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Coil</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.25pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">Evap</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.3pt; font-size:9pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:23.9pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
+                <td colspan="3"
+                    style="width:77.65pt; border-style:solid; border-width:1.5pt 1.5pt 0.75pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:19pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Coil</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.4pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">Condensor</span></p>
+                </td>
+                <td colspan="3" rowspan="3"
+                    style="width:89.45pt; border-top-style:solid; border-top-width:1.5pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top; -aw-border-left:0.75pt thin-thick-medium-gap">
+                    <p class="TableParagraph" style="margin-left:31.8pt; line-height:7.8pt"><span
+                            style="font-size:7pt; font-weight:bold">Bak</span><span
+                            style="font-size:7pt; font-weight:bold; letter-spacing:-0.2pt"> </span><span
+                            style="font-size:7pt; font-weight:bold">Drain</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="font-size:7pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.5pt; font-size:8.5pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:28.9pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
             </tr>
-            <tr style='height:11.8pt'>
-               <td width=109 colspan=3 valign=top style='width:81.55pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid white 1.5pt;
-                  background:black;padding:0in 0in 0in 0in;height:11.8pt'>
-                  <p class=TableParagraph style='margin-left:12.8pt;line-height:10.55pt'><b><span
-                     style='font-size:9.0pt;color:white'>Sub<span style='letter-spacing:-.25pt'> </span><span
-                     style='letter-spacing:-.1pt'>Equipment</span></span></b></p>
-               </td>
-               <td width=114 colspan=3 valign=top style='width:85.8pt;border:none;
-                  border-right:solid white 1.5pt;background:black;padding:0in 0in 0in 0in;
-                  height:11.8pt'>
-                  <p class=TableParagraph style='margin-top:.75pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:21.35pt;margin-bottom:.0001pt'><b><span style='font-size:
-                     8.0pt;font-family:"Arial",sans-serif;color:white'>Indoor<span
-                     style='letter-spacing:.3pt'> </span><span style='letter-spacing:-.2pt'>Unit</span></span></b></p>
-               </td>
-               <td width=420 colspan=7 valign=top style='width:315.15pt;border:none;
-                  border-right:solid black 1.5pt;background:black;padding:0in 0in 0in 0in;
-                  height:11.8pt'>
-                  <p class=TableParagraph align=center style='margin-top:.75pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:1.95pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:8.0pt;font-family:"Arial",sans-serif;
-                     color:white'>Outdoor<span style='letter-spacing:.55pt'> </span><span
-                     style='letter-spacing:-.2pt'>Unit</span></span></b></p>
-               </td>
+            <tr style="height:74.4pt">
+                <td
+                    style="width:75.78pt; border-style:solid; border-width:0.75pt 0.75pt 0.75pt 1.5pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.25pt; font-size:15pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-right:20.15pt; margin-left:22.7pt; text-align:center"><span
+                            style="color:#006fc0">IMAGE</span></p>
+                </td>
+                <td
+                    style="width:1.92pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:0.75pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="2"
+                    style="width:78.45pt; border-style:solid; border-width:0.75pt 1.5pt; vertical-align:top; background-color:#b6dee8; -aw-border-right:0.75pt thick-thin-medium-gap">
+                    <p class="TableParagraph"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.4pt; font-size:15pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:24.15pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
+                <td colspan="3"
+                    style="width:77.65pt; border-style:solid; border-width:0.75pt 1.5pt; vertical-align:top; background-color:#b6dee8; -aw-border-right:0.75pt thick-thin-medium-gap">
+                    <p class="TableParagraph"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.05pt; font-size:15pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-left:24.2pt"><span style="color:#006fc0">IMAGE</span></p>
+                </td>
             </tr>
-            <tr style='height:10.9pt'>
-               <td width=109 colspan=3 valign=top style='width:81.55pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:
-                  solid black 1.0pt;background:#D9D9D9;padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph style='margin-left:21.2pt;line-height:9.9pt'><b><span
-                     style='font-size:9.0pt;color:black;letter-spacing:-.1pt'>Parameter</span></b></p>
-               </td>
-               <td width=114 colspan=3 valign=top style='width:85.8pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  background:#D9D9D9;padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph style='margin-top:.3pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:26.55pt;margin-bottom:.0001pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt;color:black'>Temp (<span style='letter-spacing:.05pt'>
-                     </span>C <span style='letter-spacing:-.5pt'>)</span></span></b>
-                  </p>
-               </td>
-               <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  background:#D9D9D9;padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:1.9pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><b><span style='font-size:8.0pt;color:black'>Suction
-                     Pressure<span style='letter-spacing:-.05pt'> </span><span style='letter-spacing:
-                        -.2pt'>(Psi)</span></span></b>
-                  </p>
-               </td>
-               <td width=109 valign=top style='width:82.1pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  background:#D9D9D9;padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     .9pt;margin-bottom:0in;margin-left:2.8pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><b><span style='font-size:8.0pt;color:black'>Discharge<span
-                     style='letter-spacing:-.1pt'> </span>Pressr.<span style='letter-spacing:-.1pt'>
-                     (Psi)</span></span></b>
-                  </p>
-               </td>
-               <td width=105 colspan=3 valign=top style='width:78.8pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  background:#D9D9D9;padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph style='margin-top:.3pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:3.85pt;margin-bottom:.0001pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt;color:black'>Amp.<span style='letter-spacing:-.1pt'> </span>Compressor<span
-                     style='letter-spacing:-.05pt'> </span><span style='letter-spacing:-.25pt'>(A)</span></span></b></p>
-               </td>
-               <td width=97 colspan=2 valign=top style='width:73.0pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.5pt;
-                  background:#D9D9D9;padding:0in 0in 0in 0in;height:10.9pt'>
-                  <p class=TableParagraph style='margin-top:.3pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:18.05pt;margin-bottom:.0001pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt;color:black'>Voltage<span style='letter-spacing:.25pt'>
-                     </span><span style='letter-spacing:-.25pt'>(V)</span></span></b>
-                  </p>
-               </td>
+            <tr style="height:2.4pt">
+                <td colspan="2"
+                    style="width:78.45pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph" style="font-size:1pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="2"
+                    style="width:78.45pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph" style="font-size:1pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="3"
+                    style="width:77.65pt; border-top-style:solid; border-top-width:0.75pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top; background-color:#b6dee8">
+                    <p class="TableParagraph" style="font-size:1pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=109 colspan=3 valign=top style='width:81.55pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:
-                  solid black 1.0pt;background:#D9D9D9;padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph style='margin-top:.3pt;margin-right:0in;margin-bottom:
-                     0in;margin-left:17.6pt;margin-bottom:.0001pt;line-height:9.6pt'><span
-                     style='font-size:8.0pt;color:black'>Standar<span style='letter-spacing:.2pt'>
-                     </span><span style='letter-spacing:-.1pt'>Cond.</span></span>
-                  </p>
-               </td>
-               <td width=114 colspan=3 valign=top style='width:85.8pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q28);
-                        $firstValue = $values[0];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p></td>
-               <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                    <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q28);
-                        $firstValue = $values[1];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=109 valign=top style='width:82.1pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                    <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q28);
-                        $firstValue = $values[2];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=105 colspan=3 valign=top style='width:78.8pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  
-                     <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q28);
-                        $firstValue = $values[3];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=105 colspan=3 valign=top style='width:78.8pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  
-                     <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q28);
-                        $firstValue = $values[4];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-              
+            <tr style="height:11.6pt">
+                <td colspan="13" style="width:488.1pt; vertical-align:top; background-color:#000000">
+                    <p class="TableParagraph"
+                        style="margin-top:0.6pt; margin-right:194.45pt; margin-left:196.4pt; text-align:center; font-size:7pt">
+                        <span style="font-family:Arial; font-weight:bold; color:#ffffff">CATATAN</span><span
+                            style="font-family:Arial; font-weight:bold; letter-spacing:-0.5pt; color:#ffffff">
+                        </span><span style="font-family:Arial; font-weight:bold; color:#ffffff">TEKNISI</span>
+                    </p>
+                </td>
             </tr>
-            <tr style='height:10.85pt'>
-               <td width=109 colspan=3 valign=top style='width:81.55pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:solid black 1.0pt;border-right:
-                  solid black 1.0pt;background:#D9D9D9;padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.25pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:1.75pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;color:black;
-                     letter-spacing:-.1pt'>Before</span></p>
-               </td>
-               <td width=114 colspan=3 valign=top style='width:85.8pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q29);
-                        $firstValue = $values[0];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=108 valign=top style='width:81.25pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q29);
-                        $firstValue = $values[1];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=109 valign=top style='width:82.1pt;border-top:none;border-left:
-                  none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q29);
-                        $firstValue = $values[2];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=105 colspan=3 valign=top style='width:78.8pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q29);
-                        $firstValue = $values[3];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=105 colspan=3 valign=top style='width:78.8pt;border-top:none;
-                  border-left:none;border-bottom:solid black 1.0pt;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:10.85pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q29);
-                        $firstValue = $values[4];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.15pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:1.15pt; line-height:8.15pt"><span
+                            style="font-size:7.5pt">Temuan</span><span style="font-size:7.5pt; letter-spacing:0.25pt">
+                        </span><span style="font-size:7.5pt">Saat</span><span
+                            style="font-size:7.5pt; letter-spacing:0.15pt"> </span><span
+                            style="font-size:7.5pt">PM</span><span style="font-size:7.5pt; letter-spacing:0.2pt">
+                        </span><span style="font-size:7.5pt">:</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="margin-left:1.6pt; line-height:8.15pt"><span
+                            style="font-size:7.5pt">Rekomendasi</span><span
+                            style="font-size:7.5pt; letter-spacing:0.35pt"> </span><span
+                            style="font-size:7.5pt">:</span></p>
+                </td>
             </tr>
-            <tr style='height:11.35pt'>
-               <td width=109 colspan=3 valign=top style='width:81.55pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.0pt;
-                  background:#D9D9D9;padding:0in 0in 0in 0in;height:11.35pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     .1pt;margin-bottom:0in;margin-left:1.75pt;margin-bottom:.0001pt;text-align:
-                     center'><span style='font-size:8.0pt;color:black;letter-spacing:-.1pt'>After</span></p>
-               </td>
-               <td width=114 colspan=3 valign=top style='width:85.8pt;border:none;
-                  border-right:solid black 1.0pt;padding:0in 0in 0in 0in;height:11.35pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q30);
-                        $firstValue = $values[0];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=108 valign=top style='width:81.25pt;border:none;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:11.35pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q30);
-                        $firstValue = $values[1];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=109 valign=top style='width:82.1pt;border:none;border-right:solid black 1.0pt;
-                  padding:0in 0in 0in 0in;height:11.35pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q30);
-                        $firstValue = $values[2];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=105 colspan=3 valign=top style='width:78.8pt;border:none;
-                  border-right:solid black 1.0pt;padding:0in 0in 0in 0in;height:11.35pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q30);
-                        $firstValue = $values[3];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
-               <td width=105 colspan=3 valign=top style='width:78.8pt;border:none;
-                  border-right:solid black 1.0pt;padding:0in 0in 0in 0in;height:11.35pt'>
-                  <p class=TableParagraph align=center style='margin-top:.3pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.0pt;margin-bottom:.0001pt;text-align:
-                     center;line-height:9.6pt'><span style='font-size:8.0pt;letter-spacing:-.25pt'>
-                     
-                     @php
-                        $values = explode(',', $Acs->q30);
-                        $firstValue = $values[4];
-                        echo $firstValue;
-                     @endphp
-                     
-                  </span></p>    
-                </span></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:12.55pt'>
-               <td width=643 colspan=13 valign=top style='width:482.5pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
-                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
-                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>NOTES</span></b></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:68.75pt'>
-               <td width=331 colspan=7 valign=top style='width:248.6pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:68.75pt'>
-                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt'>Temuan<span style='letter-spacing:.15pt'> </span><span
-                     style='letter-spacing:-.5pt'>: {{$Acs->temuan}}</span></span></b></p>
-               </td>
-               <td width=312 colspan=6 valign=top style='width:233.9pt;border:none;
-                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:68.75pt'>
-                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt'>Rekomendasi<span style='letter-spacing:.3pt'> </span><span
-                     style='letter-spacing:-.5pt'>: {{$Acs->rekomendasi}}</span></span></b></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-        <tr style='height:12.55pt'>
-               <td width=600 colspan=13 valign=top style='width:482.5pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
-                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
-                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>APPROVAL</span></b></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-        <tr style='height:12.55pt'>
-               <td width=300 colspan=6 valign=top style='width:482.5pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
-                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
-                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>CREATED BY</span></b></p>
-               </td>
-               <td width=300 colspan=7 valign=top style='width:482.5pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
-                  background:black;padding:0in 0in 0in 0in;height:12.55pt'>
-                  <p class=TableParagraph align=center style='margin-top:.4pt;margin-right:
-                     0in;margin-bottom:0in;margin-left:2.1pt;margin-bottom:.0001pt;text-align:
-                     center'><b><span style='font-size:8.0pt;color:white;letter-spacing:-.1pt'>APPROVAL STATUS</span></b></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-            <tr style='height:68.75pt'>
-               <td width=331 colspan=7 valign=top style='width:248.6pt;border-top:none;
-                  border-left:solid black 1.5pt;border-bottom:none;border-right:solid black 1.5pt;
-                  padding:0in 0in 0in 0in;height:68.75pt'>
-                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt'>Created By<span style='letter-spacing:.15pt'> </span><span
-                     style='letter-spacing:-.5pt'>: {{$Acs->created_by}}</span></span></b></p>
-                  <p class=TableParagraph style='margin-left:1.4pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt'>Completed Date <span style='letter-spacing:.15pt'> </span><span
-                     style='letter-spacing:-.5pt'>: {{$Acs->date_completed}}</span></span></b></p>
-               </td>
-               <td width=312 colspan=6 valign=top style='width:233.9pt;border:none;
-                  border-right:solid black 1.5pt;padding:0in 0in 0in 0in;height:68.75pt'>
-                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt'>Status Approval<span style='letter-spacing:.3pt'> </span><span
-                     style='letter-spacing:-.5pt'>: {{$history->approval}}</span></span></b></p>
-                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt'>Approved By<span style='letter-spacing:.3pt'> </span><span
-                     style='letter-spacing:-.5pt'>: {{$Acs->approved_by}}</span></span></b></p>
-                  <p class=TableParagraph style='margin-left:1.45pt;line-height:9.6pt'><b><span
-                     style='font-size:8.0pt'>Approved Date<span style='letter-spacing:.3pt'> </span><span
-                     style='letter-spacing:-.5pt'>: {{$Acs->approved_date}}</span></span></b></p>
-               </td>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
             </tr>
-    </td>
-</tr>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+            </tr>
+            <tr style="height:9.3pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom:0.75pt solid #ffffff; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+            </tr>
+            <tr style="height:9.4pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+                <td colspan="7"
+                    style="width:248pt; border-top:0.75pt solid #ffffff; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                </td>
+            </tr>
+            <tr style="height:11.6pt">
+                <td colspan="13" style="width:488.1pt; vertical-align:top; background-color:#000000">
+                    <p class="TableParagraph"
+                        style="margin-top:0.6pt; margin-right:194.5pt; margin-left:196.4pt; text-align:center; font-size:7pt">
+                        <span style="font-family:Arial; font-weight:bold; color:#ffffff">APPROVAL</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:49.4pt">
+                <td colspan="6"
+                    style="width:237.1pt; border-right-style:solid; border-right-width:1.5pt; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph"
+                        style="margin-top:0.45pt; margin-right:38.9pt; margin-left:1pt; line-height:138%; font-size:6pt">
+                        <span>Created by</span><span style="letter-spacing:-0.05pt"> </span><span>Team
+                            Leader</span><span style="letter-spacing:-0.1pt"> </span><span>:</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>FULAN</span><span
+                            style="width:39.34pt; font-family:'Times New Roman'; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:120.55pt">&#xa0;</span><span>Rev.
+                            &amp; Aprv. by SPV : FULAN</span><span style="letter-spacing:0.05pt"> </span><span>Created
+                            Date</span><span style="letter-spacing:-0.05pt"> </span><span>: DD/MM/YYYY</span><span
+                            style="width:26.74pt; font-family:'Times New Roman'; display:inline-block">&#xa0;</span><span>Approval</span><span
+                            style="letter-spacing:0.05pt"> </span><span>Date :</span><span
+                            style="letter-spacing:0.05pt"> </span><span>DD/MM/YYYY</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:0.45pt; font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.05pt; margin-left:10.4pt; font-size:7.5pt"><span
+                            style="vertical-align:1pt; color:#ff0000">SIGNED</span><span
+                            style="width:93.92pt; font-family:'Times New Roman'; vertical-align:1pt; display:inline-block; -aw-tabstop-align:left; -aw-tabstop-pos:127.5pt">&#xa0;</span><span
+                            style="color:#ff0000">SIGNED</span></p>
+                </td>
+                <td colspan="2"
+                    style="width:118.88pt; border-right:0.75pt solid #ffffff; border-left-style:solid; border-left-width:1.5pt; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.45pt; margin-left:1.45pt; font-size:6pt">
+                        <span>Customer</span><span style="letter-spacing:-0.05pt"> </span><span>Notes</span><span
+                            style="letter-spacing:0.05pt"> </span><span>:</span>
+                    </p>
+                </td>
+                <td colspan="5"
+                    style="width:128.38pt; border-right-style:solid; border-right-width:1.5pt; border-left:0.75pt solid #ffffff; border-bottom-style:solid; border-bottom-width:1.5pt; vertical-align:top">
+                    <p class="TableParagraph" style="margin-top:0.45pt; margin-left:1.35pt; font-size:6pt">
+                        <span>PIC</span><span style="letter-spacing:-0.05pt"> </span><span>Customer</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>:</span>
+                    </p>
+                    <p class="TableParagraph" style="margin-top:2.8pt; margin-left:1.35pt; font-size:6pt">
+                        <span>Sign</span><span style="letter-spacing:0.05pt"> </span><span>Cust.</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>Date</span><span
+                            style="letter-spacing:-0.05pt"> </span><span>:</span>
+                    </p>
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.5pt; font-size:6pt"><span
+                            style="font-family:'Times New Roman'; -aw-import:ignore">&#xa0;</span></p>
+                    <p class="TableParagraph" style="margin-top:0.05pt; margin-left:41.3pt; font-size:7.5pt">
+                        <span>(</span><span
+                            style="width:69.13pt; font-family:'Lucida Console'; text-decoration:underline; display:inline-block; -aw-font-family:'Times New Roman'; -aw-tabstop-align:left; -aw-tabstop-pos:112.7pt">&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;&#xa0;</span><span>)</span>
+                    </p>
+                </td>
+            </tr>
+            <tr style="height:0pt">
+                <td style="width:76.9pt"></td>
+                <td style="width:3.05pt"></td>
+                <td style="width:39.6pt"></td>
+                <td style="width:39.1pt"></td>
+                <td style="width:40.5pt"></td>
+                <td style="width:39.45pt"></td>
+                <td style="width:79.4pt"></td>
+                <td style="width:40.6pt"></td>
+                <td style="width:19.85pt"></td>
+                <td style="width:18.7pt"></td>
+                <td style="width:41.1pt"></td>
+                <td style="width:27.6pt"></td>
+                <td style="width:22.25pt"></td>
+            </tr>
+        </table>
+    </div>
+</body>
 
-         
-            
-         </table>
-      </div>
-   <style>
-    .page-break {
-      page-break-before: always;
-    }
-  </style>
-<div class="page-break"></div>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <tr>
-    <td style="background-color: black; color: #fff; text-align: center; border: solid black 1pt;" colspan="4"><b>Foto Equipment</b></td>
-  </tr>
-  <tr style="height: 11pt">
-    <td style="width: 5%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">No</p>
-    </td>
-    <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Gambar</p>
-    </td>
-    <td style="width: 50%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Info</p>
-    </td>
-    <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Keterangan</p>
-    </td>
-  </tr>
-  @php
-  $no = 1;
-  @endphp
-  @foreach($gambar as $g1)
-  <tr style="height: 11pt">
-    <td style="width: 5%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$no++}}</p>
-    </td>
-    <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0;">
-        <img width="200" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar/') . $g1->gambar)) }}" />
-      </p>
-    </td>
-    <td style="width: 15%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$g1->info}}</p>
-    </td>
-    <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$g1->keterangan}}</p>
-    </td>
-  </tr>
-  @endforeach
-</table>
-
-<table style="width: 100%; border-collapse: collapse;">
-  <tr>
-    <td style="background-color: black; color: #fff; text-align: center; border: solid black 1pt;" colspan="4"><b>Foto Parameter</b></td>
-  </tr>
-  <tr style="height: 11pt">
-    <td style="width: 5%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">No</p>
-    </td>
-    <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Gambar</p>
-    </td>
-    <td style="width: 50%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Info</p>
-    </td>
-    <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 9pt;">Keterangan</p>
-    </td>
-  </tr>
-  @php
-  $no = 1;
-  @endphp
-  @foreach($gambar2 as $g2)
-  <tr style="height: 11pt">
-    <td style="width: 5%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$no++}}</p>
-    </td>
-    <td style="width: 70%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0;">
-        <img width="200" src="data:image/png;base64,{{ base64_encode(file_get_contents(public_path('gambar2/') . $g2->gambar)) }}" />
-      </p>
-    </td>
-    <td style="width: 15%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$g2->info}}</p>
-    </td>
-    <td style="width: 10%; border: solid black 1pt; padding: 5px; text-align: center;">
-      <p class="TableParagraph" style="margin: 0; font-size: 12pt; font-family: 'Times New Roman', serif;">{{$g2->keterangan}}</p>
-    </td>
-  </tr>
-  @endforeach
-</table>
-
-   </body>
 </html>

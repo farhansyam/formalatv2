@@ -73,6 +73,16 @@
                 <span class="hide-menu">{{auth()->user()->role_sipm}}</span></span>
               </a>
             </li>
+           @if(auth()->user()->role_sipm == 'spv' || auth()->user()->role_sipm == 'team_lead')
+            <li class="sidebar-item">
+              <a class="sidebar-link" href="{{route('akun.signindex')}}" aria-expanded="false">
+                <span>
+                  <i class="ti ti-pencil"></i>
+                </span>
+                <span class="hide-menu">Signature</span>
+              </a>
+            </li>
+            @endif
             <li class="sidebar-item">
               <a class="sidebar-link" href="{{route('dashboard')}}" aria-expanded="false">
                 <span>

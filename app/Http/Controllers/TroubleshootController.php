@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Dompdf\Dompdf;
+use Dompdf\Options;
+use App\Models\Akun;
 use App\Models\History;
 use App\Models\Equipment;
 use App\Models\GambarAct;
@@ -63,8 +65,11 @@ class TroubleshootController extends Controller
             'brand' => $request->brand, // Pastikan field ini ada di $request
             'serial' => $request->serial, // Pastikan field ini ada di $request
 
+            'jenis_survey' => $request->jenis_survey, // Pastikan field ini ada di $request
+            'defect_type' => $request->defect_type, // Pastikan field ini ada di $request
             'rekomendasi_teknisi_lapangan' => $request->rekomendasi_teknisi_lapangan, // Pastikan field ini ada di $request
             'tindakan' => $request->tindakan, // Pastikan field ini ada di $request
+            'tindak_lanjut' => $request->tindak_lanjut, // Pastikan field ini ada di $request
             'tahun_install' => $request->tahun_install, // Pastikan field ini ada di $request
             'deskripsi' => $request->deskripsi, // Pastikan field ini ada di $request
             'tahun_pembuatan' => $request->tahun_pembuatan, // Pastikan field ini ada di $request
@@ -122,6 +127,8 @@ class TroubleshootController extends Controller
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
                     'type' => 'TS',
+                    'keterangan2' => $request->keterangan2[$index],
+
                 ]);
             }
         }
@@ -134,9 +141,10 @@ class TroubleshootController extends Controller
                     'id_act' => $formBeritaAcara->id,
                     'id_equipement' => $request->id_equipment,
                     'gambar' => $gambarname2,
-                    'keterangan' => $request->keterangangambar2[$index],
-                    'info' => $request->info2[$index],
+                    'keterangan' => $request->keterangangambar2[$index2],
+                    'info' => $request->info2[$index2],
                     'type' => 'TS',
+                    'keterangan2' => $request->keterangan22[$index2],
 
                 ]);
             }
@@ -201,6 +209,8 @@ class TroubleshootController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+
         // Validasi input dari form
         $beritaacara = ServiceReport::find($id);
         // Lakukan multiple insert ke listkebutuhanberitaacara
@@ -265,6 +275,7 @@ class TroubleshootController extends Controller
             $request->all(),
             'date_completed' => $request->status == 'Completed' ? date('Y-m-d') : null
         ]);
+
         if ($request->file('gambar')) {
             foreach ($request->file('gambar') as $index => $gambar) {
                 $gambarname = time() . '_' . $index . '.' . $gambar->getClientOriginalExtension();
@@ -277,6 +288,7 @@ class TroubleshootController extends Controller
                     'keterangan' => $request->keterangangambar[$index],
                     'info' => $request->info[$index],
                     'type' => 'TS',
+                    'keterangan2' => $request->keterangan2[$index],
 
                 ]);
             }
@@ -293,6 +305,8 @@ class TroubleshootController extends Controller
                     'keterangan' => $request->keterangangambar2[$index2],
                     'info' => $request->info2[$index2],
                     'type' => 'TS',
+                    'keterangan2' => $request->keterangan22[$index],
+
 
                 ]);
             }
@@ -317,40 +331,58 @@ class TroubleshootController extends Controller
 
     public function print($id)
     {
-        $history = History::find($id);
-        $ServiceReport = ServiceReport::find($history->id_act);
-        $list = ListKebutuhanBeritaAcara::where('type', 'FormserviceReport')->where('id_beritaacara', $history->id_act)->get();
-        $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'TS')->get();
-        $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'TS')->get();
-        $equipment = Equipment::find($history->id_equipment);
-        // Render view blade dengan gambar QR
-        $pdfContent = view('pdf.troubleshoot', ['history' => $history, 'ServiceReport' => $ServiceReport, 'list' => $list, 'gambar' => $gambar, 'gambar2' => $gambar2, 'equipment' => $equipment])->render();
+        try {
+            $history = History::find($id);
+            if (!$history) {
+                throw new \Exception("History with ID $id not found.");
+            }
 
-        // Buat objek DOMPDF
-        $dompdf = new Dompdf();
+            $ServiceReport = ServiceReport::find($history->id_act);
+            if (!$ServiceReport) {
+                throw new \Exception("Service Report not found for ID $history->id_act.");
+            }
 
-        // Muat konten PDF
-        $dompdf->loadHtml($pdfContent);
+            $list = ListKebutuhanBeritaAcara::where('type', 'FormserviceReport')
+                ->where('id_beritaacara', $history->id_act)
+                ->get();
+            $spv = Akun::where('name', $ServiceReport->approved_by)->first();
+            $teamlead = Akun::where('name', $ServiceReport->created_by)->first();
+            $gambar = GambarAct::where('id_act', $history->id_act)->where('type', 'TS')->get();
+            $gambar2 = GambarAct2::where('id_act', $history->id_act)->where('type', 'TS')->get();
+            $equipment = Equipment::find($history->id_equipment);
 
-        // Set ukuran dan orientasi dokumen
-        $dompdf->setPaper('A4', 'landscape');
+            $pdfContent = view('pdf.troubleshoot', compact(
+                'teamlead',
+                'spv',
+                'history',
+                'ServiceReport',
+                'list',
+                'gambar',
+                'gambar2',
+                'equipment'
+            ))->render();
 
-        // Render PDF
-        $dompdf->render();
-        $formattedDate = \Carbon\Carbon::parse($ServiceReport->tanggal_survey)->format('dmy');
+            $options = new Options();
+            $options->set('defaultFont', 'Courier');
+            $options->set('isHtml5ParserEnabled', true);
+            $options->set('isRemoteEnabled', true);
 
-        // Menghasilkan nama file unik
-        $filename = $history->type . $formattedDate . ' ' . $equipment->area . ' ' . '-' . ' ' . $equipment->id_combine . '.pdf';
+            $dompdf = new Dompdf($options);
+            $dompdf->loadHtml($pdfContent);
+            $dompdf->setPaper('A3', 'portrait'); // Disarankan pakai ukuran konsisten
+            $dompdf->render();
 
-        // Simpan PDF ke server sementara
-        // Simpan PDF ke folder public
-        $pdfFilePath = public_path($filename);
-        file_put_contents($pdfFilePath, $dompdf->output());
+            $formattedDate = \Carbon\Carbon::parse($ServiceReport->tanggal_survey)->format('dmy');
+            $filename = "{$history->type}{$formattedDate} {$equipment->area} - {$equipment->id_combine}.pdf";
+            $pdfFilePath = public_path($filename);
 
-        // Tautan untuk membuka pratinjau PDF di tab baru
-        $previewLink = route('pdf.preview', ['filename' => $filename]);
+            file_put_contents($pdfFilePath, $dompdf->output());
 
-        // Redirect ke pratinjau PDF
-        return redirect()->away($previewLink);
+            return redirect()->away(route('pdf.preview', ['filename' => $filename]));
+        } catch (\Throwable $e) {
+            // Log error dan tampilkan pesan kesalahan
+            \Log::error("Error generating PDF: " . $e->getMessage());
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 }

@@ -9,6 +9,7 @@ class Equipment extends Model
 {
     use HasFactory;
     protected $table = 'equipments';
+    protected $guarded = [];
 
     public function customer()
     {

@@ -8,6 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class ServiceReport extends Model
 {
     protected $fillable = [
+        'created_by',
+        'approved_by',
+        'approved_date',
+        'date_completed',
+        'id_equipment',
         'id_equipment',
         'customer',
         'no_kontak',
