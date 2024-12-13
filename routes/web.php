@@ -95,6 +95,9 @@ Route::get('/equipment/export', function () {
         return Excel::download(new EquipmentExport, 'equipment.xlsx');
 })->name('equipment.export');
 
+// routes/web.php
+Route::get('/edit-column', [EquipmentController::class, 'editColumn'])->name('edit.column');
+
 Route::get('/eq', [DashboardController::class, 'eq'])->name('eq')->middleware('auth');
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::resource('customer', CustomerController::class)->name('index', 'customer.index')->middleware('auth');

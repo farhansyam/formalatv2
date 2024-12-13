@@ -63,8 +63,15 @@ class TroubleshootController extends Controller
             'tanggal_survey' => $request->tanggal_survey, // Pastikan field ini ada di $request
             'jenis_equipment' => $request->jenis_equipment, // Pastikan field ini ada di $request
             'brand' => $request->brand, // Pastikan field ini ada di $request
-            'serial' => $request->serial, // Pastikan field ini ada di $request
-
+            'serial' => $request->serial, // Pastikan field ini ada di 
+            'c1' => $request->c1,
+            'c2' => $request->c2,
+            'c3' => $request->c3,
+            'c4' => $request->c4,
+            'c5' => $request->c5,
+            'c6' => $request->c6,
+            'c7' => $request->c7,
+            'c8' => $request->c8,
             'jenis_survey' => $request->jenis_survey, // Pastikan field ini ada di $request
             'defect_type' => $request->defect_type, // Pastikan field ini ada di $request
             'rekomendasi_teknisi_lapangan' => $request->rekomendasi_teknisi_lapangan, // Pastikan field ini ada di $request
@@ -243,6 +250,14 @@ class TroubleshootController extends Controller
                         'qty' => $qty[$index],
                         'keterangan' => $keterangan[$index],
                         'type' => $type,
+                        'c1' => $request->c1,
+                        'c2' => $request->c2,
+                        'c3' => $request->c3,
+                        'c4' => $request->c4,
+                        'c5' => $request->c5,
+                        'c6' => $request->c6,
+                        'c7' => $request->c7,
+                        'c8' => $request->c8,
                         'status' => $request->status,
                         'priority' => $request->defect_level,
                     ];

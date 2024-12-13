@@ -24,8 +24,9 @@ use App\Exports\HistoryExport;
 use App\Models\FormBeritaAcara;
 use App\Exports\EquipmentExport;
 use Illuminate\Routing\Controller;
-use Maatwebsite\Excel\Facades\Excel;
+use Illuminate\Support\Facades\DB;
 
+use Maatwebsite\Excel\Facades\Excel;
 use App\Models\AirCooledWaterChiller;
 use Illuminate\Support\Facades\Storage;
 use App\Models\ListKebutuhanBeritaAcara;
@@ -624,5 +625,28 @@ class EquipmentController extends Controller
             new HistoryExport($site, $jenis, $startDate, $endDate),
             $fileName
         );
+    }
+
+    public function editColumn(Request $request)
+    {
+        // Validate input
+        $validatedData = $request->validate([
+            'table' => 'required|string', // The name of the table
+            'id' => 'required|integer',  // The ID of the row to update
+            'column' => 'required|string', // The column name as a string
+        ]);
+
+        try {
+            // Dynamically update the specified column
+            DB::table($validatedData['table'])
+                ->where('id', $validatedData['id'])
+                ->update([
+                    $validatedData['column'] => 0,
+                ]);
+
+            return redirect()->back()->with('success', 'Kolom berhasil diperbarui.');
+        } catch (\Exception $e) {
+            return redirect()->back()->with('error', 'Terjadi kesalahan: ' . $e->getMessage());
+        }
     }
 }
